@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A reusable Roblox + Rojo starter template (Luau). The project is intentionally still named `template-game`; it is not a finished game. See README.md for the full setup walkthrough.
+Bandit Eater, a Roblox + Rojo game (Luau), created from the `template-game` starter template. It is not a finished game yet. See README.md for the full setup walkthrough.
 
 ## Commands
 
@@ -12,7 +12,7 @@ A reusable Roblox + Rojo starter template (Luau). The project is intentionally s
 - Install the Rojo Studio plugin: `rojo plugin install`
 - Start the sync server (must stay running while editing so changes push into Studio): `rojo serve` (default port 34872)
 - Lint Luau (`selene.toml` sets `std = "roblox"`): `selene src`
-- Rename the template for a new project (updates `name` in `default.project.json` and replaces `template-game` in README.md): `./scripts/rename-template.ps1 -ProjectName "YourGameName"` — with no `-ProjectName`, it infers the name from the git remote or folder name.
+- The template rename is already done (project name `Bandit-Eater`); `./scripts/rename-template.ps1` does not need to run again.
 
 There is no build step or automated test suite. Verifying behavior means: run `rojo serve`, connect Roblox Studio to it via the Rojo plugin, press Play, and check the Output window.
 

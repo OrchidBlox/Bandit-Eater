@@ -30,4 +30,4 @@ for _, name in SERVICE_ORDER do
 	end
 end
 
-print("[Server] template-game server started")
+print("[Server] Bandit-Eater server started")

@@ -15,4 +15,4 @@ for _, name in CONTROLLER_ORDER do
 	end
 end
 
-print("[Client] template-game client started")
+print("[Client] Bandit-Eater client started")

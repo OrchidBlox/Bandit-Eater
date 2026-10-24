@@ -1,6 +1,6 @@
-# template-game
+# Bandit-Eater
 
-This repository is a reusable Roblox starter template. The project name is intentionally still `template-game` so the template remains clear and easy to copy.
+This repository is a reusable Roblox starter template. The project name is intentionally still `Bandit-Eater` so the template remains clear and easy to copy.
 
 When you start a real game project, you should change the values that are project-specific, such as:
 
@@ -23,7 +23,7 @@ Before using this repo for a real project, update these items:
 3. Update the `name` field in `default.project.json`.
 4. Update the project title in this README.
 5. Replace example scripts and print statements with your real game code.
-6. Change any placeholder references to `template-game`.
+6. Change any placeholder references to `Bandit-Eater`.
 
 A quick example:
 
@@ -118,7 +118,7 @@ This script updates the project metadata to match the new name automatically.
 ## Project Structure
 
 ```text
-template-game/
+Bandit-Eater/
 ├── src/
 │   ├── client/               # -> StarterPlayerScripts.Client
 │   │   ├── init.client.luau  # starts each controller in order
@@ -281,8 +281,8 @@ Check the Output window.
 You should see:
 
 ```text
-[Server] template-game server started
-[Client] template-game client started
+[Server] Bandit-Eater server started
+[Client] Bandit-Eater client started
 ```
 
 and a "Welcome" notification in the corner of the game view. If both messages appear, the VS Code → Rojo → Roblox Studio workflow is working correctly.
@@ -409,7 +409,7 @@ You will usually replace or remove:
 
 * the example `PlayerService` and `NotificationController` (keep the loader pattern in `init.server.luau` and `init.client.luau`)
 * the `Notify` remote, if the game doesn't need it
-* the generic `template-game` naming
+* the generic `Bandit-Eater` naming
 
 That is expected. The point of the template is to give you a working Roblox + Rojo structure, then let you build the actual game on top of it.
 
