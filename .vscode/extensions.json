@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "johnnymorganz.luau-lsp",
+    "kampfkarren.selene-vscode",
+    "evaera.vscode-rojo"
+  ],
+  "unwantedRecommendations": [
+    "nightrains.robloxlsp"
+  ]
+}
