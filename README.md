@@ -240,7 +240,7 @@ From the project folder, run:
 rojo serve
 ```
 
-Rojo uses its default port, 34872. Keep this terminal window running while developing.
+Rojo serves on port 32222 (set by `servePort` in `default.project.json`); connect the Studio plugin to 32222. Keep this terminal window running while developing.
 
 Rojo must remain connected for changes made to Rojo-managed source files to sync into Roblox Studio.
 

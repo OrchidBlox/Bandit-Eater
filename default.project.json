@@ -1,5 +1,6 @@
 {
   "name": "Bandit-Eater",
+  "servePort": 32222,
   "tree": {
     "$className": "DataModel",
 

@@ -10,7 +10,7 @@ Bandit Eater, a Roblox + Rojo game (Luau), created from the `template-game` star
 
 - Install toolchain (Rojo, pinned in `aftman.toml`): `aftman install`
 - Install the Rojo Studio plugin: `rojo plugin install`
-- Start the sync server (must stay running while editing so changes push into Studio): `rojo serve` (default port 34872)
+- Start the sync server (must stay running while editing so changes push into Studio): `rojo serve` (port 32222, set by `servePort` in `default.project.json`; connect the Studio Rojo plugin to 32222)
 - Lint Luau (`selene.toml` sets `std = "roblox"`): `selene src`
 - The template rename is already done (project name `Bandit-Eater`); `./scripts/rename-template.ps1` does not need to run again.
 
