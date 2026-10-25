@@ -64,13 +64,15 @@ All dimensions W x H x D, in studs. Budget is triangles per template, not per ar
 
 Cliffs/rocks and trees are approved and installed. Undergrowth is mesh-only; stair trims and lobby fence remain deferred. Stair trims do not authorize new routes or raised floors. Three rock templates do not reduce the current nine cover placements.
 
+Lobby continuation (2026-10-24): the owner's "lobby needs the same love" authorizes rolling out the approved scenery style. Six tree instances, six rocks, twelve beds, smooth warm paving and coordinated existing furniture are installed. New bush/flower meshes remain unapproved; existing small plants are retained. See [lobby validation](nature-lobby-validation.md). No new fence mesh or stair route was built.
+
 ## References and exceptions
 
 - Arena: `docs/reference/concepts-v1-2026-10-24/grassland-arena-v2.png`: broad fractured cliff planes, shallow ledge-like rocks, grouped foliage, muted ground, legible yellow bandits.
 - Lobby: `lobby-spacious-v2.png` for the open-plaza composition; `lobby-two-leaderboards-v3.png` is authoritative for two board areas and no cosmetics.
 - The newer explicit low-poly-nature style overrides old workflow text saying blocky simulator. Budget caps from the style override generic 800/4000 or 1500–4000 suggestions.
 - Keep the cyan sci-fi gate as the deliberate accent. No new neon nature props.
-- Ground has native studs/Plastic in the current build; the concept's textured grass is not yet a matching mapped grass texture. In the later placement pass, preserve plain gameplay floors and use separately approved low-contrast decorative grass dressing without altering protected floor anchors. No heavy/noisy prop textures.
+- Original ground uses native studs/Plastic. Installed arena and lobby dressing now uses low-contrast native Grass surfaces above unchanged plain-part floor anchors; this is not a custom mapped grass texture. No heavy/noisy prop textures.
 
 ## Protected contracts
 

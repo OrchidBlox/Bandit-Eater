@@ -27,7 +27,7 @@ Every model, visual, and map object the game uses. Code depends only on the anch
 
 ## Low-poly nature restyle — arena progress (2026-10-24)
 
-The environment remains version 12. Approved cliffs, rocks and trees are installed in the arena through separate NatureDecor modules. Undergrowth is awaiting mesh approval; the lobby restyle is still deferred.
+The environment remains version 12. Approved cliffs, rocks and trees are installed in the arena through separate NatureDecor modules; the lobby now reuses the approved trees and rocks. Undergrowth is awaiting mesh approval.
 
 | Deliverable | Status |
 | --- | --- |
@@ -40,6 +40,6 @@ The environment remains version 12. Approved cliffs, rocks and trees are install
 | Arena trees | Five instances of three approved 194-triangle variants; two former path overlaps moved clear together with their existing colliders |
 | Golden-hour lighting, phone screenshots and yellow-bandit/VFX readability | Applied and inspected on desktop and iPhone 17 Pro landscape/portrait. [Validation and limits](nature-arena-validation.md); prototype HUD clipping remains |
 | [Undergrowth mesh review](../blender/review/BE_Nature_Undergrowth_mesh.png) | Two bushes and a flower clump, 60 triangles each; awaiting owner approval, not exported or placed |
-| Lobby restyle | Deferred until arena approval; keep two boards, cyan gate, floors and teleport/spawn anchors |
+| Lobby restyle | Installed after owner requested the same treatment: six approved trees, six rocks, twelve beds, smooth warm paving and coordinated furniture. Two boards, cyan gate and protected anchors unchanged. [Validation](nature-lobby-validation.md) |
 
 Floors, paths, spawn plates and collision bounds remain plain parts. A noncolliding textured Grass surface sits above the unchanged ArenaFloor. The nine arena cover centres remain the layout baseline. The cyan gate, two lobby boards, Elevation=180 and LobbyLift=60 are preserved.

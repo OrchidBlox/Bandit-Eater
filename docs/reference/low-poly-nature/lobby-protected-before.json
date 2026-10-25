@@ -1,0 +1,1831 @@
+{
+  "Workspace.BanditEaterPilot.Environment.Lobby.Leaderboard.Backboard": {
+    "cf": [
+      -72,
+      249,
+      11970,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": true,
+    "color": [
+      0.22745098173618317,
+      0.3019607961177826,
+      0.34117648005485535
+    ],
+    "material": "SmoothPlastic",
+    "collide": true,
+    "size": [
+      24,
+      17,
+      2
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.InvisibleBounds.East": {
+    "cf": [
+      59,
+      318,
+      12000,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 1,
+    "query": true,
+    "color": [
+      0.6117647290229797,
+      0.6392157077789307,
+      0.5921568870544434
+    ],
+    "material": "Plastic",
+    "collide": true,
+    "size": [
+      2,
+      164,
+      116
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.KOLeaderboard.Row1": {
+    "cf": [
+      32,
+      253.10000610351562,
+      11971.400390625,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.30588236451148987,
+      0.3686274588108063,
+      0.40392157435417175
+    ],
+    "material": "SmoothPlastic",
+    "collide": false,
+    "size": [
+      21,
+      2.0999999046325684,
+      0.4000000059604645
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.GrasslandArena.InvisibleBounds.Floor": {
+    "cf": [
+      0,
+      178.9499969482422,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 1,
+    "query": true,
+    "color": [
+      0.6117647290229797,
+      0.6392157077789307,
+      0.5921568870544434
+    ],
+    "material": "Plastic",
+    "collide": true,
+    "size": [
+      628,
+      2,
+      384
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.GrasslandArena.InvisibleBounds.North": {
+    "cf": [
+      0,
+      258,
+      -191,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 1,
+    "query": true,
+    "color": [
+      0.6117647290229797,
+      0.6392157077789307,
+      0.5921568870544434
+    ],
+    "material": "Plastic",
+    "collide": true,
+    "size": [
+      628,
+      164,
+      2
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.PilotLobbySpawn": {
+    "cf": [
+      -20,
+      240.5,
+      11994,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 1,
+    "query": true,
+    "color": [
+      0.6392157077789307,
+      0.6352941393852234,
+      0.6470588445663452
+    ],
+    "material": "Plastic",
+    "collide": false,
+    "size": [
+      8,
+      1,
+      8
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.ArenaGateway.Foundation": {
+    "cf": [
+      -20,
+      240.1999969482422,
+      11965.7998046875,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": true,
+    "color": [
+      0.7450980544090271,
+      0.7647058963775635,
+      0.7058823704719543
+    ],
+    "material": "SmoothPlastic",
+    "collide": true,
+    "size": [
+      25,
+      0.4000000059604645,
+      19
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.GrasslandArena.BanditClearings.BanditSpawn2": {
+    "cf": [
+      -109.71428680419922,
+      180,
+      115.7236328125,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 1,
+    "query": false,
+    "color": [
+      0.2549019753932953,
+      0.43921568989753723,
+      0.13725490868091583
+    ],
+    "material": "Plastic",
+    "collide": false,
+    "size": [
+      1,
+      1,
+      1
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.GrasslandArena.InvisibleBounds.Ceiling": {
+    "cf": [
+      0,
+      341,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 1,
+    "query": true,
+    "color": [
+      0.6117647290229797,
+      0.6392157077789307,
+      0.5921568870544434
+    ],
+    "material": "Plastic",
+    "collide": true,
+    "size": [
+      628,
+      2,
+      384
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.Leaderboard.Row2": {
+    "cf": [
+      -72,
+      250.60000610351562,
+      11971.400390625,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.30588236451148987,
+      0.3686274588108063,
+      0.40392157435417175
+    ],
+    "material": "SmoothPlastic",
+    "collide": false,
+    "size": [
+      21,
+      2.0999999046325684,
+      0.4000000059604645
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.KOLeaderboard.Row5": {
+    "cf": [
+      32,
+      243.10000610351562,
+      11971.400390625,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.30588236451148987,
+      0.3686274588108063,
+      0.40392157435417175
+    ],
+    "material": "SmoothPlastic",
+    "collide": false,
+    "size": [
+      21,
+      2.0999999046325684,
+      0.4000000059604645
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.GrasslandArena.BanditClearings.BanditSpawn5": {
+    "cf": [
+      109.71428680419922,
+      180,
+      -115.7236328125,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 1,
+    "query": false,
+    "color": [
+      0.2549019753932953,
+      0.43921568989753723,
+      0.13725490868091583
+    ],
+    "material": "Plastic",
+    "collide": false,
+    "size": [
+      1,
+      1,
+      1
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.GrasslandArena.InvisibleBounds.East": {
+    "cf": [
+      313,
+      258,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 1,
+    "query": true,
+    "color": [
+      0.6117647290229797,
+      0.6392157077789307,
+      0.5921568870544434
+    ],
+    "material": "Plastic",
+    "collide": true,
+    "size": [
+      2,
+      164,
+      384
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.Leaderboard.BoardCaption": {
+    "cf": [
+      -72,
+      241.60000610351562,
+      11971.400390625,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.22745098173618317,
+      0.3019607961177826,
+      0.34117648005485535
+    ],
+    "material": "SmoothPlastic",
+    "collide": false,
+    "size": [
+      23,
+      1,
+      0.20000000298023224
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.KOLeaderboard.Pillar": {
+    "cf": [
+      45,
+      249,
+      11970,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": true,
+    "color": [
+      0.7450980544090271,
+      0.7647058963775635,
+      0.7058823704719543
+    ],
+    "material": "Plastic",
+    "collide": true,
+    "size": [
+      2,
+      18,
+      3.5
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.ArenaGateway.ArenaSign": {
+    "cf": [
+      -20,
+      252,
+      11959.7998046875,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": true,
+    "color": [
+      0.22745098173618317,
+      0.3019607961177826,
+      0.34117648005485535
+    ],
+    "material": "SmoothPlastic",
+    "collide": true,
+    "size": [
+      19.399999618530273,
+      2.200000047683716,
+      1.600000023841858
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.Leaderboard.Plinth": {
+    "cf": [
+      -72,
+      240.60000610351562,
+      11970,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": true,
+    "color": [
+      0.6117647290229797,
+      0.6392157077789307,
+      0.5921568870544434
+    ],
+    "material": "Plastic",
+    "collide": true,
+    "size": [
+      28,
+      1.2000000476837158,
+      9
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.GrasslandArena.BanditClearings.BanditSpawn1": {
+    "cf": [
+      109.71428680419922,
+      180,
+      115.7236328125,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 1,
+    "query": false,
+    "color": [
+      0.2549019753932953,
+      0.43921568989753723,
+      0.13725490868091583
+    ],
+    "material": "Plastic",
+    "collide": false,
+    "size": [
+      1,
+      1,
+      1
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.Leaderboard.Title": {
+    "cf": [
+      -72,
+      255.8000030517578,
+      11971.2001953125,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.22745098173618317,
+      0.3019607961177826,
+      0.34117648005485535
+    ],
+    "material": "SmoothPlastic",
+    "collide": false,
+    "size": [
+      23,
+      2.5,
+      0.20000000298023224
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.GrasslandArena.InvisibleBounds.West": {
+    "cf": [
+      -313,
+      258,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 1,
+    "query": true,
+    "color": [
+      0.6117647290229797,
+      0.6392157077789307,
+      0.5921568870544434
+    ],
+    "material": "Plastic",
+    "collide": true,
+    "size": [
+      2,
+      164,
+      384
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.KOLeaderboard.Row2": {
+    "cf": [
+      32,
+      250.60000610351562,
+      11971.400390625,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.30588236451148987,
+      0.3686274588108063,
+      0.40392157435417175
+    ],
+    "material": "SmoothPlastic",
+    "collide": false,
+    "size": [
+      21,
+      2.0999999046325684,
+      0.4000000059604645
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.KOLeaderboard.BoardCaption": {
+    "cf": [
+      32,
+      241.60000610351562,
+      11971.400390625,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.22745098173618317,
+      0.3019607961177826,
+      0.34117648005485535
+    ],
+    "material": "SmoothPlastic",
+    "collide": false,
+    "size": [
+      23,
+      1,
+      0.20000000298023224
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.KOLeaderboard.CyanStrip": {
+    "cf": [
+      45,
+      248.5,
+      11971.900390625,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.25882354378700256,
+      0.8470588326454163,
+      1
+    ],
+    "material": "Neon",
+    "collide": false,
+    "size": [
+      0.4000000059604645,
+      11,
+      0.20000000298023224
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.GrasslandArena.ArenaFloor": {
+    "cf": [
+      0,
+      178.5,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": true,
+    "color": [
+      0.2549019753932953,
+      0.43921568989753723,
+      0.13725490868091583
+    ],
+    "material": "Plastic",
+    "collide": true,
+    "size": [
+      624,
+      3,
+      380
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.KOLeaderboard.Row3": {
+    "cf": [
+      32,
+      248.10000610351562,
+      11971.400390625,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.30588236451148987,
+      0.3686274588108063,
+      0.40392157435417175
+    ],
+    "material": "SmoothPlastic",
+    "collide": false,
+    "size": [
+      21,
+      2.0999999046325684,
+      0.4000000059604645
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.InvisibleBounds.North": {
+    "cf": [
+      -20,
+      318,
+      11943,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 1,
+    "query": true,
+    "color": [
+      0.6117647290229797,
+      0.6392157077789307,
+      0.5921568870544434
+    ],
+    "material": "Plastic",
+    "collide": true,
+    "size": [
+      160,
+      164,
+      2
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.InvisibleBounds.Ceiling": {
+    "cf": [
+      -20,
+      401,
+      12000,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 1,
+    "query": true,
+    "color": [
+      0.6117647290229797,
+      0.6392157077789307,
+      0.5921568870544434
+    ],
+    "material": "Plastic",
+    "collide": true,
+    "size": [
+      160,
+      2,
+      116
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.GrasslandArena.InvisibleBounds.South": {
+    "cf": [
+      0,
+      258,
+      191,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 1,
+    "query": true,
+    "color": [
+      0.6117647290229797,
+      0.6392157077789307,
+      0.5921568870544434
+    ],
+    "material": "Plastic",
+    "collide": true,
+    "size": [
+      628,
+      164,
+      2
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.KOLeaderboard.TopFrame": {
+    "cf": [
+      32,
+      258,
+      11970,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.6117647290229797,
+      0.6392157077789307,
+      0.5921568870544434
+    ],
+    "material": "Plastic",
+    "collide": false,
+    "size": [
+      28,
+      1.399999976158142,
+      4
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.GrasslandArena.BanditClearings.PowerClearing1": {
+    "cf": [
+      109.71428680419922,
+      180.05999755859375,
+      115.7236328125,
+      -4.371138828673793e-8,
+      -1,
+      0,
+      1,
+      -4.371138828673793e-8,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.7450980544090271,
+      0.6313725709915161,
+      0.4431372582912445
+    ],
+    "material": "Plastic",
+    "collide": false,
+    "size": [
+      0.07999999821186066,
+      21,
+      21
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.KOLeaderboard.Backboard": {
+    "cf": [
+      32,
+      249,
+      11970,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": true,
+    "color": [
+      0.22745098173618317,
+      0.3019607961177826,
+      0.34117648005485535
+    ],
+    "material": "SmoothPlastic",
+    "collide": true,
+    "size": [
+      24,
+      17,
+      2
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.InvisibleBounds.West": {
+    "cf": [
+      -99,
+      318,
+      12000,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 1,
+    "query": true,
+    "color": [
+      0.6117647290229797,
+      0.6392157077789307,
+      0.5921568870544434
+    ],
+    "material": "Plastic",
+    "collide": true,
+    "size": [
+      2,
+      164,
+      116
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.ArenaGateway.SimplePost": {
+    "cf": [
+      -11,
+      246.60000610351562,
+      11959.7998046875,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": true,
+    "color": [
+      0.7450980544090271,
+      0.7647058963775635,
+      0.7058823704719543
+    ],
+    "material": "SmoothPlastic",
+    "collide": true,
+    "size": [
+      1.399999976158142,
+      12,
+      1.600000023841858
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.ArenaGateway.PostLight": {
+    "cf": [
+      -11,
+      246,
+      11960.7001953125,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.25882354378700256,
+      0.8470588326454163,
+      1
+    ],
+    "material": "Neon",
+    "collide": false,
+    "size": [
+      0.2199999988079071,
+      9,
+      0.15000000596046448
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.GrasslandArena.BanditClearings.PowerClearing2": {
+    "cf": [
+      -109.71428680419922,
+      180.05999755859375,
+      115.7236328125,
+      -4.371138828673793e-8,
+      -1,
+      0,
+      1,
+      -4.371138828673793e-8,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.7450980544090271,
+      0.6313725709915161,
+      0.4431372582912445
+    ],
+    "material": "Plastic",
+    "collide": false,
+    "size": [
+      0.07999999821186066,
+      21,
+      21
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.GrasslandArena.BanditClearings.PowerClearing4": {
+    "cf": [
+      -109.71428680419922,
+      180.05999755859375,
+      -115.7236328125,
+      -4.371138828673793e-8,
+      -1,
+      0,
+      1,
+      -4.371138828673793e-8,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.7450980544090271,
+      0.6313725709915161,
+      0.4431372582912445
+    ],
+    "material": "Plastic",
+    "collide": false,
+    "size": [
+      0.07999999821186066,
+      21,
+      21
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.Leaderboard.Pillar": {
+    "cf": [
+      -59,
+      249,
+      11970,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": true,
+    "color": [
+      0.7450980544090271,
+      0.7647058963775635,
+      0.7058823704719543
+    ],
+    "material": "Plastic",
+    "collide": true,
+    "size": [
+      2,
+      18,
+      3.5
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.KOLeaderboard.Title": {
+    "cf": [
+      32,
+      255.8000030517578,
+      11971.2001953125,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.22745098173618317,
+      0.3019607961177826,
+      0.34117648005485535
+    ],
+    "material": "SmoothPlastic",
+    "collide": false,
+    "size": [
+      23,
+      2.5,
+      0.20000000298023224
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.KOLeaderboard.Plinth": {
+    "cf": [
+      32,
+      240.60000610351562,
+      11970,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": true,
+    "color": [
+      0.6117647290229797,
+      0.6392157077789307,
+      0.5921568870544434
+    ],
+    "material": "Plastic",
+    "collide": true,
+    "size": [
+      28,
+      1.2000000476837158,
+      9
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.ArenaTeleportPad": {
+    "cf": [
+      -20,
+      240.6999969482422,
+      11965.7998046875,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 1,
+    "query": false,
+    "color": [
+      0.25882354378700256,
+      0.8470588326454163,
+      1
+    ],
+    "material": "Neon",
+    "collide": false,
+    "size": [
+      16,
+      0.4000000059604645,
+      12
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.LobbyFloor": {
+    "cf": [
+      -20,
+      238.5,
+      12000,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": true,
+    "color": [
+      0.2549019753932953,
+      0.43921568989753723,
+      0.13725490868091583
+    ],
+    "material": "Plastic",
+    "collide": true,
+    "size": [
+      156,
+      3,
+      112
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.Leaderboard.Row5": {
+    "cf": [
+      -72,
+      243.10000610351562,
+      11971.400390625,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.30588236451148987,
+      0.3686274588108063,
+      0.40392157435417175
+    ],
+    "material": "SmoothPlastic",
+    "collide": false,
+    "size": [
+      21,
+      2.0999999046325684,
+      0.4000000059604645
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.Leaderboard.CyanStrip": {
+    "cf": [
+      -59,
+      248.5,
+      11971.900390625,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.25882354378700256,
+      0.8470588326454163,
+      1
+    ],
+    "material": "Neon",
+    "collide": false,
+    "size": [
+      0.4000000059604645,
+      11,
+      0.20000000298023224
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.Leaderboard.Row4": {
+    "cf": [
+      -72,
+      245.60000610351562,
+      11971.400390625,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.30588236451148987,
+      0.3686274588108063,
+      0.40392157435417175
+    ],
+    "material": "SmoothPlastic",
+    "collide": false,
+    "size": [
+      21,
+      2.0999999046325684,
+      0.4000000059604645
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.GrasslandArena.BanditClearings.PowerClearing6": {
+    "cf": [
+      219.42857360839844,
+      180.05999755859375,
+      0,
+      -4.371138828673793e-8,
+      -1,
+      0,
+      1,
+      -4.371138828673793e-8,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.7450980544090271,
+      0.6313725709915161,
+      0.4431372582912445
+    ],
+    "material": "Plastic",
+    "collide": false,
+    "size": [
+      0.07999999821186066,
+      21,
+      21
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.ArenaGateway.Platform": {
+    "cf": [
+      -20,
+      240.5,
+      11965.7998046875,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": true,
+    "color": [
+      0.22745098173618317,
+      0.3019607961177826,
+      0.34117648005485535
+    ],
+    "material": "SmoothPlastic",
+    "collide": true,
+    "size": [
+      21,
+      0.20000000298023224,
+      16
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.Leaderboard.Row1": {
+    "cf": [
+      -72,
+      253.10000610351562,
+      11971.400390625,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.30588236451148987,
+      0.3686274588108063,
+      0.40392157435417175
+    ],
+    "material": "SmoothPlastic",
+    "collide": false,
+    "size": [
+      21,
+      2.0999999046325684,
+      0.4000000059604645
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.KOLeaderboard.Row4": {
+    "cf": [
+      32,
+      245.60000610351562,
+      11971.400390625,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.30588236451148987,
+      0.3686274588108063,
+      0.40392157435417175
+    ],
+    "material": "SmoothPlastic",
+    "collide": false,
+    "size": [
+      21,
+      2.0999999046325684,
+      0.4000000059604645
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.GrasslandArena.BanditClearings.BanditSpawn6": {
+    "cf": [
+      219.42857360839844,
+      180,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 1,
+    "query": false,
+    "color": [
+      0.2549019753932953,
+      0.43921568989753723,
+      0.13725490868091583
+    ],
+    "material": "Plastic",
+    "collide": false,
+    "size": [
+      1,
+      1,
+      1
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.GrasslandArena.BanditClearings.PowerClearing5": {
+    "cf": [
+      109.71428680419922,
+      180.05999755859375,
+      -115.7236328125,
+      -4.371138828673793e-8,
+      -1,
+      0,
+      1,
+      -4.371138828673793e-8,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.7450980544090271,
+      0.6313725709915161,
+      0.4431372582912445
+    ],
+    "material": "Plastic",
+    "collide": false,
+    "size": [
+      0.07999999821186066,
+      21,
+      21
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.ArenaGateway.PortalSurface": {
+    "cf": [
+      -20,
+      245.8000030517578,
+      11959.7998046875,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0.8799999952316284,
+    "query": false,
+    "color": [
+      0.25882354378700256,
+      0.8470588326454163,
+      1
+    ],
+    "material": "Glass",
+    "collide": false,
+    "size": [
+      16.5,
+      10.199999809265137,
+      0.11999999731779099
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.GrasslandArena.BanditClearings.PowerClearing3": {
+    "cf": [
+      -219.42857360839844,
+      180.05999755859375,
+      0,
+      -4.371138828673793e-8,
+      -1,
+      0,
+      1,
+      -4.371138828673793e-8,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.7450980544090271,
+      0.6313725709915161,
+      0.4431372582912445
+    ],
+    "material": "Plastic",
+    "collide": false,
+    "size": [
+      0.07999999821186066,
+      21,
+      21
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.Leaderboard.Row3": {
+    "cf": [
+      -72,
+      248.10000610351562,
+      11971.400390625,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.30588236451148987,
+      0.3686274588108063,
+      0.40392157435417175
+    ],
+    "material": "SmoothPlastic",
+    "collide": false,
+    "size": [
+      21,
+      2.0999999046325684,
+      0.4000000059604645
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.Leaderboard.TopFrame": {
+    "cf": [
+      -72,
+      258,
+      11970,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.6117647290229797,
+      0.6392157077789307,
+      0.5921568870544434
+    ],
+    "material": "Plastic",
+    "collide": false,
+    "size": [
+      28,
+      1.399999976158142,
+      4
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.InvisibleBounds.South": {
+    "cf": [
+      -20,
+      318,
+      12057,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 1,
+    "query": true,
+    "color": [
+      0.6117647290229797,
+      0.6392157077789307,
+      0.5921568870544434
+    ],
+    "material": "Plastic",
+    "collide": true,
+    "size": [
+      160,
+      164,
+      2
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.ArenaGateway.PadLight": {
+    "cf": [
+      -20,
+      240.64999389648438,
+      11972.7998046875,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 0,
+    "query": false,
+    "color": [
+      0.25882354378700256,
+      0.8470588326454163,
+      1
+    ],
+    "material": "Neon",
+    "collide": false,
+    "size": [
+      19.399999618530273,
+      0.07999999821186066,
+      0.25
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.Lobby.InvisibleBounds.Floor": {
+    "cf": [
+      -20,
+      238.9499969482422,
+      12000,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 1,
+    "query": true,
+    "color": [
+      0.6117647290229797,
+      0.6392157077789307,
+      0.5921568870544434
+    ],
+    "material": "Plastic",
+    "collide": true,
+    "size": [
+      160,
+      2,
+      116
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.GrasslandArena.BanditClearings.BanditSpawn3": {
+    "cf": [
+      -219.42857360839844,
+      180,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 1,
+    "query": false,
+    "color": [
+      0.2549019753932953,
+      0.43921568989753723,
+      0.13725490868091583
+    ],
+    "material": "Plastic",
+    "collide": false,
+    "size": [
+      1,
+      1,
+      1
+    ]
+  },
+  "Workspace.BanditEaterPilot.Environment.GrasslandArena.BanditClearings.BanditSpawn4": {
+    "cf": [
+      -109.71428680419922,
+      180,
+      -115.7236328125,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "touch": false,
+    "transparency": 1,
+    "query": false,
+    "color": [
+      0.2549019753932953,
+      0.43921568989753723,
+      0.13725490868091583
+    ],
+    "material": "Plastic",
+    "collide": false,
+    "size": [
+      1,
+      1,
+      1
+    ]
+  }
+}

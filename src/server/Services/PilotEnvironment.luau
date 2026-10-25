@@ -5,6 +5,7 @@ local Lobby = require(script.Parent.EnvironmentLobby)
 local Arena = require(script.Parent.EnvironmentArena)
 local NatureArenaPolish = require(script.Parent.NatureArenaPolish)
 local NatureArenaTrees = require(script.Parent.NatureArenaTrees)
+local NatureLobbyPolish = require(script.Parent.NatureLobbyPolish)
 local Environment = { Version = 5 }
 Environment.BanditPosition = Arena.BanditPosition
 Environment.PlayerSpawnPosition = Arena.PlayerSpawnPosition
@@ -38,6 +39,7 @@ function Environment.Build(root)
 	if existing and existing:GetAttribute("Version") == Environment.Version then
 		NatureArenaPolish.Apply(existing)
 		NatureArenaTrees.Apply(existing)
+		NatureLobbyPolish.Apply(existing)
 		return existing
 	end
 	if existing then
@@ -76,6 +78,7 @@ function Environment.Build(root)
 	end
 	NatureArenaPolish.Apply(model)
 	NatureArenaTrees.Apply(model)
+	NatureLobbyPolish.Apply(model)
 	task.wait()
 	return model
 end
