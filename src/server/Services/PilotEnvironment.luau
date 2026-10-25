@@ -6,9 +6,15 @@ local Arena = require(script.Parent.EnvironmentArena)
 local NatureArenaPolish = require(script.Parent.NatureArenaPolish)
 local NatureArenaTrees = require(script.Parent.NatureArenaTrees)
 local NatureLobbyPolish = require(script.Parent.NatureLobbyPolish)
-local Environment = { Version = 5 }
-Environment.BanditPosition = Arena.BanditPosition
-Environment.PlayerSpawnPosition = Arena.PlayerSpawnPosition
+local Environment = { Version = 12, Elevation = 180, LobbyLift = 60 }
+
+function Environment.BanditPosition(index)
+	return Arena.BanditPosition(index) + Vector3.new(0, Environment.Elevation, 0)
+end
+
+function Environment.PlayerSpawnPosition(index)
+	return Arena.PlayerSpawnPosition(index) + Vector3.new(0, Environment.Elevation, 0)
+end
 
 local function lighting()
 	Lighting.ClockTime = 14
@@ -59,23 +65,13 @@ function Environment.Build(root)
 	end
 	local model = P.Model(root, "Environment")
 	model:SetAttribute("Version", Environment.Version)
+	model:SetAttribute("Elevation", Environment.Elevation)
+	model:SetAttribute("LobbyElevation", Environment.Elevation + Environment.LobbyLift)
 	model:SetAttribute("Source", "Approved lobby and grassland-arena-v2 concepts")
 	Arena.Build(model)
-	Lobby.Build(model)
-	local backdrop = P.Model(model, "Backdrop")
-	local sea = P.Part(backdrop, "Ocean", Vector3.new(2600, 2, 2600), CFrame.new(0, -18, 0), Color3.fromRGB(65, 162, 192), Enum.Material.Glass, false)
-	sea.Transparency, sea.Reflectance = 0.2, 0.12
-	local rng = Random.new(181)
-	for i = 1, 14 do
-		local angle = i * math.pi * 2 / 14
-		local radius = 800 + rng:NextNumber(0, 220)
-		local height = rng:NextNumber(20, 60)
-		local position = Vector3.new(math.cos(angle) * radius, height / 2 - 20, math.sin(angle) * radius)
-		local size = Vector3.new(rng:NextNumber(28, 55), height, rng:NextNumber(25, 45))
-		P.Part(backdrop, "DistantRockIsland", size, CFrame.new(position) * CFrame.Angles(0, angle, 0), Color3.fromRGB(136, 151, 147), Enum.Material.Slate, false)
-		P.Part(backdrop, "DistantGrassCap", Vector3.new(size.X, 1, size.Z), CFrame.new(position + Vector3.new(0, size.Y / 2, 0)) * CFrame.Angles(0, angle, 0),
-			Color3.fromRGB(111, 153, 72):Lerp(Color3.new(0, 0, 0), 0.28), Enum.Material.Grass, false)
-	end
+	local lobby = Lobby.Build(model)
+	lobby:PivotTo(lobby:GetPivot() + Vector3.new(0, Environment.LobbyLift, 0))
+	model:PivotTo(model:GetPivot() + Vector3.new(0, Environment.Elevation, 0))
 	NatureArenaPolish.Apply(model)
 	NatureArenaTrees.Apply(model)
 	NatureLobbyPolish.Apply(model)

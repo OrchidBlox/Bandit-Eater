@@ -1,178 +1,192 @@
-# Bandit Eater: Game Design Doc (Roblox)
+# Bandit Eater: Game Design Document (Roblox)
 
-Use this as the source of truth for building the game. Build in Luau, Rojo project structure, server-authoritative logic. Part 1 is the V1 pilot and is what to build now. Part 2 is the long-term vision: do NOT build anything from Part 2 until the developer approves it. Where something is marked OPEN or PROPOSED, ask the developer before assuming.
+Source of truth for development. Luau, Rojo project structure, VS Code/GitHub workflow, and server-authoritative gameplay.
 
----
+## Scope and approval
 
-# PART 1: V1 PILOT (BUILD THIS)
+- **V1: build now.** One continuous PvPvE map, not timed matches.
+- **V2: approved roadmap direction, not authorization to implement early.** Currency-based permanent base starter unlocks and cosmetic mastery.
+- **V3: future candidates and keep-or-delete decisions.** Nothing is authorized for implementation.
+- Items marked OPEN or PROPOSED require developer approval before assuming behavior. Suggested tuning is not a locked value.
+- Latest rules below supersede earlier round-based, separate-PvE-zone, weakening, unlock-meter, permanent-fusion, and cosmetic-only-monetization proposals.
 
-## 1. Pitch
-Kirby-style battlegrounds game. Genre: Fighting / Action (PvP). Subgenre: free-for-all arena brawler with an ability-collection mechanic. Players inhale bandits (yellow dummy-looking NPCs, each themed on one power), swallow them to copy their power, optionally fuse powers, and spit star projectiles at opponents.
+# PART 1: V1 — ROUNDLESS PvPvE PILOT
 
-One-line pitch: "A Kirby-style battlegrounds game where you inhale bandits, steal their powers, and fuse them."
+## 1. Pitch and style
 
-## 2. V1 Scope
-A **lobby + free-for-all PvP arena**. All powers come from inhaling arena bandits (or the random starter power) and are **temporary** (that match only). Permanent powers, saved slots, mastery, and the open world are added later as the game grows (see Part 2).
+A cartoon action brawler where players fight each other, inhale bandits to copy powers, spit stars, and fuse compatible powers.
 
-## 3. Match Loop
-1. Spawn into the arena with one random starter power.
-2. Fight with M1, dash, bubble shield, and power moves.
-3. Inhale an arena bandit (easy). Swallow it to get its power, or spit it as a star projectile.
-4. Optionally fuse (Sword fusions only at launch).
-5. Win or lose, earn PvP currency. On a KO, respawn with a fresh random starter power.
-6. Between matches, spend currency on cosmetics in the lobby.
+One-line pitch: “Inhale bandits, steal their powers, and fuse them while fighting other players.”
 
-## 4. Lobby
-- Queue/join button for the arena. The arena fills with bots when population is low so matches always start.
-- Leaderboard and cosmetics shop.
-- PROPOSED: a short roadmap note in the lobby ("permanent powers coming soon").
-- PROPOSED: daily quests tied to arena play (e.g. "inhale 5 fire bandits").
+Visual direction: low-poly nature, chunky cartoon VFX, exaggerated animations, readable silhouettes, and clearly telegraphed attacks. PvPvE means players fight both players and NPC bandits; this is not a separate PvE game.
 
-## 5. Controls
-Universal moves (every player, not tied to any power):
-- **M1:** regular basic attack combo.
-- **Dash:** brief i-frames, on a cooldown.
-- **Bubble shield block (developer decision):** blocking pops up a transparent bubble shield around the player for a short time that reduces damage taken (it does not negate it). The bubble is see-through and visible to opponents so it reads clearly. PROPOSED tuning: about 1 second duration, a cooldown so it cannot be held forever, about 60-70% damage reduction, and guard-break (heavy hits and signature moves can pop the bubble early and leave the player briefly exposed). All values tunable.
-- **Inhale** and **spit** (see Section 7), **swap** (between the two temp slots), **jump**.
-- Power moves on Q, E, R (mobile buttons and gamepad mapped too).
+## 2. World and session loop
 
-Mobile UI: M1, dash, block, inhale, swap, jump, plus 3 power-move buttons and a small icon for the benched power. Keep the layout compact (dash/block/jump near the thumb, the three power moves grouped). PROPOSED: let players move and resize buttons, hide swap until the player holds two powers, and show the fuse button only when fusing is possible. Test the layout early.
+One compact continuous combat map with a safe lobby/spawn area. No rounds, queue, match timer, winner screen, or match payouts.
 
-## 6. Powers, Moves, and Slots
-- **Launch roster (developer decision), 6 base powers:** Wind, Earth, Water, Fire, Sword, Shadow. Design everything data-driven so adding a power later needs only new data.
-- Inhale is NOT a power. It is the universal core mechanic every player has. There is no "Eat" power.
-- Each power has 3 moves on Q, E, R, **all unlocked in V1**:
-  1. Move 1: fast, low cooldown power attack.
-  2. Move 2: utility/control (trap, shield, area control, projectile). Not just a plain dash, since dash is universal.
-  3. Move 3, Signature: big, long cooldown.
-- **Two temporary slots.** Only ONE power is active at a time; the other is benched. One swap key switches them, with a short swap cooldown (1-2 seconds). Cooldowns keep ticking while a power is benched.
-- **Starter power (developer decision):** every player spawns with one random base power in temp slot 1. Temp slot 2 starts empty and is filled by inhaling a bandit. A fresh random starter power on every respawn. Stats are PvP-normalized, so the starter is as strong as any other power. Show a short first-match prompt: "Inhale a bandit to get a second power."
-- Two copies of the same power can be held (needed for the Sword + Sword fusion).
-- If both slots are full on swallow, the player chooses which power to replace.
-- Temporary powers never touch saved data.
+1. Spawn with one random base starter in slot 1; slot 2 is empty.
+2. Enter the combat zone and fight players.
+3. Inhale a bandit; swallow for a temporary power or spit as a star.
+4. Swap powers or optionally fuse a valid pair.
+5. Earn currency through meaningful combat participation and approved objectives.
+6. On KO, lose current temporary powers/fusions and respawn with a fresh random base starter.
+7. Keep currency, cosmetics, and saved stats.
 
-## 7. Inhale, Swallow, and Spit
-- Hold a button to inhale. Bandits in a cone in front of the player are pulled in. Players are exposed while pulling, which is the intended risk. No invulnerability while pulling.
-- **Bandits can be inhaled right away (developer decision):** no weakening or stagger is needed, so a bandit can be inhaled at full health. The risk is being exposed while pulling, plus the inhale cooldown.
-- After inhaling: **swallow** (copy its power into a temp slot) or **spit** (fire a **star** projectile).
-- **Spit as a weapon:** the star can hit opponents (PvP-tuned damage and cooldown).
-- **Star cosmetic (developer idea):** the star's look is planned as a changeable, possibly paid cosmetic (skins, colors, trails). Cosmetic variants must never change the star's hitbox, size, speed, or damage, and must not hide telegraphs.
-- **Inhale cooldown:** a small cooldown so players cannot chain-inhale every bandit and snowball.
-- **Post-swallow protection (developer decision):** after a successful swallow, about 0.3-0.5 seconds of 50% damage resistance (NOT full i-frames), with a visible flash or pulse. It is tied to the inhale cooldown so it cannot be chained. Percentage and duration are tunable.
+Permanent starter selection is V2, not V1. Bandits provide local activity and powers; player combat remains the main event.
 
-## 8. Fusion (Sword-only at launch)
-- **Fusion works in temp mode (developer decision):** a player holding two temp powers can choose to fuse them into a temporary fusion. Fusion is optional, never automatic. Fusing consumes both powers and puts the fused result in one slot, freeing the other.
-- **Sword is the only power that fuses at launch (developer decision):** Sword + one other power, plus Sword + Sword (6 fusions). The fuse option only appears when the player holds Sword plus another power (which can be a second Sword).
-- Fusions (proposed names):
-  - Fire + Sword = Flame Blade
-  - Water + Sword = Tide Blade
-  - Wind + Sword = Gale Blade
-  - Earth + Sword = Quake Blade
-  - Shadow + Sword = Shadow Blade
-  - Sword + Sword = Master Blade (an upgraded Sword)
-- Fusion order does not matter. Fusions are sidegrades, not strict upgrades.
-- **No Fusion Book (developer decision):** there is no fusion book or discovery list. While in the arena, a player who holds two abilities that can be fused simply gets the option to fuse them.
-- **Workload plan (PROPOSED):** each fusion takes move 1 from one parent and move 2 from the other (reusing animations and effects) and adds one new signature move, so V1 needs about 6 new signature moves. Keep fusions data-driven (a Fusions module keyed by sorted pair of power ids) so a new pair needs only data plus one signature move.
+OPEN: exact safe-area boundaries, damage protection, spawn protection, and rules preventing safe-zone abuse.
 
-## 9. Arena Bandits
-- All bandits share the same yellow dummy-like base model, themed on their power (a look and tell that match the power, e.g. flames for Fire, a blade for Sword), so players know what they will copy.
-- Each bandit uses ONLY ONE ability (developer decision). Proposed: the power's Move 1, with a clear telegraph (about 0.4-0.6 seconds) and low damage, so the power is readable before inhaling and the AI stays simple.
-- Bandits attack all players and target the nearest player, not the match leader.
-- **Rare and mystery variants** spawn on the arena's own timers (more often than they would in an open world, since arena powers are temporary). They also use a single ability (a stronger or faster version). The mystery bandit plays a slot-machine style reveal after the swallow and lands on a random temp power. Rare arena powers are sidegrades with PvP-normalized stats.
-- Limit how many bandits are alive, use respawn timers, keep bandit damage low so players mostly fight each other, and keep power-ups sidegrades so the match leader does not snowball.
-- PROPOSED: spawn Sword bandits slightly more often so fusion shows up regularly.
-- Bandits also help with low population by keeping matches busy.
+## 3. Controls and universal defense
 
-## 10. Arena and Match Rules
-- Launch mode: free-for-all on one arena map. Short matches (about 1-2 minutes).
-- PvP stats are normalized for everyone (levels, gear, grind do not matter).
-- Per-move PvP multipliers for damage, cooldown, and stun length, so powers can be tuned independently.
-- Cap stun/freeze duration and add short stun immunity after being stunned (no chain-locks).
-- Losing costs nothing: no power loss, no progress loss.
-- Fill empty arenas with bots so matches always start.
-- Match flow: timer, scoring, respawns, results screen, currency payout.
+- M1: basic attack combo.
+- Dash: brief i-frames on cooldown.
+- Jump, inhale, swallow, spit, and swap.
+- Q/E/R: three power moves, all unlocked immediately.
+- Mobile and gamepad support.
+- No bubble shield/block. No shield guard-break system.
+- Catch eligible incoming attacks from the front during a brief timed inhale window. Holding indefinitely does not provide continuous protection.
+- Missing gives no protection and triggers a cooldown before another catch attempt. It does not freeze or stun the player; movement and dash remain available under their normal rules.
+- Melee, rear attacks, and uncatchable attacks can still hit during inhale. No general inhale invulnerability.
 
-## 11. Rewards, Saved Data, and Monetization (V1)
-- **Rewards for win or loss:** PvP currency (winners earn more, losers still earn a smaller amount), plus cosmetics and titles. No power-affecting rewards.
-- **PROPOSED saved data:** PvP currency, cosmetics, stats/leaderboard. Reason: V1 needs a reason to return even though powers are not saved.
-- **Light anti-abuse (agreed direction):** daily cap on boosted rewards (normal rate after), AFK check with a minimum participation requirement (damage dealt or inhales) to earn, and reduced rewards for repeated fights against the same opponent or against bots.
-- **Monetization:** cosmetics only in V1 (star skins as a paid option, plus PROPOSED inhale effects, auras, and bandit skins). Nothing purchasable changes PvP outcomes.
+OPEN: catch-window duration, cooldown, input bindings/state transitions, how bandit and projectile inhaling share controls/cooldowns, and capacity while already holding a bandit/star. The earlier 0.4-second catch window was illustrative only.
 
-## 12. Technical Notes
-- Luau, Rojo project layout, VS Code and GitHub workflow.
-- All gameplay (inhale, swallow, fuse, damage, cooldowns, slot changes) is validated on the server. The client only sends input and plays effects.
-- Data-driven definitions: a Powers module and a Fusions module with move data (damage, cooldown, effect ids). Adding content means adding data.
-- Player data saved in V1: currency, cosmetics, stats. **Forward compatibility:** reserve empty fields in the player data schema for saved slots, owned powers, and mastery, so adding permanent powers later is an extension, not a rewrite. DataStore saves with retry/session locking.
+## 4. Powers and two combat slots
 
-## 13. V1 Build Order
-1. Lobby, queue, and teleport to the arena (with bot fill).
-2. Player controller: M1, dash, bubble shield block.
-3. Inhale and spit, plus arena bandit AI.
-4. Power and move framework with the 6 powers (temp slots, random starter power).
-5. Fusion option in the arena (offered when two held abilities can fuse).
-6. Free-for-all match flow: timer, scoring, respawns, results, currency payout.
-7. Cosmetics shop, leaderboard, daily quests.
-8. Mobile layout, onboarding (first 60 seconds), balance pass.
+Launch base roster: **Wind, Earth, Water, Fire, Sword, Shadow**. Inhale is universal, never a seventh power.
 
-## 14. Playtest and Tuning Checklist
-- Prototype acceptance test: a new player understands the controls within 60 seconds, and fighting plus inhaling with one power is fun for 5 minutes with no rewards attached.
-- Tune: bubble shield duration, cooldown, and damage reduction; post-swallow protection; inhale cooldown; bandit count, damage, and respawn timers; starter power randomness; Sword bandit spawn rate.
-- Watch: free-for-all chaos with bandits attacking, bot fill quality at low population, mobile button layout, day-1 return rate before spending on ads.
+Each power has:
 
----
+1. A fast low-cooldown attack.
+2. Utility/control, not merely another dash.
+3. A large signature on a longer cooldown.
 
-# PART 2: LATER (NOT IN V1, DO NOT BUILD UNTIL APPROVED)
+Every base power has at least one clearly recognizable inhaleable attack. Sword has a small traveling slash; ordinary melee swings are not inhaleable. Use shape and animation as well as color for readability.
 
-## L1. Permanent Powers and Saved Slots
-- Players start with 2 saved power slots. Powers absorbed from open-world bandits are permanent and persist between servers (saved to DataStore, saved immediately on absorb and on fuse).
-- Planned progression: 3rd slot by level/quest, 4th slot as a gamepass (more options, not more power).
-- Fusing consumes both powers and puts the result in one slot.
-- Open-world bandits are instanced per player (or per party), no kill stealing, matched to player level. Powers only come from bandits, never from other players.
-- Arena spawn loadout (developer decision): players enter the arena with their permanent saved powers and can also pick up temporary powers from arena bandits. Temp powers live in separate temp slots. The swap key cycles through saved slots plus temp slots.
-- Opt-in "Bandit Mode" PvP toggle in the open world (visible overhead marker). Flagged players mid-bandit-fight or mid-inhale are immune to PvP in the open world only. Consider merging the arena into a flag-only PvP zone on the main map.
+- Two match-held combat slots; one active, one benched.
+- Swap has a short cooldown; approximately 1–2 seconds is suggested tuning.
+- Cooldowns keep ticking while benched.
+- Duplicate powers allowed, including Sword + Sword.
+- Empty slot fills on swallow.
+- **Swallow automatically activates the newly acquired power.** If Fire is active and the second slot is empty, swallowing Sword fills that empty slot and makes Sword active; Fire becomes benched. Swap returns to Fire.
+- Keep slot positions fixed: change the active-slot selection rather than moving powers between slots. Preserve existing cooldowns when activation changes.
+- After a full-slot replacement, the newly swallowed power also becomes active; the other retained power stays benched. This does not resolve which replacement UX to use.
+- Temporary loadouts are never saved as owned powers.
 
-## L2. Power Mastery (APPROVED concept)
-- Every power, base and fused, levels 0-10 through use (everything starts at 0). Mastery is saved per power id and persists even when the power is not held, is consumed in a fusion, or is re-absorbed. Fused powers start at 0 mastery (no inheritance).
-- Moves 1 and 2 unlocked at the start, signature (move 3) unlocked at Mastery 1. Mastery 0 to 1 should be quick (about 5 minutes of use), with the locked signature shown alongside a progress bar.
-- Mastery unlocks cosmetic effects, titles, and sidegrade move variants. It never raises PvP stats (PvP stays normalized).
-- In PvP, all three moves are available regardless of mastery. Mastery EXP comes from bandit farming at a base rate and from PvP at a boosted rate (about 2x as a starting value). Temporary arena powers earn no mastery EXP; only permanently owned powers do.
+**OPEN replacement UX:** original rule asks which slot to replace when both are full. Proposed simpler alternative: swallow replaces the active power and immediately activates the new power, shows “Swallow → Replace [power]” before confirmation, and allows swapping before swallowing to select the other replacement target. The benched power remains untouched. Spitting preserves both powers. Confirm one approach before implementation; avoid assuming a replacement menu is required.
 
-## L3. Lure Shards and Lures (open world only)
-- Lure Shards are earned from bandit farming (base rate) and PvP (boosted rate, win-streak bonuses, pity-timer boost; losers still earn a smaller amount).
-- Lures are bought with shards and spawn a personal bandit that the player still has to beat and inhale (currency never grants a power directly). Open world only; never used in the arena.
-  - Specific Lure: a normal bandit of a power the player chooses.
-  - Rare Lure: a harder rare bandit.
-  - Mystery Lure: the RNG mystery bandit (small chance of a rare power or ready-made fusion).
-- Mystery bandit includes a pity timer (guaranteed rare after X spawns without one). OPEN: fully random vs weighted toward powers the player does not own.
-- If shards or lures can ever be bought with Robux, check Roblox's paid random item rules (odds disclosure) before shipping.
-- Keep all rates in config values and log telemetry.
+## 5. Bandits: lightly interactive, no weakening
 
-## L4. Open-World Bandit Combat
-- Bandits are not weakened before inhaling (developer decision); they can be inhaled right away. The earlier stagger-bar idea is dropped.
-- Bandit archetypes (open world only, since arena bandits use one ability): Brawler, Runner, Tank (armor broken by heavy hits), Thrower/Sniper, Summoner. Rare bandits combine archetypes and have phases.
-- Elemental interactions so power choice matters. Inhale streaks (consecutive inhales within about 10 seconds give bonus rewards).
-- Game feel: hit-stop, optional camera shake, knockback, damage numbers, inhale pull VFX, swallow pop effect.
+- Yellow dummy-like shared model with distinct power accessories and tells.
+- Stay near their spawn and target the nearest player within a short aggression range.
+- One clearly telegraphed ability each; no chasing across the map or complex combat AI.
+- **Nearly instant inhale at full health. No weakening, damage threshold, or stagger requirement.**
+- Clear suction/reaction animation makes collection readable and satisfying.
+- Low damage, capped population, respawn timers, and restrained effects.
+- PROPOSED: use the power's move 1 with roughly 0.4–0.6 seconds of telegraph.
+- PROPOSED: slightly more Sword spawns, staggered respawns, and effects smaller than player signatures.
+- OPEN: aggression range, population, spawn distribution, respawn rates, and final attack tuning.
 
-## L5. Expanded Powers and Fusions
-- Add new base powers over time (one every 2-3 weeks), seasonal/event/rare-only powers. A new power adds a fusion with every existing power plus its own double (N powers means N(N+1)/2 fusions).
-- Shelved power ideas from the earlier roster: Ice, Speed, Shock, Bomb. Earlier fusion ideas: Steam, Blaze Dash, Plasma, Napalm, Ice Slide, Freeze Shock, Frost Mine, Frostbrand, Lightning Dash, Rocket Jump, Blitz Slash, Chain Blast, Thunder Blade, Exploding Blade, plus doubles (Inferno, Blizzard, Sonic, Storm, Mega Bomb).
-- Evolved fusions (Tier 3): fuse a fusion with a base power or another fusion, requiring Mastery 5+ in the ingredients. Launch with a small hand-picked set (about 6).
+Rare/stronger unique powers are **not in V1 or V2**. They are later-only candidates and may only ever grant temporary powers.
 
-## L6. Endgame and Retention
-- Bandit King boss ladder (PvE zones with boss bandits whose signature mechanics reward specific powers; cosmetics and titles).
-- Rare Shiny fusion variants (cosmetic only).
-- Daily/weekly Bandit Hunts, daily login streak, limited-time event bandits, mastery milestones.
-- Seasonal ranked PvP with resets, exclusive cosmetics and titles. Leaderboards for ranked PvP and boss ladder.
+PROPOSED: prototype without combat bots. Round-based bot fill is removed; whether low-population play needs bots remains a playtest decision.
 
-## L7. Later Modes
-- 1v1 (planned as a bandit-free mode), team modes, "fusion showdown" (random fusion for everyone), spectator view, and a "top fusion this hour" leaderboard.
+## 6. Swallow and star spit
 
-## L8. Later Monetization (no PvP pay-to-win)
-- 4th slot as a gamepass; luck potions (time-limited, capped, pity timer still applies, show odds); seasonal pass with free and premium tracks; optional VIP (cosmetic perks plus an extra daily mystery bandit); more cosmetics (spit trails, auras, bandit skins, swallow animations).
+- A paid base unlock grants starter eligibility only, not exclusivity, extra slots, stronger stats, or a fusion.
+- Clearly preview and describe purchases.
+- Buying starter access gives reliable choice; do not assume normalized stats eliminate that advantage.
+- Keep free unlock pacing reasonable and bandits accessible; do not make desirable spawns artificially rare to push purchases.
+- Currency purchase packs are not automatically approved by approving direct power purchases. Decide separately.
+- Suggested cosmetic offerings: star skins/trails, emotes, victory poses; more categories need content planning.
+- No sale of stronger rare powers, fusion starters, or extra combat slots.
+- Season passes remain later candidates until production capacity is proven.
+- OPEN: product catalog, prices, direct purchase versus currency purchase implementation, and duplicate purchase handling.
 
-## L9. Later Open Questions
-1. Mystery bandit: fully random or weighted toward missing powers?
-2. Core fantasy and story/factions?
-3. Endgame: fusion collection, boss ladder, ranked PvP, or all three?
-4. Evolved fusions: approve as part of the endgame?
-5. Players with many permanent fusions may have more options than new players in the free-for-all. Fusions are meant to be sidegrades; test this in balance passes.
+## 5. Saving and onboarding
+
+Save owned base IDs, selected starter, per-power cosmetic mastery, currency, cosmetics, and stats. Remove the superseded base unlock-progress-meter concept; no separate PvE loadouts or permanent fusion inventory.
+
+Server validates purchases, ownership, starter selection, mastery, and rewards. Handle purchases reliably and idempotently using Roblox's appropriate server purchase lifecycle. Save milestones promptly with retries/session locking.
+
+Clearly explain: “Own a base power to choose it as your starter. Bandits give temporary powers. Fusions last for this life.”
+
+PROPOSED: lobby training area to try the six base powers before spending currency. Do not build until approved.
+
+## 6. Build order and acceptance
+
+1. Resolve initial free starter, selection/respawn lifecycle, unlock costs, and reward pacing.
+2. Currency-based base collection and ownership UI.
+3. Selected starter integrated with two-slot combat.
+4. Cosmetic mastery for base powers and temporary fusions.
+5. Approved paid starter products and cosmetic shop additions.
+6. Purchase/save reliability, onboarding, mobile testing, and fairness checks.
+
+Acceptance: players understand ownership versus current powers; beginners can earn unlocks without winning; bought powers remain obtainable temporarily by everyone; bandits/fusion remain useful after collection; cosmetic mastery provides long-term goals without inflated unlock grind.
+
+# PART 3: V3 — FUTURE CANDIDATES
+
+Nothing here is approved for implementation. Expansion candidates need approval and evidence of player demand. Keep-or-delete entries are unresolved decisions, including entries recommended for deletion.
+
+## A. Expansion candidates
+
+**Rare unique stronger powers:** later-only and temporary-only if added. Never permanent unlocks, starter choices, or purchases. Acquisition is through rare dummy spawns. Spawn rules, duration/KO expiry, counterplay, fusion eligibility, and anti-snowball safeguards require approval; do not assume these powers are balanced sidegrades.
+
+
+| Feature | Prerequisite |
+|---|---|
+| Bandit King boss ladder | Proven PvE loop; meaningful boss combat beyond immediate collection |
+| Additional base powers | Sustainable releases, distinct identity, readable inhaleable attack |
+| Curated additional fusions | Individually approved recipes; no every-pair requirement |
+| Bandit archetypes | Distinct readable encounters; candidates include Brawler, Runner, Tank, Thrower, Summoner |
+| 1v1 without bandits | Sufficient players to support another queue |
+| Team modes | Readability and coordination testing |
+| Spectating | Demonstrated demand |
+| Seasonal ranked PvP | Stable balance, population, matchmaking, and abuse controls |
+| Cosmetic shiny variants | Preserve silhouettes and warning readability |
+| Bandit Hunts and events | Sustainable content schedule built on proven gameplay |
+| Separate PvE zone / larger world | Deferred from V2; keep or delete before planning another zone |
+
+Shelved power candidates: Ice, Speed, Shock, Bomb. Shelved fusion concepts include Steam, Blaze Dash, Plasma, Napalm, Ice Slide, Freeze Shock, Frost Mine, Frostbrand, Lightning Dash, Rocket Jump, Blitz Slash, Chain Blast, Thunder Blade, Exploding Blade, Inferno, Blizzard, Sonic, Storm, and Mega Bomb. None are implementation commitments.
+
+## B. Keep or delete before development
+
+| Idea | Concern / recommendation |
+|---|---|
+| Every power fuses with every power and itself | Recommend delete; curated recipes avoid quadratic content growth |
+| New power every 2–3 weeks | Recommend delete as a promise; release when ready |
+| Expanded permanent loadouts | V2 permits one unlocked base starter only; broader starting loadouts need separate evaluation |
+| Saved plus temporary arena slots | Control complexity and excess options; preserve two-slot main arena initially |
+| Third/fourth equipped slots | Deferred; no extra combat slots in current design |
+| Paid fourth slot | Recommend delete; sells combat flexibility |
+| Mastery-gated signatures | Recommend delete; complete movesets available immediately |
+| Mastery move variants | Fairness/readability cost; cosmetic mastery first |
+| Tier 3 evolved fusions | Recipe/balance complexity; original Mastery 5 ingredient gate is also unapproved |
+| Lure Shards and shop | Extra economy needs a demonstrated purpose |
+| Specific, rare, and mystery lures | Determine whether targeted/random encounters improve collection |
+| Paid lures/luck potions | Unapproved; evaluate fairness and randomness separately from direct base-starter purchases |
+| VIP daily mystery bandit | Recommend delete power-access benefit; cosmetic perks can be considered |
+| Mystery pity system | Only needed if random permanent collection is approved |
+| Fully random vs missing-power-weighted rewards | Resolve together with permanent mystery system |
+| Open-world PvP toggle / flagged arena zone | Adds scope and complex immunity rules; current design uses one mixed PvP/NPC arena |
+| Party-instanced bandits | Define ownership and rewards first |
+| Elemental advantages | Potentially frustrating hard counters; test first |
+| Inhale streak rewards | May encourage rushing/farming; original ~10-second window not approved |
+| Seasonal pass | Requires sustainable cosmetics production |
+| Daily login streaks | Consider forgiving return rewards instead of missed-day penalties |
+| Fusion showdown | Could split queues; consider a temporary event |
+| Top fusion this hour board | Establish player value before building |
+
+If paid random acquisition is ever reconsidered, review current Roblox paid-random-item requirements before implementation. Rates, odds, pity, and telemetry remain undefined until the underlying system is approved.
+
+## C. Open design questions
+
+1. What original world, characters, factions, and story define Bandit Eater?
+2. Should long-term PvE emphasize collection, bosses, or both?
+3. Does permanent progression need rare powers?
+4. Would any future mode justify expanding beyond one chosen base starter and two combat slots?
+5. Which additions justify their ongoing development cost?
+
+## Roadmap principle
+
+V1 proves roundless PvPvE combat. V2 adds currency-based base starter unlocks and cosmetic mastery on the same map. Fusions stay temporary. V3 expands only where playtesting and player demand support it.
+

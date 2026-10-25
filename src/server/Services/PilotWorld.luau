@@ -68,6 +68,7 @@ function World.Build()
 	World.Spawn = scenery:FindFirstChild("PilotLobbySpawn", true)
 	World.ArenaTeleportPad = scenery:FindFirstChild("ArenaTeleportPad", true)
 	World.Leaderboard = scenery.Lobby.Leaderboard
+	World.KOLeaderboard = scenery.Lobby.KOLeaderboard
 	World.BanditPosition = environment.BanditPosition
 	World.PlayerSpawnPosition = environment.PlayerSpawnPosition
 	World.LobbyPosition = World.Spawn.Position + Vector3.new(0, 4.5, 0)

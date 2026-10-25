@@ -6,10 +6,11 @@ Every model, visual, and map object the game uses. Code depends only on the anch
 
 | Asset | Where it goes | What the code needs | Required? | Status |
 | --- | --- | --- | --- | --- |
-| Arena and cover | `Workspace.BanditEaterPilot.Environment.GrasslandArena` | `ArenaFloor`, `BanditClearings`; cover uses collision on visible stones | V1 | 546-stud arena, darker studded grass; three rock formations about 2.7-3.3 studs tall |
-| Lobby | `Workspace.BanditEaterPilot.Environment.Lobby` | `LobbyFloor`, `PilotLobbySpawn`; separate from arena | V1 | Studded plaza, darker grass gardens, part-built trees |
-| Arena teleport pad | `Workspace.BanditEaterPilot.Environment.Lobby.ArenaTeleportPad` | Server checks volume above the pad at (-20, 0.2, 375); joins live round or queues between rounds | V1 | Smooth-plastic frame/base with glass and light accents |
-| Lobby stations | `Workspace.BanditEaterPilot.Environment.Lobby` | `CosmeticsKiosk`, `Leaderboard`; board rows updated by server | V1 | Smooth-plastic shop; studded leaderboard |
+| Arena and cover | `Workspace.BanditEaterPilot.Environment.GrasslandArena` | `ArenaFloor`, `BanditClearings`; cover uses collision on visible stones | V1 | 624 x 380 rectangular arena; width increased 1.2x from 520, depth unchanged; spawn, paths and cover positions follow the footprint; nine low rock formations |
+| Sky platforms and bounds | `Workspace.BanditEaterPilot.Environment` | `Elevation = 180`, `LobbyLift = 60`; each region has `InvisibleBounds` | V1 | Arena floor Y=180, lobby floor Y=240. Six overlapping transparent colliders per region stop characters and dash casts; no ground sheet |
+| Lobby | `Workspace.BanditEaterPilot.Environment.Lobby` | `LobbyFloor`, `PilotLobbySpawn`; separate from arena | V1 | Compact 156 x 112 sky plaza centered at (-20, 240, 12000), away from arena sightlines; spawn 28.2 studs from pad |
+| Arena teleport pad | `Workspace.BanditEaterPilot.Environment.Lobby.ArenaTeleportPad` | Server checks volume above the pad at approximately (-20, 240.7, 11965.8); joins live round or queues between rounds | V1 | Simple smooth-plastic posts, narrow ARENA sign and low rectangular cyan-outlined platform |
+| Lobby leaderboards | `Workspace.BanditEaterPilot.Environment.Lobby` | `Leaderboard`, `KOLeaderboard`; five `Row` parts on each, updated by server | V1 | Separate server wins and total server-player KOs; cosmetics kiosk removed and shop HUD hidden for now |
 | Cloud panorama sky | `Lighting.PilotCloudSky` (client) | Six texture IDs in `PilotSkyConfig.luau`; `PilotSkyController` switches after successful preload | V1 | Corrected Roblox face orientation; all 12 cube joins checked. Existing sky stays visible until all textures load. Manifest in `assets/sky/cloud-panorama-v2` |
 | Six power bandits | `Workspace.BanditEaterPilot` | Model with `HumanoidRootPart` as PrimaryPart; `PowerId`, `Variant` attributes | V1 | Yellow part dummies with power tells |
 | Rare / mystery bandits | `Workspace.BanditEaterPilot` | Same model contract; rare or mystery Variant | V1 | Labeled dummy variants |
@@ -61,7 +62,7 @@ Floors, paths, spawn plates and collision bounds remain plain parts. A noncollid
 
 | Asset | Runtime location / ID | Status |
 | --- | --- | --- |
-| Hero Sprint R15 run | `rbxassetid://110375300869114`; `Shared.Config.Animations.RunId` | Rebuilt on original MrXen0 R15 rig 2026-10-25; 16/30-second loop, Movement priority, alternating Footstep markers; live playback and server replication checked |
+| Hero Sprint R15 run | `rbxassetid://116051034967244`; `Shared.Config.Animations.RunId` | Rebuilt on original MrXen0 R15 rig 2026-10-25; Approved V5: 0.8-second loop at normal speed, Movement priority, alternating Footstep markers; live playback and server replication checked |
 | Step cloud | Existing `rbxassetid://71229989533127`; client-created `LeftFoot/RightFoot.HeroSprintFootstep.Puff` | Marker-driven Emit(1), max two reused emitters per character; grounded running only |
 
 [Animation registry](animations.md), [current Blender preview](../blender/review/BE_HeroSprint_MrXen0.gif), and [validation/limits](hero-sprint-validation.md). Current replacement checked actual input, marker alternation, server receipt, idle/jump transitions and live visuals. Earlier controller death/respawn/teardown checks are documented separately. Owner visual acceptance is pending. No new player mesh, movement speed, collision or gameplay changes.

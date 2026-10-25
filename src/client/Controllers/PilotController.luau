@@ -62,6 +62,7 @@ function Controller.Start()
 	local shop = Instance.new("Frame")
 	shop.Name, shop.Size, shop.Position, shop.BackgroundTransparency = "Cosmetics", UDim2.fromScale(0.2, 0.3), UDim2.fromScale(0.79, 0.25), 1
 	shop.Parent = gui
+	shop.Visible = false -- Cosmetics are hidden for the current lobby revision.
 	local shopButtons = {}
 	for i, id in { "Default", "Rose", "Mint" } do
 		shopButtons[id] = button(shop, id, UDim2.fromScale(0, (i - 1) / 3), UDim2.fromScale(1, 0.3), "Shop", id)
@@ -137,7 +138,7 @@ function Controller.Start()
 		queue.Visible = not state.Active
 		queue.Text = not state.Ready and "Loading save..." or state.Queued and "Queued - click to cancel"
 			or state.Phase == "Match" and "Join live arena" or "Join next round"
-		shop.Visible, actions.Visible = not state.Active, inMatch
+		shop.Visible, actions.Visible = false, inMatch
 		fuse.Visible = inMatch and C.Fusion(slots[1], slots[2]) ~= nil
 		replace1.Visible = inMatch and state.Held ~= nil and slots[1] ~= nil and slots[2] ~= nil
 		replace2.Visible = replace1.Visible

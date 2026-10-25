@@ -36,3 +36,10 @@ If a style line in `CLAUDE.md` still says "not chosen yet", do not pick a style 
 - Never commit, push or change git state unless the spec says so.
 - Never touch named anchors listed in `docs/asset-checklist.md`.
 - Never put API keys or `.env` contents in output, logs or files.
+## Required R15 rig (owner decision, 2026-10-25)
+
+- For all future R15 character rigging and R15 animation work, use `C:\Users\Kobe\source\repos\R15 - Blener Model\MrXen0_R15RIG_v1.2.blend` as the canonical source rig unless the owner explicitly requests another rig.
+- Reuse this rig instead of generating a replacement R15 armature or choosing another default. Preserve its bone names, hierarchy, rest pose and rig controls when authoring animations.
+- Keep the source file unchanged. Copy it into the project's `blender/` folder or append its rig into the working scene, and save project work separately. When a live Blender session is open, preserve unsaved work and append into a new scene rather than switching files.
+- If the source file is unavailable, report the missing path and ask for its location; do not silently substitute another rig.
+- This rule applies specifically to R15 work. Other asset rigs, including creatures and grimoires, retain their own project instructions. Existing assets are not migrated unless requested.

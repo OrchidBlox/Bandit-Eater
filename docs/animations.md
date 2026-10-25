@@ -36,3 +36,11 @@ python scripts/upload_assets.py BE_HeroSprintMrXen0 --only '*.rbxmx' --include-a
 ```
 
 The exported RBXMX is generated/ignored; source, builder/exporter, neutral rest data, validation report and uploaded ID/hash are tracked. Original generated-rig ID `95948628269299` and interim native-Luau ID `79021053592583` are superseded. [Runtime validation and limits](hero-sprint-validation.md).
+
+## Approved V4 replacement (2026-10-25)
+
+Current run ID: `77124463468180`. Source: `blender/anims/BE_HeroSprint_MrXen0_V4.blend`; preview: `blender/review/BE_HeroSprint_V4.gif`. Authored cycle is 24/30 seconds, with duplicate frame25 and Footstep Left0 / Right0.4. Config BaseSpeed20 preserves the approved preview cadence at normal WalkSpeed20. Fresh Studio Play and server observation confirmed Length0.8, Speed1, Loop=true; both foot emitters were created. Selene and Rojo passed. Owner in-game visual review pending. Earlier IDs and timing above are historical. No public place publish or push.
+
+## Current V5 (2026-10-25)
+
+Approved dramatic revision: `116051034967244`. Source `blender/anims/BE_HeroSprint_MrXen0_V5.blend`; builder `revise_hero_sprint_v5.py`; exporter `export_hero_sprint_v5.py`; preview `blender/review/BE_HeroSprint_V5.gif`. Same 0.8-second cycle, BaseSpeed20, Footstep Left0/Right0.4. Broader arm swings, stronger torso rotation and higher airborne stretch. Export checks, Selene and Rojo passed; fresh Studio Play/server verified new track at Length0.8, Speed1 and Loop=true. Both foot emitters created. Owner in-game visual review pending; no public place publish. V4 and earlier sections are historical.

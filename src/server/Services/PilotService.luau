@@ -433,6 +433,19 @@ local function payout()
 	end
 end
 
+local function updateLeaderboard(model, rows, stat, suffix)
+	if not model then
+		return
+	end
+	for i = 1, 5 do
+		local row = model:FindFirstChild("Row" .. i)
+		if row then
+			local entry = rows[i]
+			row.Sign.Text.Text = entry and string.format("%d. %s   %d %s", i, entry.Name, entry[stat], suffix) or i .. ".  --"
+		end
+	end
+end
+
 local function sendState()
 	local rows = phase == "Results" and results or standings()
 	local board = {}
@@ -445,15 +458,12 @@ local function sendState()
 	table.sort(board, function(a, b)
 		return a.Wins > b.Wins
 	end)
-	if World.Leaderboard then
-		for i = 1, 5 do
-			local row = World.Leaderboard:FindFirstChild("Row" .. i)
-			if row then
-				local entry = board[i]
-				row.Sign.Text.Text = entry and string.format("%d. %s   %d wins", i, entry.Name, entry.Wins) or i .. ".  --"
-			end
-		end
-	end
+	updateLeaderboard(World.Leaderboard, board, "Wins", "wins")
+	local koBoard = table.clone(board)
+	table.sort(koBoard, function(a, b)
+		return a.KOs > b.KOs
+	end)
+	updateLeaderboard(World.KOLeaderboard, koBoard, "KOs", "KOs")
 	for player, actor in actors do
 		if actor.Bot then
 			continue

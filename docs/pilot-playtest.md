@@ -4,6 +4,10 @@ Source: `bandit-eater-design-doc (1).md`, Part 1. This is a functional greybox f
 
 ## Start
 
+Current layout (environment version 11): arena 520 x 380 at Y=180; lobby 156 x 112 at Y=240, centered at X=-20 / Z=12000, away from arena sightlines. Lobby spawn remains 28.2 studs from the arena pad. Each area has six transparent, collidable, queryable boundary parts, including a ceiling and floor. Only these small safety models are Persistent so collision remains available during distant teleports; their invisible floors sit just below the visible floor surfaces. See Roblox's [model streaming documentation](https://create.roblox.com/docs/reference/engine/enums/ModelStreamingMode).
+
+Version 11 checks: all eight player and bandit spawn positions are supported by the resized arena, both boundary models have six persistent parts, and area centers are over 12,000 studs apart. Fresh Play walk-on navigation from the relocated lobby successfully joined the arena at Y=184. Selene and Rojo build pass. Studio was returned to Edit mode after validation.
+
 Connect Studio's Rojo plugin to port **32222**, then press Play. The pilot creates `Workspace.BanditEaterPilot` at runtime. Walk onto the glowing **ARENA** pad in the lobby to join the current round immediately; **Join live arena** on the HUD is an alternative. The server starts 90-second rounds automatically, even without human participants. Bots fill to four total participants and adjust when players join or leave. Between rounds there are eight seconds of results and a 12-second intermission; entering the pad then queues you for the next round. Standing on the pad while your save loads also joins automatically when ready.
 
 ## Controls
@@ -66,3 +70,13 @@ Full multiplayer, device ergonomics, all power/fusion combinations, mystery/spit
 Walk-on entry update: Studio verified a running round with four bots before the player joined. Moving the character onto `ArenaTeleportPad` without a join remote immediately entered that same round, granted a starter power, hid the join button and reduced the bot count to three. No gameplay errors appeared. Selene again reported zero code diagnostics, and Rojo build passed.
 
 Inhale feedback update: input mappings now use explicit input lists, release is handled even when chat gains focus, the server reports inhale/target/rejection status to the HUD, and fighter bots are blue to distinguish them from inhale targets. Selene reported zero code diagnostics and Rojo build passed. Studio was disconnected, so this update still needs a fresh keyboard/touch playtest.
+# Environment revision: rectangular arena
+
+2026-10-24: arena floor is 840 x 560 studs (2.009 times the old circular area), with nine low rock formations. Solid grassland replaces the ocean/drop beneath both lobby and arena. The existing lobby anchors remain at their previous coordinates.
+
+Checked in a fresh Studio Play: environment version 6, rectangular floor, nine rocks, six bandit markers, all eight player spawn positions supported by the arena floor, and no Ocean object. Rock tops measure about 2.9-3.6 studs. Selene and Rojo build pass. Desktop inspection confirmed continuous ground surrounding the lobby. Jumping over every rock and a complete perimeter walkthrough remain manual playtests.
+
+The roomier lobby is now built (environment version 8), based on `docs/reference/concepts-v1-2026-10-24/lobby-two-leaderboards-v3.png`. Its 240 x 184 plaza has separate SERVER WINS and SERVER KOs boards, a simplified rectangular teleporter, perimeter gardens and six benches. The cosmetics kiosk is removed and the cosmetics HUD is hidden; existing ownership data remains intact.
+
+Fresh Play verification: both boards populated from the connected player's totals, cosmetics HUD hidden, 25 clear-center-lane ray checks passed, and walking from the spawn onto the new pad automatically joined the active arena match. Selene reports zero errors/warnings and Rojo builds successfully. Multi-player ranking order still needs a multi-client playtest.
+

@@ -47,6 +47,25 @@ function P.Part(parent, name, size, cf, color, material, collide)
 	return part
 end
 
+function P.Bounds(parent, center, width, depth)
+	local model = P.Model(parent, "InvisibleBounds")
+	-- Keep only the six safety colliders loaded during long-distance teleports.
+	model.ModelStreamingMode = Enum.ModelStreamingMode.Persistent
+	-- Overlap every edge. Queryable walls also stop dash blockcasts and bots.
+	for _, spec in {
+		{ "West", Vector3.new(2, 164, depth + 4), Vector3.new(-width / 2 - 1, 78, 0) },
+		{ "East", Vector3.new(2, 164, depth + 4), Vector3.new(width / 2 + 1, 78, 0) },
+		{ "North", Vector3.new(width + 4, 164, 2), Vector3.new(0, 78, -depth / 2 - 1) },
+		{ "South", Vector3.new(width + 4, 164, 2), Vector3.new(0, 78, depth / 2 + 1) },
+		{ "Floor", Vector3.new(width + 4, 2, depth + 4), Vector3.new(0, -1.05, 0) },
+		{ "Ceiling", Vector3.new(width + 4, 2, depth + 4), Vector3.new(0, 161, 0) },
+	} do
+		local part = P.Part(model, spec[1], spec[2], CFrame.new(center + spec[3]), P.Colors.Stone, nil, true)
+		part.Transparency, part.CastShadow = 1, false
+	end
+	return model
+end
+
 function P.Disc(parent, name, center, radius, height, color, material, collide)
 	local p = P.Part(parent, name, Vector3.new(height, radius * 2, radius * 2),
 		CFrame.new(center) * CFrame.Angles(0, 0, math.pi / 2), color, material, collide)

@@ -95,6 +95,18 @@
     "sha256": "5fef960f5baf3ec838378d980d4e01dcb6089d32de39b2e0252527117270e67f",
     "uploadedAt": "2026-10-25T06:30:08Z"
   },
+  "blender/export/animations/BE_HeroSprintV4_Run.rbxmx": {
+    "assetId": "77124463468180",
+    "assetType": "Animation",
+    "sha256": "37cd85663eb71866baf9bf2a935496e4c663e2a1f2d166d19b454e7a654db95f",
+    "uploadedAt": "2026-10-25T07:02:10Z"
+  },
+  "blender/export/animations/BE_HeroSprintV5_Run.rbxmx": {
+    "assetId": "116051034967244",
+    "assetType": "Animation",
+    "sha256": "c0c86ffe324304c9c25189ca0cdcccb84bcc8f1df3dd4148d0b508d5dcb5c4e6",
+    "uploadedAt": "2026-10-25T07:10:23Z"
+  },
   "blender/export/animations/BE_HeroSprint_Run.rbxmx": {
     "assetId": "95948628269299",
     "assetType": "Animation",
