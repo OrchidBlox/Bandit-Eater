@@ -66,3 +66,13 @@ Floors, paths, spawn plates and collision bounds remain plain parts. A noncollid
 | Step cloud | Existing `rbxassetid://71229989533127`; client-created `LeftFoot/RightFoot.HeroSprintFootstep.Puff` | Marker-driven Emit(1), max two reused emitters per character; grounded running only |
 
 [Animation registry](animations.md), [current Blender preview](../blender/review/BE_HeroSprint_MrXen0.gif), and [validation/limits](hero-sprint-validation.md). Current replacement checked actual input, marker alternation, server receipt, idle/jump transitions and live visuals. Earlier controller death/respawn/teardown checks are documented separately. Owner visual acceptance is pending. No new player mesh, movement speed, collision or gameplay changes.
+
+## Movement transitions - 2026-10-25
+
+- [x] Start, Stop, Takeoff, LandRun and LandIdle authored on canonical MrXen0 rig; V5 preserved.
+- [x] Five group-owned animation assets uploaded and configured; existing white puff reused for grounded landing contacts.
+- [x] Fresh Studio keyboard tests, interruption tests, death/respawn and controller cleanup passed.
+- [x] Project animation skill and its Codex mirror require applicable transitions; template mirrors updated too.
+- [ ] Owner review of transition feel in normal gameplay; multi-client and broad avatar/slope coverage remain.
+
+[Current IDs](animations.md), [motion preview](../blender/review/BE_MovementTransitions.gif), [validation and limits](movement-transitions-validation.md).

@@ -46,6 +46,17 @@ To add a style, copy [styles/_template.md](styles/_template.md), fill every sect
 4. **Export and upload** through the `asset-pipeline` skill, register IDs in docs/animations.md and the game config, with the strike frame time written next to the ID.
 5. **Test in Studio at game speed** with the real cast or attack, not just the animation editor, and tune from what the owner feels.
 
+## Movement transitions are part of animation delivery
+
+Every character animation set must define how its clips enter, exit and get interrupted. A good isolated loop is not a finished movement system. Include applicable transitions in the brief and implementation; explicitly mark unsupported states as not applicable instead of silently omitting them.
+
+- For locomotion, cover idle to walk/run, walk/run to idle, speed changes, takeoff, fall, landing to idle/run, and direction changes where supported. For actions, define entry from locomotion, recovery back to locomotion, and permitted interruptions.
+- Preserve approved stride timing and silhouettes. Use tuned crossfades first; author dedicated start, stop, turn or landing clips only where blending cannot express the desired weight. Do not require extra full-body animations stacked together for smoothness.
+- Tune start, stop, airborne and landing fades separately. Smooth animation playback speed when needed, without adding input delay or changing physical speed, jump behavior, hit timing or invulnerability unless gameplay changes are explicitly authorized.
+- Assign priorities and joint coverage deliberately. Upper-body actions can layer over moving legs when allowed; a full-body action must not accidentally freeze locomotion. Do not let fades hide attack telegraphs or move damage windows.
+- Keep footsteps and VFX tied to actual eligible contacts. Suppress step effects while idle or airborne, avoid duplicate markers during blends, and handle rapid starts/stops, jumps, landing, death, respawn and cleanup.
+- Review transitions in a fresh Studio playtest at actual game speed: start, stop, reverse, jump while moving, land moving and stationary, then interrupt with relevant actions. Check feet, pose pops, unwanted sliding, stale tracks and duplicate effects. Record what was actually tested; a preview image or Blender loop alone does not verify transitions.
+
 ## Why animations come out flat, and the fix
 
 | Symptom | Likely cause | Fix |
@@ -64,7 +75,7 @@ To add a style, copy [styles/_template.md](styles/_template.md), fill every sect
 - R15 joints (Motor6D) are rotation and offset only: no squash or scale on limbs, so exaggeration comes from posing and timing.
 - Clips are authored at 30 fps (see docs/animations.md) and Roblox interpolates on playback. Keep keyframes sparse and meaningful; a key every frame fights the interpolation.
 - Check which easing styles the exporter writes before relying on them. If it only samples curves, bake the timing into the keys instead.
-- Animation priority: Idle < Movement < Action < Core. Attacks use Action; looping idle and run use Idle and Movement. Mark loops in the clip and test the loop point.
+- Animation priority: Core < Idle < Movement < Action < Action2 < Action3 < Action4. Attacks use Action; looping idle and run use Idle and Movement. Mark loops in the clip and test the loop point.
 - Sync gameplay to named strike frames (write the time in the brief and next to the ID in docs/animations.md; use keyframe markers if the exporter supports them).
 - Publish every animation under the experience's owner, or it fails silently. New assets can take a few minutes to play, so preload with `ContentProvider:PreloadAsync`.
 - Load tracks only after the model is parented to the workspace; an Animator outside the world gives zero-length tracks.
@@ -77,5 +88,6 @@ To add a style, copy [styles/_template.md](styles/_template.md), fill every sect
 - [ ] Hips, chest and head move, not only the arms
 - [ ] Strike frame is named, written in docs/animations.md and synced to damage and VFX
 - [ ] Loops are seamless; non-loops return to idle cleanly
+- [ ] Applicable movement/action transitions, interruptions and marker gating are implemented and tested at game speed
 - [ ] Tested in game at real speed, from the owner's point of view and an opponent's
 - [ ] Animation ID registered and published under the experience owner

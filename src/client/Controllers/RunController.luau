@@ -4,10 +4,12 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ContentProvider = game:GetService("ContentProvider")
 local Config = require(ReplicatedStorage.Shared.Config.Animations)
 local Vfx = require(ReplicatedStorage.Shared.Config.Vfx)
+local MovementTransitions = require(script.Parent.MovementTransitions)
 local Controller = {}
 local connections, bindings = {}, {}
 local started, elapsed = false, 0
-local stats = { emitted = 0, left = 0, right = 0, failedLoads = 0, lastMarker = "", lastSpeed = 0 }
+local stats = { emitted = 0, left = 0, right = 0, landings = 0, landingPuffs = 0,
+	failedLoads = 0, lastMarker = "", lastSpeed = 0 }
 
 local function assetNumber(id)
 	return type(id) == "string" and string.match(id, "^rbxassetid://(%d+)$") or nil
@@ -25,10 +27,19 @@ local function removeTrack(state, track)
 	if listeners then
 		disconnect(listeners)
 		state.tracks[track] = nil
+		state.trackKinds[track] = nil
+		state.landingSeen[track] = nil
+		if state.pendingLanding and state.pendingLanding.track == track then
+			state.pendingLanding = nil
+		end
 	end
 end
 
 local function clearTracks(state)
+	if state.transitions then
+		state.transitions:Destroy()
+		state.transitions = nil
+	end
 	for track in state.tracks do
 		removeTrack(state, track)
 	end
@@ -110,8 +121,22 @@ local function emitter(state, side)
 	return particle
 end
 
-local function footstep(state, side)
+local function footstep(state, side, track)
 	if side ~= "Left" and side ~= "Right" then
+		return
+	end
+	if track.WeightCurrent < 0.15 then
+		return
+	end
+	if state.trackKinds[track] == "Run" then
+		for other, kind in state.trackKinds do
+			if kind ~= "Run" and other.IsPlaying and (other.WeightCurrent > 0.15 or other.WeightTarget > 0.5) then
+				return
+			end
+		end
+	end
+	local now = os.clock()
+	if now - (state.lastFootsteps[side] or -math.huge) < 0.08 then
 		return
 	end
 	local eligible = moving(state, state.player == Players.LocalPlayer)
@@ -124,6 +149,7 @@ local function footstep(state, side)
 		return
 	end
 	particle:Emit(1)
+	state.lastFootsteps[side] = now
 	stats.emitted += 1
 	if side == "Left" then
 		stats.left += 1
@@ -133,14 +159,94 @@ local function footstep(state, side)
 	stats.lastMarker = side
 end
 
+local function landing(state)
+	local humanoid, root = state.humanoid, state.character:FindFirstChild("HumanoidRootPart")
+	if state.dead or not humanoid or humanoid.Health <= 0 or not root or not root:IsA("BasePart") then
+		return true
+	end
+	local mode = humanoid:GetState()
+	if mode ~= Enum.HumanoidStateType.Landed and mode ~= Enum.HumanoidStateType.Running
+		and mode ~= Enum.HumanoidStateType.RunningNoPhysics then return false end
+	local grounded = humanoid.FloorMaterial ~= Enum.Material.Air
+	if not grounded then
+		local params = RaycastParams.new()
+		params.FilterType, params.FilterDescendantsInstances = Enum.RaycastFilterType.Exclude, { state.character }
+		for _, side in { "Left", "Right" } do
+			local foot = state.character:FindFirstChild(side .. "Foot")
+			if foot and foot:IsA("BasePart") then
+				local hit = workspace:Raycast(foot.Position + Vector3.new(0, 0.4, 0), Vector3.new(0, -foot.Size.Y / 2 - 0.8, 0), params)
+				grounded = grounded or hit ~= nil
+			end
+		end
+	end
+	if not grounded then
+		return false
+	end
+	local now, camera = os.clock(), workspace.CurrentCamera
+	if now - (state.lastLandingAt or -math.huge) < 0.12 then
+		return true
+	end
+	state.lastLandingAt = now
+	if not camera or (camera.CFrame.Position - root.Position).Magnitude > Config.FootstepDistance then
+		return true
+	end
+	stats.landings += 1
+	for _, side in { "Left", "Right" } do
+		local particle = emitter(state, side)
+		if particle then
+			particle:Emit(1)
+			state.lastFootsteps[side] = now
+			stats.emitted += 1
+			stats.landingPuffs += 1
+			if side == "Left" then
+				stats.left += 1
+			else
+				stats.right += 1
+			end
+		end
+	end
+	stats.lastMarker = "Landing"
+	return true
+end
+
 local function watchTrack(state, track)
-	if state.dead or state.tracks[track] or not track.Animation
-		or not assetNumber(Config.RunId) or assetNumber(track.Animation.AnimationId) ~= assetNumber(Config.RunId) then return end
+	if state.dead or not track.Animation then
+		return
+	end
+	local id = assetNumber(track.Animation.AnimationId)
+	if not id then
+		return
+	end
+	local kind = id == assetNumber(Config.RunId) and "Run" or nil
+	for name, transitionId in Config.TransitionIds do
+		if id == assetNumber(transitionId) then
+			kind = name
+		end
+	end
+	if not kind then
+		return
+	end
+	state.landingSeen[track] = false
+	if state.tracks[track] then
+		return
+	end
 	local listeners = {}
 	state.tracks[track] = listeners
+	state.trackKinds[track] = kind
 	table.insert(listeners, track:GetMarkerReachedSignal(Config.Marker):Connect(function(side)
-		footstep(state, side)
+		footstep(state, side, track)
 	end))
+	if kind == "LandRun" or kind == "LandIdle" then
+		table.insert(listeners, track:GetMarkerReachedSignal(Config.LandingMarker):Connect(function(parameter)
+			if parameter ~= "Both" or state.landingSeen[track] then
+				return
+			end
+			state.landingSeen[track] = true
+			if not landing(state) then
+				state.pendingLanding = { track = track, deadline = os.clock() + 0.12 }
+			end
+		end))
+	end
 	table.insert(listeners, track.Ended:Connect(function()
 		if not track.IsPlaying then
 			removeTrack(state, track)
@@ -199,12 +305,18 @@ local function refreshAnimator(state)
 	end
 	track.Priority, track.Looped = Enum.AnimationPriority.Movement, true
 	state.runTrack, state.loadStarted = track, os.clock()
+	state.transitions = MovementTransitions.new(animator, humanoid, track, Config, function()
+		watchTrack(state, track)
+	end, function(transitionTrack)
+		watchTrack(state, transitionTrack)
+	end)
 end
 
 local function attachCharacter(binding, character)
 	cleanupCharacter(binding)
 	local state = { player = binding.player, binding = binding, character = character,
-		connections = {}, tracks = {}, feet = {}, seenWorkspace = character:IsDescendantOf(workspace) }
+		connections = {}, tracks = {}, trackKinds = {}, landingSeen = {}, lastFootsteps = {}, feet = {},
+		seenWorkspace = character:IsDescendantOf(workspace) }
 	binding.state = state
 	table.insert(state.connections, character.AncestryChanged:Connect(function()
 		if character:IsDescendantOf(workspace) then
@@ -249,6 +361,8 @@ function Controller.debugStats()
 	local result = table.clone(stats)
 	result.boundCharacters, result.connections, result.tracks, result.emitters = 0, #connections, 0, 0
 	result.currentTrackIsPlaying = false
+	result.activeTransition, result.transitionPlays, result.transitionInterruptions = "", 0, 0
+	result.transitionFallbacks, result.transitionLoadFailures, result.loadedTransitions = 0, 0, 0
 	for _, binding in bindings do
 		result.connections += #binding.connections
 		local state = binding.state
@@ -266,6 +380,17 @@ function Controller.debugStats()
 			end
 			if binding.player == Players.LocalPlayer and state.runTrack then
 				result.currentTrackIsPlaying = state.runTrack.IsPlaying
+				local transitions = state.transitions
+				if transitions then
+					result.connections += 1
+					result.activeTransition = transitions.active and transitions.active.name or ""
+					result.lastTransition = transitions.last
+					result.transitionPlays, result.transitionInterruptions = transitions.played, transitions.interrupted
+					result.transitionFallbacks, result.transitionLoadFailures = transitions.fallbacks, transitions.failedLoads
+					for _ in transitions.tracks do
+						result.loadedTransitions += 1
+					end
+				end
 			end
 		end
 	end
@@ -295,6 +420,7 @@ function Controller.Start()
 		if elapsed < Config.UpdateInterval then
 			return
 		end
+		local updateDt = elapsed
 		elapsed = 0
 		for _, binding in bindings do
 			-- A streamed-out remote character can return without CharacterAdded firing again.
@@ -316,6 +442,11 @@ function Controller.Start()
 				end
 			end
 			refreshAnimator(state)
+			if state.pendingLanding then
+				if os.clock() > state.pendingLanding.deadline or landing(state) then
+					state.pendingLanding = nil
+				end
+			end
 			local track = state.runTrack
 			if not track then
 				continue
@@ -327,16 +458,8 @@ function Controller.Start()
 					stats.failedLoads += 1
 					clearTracks(state)
 				end
-			elseif shouldRun then
-				local playback = math.clamp(speed / Config.BaseSpeed, 0.35, 1.8)
-				if not track.IsPlaying then
-					watchTrack(state, track)
-					track:Play(Config.Fade, 1, playback)
-				else
-					track:AdjustSpeed(playback)
-				end
-			elseif track.IsPlaying then
-				track:Stop(Config.Fade)
+			elseif state.transitions then
+				state.transitions:Update(shouldRun, speed, updateDt)
 			end
 		end
 	end))
@@ -352,6 +475,13 @@ function Controller.Start()
 			local animation = Instance.new("Animation")
 			animation.AnimationId = Config.RunId
 			table.insert(assets, animation)
+		end
+		for _, id in Config.TransitionIds do
+			if assetNumber(id) then
+				local animation = Instance.new("Animation")
+				animation.AnimationId = id
+				table.insert(assets, animation)
+			end
 		end
 		if assetNumber(Vfx.Textures.Puff) then
 			local particle = Instance.new("ParticleEmitter")

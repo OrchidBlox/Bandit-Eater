@@ -2,6 +2,22 @@
 
 The published animation IDs the game uses.
 
+## Current movement transitions (2026-10-25)
+
+V5 remains the approved run (`116051034967244`, 0.8 seconds at normal speed). The earlier Hero Sprint sections below are revision history.
+
+| Clip | Asset ID | Duration |
+| --- | --- | --- |
+| Start | 104271079454951 | 8/30 s |
+| Stop | 135962042925895 | 8/30 s |
+| Takeoff | 75446304601768 | 6/30 s |
+| LandRun | 123339471651713 | 6/30 s |
+| LandIdle | 85449026426804 | 8/30 s |
+
+All five are group-owned, nonlooping Movement tracks. Start and LandRun end at the exact V5 first pose. Landing clips emit `Landing=Both` at time zero; runtime requires a healthy grounded character and emits one existing cloud per foot. Starts/stops can be interrupted immediately by jumping or changed movement intent. Default Animate retains idle and freefall; movement physics are unchanged.
+
+[Blender source](../blender/anims/BE_MovementTransitions.blend), [preview](../blender/review/BE_MovementTransitions.gif), and [validation](movement-transitions-validation.md).
+
 **Publish every animation under the experience's owner.** If the game belongs to a group, publish under the group. Roblox won't play animations owned by a different account, and they fail silently.
 
 ## Automated pipeline (preferred)

@@ -113,6 +113,36 @@
     "sha256": "6c10c2999d3034b7425a8c16e5682a9a258d975b587cb39697acef729f53e1b7",
     "uploadedAt": "2026-10-25T02:30:12Z"
   },
+  "blender/export/animations/BE_MovementTransitions_LandIdle.rbxmx": {
+    "assetId": "85449026426804",
+    "assetType": "Animation",
+    "sha256": "0dd0703c7d5a999f06c781351a5fac371d37a1fa88a54190dc3c9a6afb85f38c",
+    "uploadedAt": "2026-10-25T20:22:23Z"
+  },
+  "blender/export/animations/BE_MovementTransitions_LandRun.rbxmx": {
+    "assetId": "123339471651713",
+    "assetType": "Animation",
+    "sha256": "02b54b3741f751c7473203929b205a5be69683a296c042086836b8b679c41b9e",
+    "uploadedAt": "2026-10-25T20:22:25Z"
+  },
+  "blender/export/animations/BE_MovementTransitions_Start.rbxmx": {
+    "assetId": "104271079454951",
+    "assetType": "Animation",
+    "sha256": "482e80cae2a02dbdaef42ecd9cd22d2dcbb0c8fc032604d4e9f6b5b4cd9f3164",
+    "uploadedAt": "2026-10-25T20:22:28Z"
+  },
+  "blender/export/animations/BE_MovementTransitions_Stop.rbxmx": {
+    "assetId": "135962042925895",
+    "assetType": "Animation",
+    "sha256": "13dce01df8f3489f5ce229cb9b9fd51da6142df2a2c863630a5e3dc2f12ad325",
+    "uploadedAt": "2026-10-25T20:22:31Z"
+  },
+  "blender/export/animations/BE_MovementTransitions_Takeoff.rbxmx": {
+    "assetId": "75446304601768",
+    "assetType": "Animation",
+    "sha256": "b970772cdf14e41c279015ea8d29f20769ee185610e86170a0ab3382588f3956",
+    "uploadedAt": "2026-10-25T20:22:34Z"
+  },
   "blender/export/textures/BE_Inhale_Puff.png": {
     "assetId": "71229989533127",
     "assetType": "Image",
