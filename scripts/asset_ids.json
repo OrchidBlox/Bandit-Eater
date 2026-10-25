@@ -83,6 +83,12 @@
     "sha256": "da16e7295de716ae4aac4eab7f383a40ff5b6d7f4d39300ef870f458f8b3e82d",
     "uploadedAt": "2026-10-25T01:13:38Z"
   },
+  "blender/export/animations/BE_HeroSprint_Run.rbxmx": {
+    "assetId": "95948628269299",
+    "assetType": "Animation",
+    "sha256": "6c10c2999d3034b7425a8c16e5682a9a258d975b587cb39697acef729f53e1b7",
+    "uploadedAt": "2026-10-25T02:30:12Z"
+  },
   "blender/export/textures/BE_Inhale_Puff.png": {
     "assetId": "71229989533127",
     "assetType": "Image",

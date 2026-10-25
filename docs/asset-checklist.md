@@ -55,3 +55,13 @@ Floors, paths, spawn plates and collision bounds remain plain parts. A noncollid
 | Client inhale presentation | `Workspace.PilotVfx.Inhale_<token>` | Server-signalled Start/Stop; full mesh + sprites tested: 22 parts/cast, max 6 casts; capture and cleanup pass |
 
 [Implementation, sources and validation](inhale-vfx-implementation.md). Rings and sprites move toward the player; capture pop is separate from swallow/spit. Avatar animation deferred. The crescent uses a ring-center pivot (VFX exception to the character/prop base-pivot rule). Arena/lobby and gameplay values are unchanged.
+
+
+## Hero Sprint run and footsteps - 2026-10-24
+
+| Asset | Runtime location / ID | Status |
+| --- | --- | --- |
+| Hero Sprint R15 run | `rbxassetid://95948628269299`; `Shared.Config.Animations.RunId` | Blender-authored, group-owned; 16/30-second loop, Movement priority, alternating Footstep markers |
+| Step cloud | Existing `rbxassetid://71229989533127`; client-created `LeftFoot/RightFoot.HeroSprintFootstep.Puff` | Marker-driven Emit(1), max two reused emitters per character; grounded running only |
+
+[Animation registry](animations.md), [Blender preview](../blender/review/BE_HeroSprint_Run.gif), and [validation/limits](hero-sprint-validation.md). Fresh Play checked actual input, marker alternation, server receipt, idle/jump/death/respawn and teardown. Final puff visual tuning still needs owner review. No new player mesh, movement speed, collision or gameplay changes.

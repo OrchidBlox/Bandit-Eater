@@ -1,0 +1,169 @@
+{
+  "pass": true,
+  "keyframes": 17,
+  "duration_seconds": 0.533333333,
+  "priority": "Movement",
+  "loop": true,
+  "poses_per_keyframe": 16,
+  "bones": 15,
+  "first_last_equal": true,
+  "maximum_orthonormal_error": 1.9492020000289045e-06,
+  "markers": [
+    {
+      "time": 0.0,
+      "name": "Footstep",
+      "value": "Left"
+    },
+    {
+      "time": 0.266666667,
+      "name": "Footstep",
+      "value": "Right"
+    }
+  ],
+  "rig": "BE_HeroSprint_R15",
+  "action": "Run",
+  "fps": 30,
+  "frame_range": [
+    1,
+    17
+  ],
+  "slot": "OBBE_HeroSprint_R15",
+  "source_rest_sha256": "446510c7ac9e7f366425eb843a2120a1a6266bc92e303358cd3579c822e79c37",
+  "root_horizontal_travel": 0,
+  "hip_bounce_peak_to_peak": 0.15999996662139893,
+  "hip_vertical_offset_range": [
+    -0.43999993801116943,
+    -0.2799999713897705
+  ],
+  "torso_forward_lean_degrees": 14,
+  "support_travel_studs_per_four_frames": 2.08,
+  "authored_support_speed_studs_per_second": 15.6,
+  "expected_support_speed_at_1_25_playback": 19.5,
+  "max_foot_clearance_error": 4.0292739866831795e-07,
+  "foot_samples": [
+    {
+      "frame": 1,
+      "left_foot_clearance": -0.0,
+      "left_ankle_y": -1.04,
+      "right_foot_clearance": 0.67,
+      "right_ankle_y": 0.7
+    },
+    {
+      "frame": 2,
+      "left_foot_clearance": 0.0,
+      "left_ankle_y": -0.52,
+      "right_foot_clearance": 0.8275,
+      "right_ankle_y": 0.4125
+    },
+    {
+      "frame": 3,
+      "left_foot_clearance": 0.0,
+      "left_ankle_y": 0.0,
+      "right_foot_clearance": 0.9,
+      "right_ankle_y": 0.05
+    },
+    {
+      "frame": 4,
+      "left_foot_clearance": -0.0,
+      "left_ankle_y": 0.52,
+      "right_foot_clearance": 0.815,
+      "right_ankle_y": -0.325
+    },
+    {
+      "frame": 5,
+      "left_foot_clearance": 0.0,
+      "left_ankle_y": 1.04,
+      "right_foot_clearance": 0.65,
+      "right_ankle_y": -0.65
+    },
+    {
+      "frame": 6,
+      "left_foot_clearance": 0.0675,
+      "left_ankle_y": 1.22,
+      "right_foot_clearance": 0.455,
+      "right_ankle_y": -0.8125
+    },
+    {
+      "frame": 7,
+      "left_foot_clearance": 0.22,
+      "left_ankle_y": 1.1,
+      "right_foot_clearance": 0.25,
+      "right_ankle_y": -0.9
+    },
+    {
+      "frame": 8,
+      "left_foot_clearance": 0.445,
+      "left_ankle_y": 0.9425,
+      "right_foot_clearance": 0.08,
+      "right_ankle_y": -1.1375
+    },
+    {
+      "frame": 9,
+      "left_foot_clearance": 0.67,
+      "left_ankle_y": 0.7,
+      "right_foot_clearance": 0.0,
+      "right_ankle_y": -1.04
+    },
+    {
+      "frame": 10,
+      "left_foot_clearance": 0.8275,
+      "left_ankle_y": 0.4125,
+      "right_foot_clearance": 0.0,
+      "right_ankle_y": -0.52
+    },
+    {
+      "frame": 11,
+      "left_foot_clearance": 0.9,
+      "left_ankle_y": 0.05,
+      "right_foot_clearance": 0.0,
+      "right_ankle_y": 0.0
+    },
+    {
+      "frame": 12,
+      "left_foot_clearance": 0.815,
+      "left_ankle_y": -0.325,
+      "right_foot_clearance": 0.0,
+      "right_ankle_y": 0.52
+    },
+    {
+      "frame": 13,
+      "left_foot_clearance": 0.65,
+      "left_ankle_y": -0.65,
+      "right_foot_clearance": -0.0,
+      "right_ankle_y": 1.04
+    },
+    {
+      "frame": 14,
+      "left_foot_clearance": 0.455,
+      "left_ankle_y": -0.8125,
+      "right_foot_clearance": 0.0675,
+      "right_ankle_y": 1.22
+    },
+    {
+      "frame": 15,
+      "left_foot_clearance": 0.25,
+      "left_ankle_y": -0.9,
+      "right_foot_clearance": 0.22,
+      "right_ankle_y": 1.1
+    },
+    {
+      "frame": 16,
+      "left_foot_clearance": 0.08,
+      "left_ankle_y": -1.1375,
+      "right_foot_clearance": 0.445,
+      "right_ankle_y": 0.9425
+    },
+    {
+      "frame": 17,
+      "left_foot_clearance": -0.0,
+      "left_ankle_y": -1.04,
+      "right_foot_clearance": 0.67,
+      "right_ankle_y": 0.7
+    }
+  ],
+  "export": "C:\\Users\\Kobe\\source\\repos\\bandit-eater\\blender\\export\\animations\\BE_HeroSprint_Run.rbxmx",
+  "source": "C:\\Users\\Kobe\\source\\repos\\bandit-eater\\blender\\anims\\BE_HeroSprint.blend",
+  "proxy_not_exported": true,
+  "preexisting_objects_unchanged": true,
+  "validation_limit": "Blender poses and RBXMX structure verified. Actual Roblox playback and puff timing require Studio acceptance."
+}

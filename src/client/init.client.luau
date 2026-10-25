@@ -8,6 +8,7 @@ local CONTROLLER_ORDER = {
 	"NotificationController",
 	"PilotSkyController",
 	"VfxController",
+	"RunController",
 	"PilotController",
 }
 
