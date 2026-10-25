@@ -11,11 +11,26 @@ Owner selected Hero Sprint (option 1) with a little Bouncy Runner (option 3) bou
 
 ## Source and rig
 
+### Current replacement: MrXen0 rig, 2026-10-25
+
+The owner rejected the first run's appearance and then requested Blender authoring on the new canonical rig. Current animation: `rbxassetid://110375300869114`. Source: [BE_HeroSprint_MrXen0.blend](../blender/anims/BE_HeroSprint_MrXen0.blend), [builder/exporter](../blender/anims/build_hero_sprint_mrxeno.py), [GIF](../blender/review/BE_HeroSprint_MrXen0.gif), [decoded-GIF reference comparison](../blender/review/BE_HeroSprint_MrXen0.png), [numeric report](../blender/review/BE_HeroSprint_MrXen0.validation.json).
+
+- Appended the original `MrXen0_R15RIG_v1.2.blend` into its own scene. Its source SHA256 remains `cd301c229332d423651635ad97b90ddbf408570f5429d42ea1260e6277e2caa4`. Original meshes and bone hierarchy retained. Rest action copied, four IK/FK switches keyed to FK, 24-degree forward chest lean, opposite arm/leg movement and planted contacts.
+- Exported evaluated deform poses using the measured `(x,z,-y)` mapping. Reconstructed rotation error below 0.000001; original joint-length change below 0.000035 stud; game neutral-pivot difference below 0.024 stud. Exact loop equality, 17 keys, 16 poses per key, two Footstep markers, Movement priority, finite orthonormal matrices. The report records predicted Blender/game foot heights per frame.
+- Viewed side and three-quarter renders of the actual supplied mesh, then the decoded GIF comparison against the Hero Sprint concept. A still concept cannot specify the entire gait: the finished loop alternates both legs and includes support/recovery phases.
+- Fresh Studio Play loaded the new asset at length 0.53333336, speed 1.25, Loop=true and Movement priority. Server observed the same track. WalkSpeed remains 20. Actual D-key running produced 12 alternating puffs, six per foot, using two reused emitters with zero failed loads. Idle stopped the track and held the puff count steady. Jump/freefall samples held the emission count at 14 while the run stopped, then resumed on landing.
+- Visually inspected running and the puff trail in the lobby, plus a frozen contact pose on the actual player. Typical marker-time foot-bottom measurements were about 0.003-0.126 stud above the floor; the initial blend sample is excluded from that range (marker delivery and animation evaluation are not synchronized, and the first fade blends with idle). These are observations, not an all-avatar no-slip guarantee.
+- Selene and Rojo passed. Temporary monitoring, frozen-pose camera, UI hiding and anchoring existed only in Play and were removed by stopping Play. Studio returned to Edit. No public place publish or Git push.
+
+Limits: owner visual acceptance, second-client observer testing, mobile and extreme avatar proportions remain unverified. Existing controller lifecycle tests below apply to the unchanged controller; they were not rerun in full for this asset-only replacement.
+
+### Historical first version (superseded)
+
 The neutral rest data in `scripts/rigs/r15_rest.json` was reconstructed from the live R15 character's AnimationConstraint attachments using forward kinematics, not its moving part poses. Fifteen joints, identity attachment rotations. This avoids capturing the default idle pose as the rig rest pose. No appearance or physical rig changes are imported into the player.
 
 The R15 exporter starts from the existing clover-ascension `scripts/export_r15_animations.py`, adapted locally for marker export and reusable invocation. The original file in clover-ascension is unchanged.
 
-## Validation status
+## Historical validation status (original generated rig)
 
 Completed on 2026-10-24:
 

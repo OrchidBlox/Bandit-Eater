@@ -18,21 +18,21 @@ Variants that share one skeleton share one set of animations, so publish only on
 
 ## Hero Sprint (R15)
 
-Source: [BE_HeroSprint.blend](../blender/anims/BE_HeroSprint.blend). Rig `BE_HeroSprint_R15`, 15 bones. [Looping preview](../blender/review/BE_HeroSprint_Run.gif) and [pose sheet](../blender/review/BE_HeroSprint_Run.png). The review proxy is not imported; only the animation plays on the existing avatar.
+Current source: [BE_HeroSprint_MrXen0.blend](../blender/anims/BE_HeroSprint_MrXen0.blend), authored on the owner's original `MrXen0_R15RIG_v1.2.blend` rig. [Looping preview](../blender/review/BE_HeroSprint_MrXen0.gif) and [reference comparison](../blender/review/BE_HeroSprint_MrXen0.png). The original rig and mesh are preserved; only the animation plays on the existing avatar.
 
 | Action | Frames | Loop | Used for | Asset ID | Status |
 | --- | ---: | --- | --- | --- | --- |
-| Run | 1-17 at 30 fps; frame 17 duplicates frame 1 | yes | Hero Sprint with subtle bounce; Movement priority | 95948628269299 | Group-owned; fresh Studio Play passed |
+| Run | 1-17 at 30 fps; frame 17 duplicates frame 1 | yes | Hero Sprint: forward chest, pumping arms, alternating stride; Movement priority | 110375300869114 | Group-owned; fresh Studio playback and server replication checked 2026-10-25 |
 
 The loop lasts 16/30 seconds. `Footstep` markers: `Left` at 0 seconds, `Right` at 8/30 seconds. There is no damage/strike frame for this locomotion clip. Runtime playback scales by actual horizontal speed / 16; at the game's unchanged 20 studs/s this is 1.25x. Foot support travel was authored at 15.6 studs/s, approximately 19.5 studs/s at that playback speed.
 
 Registered in `src/shared/Config/Animations.luau`; `RunController` handles run/stop/air/death transitions and marker-driven white puffs. Existing Animate handles idle/jump/fall. Puff texture: `rbxassetid://71229989533127`.
 
-R15 export (separate from the skinned-mesh pipeline above):
+Rebuild using `blender/anims/build_hero_sprint_mrxeno.py` in the live Blender Python context. Its `MRX_MODE` modes are `author`, `render`, and `export`; export reads evaluated deform-bone matrices. It appends the canonical rig into an isolated scene and saves project work separately. Do not use the old generated-armature exporter on this rig.
 
 ```powershell
-blender -b blender/anims/BE_HeroSprint.blend --python scripts/export_r15_animations.py -- --rig BE_HeroSprint_R15 --actions Run --prefix BE_HeroSprint
-python scripts/upload_assets.py BE_HeroSprint --only '*.rbxmx' --include-animations
+python blender/anims/build_hero_sprint_mrxeno.py --compose
+python scripts/upload_assets.py BE_HeroSprintMrXen0 --only '*.rbxmx' --include-animations
 ```
 
-The exported RBXMX is generated/ignored; source, exporter, neutral rest data, validation report and uploaded ID/hash are tracked. [Runtime validation and limits](hero-sprint-validation.md).
+The exported RBXMX is generated/ignored; source, builder/exporter, neutral rest data, validation report and uploaded ID/hash are tracked. Original generated-rig ID `95948628269299` and interim native-Luau ID `79021053592583` are superseded. [Runtime validation and limits](hero-sprint-validation.md).

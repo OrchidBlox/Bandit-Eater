@@ -61,7 +61,7 @@ Floors, paths, spawn plates and collision bounds remain plain parts. A noncollid
 
 | Asset | Runtime location / ID | Status |
 | --- | --- | --- |
-| Hero Sprint R15 run | `rbxassetid://95948628269299`; `Shared.Config.Animations.RunId` | Blender-authored, group-owned; 16/30-second loop, Movement priority, alternating Footstep markers |
+| Hero Sprint R15 run | `rbxassetid://110375300869114`; `Shared.Config.Animations.RunId` | Rebuilt on original MrXen0 R15 rig 2026-10-25; 16/30-second loop, Movement priority, alternating Footstep markers; live playback and server replication checked |
 | Step cloud | Existing `rbxassetid://71229989533127`; client-created `LeftFoot/RightFoot.HeroSprintFootstep.Puff` | Marker-driven Emit(1), max two reused emitters per character; grounded running only |
 
-[Animation registry](animations.md), [Blender preview](../blender/review/BE_HeroSprint_Run.gif), and [validation/limits](hero-sprint-validation.md). Fresh Play checked actual input, marker alternation, server receipt, idle/jump/death/respawn and teardown. Final puff visual tuning still needs owner review. No new player mesh, movement speed, collision or gameplay changes.
+[Animation registry](animations.md), [current Blender preview](../blender/review/BE_HeroSprint_MrXen0.gif), and [validation/limits](hero-sprint-validation.md). Current replacement checked actual input, marker alternation, server receipt, idle/jump transitions and live visuals. Earlier controller death/respawn/teardown checks are documented separately. Owner visual acceptance is pending. No new player mesh, movement speed, collision or gameplay changes.

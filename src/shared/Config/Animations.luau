@@ -1,5 +1,6 @@
 return {
-	RunId = "rbxassetid://95948628269299",
+	-- Blender FK action on the canonical MrXen0 R15 rig; evaluated-pose export.
+	RunId = "rbxassetid://110375300869114",
 	BaseSpeed = 16,
 	Fade = 0.12,
 	MinimumMovingSpeed = 1.5,

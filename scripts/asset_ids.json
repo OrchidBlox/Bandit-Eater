@@ -83,6 +83,18 @@
     "sha256": "da16e7295de716ae4aac4eab7f383a40ff5b6d7f4d39300ef870f458f8b3e82d",
     "uploadedAt": "2026-10-25T01:13:38Z"
   },
+  "blender/export/animations/BE_HeroRun_Luau.rbxmx": {
+    "assetId": "79021053592583",
+    "assetType": "Animation",
+    "sha256": "7ddac3566c031c8dc2a0010637143ab5e964f59a06215501276fe97dc4104956",
+    "uploadedAt": "2026-10-25T02:42:39Z"
+  },
+  "blender/export/animations/BE_HeroSprintMrXen0_Run.rbxmx": {
+    "assetId": "110375300869114",
+    "assetType": "Animation",
+    "sha256": "5fef960f5baf3ec838378d980d4e01dcb6089d32de39b2e0252527117270e67f",
+    "uploadedAt": "2026-10-25T06:30:08Z"
+  },
   "blender/export/animations/BE_HeroSprint_Run.rbxmx": {
     "assetId": "95948628269299",
     "assetType": "Animation",
