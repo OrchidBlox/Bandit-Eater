@@ -30,6 +30,8 @@ local function spawnPosition(index)
 end
 
 local function resetActor(actor)
+	Combat.CancelAction(actor)
+	actor.Combo, actor.LastM1At = nil, nil
 	actor.HP, actor.Slots, actor.Slot, actor.Cooldowns = C.MaxHealth, { randomPower() }, 1, {}
 	actor.Held, actor.Inhaling, actor.Shield, actor.Protection = nil, nil, 0, 0
 	actor.InhaleTarget, actor.InhaleMessage, actor.InhaleMessageUntil = nil, nil, 0
@@ -350,6 +352,7 @@ function Combat.OnKO(source, target)
 	if target.Dead then
 		return
 	end
+	Combat.CancelAction(target)
 	target.Dead, target.HP, target.Inhaling, target.Held = true, 0, nil, nil
 	if source then
 		source.Score += 1

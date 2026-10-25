@@ -3,7 +3,9 @@ local RunService = game:GetService("RunService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local C = require(ReplicatedStorage.Shared.PilotConfig)
 local World = require(script.Parent.PilotWorld)
+local Actions = require(script.Parent.CombatActions)
 local Combat = { Actors = {}, Bandits = {}, Enabled = false }
+Combat.CancelAction = Actions.Cancel
 
 function Combat.Root(actor)
 	return actor.Model and actor.Model:FindFirstChild("HumanoidRootPart")
@@ -21,7 +23,7 @@ function Combat.Effect(position, color, radius, duration)
 	return p
 end
 
-function Combat.Damage(source, target, amount, stun, heavy)
+function Combat.Damage(source, target, amount, stun, heavy, cartoonHit)
 	if not Combat.Enabled or source == target or not Combat.Alive(target) then
 		return
 	end
@@ -39,6 +41,7 @@ function Combat.Damage(source, target, amount, stun, heavy)
 		amount *= 0.5
 	end
 	if stun > 0 and now > (target.StunImmune or 0) then
+		Actions.Cancel(target)
 		target.Stunned = now + math.min(stun, 0.6)
 		target.StunImmune = target.Stunned + 1.5
 	end
@@ -47,7 +50,9 @@ function Combat.Damage(source, target, amount, stun, heavy)
 	if source then
 		source.Damage += actual
 	end
-	Combat.Effect(Combat.Root(target).Position, Color3.new(1, 1, 1), 2)
+	if not cartoonHit then
+		Combat.Effect(Combat.Root(target).Position, Color3.new(1, 1, 1), 2)
+	end
 	-- Mark and credit the KO before Health=0 triggers Humanoid.Died.
 	if target.HP <= 0 then
 		Combat.OnKO(source, target)
@@ -57,6 +62,7 @@ function Combat.Damage(source, target, amount, stun, heavy)
 			humanoid.Health = target.HP
 		end
 	end
+	return actual
 end
 
 function Combat.LineClear(from, to, excluded)
@@ -146,6 +152,12 @@ function Combat.Ready(actor, key, cooldown)
 	if now < (actor.Cooldowns[key] or 0) then
 		return false
 	end
+	if actor.CombatAction and actor.CombatAction.name == "Dash" and key ~= "Dash" then
+		return false
+	end
+	if key ~= "M1" and key ~= "Dash" then
+		Actions.Cancel(actor)
+	end
 	actor.Cooldowns[key] = now + cooldown
 	return true
 end
@@ -155,20 +167,10 @@ function Combat.Action(actor, action, argument)
 	if not Combat.Alive(actor) then
 		return
 	end
-	if action == "M1" and Combat.Ready(actor, "M1", 0.4) then
-		actor.Combo = (actor.Combo or 0) % 3 + 1
-		local center = root.Position + root.CFrame.LookVector * 4
-		Combat.Effect(center, Color3.new(1, 1, 1), 3)
-		Combat.Area(actor, center, 4, actor.Combo == 3 and 9 or 6, 0, actor.Combo == 3)
-	elseif action == "Dash" and Combat.Ready(actor, "Dash", 3) then
-		actor.Invulnerable = os.clock() + 0.2
-		local direction = root.CFrame.LookVector * 12
-		local params = RaycastParams.new()
-		params.FilterType = Enum.RaycastFilterType.Exclude
-		params.FilterDescendantsInstances = { actor.Model }
-		local hit = workspace:Blockcast(root.CFrame, Vector3.new(3, 4, 2), direction, params)
-		local distance = hit and math.max(0, hit.Distance - 1) or 12
-		actor.Model:PivotTo(actor.Model:GetPivot() + root.CFrame.LookVector * distance)
+	if action == "M1" then
+		Actions.M1(Combat, actor)
+	elseif action == "Dash" then
+		Actions.Dash(Combat, actor)
 	elseif action == "Block" and Combat.Ready(actor, "Block", C.ShieldCooldown) then
 		actor.Shield = os.clock() + C.ShieldDuration
 		local bubble = Combat.Effect(root.Position, Color3.fromRGB(100, 210, 255), 3.5, C.ShieldDuration)

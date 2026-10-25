@@ -18,3 +18,7 @@ Code checks: Selene and Rojo build. Runtime testing remains pending under the re
 - Review latency and jump height in combat. Mobile multi-touch and device-specific jump button release need hands-on verification.
 
 API reference: [UserInputService JumpRequest](https://create.roblox.com/docs/reference/engine/classes/UserInputService#JumpRequest) documents repeated signals for a single request; the implementation therefore latches until release.
+
+## Follow-up: authored jump clips
+
+Replaced reused takeoff presentation with dedicated Takeoff/DoubleJump/Fall assets; see `animations.md`. Fresh Studio testing now passed for keyboard regular jump, double jump, rejected third airborne press, landing recharge, and held-button guard. Clips loaded without errors/fallbacks. Device and multiplayer effect checks above remain pending. No claim that every abuse/latency scenario has been validated.

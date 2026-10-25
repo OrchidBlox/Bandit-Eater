@@ -123,6 +123,8 @@ local function emitter(state, side)
 end
 
 local function footstep(state, side, track)
+	if state.character:GetAttribute("CombatActionName") == "Dash"
+		and (state.character:GetAttribute("CombatActionUntil") or 0) > workspace:GetServerTimeNow() then return end
 	if side ~= "Left" and side ~= "Right" then
 		return
 	end
@@ -210,6 +212,23 @@ local function landing(state)
 	return true
 end
 
+local function airBurst(state)
+	if state.dead or not state.airBurstUntil or os.clock() > state.airBurstUntil then return end
+	local humanoid = state.humanoid
+	if not humanoid or humanoid.Health <= 0 then return end
+	local mode = humanoid:GetState()
+	if mode ~= Enum.HumanoidStateType.Jumping and mode ~= Enum.HumanoidStateType.Freefall then return end
+	state.airBurstUntil = nil
+	local root, camera = state.character:FindFirstChild("HumanoidRootPart"), workspace.CurrentCamera
+	if not root or not camera or (camera.CFrame.Position - root.Position).Magnitude > Config.FootstepDistance then return end
+	for _, side in { "Left", "Right" } do
+		local particle = emitter(state, side)
+		if particle then
+			particle:Emit(1)
+		end
+	end
+end
+
 local function watchTrack(state, track)
 	if state.dead or not track.Animation then
 		return
@@ -234,6 +253,11 @@ local function watchTrack(state, track)
 	local listeners = {}
 	state.tracks[track] = listeners
 	state.trackKinds[track] = kind
+	if kind == "DoubleJump" then
+		table.insert(listeners, track:GetMarkerReachedSignal("AirBurst"):Connect(function()
+			airBurst(state)
+		end))
+	end
 	table.insert(listeners, track:GetMarkerReachedSignal(Config.Marker):Connect(function(side)
 		footstep(state, side, track)
 	end))
@@ -418,18 +442,14 @@ function Controller.Start()
 				or state.humanoid.Health <= 0 then continue end
 			local mode = state.humanoid:GetState()
 			if mode ~= Enum.HumanoidStateType.Jumping and mode ~= Enum.HumanoidStateType.Freefall then continue end
+			state.airBurstUntil = os.clock() + 0.5
 			if state.transitions then
-				state.transitions:Play("Takeoff", Config.AirFade)
+				state.transitions:Play("DoubleJump", Config.AirFade)
 			end
-			local root, camera = character:FindFirstChild("HumanoidRootPart"), workspace.CurrentCamera
-			if root and camera and (camera.CFrame.Position - root.Position).Magnitude <= Config.FootstepDistance then
-				for _, side in { "Left", "Right" } do
-					local particle = emitter(state, side)
-					if particle then
-						particle:Emit(1)
-					end
-				end
-			end
+			-- Marker first; bounded fallback covers missing assets or replicated marker timing.
+			task.delay(0.2, function()
+				airBurst(state)
+			end)
 		end
 	end))
 	table.insert(connections, Players.PlayerAdded:Connect(bindPlayer))

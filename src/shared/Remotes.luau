@@ -13,6 +13,7 @@ local FOLDER_NAME = "Remotes"
 local REMOTE_NAMES = {
 	"Notify",
 	"DoubleJump", -- client -> server: current character; server -> all: approved character
+	"CombatAction", -- server -> client only: Character, Action, Phase, Token, Time, optional hit Position
 	"PilotInput", -- client -> server: action string, optional move/slot index or cosmetic id
 	"PilotState", -- server -> client: authoritative match / loadout / wallet snapshot
 	"PilotReveal", -- server -> client: resolved mystery power, presentation only

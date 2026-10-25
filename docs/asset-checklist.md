@@ -76,3 +76,20 @@ Floors, paths, spawn plates and collision bounds remain plain parts. A noncollid
 - [ ] Owner review of transition feel in normal gameplay; multi-client and broad avatar/slope coverage remain.
 
 [Current IDs](animations.md), [motion preview](../blender/review/BE_MovementTransitions.gif), [validation and limits](movement-transitions-validation.md).
+
+## Jump concept integration - 2026-10-25
+
+- [x] Canonical-rig Takeoff, DoubleJump and Fall exported, group-uploaded and configured; prior V5/landing clips preserved.
+- [x] Pose-sheet review, evaluated-transform checks, Selene (zero errors/warnings) and Rojo build.
+- [x] Fresh Studio keyboard test: one extra airborne jump, third-press rejection, landing reset, held-input guard, seven loaded movement clips without fallback.
+- [ ] Owner visual acceptance, mobile/gamepad and two-client VFX testing.
+
+## Dash and M1 V2 integration — 2026-10-25
+
+- [x] Canonical-rig dash, three M1s and three moving variants authored, exported and uploaded; IDs in [animation registry](animations.md).
+- [x] Owner feedback addressed: extended punches, three-frame holds, lower asymmetric dash, 20-stud eased travel.
+- [x] Actual input loaded all seven V2 clips; zero failed loads or marker fallbacks. Open travel and settled-player wall test passed; Selene and Rojo passed.
+- [x] Existing white puff/yellow star textures reused, bounded effects and server-owned hit timing.
+- [ ] Owner V2 visual acceptance; mobile/gamepad, two-client replication and broad avatar-proportion testing.
+
+[Validation](combat-actions-validation.md), [preview](../blender/review/BE_CombatActionsV2.gif).

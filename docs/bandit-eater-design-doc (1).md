@@ -40,10 +40,10 @@ OPEN: exact safe-area boundaries, damage protection, spawn protection, and rules
 ## 3. Controls and universal defense
 
 - M1: basic attack combo.
-- Dash: brief i-frames on cooldown.
+- Dash: 20-stud forward burst with collision checks, easing into recovery; 3-second cooldown and 0.2-second i-frames. Presentation lasts 0.5 seconds, with movement from 2/30 to 11/30 seconds.
 - Jump, inhale, swallow, spit, and swap.
 - **Double jump (owner approved, 2026-10-25): one normal ground jump plus exactly one extra jump while airborne.** The extra jump is consumed on use and resets on landing; it cannot refresh repeatedly in midair. Use the normal jump input again for the extra jump on keyboard, mobile, and gamepad.
-- The extra jump should feel strong and playful, with a distinct upward kick/tuck animation and a white cloud puff beneath the player. This deliberate airborne jump burst is separate from grounded footstep/landing puffs. Exact jump height, impulse, and animation timing remain playtest tuning. Runtime double jump is implemented for playtesting: one server-approved extra impulse, landing reset, existing takeoff animation and cloud burst. A dedicated double-jump clip remains future animation polish; Studio and device testing are pending.
+- The extra jump should feel strong and playful, with a distinct upward kick/tuck animation and a white cloud puff beneath the player. This deliberate airborne jump burst is separate from grounded footstep/landing puffs. Exact jump height, impulse, and animation timing remain playtest tuning. Runtime double jump is implemented for playtesting: one server-approved extra impulse, landing reset, dedicated takeoff/double-jump/fall clips and cloud burst. Fresh Studio keyboard testing passed; mobile/gamepad and owner visual acceptance remain pending.
 - Q/E/R: three power moves, all unlocked immediately.
 - Mobile and gamepad support.
 - No bubble shield/block. No shield guard-break system.

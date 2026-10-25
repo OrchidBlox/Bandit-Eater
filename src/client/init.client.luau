@@ -10,6 +10,7 @@ local CONTROLLER_ORDER = {
 	"VfxController",
 	"RunController",
 	"DoubleJumpController",
+	"CombatAnimationController",
 	"PilotController",
 }
 

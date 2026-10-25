@@ -83,6 +83,90 @@
     "sha256": "da16e7295de716ae4aac4eab7f383a40ff5b6d7f4d39300ef870f458f8b3e82d",
     "uploadedAt": "2026-10-25T01:13:38Z"
   },
+  "blender/export/animations/BE_CombatActionsV2_Dash.rbxmx": {
+    "assetId": "108163526893560",
+    "assetType": "Animation",
+    "sha256": "b535219aaf5194a6c8fbb362acecd5cc41dcf2c2895c23fc67713b63bc5b8a20",
+    "uploadedAt": "2026-10-25T21:06:13Z"
+  },
+  "blender/export/animations/BE_CombatActionsV2_M1_1.rbxmx": {
+    "assetId": "124340796371674",
+    "assetType": "Animation",
+    "sha256": "15302f53b084ffd31ce198afc6f0dbaf4eaa23f136082de409df9b22608a293c",
+    "uploadedAt": "2026-10-25T21:06:16Z"
+  },
+  "blender/export/animations/BE_CombatActionsV2_M1_1Moving.rbxmx": {
+    "assetId": "99026701617574",
+    "assetType": "Animation",
+    "sha256": "108f480597401e4ff42245ead90d0aa720394e3965dd71cfd206c0250a7fd8f3",
+    "uploadedAt": "2026-10-25T21:06:19Z"
+  },
+  "blender/export/animations/BE_CombatActionsV2_M1_2.rbxmx": {
+    "assetId": "137589820930478",
+    "assetType": "Animation",
+    "sha256": "e475cd7d8e5d518f2202c559df4b976da297351f2aec1d3022d798517c129d10",
+    "uploadedAt": "2026-10-25T21:06:22Z"
+  },
+  "blender/export/animations/BE_CombatActionsV2_M1_2Moving.rbxmx": {
+    "assetId": "132325822094557",
+    "assetType": "Animation",
+    "sha256": "11e007ecc69016b7a7f108348c444ce85529f8102a89367ca98f1a4cbc98e03c",
+    "uploadedAt": "2026-10-25T21:06:25Z"
+  },
+  "blender/export/animations/BE_CombatActionsV2_M1_3.rbxmx": {
+    "assetId": "97511758227791",
+    "assetType": "Animation",
+    "sha256": "89848bae19418cf1196d345ada3922855396857646442106d6fbc4e26d8e7bf3",
+    "uploadedAt": "2026-10-25T21:06:27Z"
+  },
+  "blender/export/animations/BE_CombatActionsV2_M1_3Moving.rbxmx": {
+    "assetId": "140611227228767",
+    "assetType": "Animation",
+    "sha256": "01ad016a585868184c5a2df741f982566cef3a31e3d2f875e4aac8b62de96606",
+    "uploadedAt": "2026-10-25T21:06:30Z"
+  },
+  "blender/export/animations/BE_CombatActions_Dash.rbxmx": {
+    "assetId": "77034492952624",
+    "assetType": "Animation",
+    "sha256": "c0a60e37716fa1913e15e3f79e63bb266714ca84b33a6f23758c5ef7243b0eac",
+    "uploadedAt": "2026-10-25T21:00:01Z"
+  },
+  "blender/export/animations/BE_CombatActions_M1_1.rbxmx": {
+    "assetId": "122305645942778",
+    "assetType": "Animation",
+    "sha256": "cc4b3912e801b25383af9bcbc83c346d6112090a3af51800f6ef7b43122ca53d",
+    "uploadedAt": "2026-10-25T21:00:06Z"
+  },
+  "blender/export/animations/BE_CombatActions_M1_1Moving.rbxmx": {
+    "assetId": "75416102315099",
+    "assetType": "Animation",
+    "sha256": "7deb72059323ac6d3f2b68cf7287347c91488ab7225aa97279c8a9b60df2e63b",
+    "uploadedAt": "2026-10-25T21:00:13Z"
+  },
+  "blender/export/animations/BE_CombatActions_M1_2.rbxmx": {
+    "assetId": "95549308865207",
+    "assetType": "Animation",
+    "sha256": "de4f84cab671ad56f795d59ae854edcb774b00cbb3e1b94a62266288be757c52",
+    "uploadedAt": "2026-10-25T21:00:16Z"
+  },
+  "blender/export/animations/BE_CombatActions_M1_2Moving.rbxmx": {
+    "assetId": "109309862709517",
+    "assetType": "Animation",
+    "sha256": "034e4640cd6f1c1eca0eae82100447cca7cb1f938b908c3c22e44c0dfcc972cd",
+    "uploadedAt": "2026-10-25T21:00:19Z"
+  },
+  "blender/export/animations/BE_CombatActions_M1_3.rbxmx": {
+    "assetId": "82229810434322",
+    "assetType": "Animation",
+    "sha256": "50aeac7fc9085193d409ffaba824e2cb077316074d9b445cce526a3981b10584",
+    "uploadedAt": "2026-10-25T21:00:22Z"
+  },
+  "blender/export/animations/BE_CombatActions_M1_3Moving.rbxmx": {
+    "assetId": "73762917867254",
+    "assetType": "Animation",
+    "sha256": "b82903852e56101b2a1b0cb9c7c7b4258761113c775fda0f6d5ebf9db1fca47d",
+    "uploadedAt": "2026-10-25T21:00:25Z"
+  },
   "blender/export/animations/BE_HeroRun_Luau.rbxmx": {
     "assetId": "79021053592583",
     "assetType": "Animation",
@@ -112,6 +196,24 @@
     "assetType": "Animation",
     "sha256": "6c10c2999d3034b7425a8c16e5682a9a258d975b587cb39697acef729f53e1b7",
     "uploadedAt": "2026-10-25T02:30:12Z"
+  },
+  "blender/export/animations/BE_JumpConcepts_DoubleJump.rbxmx": {
+    "assetId": "103031167309210",
+    "assetType": "Animation",
+    "sha256": "8ef59a7e0b6e6e1812243424f81043bafed8aa515d28dbeab1ff2b001870f1e7",
+    "uploadedAt": "2026-10-25T20:48:43Z"
+  },
+  "blender/export/animations/BE_JumpConcepts_Fall.rbxmx": {
+    "assetId": "139218872313289",
+    "assetType": "Animation",
+    "sha256": "bedab1d1dd6728fec61704acd5389fda17a6140f58162822c04cadc21da9b5f9",
+    "uploadedAt": "2026-10-25T20:48:46Z"
+  },
+  "blender/export/animations/BE_JumpConcepts_Takeoff.rbxmx": {
+    "assetId": "113531311551794",
+    "assetType": "Animation",
+    "sha256": "eed67037cdb4bca35ee1794eb6b4bf24cdc2c6d48cd2c8c8bac9c64a1caefcd5",
+    "uploadedAt": "2026-10-25T20:48:49Z"
   },
   "blender/export/animations/BE_MovementTransitions_LandIdle.rbxmx": {
     "assetId": "85449026426804",

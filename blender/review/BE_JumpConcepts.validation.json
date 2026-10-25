@@ -1,0 +1,616 @@
+{
+  "pass": true,
+  "source_sha256": "cd301c229332d423651635ad97b90ddbf408570f5429d42ea1260e6277e2caa4",
+  "V5_sha256": "3c6afe8e3268af7076352768f86bcee163865e81bb310ed3b090c2c08270bf71",
+  "source_unchanged": true,
+  "V5_unchanged": true,
+  "axis_map": "Blender(x,y,z) -> Roblox(x,z,-y)",
+  "scale": 1,
+  "clips": {
+    "Takeoff": {
+      "duration": 0.3333333333333333,
+      "loop": false,
+      "priority": "Movement",
+      "keys": 11,
+      "markers": [],
+      "endpoint_control_error": 0,
+      "export_orthonormal_error": 4.76837158203125e-07,
+      "samples": [
+        {
+          "feet": {
+            "Left": {
+              "Blender": -9.748143270371656e-08,
+              "Roblox": -0.01533973217010498
+            },
+            "Right": {
+              "Blender": 2.1544380501836713e-07,
+              "Roblox": -0.015339493751525879
+            }
+          },
+          "mapping_error": 0.01582529939366522,
+          "joint_length_error": 5.334560174885539e-05,
+          "foot_lateral_gap": 5.315462061616927e-07
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.08692529052495956,
+              "Roblox": 0.07465779781341553
+            },
+            "Right": {
+              "Blender": 0.08692560344934464,
+              "Roblox": 0.07465779781341553
+            }
+          },
+          "mapping_error": 0.012966935700252893,
+          "joint_length_error": 5.330152973903601e-05,
+          "foot_lateral_gap": 4.821170733748659e-07
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.03885198011994362,
+              "Roblox": 0.033045172691345215
+            },
+            "Right": {
+              "Blender": 0.03885229304432869,
+              "Roblox": 0.033045411109924316
+            }
+          },
+          "mapping_error": 0.009686649037673538,
+          "joint_length_error": 5.320539766340282e-05,
+          "foot_lateral_gap": 2.6588171664343463e-08
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.008733237162232399,
+              "Roblox": 0.006651520729064941
+            },
+            "Right": {
+              "Blender": 0.00873355008661747,
+              "Roblox": 0.006651520729064941
+            }
+          },
+          "mapping_error": 0.009686669517750945,
+          "joint_length_error": 5.327976918367838e-05,
+          "foot_lateral_gap": -1.9958610408821187e-07
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.008733237162232399,
+              "Roblox": 0.006651520729064941
+            },
+            "Right": {
+              "Blender": 0.00873355008661747,
+              "Roblox": 0.006651520729064941
+            }
+          },
+          "mapping_error": 0.009686669517750945,
+          "joint_length_error": 5.327976918367838e-05,
+          "foot_lateral_gap": -1.9958610408821187e-07
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.008733237162232399,
+              "Roblox": 0.006651520729064941
+            },
+            "Right": {
+              "Blender": 0.00873355008661747,
+              "Roblox": 0.006651520729064941
+            }
+          },
+          "mapping_error": 0.009686669517750945,
+          "joint_length_error": 5.327976918367838e-05,
+          "foot_lateral_gap": -1.9958610408821187e-07
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.14915809035301208,
+              "Roblox": 0.14227783679962158
+            },
+            "Right": {
+              "Blender": 0.14915840327739716,
+              "Roblox": 0.14227783679962158
+            }
+          },
+          "mapping_error": 0.009686658614609107,
+          "joint_length_error": 0.00015450081737400367,
+          "foot_lateral_gap": 1.8075967034292262e-07
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.7938860058784485,
+              "Roblox": 0.7822164297103882
+            },
+            "Right": {
+              "Blender": 0.7938863039016724,
+              "Roblox": 0.7822164297103882
+            }
+          },
+          "mapping_error": 0.017975396729374652,
+          "joint_length_error": 0.00019465466563195477,
+          "foot_lateral_gap": 3.2250313708459544e-07
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 1.1944822072982788,
+              "Roblox": 1.183459997177124
+            },
+            "Right": {
+              "Blender": 1.194482445716858,
+              "Roblox": 1.183459997177124
+            }
+          },
+          "mapping_error": 0.021344848039763713,
+          "joint_length_error": 0.00013161567840325183,
+          "foot_lateral_gap": 2.09153967034581e-07
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 1.1944822072982788,
+              "Roblox": 1.183459997177124
+            },
+            "Right": {
+              "Blender": 1.194482445716858,
+              "Roblox": 1.183459997177124
+            }
+          },
+          "mapping_error": 0.021344848039763713,
+          "joint_length_error": 0.00013161567840325183,
+          "foot_lateral_gap": 2.09153967034581e-07
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 1.1944822072982788,
+              "Roblox": 1.183459997177124
+            },
+            "Right": {
+              "Blender": 1.194482445716858,
+              "Roblox": 1.183459997177124
+            }
+          },
+          "mapping_error": 0.021344848039763713,
+          "joint_length_error": 0.00013161567840325183,
+          "foot_lateral_gap": 2.09153967034581e-07
+        }
+      ],
+      "export": "C:\\Users\\Kobe\\source\\repos\\bandit-eater\\blender\\export\\animations\\BE_JumpConcepts_Takeoff.rbxmx",
+      "sha256": "eed67037cdb4bca35ee1794eb6b4bf24cdc2c6d48cd2c8c8bac9c64a1caefcd5"
+    },
+    "DoubleJump": {
+      "duration": 0.4,
+      "loop": false,
+      "priority": "Movement",
+      "keys": 13,
+      "markers": [
+        {
+          "name": "AirBurst",
+          "value": "Both",
+          "time": 0.13333333333333333
+        }
+      ],
+      "endpoint_control_error": 0,
+      "export_orthonormal_error": 4.76837158203125e-07,
+      "samples": [
+        {
+          "feet": {
+            "Left": {
+              "Blender": 1.1944822072982788,
+              "Roblox": 1.183459997177124
+            },
+            "Right": {
+              "Blender": 1.194482445716858,
+              "Roblox": 1.183459997177124
+            }
+          },
+          "mapping_error": 0.021344848039763713,
+          "joint_length_error": 0.00013161567840325183,
+          "foot_lateral_gap": 2.09153967034581e-07
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 1.3177016973495483,
+              "Roblox": 1.307547688484192
+            },
+            "Right": {
+              "Blender": 1.317702054977417,
+              "Roblox": 1.307547688484192
+            }
+          },
+          "mapping_error": 0.02218179414741279,
+          "joint_length_error": 0.00020224293886972333,
+          "foot_lateral_gap": 1.5596036462284246e-07
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 1.426357388496399,
+              "Roblox": 1.4173096418380737
+            },
+            "Right": {
+              "Blender": 1.426357626914978,
+              "Roblox": 1.4173096418380737
+            }
+          },
+          "mapping_error": 0.022858347997181137,
+          "joint_length_error": 7.748807606722252e-05,
+          "foot_lateral_gap": 4.51608173079876e-08
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 1.2090704441070557,
+              "Roblox": 1.200724482536316
+            },
+            "Right": {
+              "Blender": 0.4352164566516876,
+              "Roblox": 0.39649641513824463
+            }
+          },
+          "mapping_error": 0.021111207950694384,
+          "joint_length_error": 0.00014266839048415747,
+          "foot_lateral_gap": 1.2668714077790355e-07
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 1.0039830207824707,
+              "Roblox": 0.9962805509567261
+            },
+            "Right": {
+              "Blender": 0.025129947811365128,
+              "Roblox": -0.030832886695861816
+            }
+          },
+          "mapping_error": 0.018601126596443654,
+          "joint_length_error": 0.00018538284091662582,
+          "foot_lateral_gap": 7.214593722437712e-08
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 1.0039830207824707,
+              "Roblox": 0.9962805509567261
+            },
+            "Right": {
+              "Blender": 0.025129947811365128,
+              "Roblox": -0.030832886695861816
+            }
+          },
+          "mapping_error": 0.018601126596443654,
+          "joint_length_error": 0.00018538284091662582,
+          "foot_lateral_gap": 7.214593722437712e-08
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 1.0039830207824707,
+              "Roblox": 0.9962805509567261
+            },
+            "Right": {
+              "Blender": 0.025129947811365128,
+              "Roblox": -0.030832886695861816
+            }
+          },
+          "mapping_error": 0.018601126596443654,
+          "joint_length_error": 0.00018538284091662582,
+          "foot_lateral_gap": 7.214593722437712e-08
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.6535139679908752,
+              "Roblox": 0.6442443132400513
+            },
+            "Right": {
+              "Blender": 0.00700104096904397,
+              "Roblox": -0.03751194477081299
+            }
+          },
+          "mapping_error": 0.01579219567988881,
+          "joint_length_error": 0.00017662326518141924,
+          "foot_lateral_gap": 8.531062789529642e-08
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.13941936194896698,
+              "Roblox": 0.13195955753326416
+            },
+            "Right": {
+              "Blender": 0.0058471388183534145,
+              "Roblox": -0.01724374294281006
+            }
+          },
+          "mapping_error": 0.009686692133809039,
+          "joint_length_error": 0.00015606717297433903,
+          "foot_lateral_gap": 9.94481013094628e-08
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.022836899384856224,
+              "Roblox": 0.011297345161437988
+            },
+            "Right": {
+              "Blender": 0.022837210446596146,
+              "Roblox": 0.011297345161437988
+            }
+          },
+          "mapping_error": 0.009686656760252224,
+          "joint_length_error": 0.00014253604371861073,
+          "foot_lateral_gap": 3.151702543391366e-08
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.022836899384856224,
+              "Roblox": 0.011297345161437988
+            },
+            "Right": {
+              "Blender": 0.022837210446596146,
+              "Roblox": 0.011297345161437988
+            }
+          },
+          "mapping_error": 0.009686656760252224,
+          "joint_length_error": 0.00014253604371861073,
+          "foot_lateral_gap": 3.151702543391366e-08
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.022836899384856224,
+              "Roblox": 0.011297345161437988
+            },
+            "Right": {
+              "Blender": 0.022837210446596146,
+              "Roblox": 0.011297345161437988
+            }
+          },
+          "mapping_error": 0.009686656760252224,
+          "joint_length_error": 0.00014253604371861073,
+          "foot_lateral_gap": 3.151702543391366e-08
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.022836899384856224,
+              "Roblox": 0.011297345161437988
+            },
+            "Right": {
+              "Blender": 0.022837210446596146,
+              "Roblox": 0.011297345161437988
+            }
+          },
+          "mapping_error": 0.009686656760252224,
+          "joint_length_error": 0.00014253604371861073,
+          "foot_lateral_gap": 3.151702543391366e-08
+        }
+      ],
+      "export": "C:\\Users\\Kobe\\source\\repos\\bandit-eater\\blender\\export\\animations\\BE_JumpConcepts_DoubleJump.rbxmx",
+      "sha256": "8ef59a7e0b6e6e1812243424f81043bafed8aa515d28dbeab1ff2b001870f1e7"
+    },
+    "Fall": {
+      "duration": 0.4,
+      "loop": true,
+      "priority": "Movement",
+      "keys": 13,
+      "markers": [],
+      "endpoint_control_error": 0,
+      "export_orthonormal_error": 2.980232238769531e-07,
+      "samples": [
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.17972776293754578,
+              "Roblox": 0.17022621631622314
+            },
+            "Right": {
+              "Blender": 0.17972807586193085,
+              "Roblox": 0.17022597789764404
+            }
+          },
+          "mapping_error": 0.01098930364967669,
+          "joint_length_error": 0.00019463235604200158,
+          "foot_lateral_gap": 3.0184180843662034e-07
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.17972776293754578,
+              "Roblox": 0.17022621631622314
+            },
+            "Right": {
+              "Blender": 0.17972807586193085,
+              "Roblox": 0.17022597789764404
+            }
+          },
+          "mapping_error": 0.01098930364967669,
+          "joint_length_error": 0.00019463235604200158,
+          "foot_lateral_gap": 3.0184180843662034e-07
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.17972776293754578,
+              "Roblox": 0.17022621631622314
+            },
+            "Right": {
+              "Blender": 0.17972807586193085,
+              "Roblox": 0.17022597789764404
+            }
+          },
+          "mapping_error": 0.01098930364967669,
+          "joint_length_error": 0.00019463235604200158,
+          "foot_lateral_gap": 3.0184180843662034e-07
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.17972776293754578,
+              "Roblox": 0.17022621631622314
+            },
+            "Right": {
+              "Blender": 0.17972807586193085,
+              "Roblox": 0.17022597789764404
+            }
+          },
+          "mapping_error": 0.01098930364967669,
+          "joint_length_error": 0.00019463235604200158,
+          "foot_lateral_gap": 3.0184180843662034e-07
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.17972776293754578,
+              "Roblox": 0.17022621631622314
+            },
+            "Right": {
+              "Blender": 0.17972807586193085,
+              "Roblox": 0.17022597789764404
+            }
+          },
+          "mapping_error": 0.01098930364967669,
+          "joint_length_error": 0.00019463235604200158,
+          "foot_lateral_gap": 3.0184180843662034e-07
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.17972776293754578,
+              "Roblox": 0.17022621631622314
+            },
+            "Right": {
+              "Blender": 0.17972807586193085,
+              "Roblox": 0.17022597789764404
+            }
+          },
+          "mapping_error": 0.01098930364967669,
+          "joint_length_error": 0.00019463235604200158,
+          "foot_lateral_gap": 3.0184180843662034e-07
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.17972776293754578,
+              "Roblox": 0.17022621631622314
+            },
+            "Right": {
+              "Blender": 0.17972807586193085,
+              "Roblox": 0.17022597789764404
+            }
+          },
+          "mapping_error": 0.01098930364967669,
+          "joint_length_error": 0.00019463235604200158,
+          "foot_lateral_gap": 3.0184180843662034e-07
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.17972776293754578,
+              "Roblox": 0.17022621631622314
+            },
+            "Right": {
+              "Blender": 0.17972807586193085,
+              "Roblox": 0.17022597789764404
+            }
+          },
+          "mapping_error": 0.01098930364967669,
+          "joint_length_error": 0.00019463235604200158,
+          "foot_lateral_gap": 3.0184180843662034e-07
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.17972776293754578,
+              "Roblox": 0.17022621631622314
+            },
+            "Right": {
+              "Blender": 0.17972807586193085,
+              "Roblox": 0.17022597789764404
+            }
+          },
+          "mapping_error": 0.01098930364967669,
+          "joint_length_error": 0.00019463235604200158,
+          "foot_lateral_gap": 3.0184180843662034e-07
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.17972776293754578,
+              "Roblox": 0.17022621631622314
+            },
+            "Right": {
+              "Blender": 0.17972807586193085,
+              "Roblox": 0.17022597789764404
+            }
+          },
+          "mapping_error": 0.01098930364967669,
+          "joint_length_error": 0.00019463235604200158,
+          "foot_lateral_gap": 3.0184180843662034e-07
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.17972776293754578,
+              "Roblox": 0.17022621631622314
+            },
+            "Right": {
+              "Blender": 0.17972807586193085,
+              "Roblox": 0.17022597789764404
+            }
+          },
+          "mapping_error": 0.01098930364967669,
+          "joint_length_error": 0.00019463235604200158,
+          "foot_lateral_gap": 3.0184180843662034e-07
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.17972776293754578,
+              "Roblox": 0.17022621631622314
+            },
+            "Right": {
+              "Blender": 0.17972807586193085,
+              "Roblox": 0.17022597789764404
+            }
+          },
+          "mapping_error": 0.01098930364967669,
+          "joint_length_error": 0.00019463235604200158,
+          "foot_lateral_gap": 3.0184180843662034e-07
+        },
+        {
+          "feet": {
+            "Left": {
+              "Blender": 0.17972776293754578,
+              "Roblox": 0.17022621631622314
+            },
+            "Right": {
+              "Blender": 0.17972807586193085,
+              "Roblox": 0.17022597789764404
+            }
+          },
+          "mapping_error": 0.01098930364967669,
+          "joint_length_error": 0.00019463235604200158,
+          "foot_lateral_gap": 3.0184180843662034e-07
+        }
+      ],
+      "export": "C:\\Users\\Kobe\\source\\repos\\bandit-eater\\blender\\export\\animations\\BE_JumpConcepts_Fall.rbxmx",
+      "sha256": "bedab1d1dd6728fec61704acd5389fda17a6140f58162822c04cadc21da9b5f9"
+    }
+  },
+  "marker_policy": "AirBurst Both at 4/30 on DoubleJump; no ground footsteps during flight. Fall is a static pose loop; physics owns translation.",
+  "visual_status": "Reviewed focused revision: raised knees to 115deg apex/135deg tuck, wide straight balance arms, stronger asymmetric kick, bent-knee fall. Actual original-rig side/three-quarter contact sheet verified; final owner Studio feel acceptance pending.",
+  "runtime_status": "Parent integrates and validates live game.",
+  "takeoff_final_two_frames_hold_exact": true,
+  "fall_loop_endpoint_exact": true
+}

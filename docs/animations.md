@@ -60,3 +60,35 @@ Current run ID: `77124463468180`. Source: `blender/anims/BE_HeroSprint_MrXen0_V4
 ## Current V5 (2026-10-25)
 
 Approved dramatic revision: `116051034967244`. Source `blender/anims/BE_HeroSprint_MrXen0_V5.blend`; builder `revise_hero_sprint_v5.py`; exporter `export_hero_sprint_v5.py`; preview `blender/review/BE_HeroSprint_V5.gif`. Same 0.8-second cycle, BaseSpeed20, Footstep Left0/Right0.4. Broader arm swings, stronger torso rotation and higher airborne stretch. Export checks, Selene and Rojo passed; fresh Studio Play/server verified new track at Length0.8, Speed1 and Loop=true. Both foot emitters created. Owner in-game visual review pending; no public place publish. V4 and earlier sections are historical.
+
+## Jump concept animations - 2026-10-25
+
+These supersede the earlier Takeoff asset; V5 run and existing landing clips remain unchanged.
+
+| Clip | Asset ID | Duration | Loop |
+| --- | --- | --- | --- |
+| Takeoff | 113531311551794 | 10/30 s | no |
+| DoubleJump | 103031167309210 | 12/30 s | no |
+| Fall | 139218872313289 | 12/30 s | yes |
+
+Source: `blender/anims/BE_JumpConcepts.blend`; builder `build_jump_concepts.py`. All are Movement priority on the original MrXen0 R15 rig. DoubleJump emits `AirBurst=Both` at 4/30 seconds, with server-approval gating and a bounded missing-marker fallback. Rising endpoints may hold until descent; contact always interrupts into LandRun/LandIdle. No animation root motion drives the physical jump.
+
+Preview: [pose sheet](../blender/review/BE_JumpConcepts.png) and [motion](../blender/review/BE_JumpConcepts.gif). Numerical export checks passed; canonical rig and V5 hashes unchanged. Fresh Studio keyboard test loaded all seven transition clips with zero failed loads/fallbacks and observed Takeoff -> Fall -> LandIdle and DoubleJump -> Fall -> LandIdle. One airborne extra jump was accepted, a third press was rejected; landing rearmed it. Holding Space did not consume an extra airborne jump (default repeated ground jumps remain). Mobile/gamepad, remote-client VFX and broad avatar-proportion visual acceptance remain pending. Studio Play was stopped after testing.
+
+Dash and M1 were implemented after this jump update; current assets are below.
+
+## Dash and M1 V2 — 2026-10-25
+
+Source: `blender/anims/BE_CombatActionsV2.blend`, builder `build_combat_actions_v2.py`; [pose sheet](../blender/review/BE_CombatActionsV2.png), [motion](../blender/review/BE_CombatActionsV2.gif). Uses the unchanged canonical MrXen0 rig. Supersedes the tighter first combat pass.
+
+| Clip | Asset ID | Duration | Marker time |
+| --- | --- | --- | --- |
+| M1 left jab | 124340796371674 | 18/30 s | Strike 6/30 |
+| M1 right cross | 137589820930478 | 18/30 s | Strike 6/30 |
+| M1 rising uppercut | 97511758227791 | 20/30 s | Strike 7/30 |
+| Moving jab | 99026701617574 | 18/30 s | Strike 6/30 |
+| Moving cross | 132325822094557 | 18/30 s | Strike 6/30 |
+| Moving uppercut | 140611227228767 | 20/30 s | Strike 7/30 |
+| Dash | 108163526893560 | 15/30 s | Burst 2/30; Brake 11/30 |
+
+All are nonlooping Action priority. Moving/airborne variants mute lower-body poses to preserve locomotion. Full extension holds three frames. Measured forward fist reach improved from 1.90/1.61/0.71 to 2.92/3.01/2.41 studs. Dash now uses a lower asymmetric burst, changing glide pose and longer recovery; server travel is 20 studs with an eased stop. Config: `src/shared/Config/CombatActions.luau`. Fresh mouse/keyboard tests loaded all seven V2 clips at expected lengths with zero failed loads or fallback markers. [Validation and remaining acceptance](combat-actions-validation.md).

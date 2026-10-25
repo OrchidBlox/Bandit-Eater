@@ -1,6 +1,6 @@
 -- Presentation-only locomotion state machine. Never changes humanoid movement.
 local Movement = {}
-local NAMES = { "Start", "Stop", "Takeoff", "LandRun", "LandIdle" }
+local NAMES = { "Start", "Stop", "Takeoff", "DoubleJump", "Fall", "LandRun", "LandIdle" }
 local SUPPORTED = {
 	[Enum.HumanoidStateType.Running] = true, [Enum.HumanoidStateType.RunningNoPhysics] = true,
 	[Enum.HumanoidStateType.Jumping] = true, [Enum.HumanoidStateType.Freefall] = true,
@@ -20,7 +20,7 @@ function Movement.new(animator, humanoid, runTrack, config, beforeRun, beforeTra
 				return animator:LoadAnimation(animation)
 			end)
 			if ok then
-				track.Priority, track.Looped = Enum.AnimationPriority.Movement, false
+				track.Priority, track.Looped = Enum.AnimationPriority.Movement, name == "Fall"
 				movement.tracks[name], movement.animations[name] = track, animation
 			else
 				animation:Destroy()
@@ -40,11 +40,17 @@ function Movement.new(animator, humanoid, runTrack, config, beforeRun, beforeTra
 	end
 
 	function movement:Play(name, fade)
+		if name == "Fall" then
+			if self.fallAttempted then return false end
+			self.fallAttempted = true
+		elseif name == "Takeoff" or name == "DoubleJump" or name == "LandIdle" or name == "LandRun" then
+			self.fallAttempted = false
+		end
 		self:Cancel(config.TransitionFade, true)
 		local track = self.tracks[name]
 		if not track or track.Length <= 0 then
 			self.fallbacks += 1
-			if name == "Takeoff" and runTrack.IsPlaying then
+			if (name == "Takeoff" or name == "DoubleJump") and runTrack.IsPlaying then
 				runTrack:Stop(config.AirFade)
 			end
 			return false
@@ -117,10 +123,24 @@ function Movement.new(animator, humanoid, runTrack, config, beforeRun, beforeTra
 				runTrack:Stop(config.AirFade)
 			end
 			local active = self.active
-			if active and (active.name ~= "Takeoff" or not active.track.IsPlaying
-				or os.clock() - active.started >= config.MaxTransitionTime
-				or (movementState == Enum.HumanoidStateType.Freefall and active.track.TimePosition >= 0.12)) then
+			local root = humanoid.RootPart
+			local falling = root and root.AssemblyLinearVelocity.Y <= 0
+			local risingClip = active and (active.name == "Takeoff" or active.name == "DoubleJump")
+			if active and active.name ~= "Fall" and not risingClip then
 				self:Cancel(config.AirFade, false)
+				active = nil
+			end
+			if risingClip then
+				-- Follow real airtime; never freeze physics to finish a pose.
+				if (falling and os.clock() - active.started >= config.MinimumAirPoseTime
+					and active.track.TimePosition >= active.track.Length - config.AirHoldLead) or not active.track.IsPlaying then
+					self:Play("Fall", config.AirFade)
+				elseif active.track.Length - active.track.TimePosition <= config.AirHoldLead then
+					active.track:AdjustSpeed(0)
+					active.track.TimePosition = math.max(0, active.track.Length - 0.001)
+				end
+			elseif not active then
+				self:Play("Fall", config.AirFade)
 			end
 			return
 		end
