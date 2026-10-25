@@ -2,6 +2,8 @@
 
 STAGE: **mesh**. NOW: this is the ONE approved build set. Stop with a review image for owner approval. Do not start foliage, stairs, fence, lobby, finishing, uploading or placement.
 
+2026-10-24 update: owner approved the mesh shapes ("ye they do"). All seven exports now pass and are uploaded/installed in the arena; see [export status](../review/BE_Nature_CliffsRocks_export-status.md). The original mesh-stage constraints above record the completed first checkpoint, not a fresh request for shape approval.
+
 Reference: `docs/reference/concepts-v1-2026-10-24/grassland-arena-v2.png`. Study the broad fractured vertical cliff faces and low, broad terrace-shaped rocks. This is a stylized geological facade, not rounded pebbles, an icosphere pile, a regular cuboid or spiky mountain noise.
 
 | Mesh (prefix BE_Nature_) | W x H x D studs | Max tris |

@@ -1,4 +1,6 @@
-# BE Nature — undergrowth (DEFERRED)
+# BE Nature — undergrowth (MESH REVIEW)
+
+2026-10-24: after the owner approved cliffs/rocks and trees, this set was built at mesh stage. BushA, BushB and FlowerClump are each 60 triangles. See [preview](../review/BE_Nature_Undergrowth_mesh.png); export/placement await owner approval.
 
 STAGE: mesh after approved cliff/rock and tree review; do not run now.
 References: `docs/reference/concepts-v1-2026-10-24/grassland-arena-v2.png` and `lobby-two-leaderboards-v3.png`. Sparse grouped planting, not noisy grass covering combat lanes.

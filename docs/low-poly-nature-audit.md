@@ -1,8 +1,8 @@
-# Low-poly nature rollout — approval checkpoint 1
+# Low-poly nature rollout — arena integration
 
-2026-10-24. User-authorized order: audit and briefs -> ONE cliffs/rocks mesh set -> owner approval -> finish/upload and arena placement -> phone/readability review -> other sets -> lobby. Only the first mesh set is authorized for construction in this pass.
+2026-10-24. Order: audit and briefs -> first cliffs/rocks mesh review -> owner approval -> finish/upload and arena placement -> phone/readability review -> other sets -> lobby. The owner approved cliffs/rocks and then the new trees. Those two sets are now installed in the arena. Undergrowth is at mesh review; lobby placement remains gated on arena review.
 
-## Current environment (live server, version 12)
+## Baseline before restyle (live server, version 12)
 
 | Area | Existing content | Implication |
 | --- | --- | --- |
@@ -15,7 +15,7 @@
 | Functional lobby | Two live board models; small cyan gate; spawn 28.2 studs from pad | Keep all named boards, rows, signs and teleport/spawn anchors |
 | Lighting | ClockTime 14, Brightness 2.2; Atmosphere Density .23 / Haze .7 | Golden-hour values remain deferred until the first arena area is approved for placement |
 
-Full baseline: [protected-anchor snapshot](reference/low-poly-nature/anchor-audit-before.json). No source or Studio environment changes made by this restyle checkpoint.
+Full baseline: [protected-anchor snapshot](reference/low-poly-nature/anchor-audit-before.json). The first mesh checkpoint made no scene changes; the subsequent approved integration uses NatureDecor without changing environment version 12 or rebuilding its anchors.
 
 Detailed [protected-part baseline](reference/low-poly-nature/protected-parts-before.json): all 52 protected parts were rechecked unchanged after the first mesh set was built.
 
@@ -25,7 +25,19 @@ Source: [BE_Nature_CliffsRocks_mesh.blend](../blender/BE_Nature_CliffsRocks_mesh
 
 Measured triangles: StraightA 128/600, StraightB 128/600, Corner 76/600, End 52/600, SmallRock 46/80, MediumRock 58/160, LargeRock 64/250. All seven have exact brief dimensions, base-centred origins, applied transforms, flat shading, two materials, closed manifold geometry and no degenerate faces. Straight A/B end sections match with zero gap at 48-stud spacing. See the [validation report](../blender/review/BE_Nature_CliffsRocks_mesh.validation.json).
 
-These technical checks do not establish visual approval. Finish/export, Roblox import scale/orientation, palette retention, collision, golden-hour lighting, phone screenshots and bandit/VFX readability remain untested and deferred. No other prop set has been constructed.
+The owner approved these shapes on 2026-10-24 ("ye they do"). All seven FBXs now pass round-trip validation, are uploaded to group 683974855 and imported at the expected scale/base pivots with separate colour components. See [export status](../blender/review/BE_Nature_CliffsRocks_export-status.md) and [arena validation](nature-arena-validation.md).
+
+## Installed arena sets
+
+- 41 faceted cliff faces, four corner dressings and two viewing-opening ends. Structural wall cores/corners and invisible bounds remain intact. Facades sit in front of the cores and their visible base meshes collide.
+- 41 plain-part grass caps are supported by the existing cores; the four corner caps remain unchanged.
+- Nine low rocks cycle the three approved variants at existing cover centres, with maximum height 3.6 studs.
+- Five new trees cycle three approved variants, 194 triangles each. Two original trunk positions overlapped dirt paths; their visuals and existing colliders are moved just clear of the paths, with originals archived. Other tree bases and nearby plants stay unchanged.
+- Original replaced parts/models are under ServerStorage.PolishOld/Arena_Nature_v1. Masters are under ServerStorage.MapProps.LowPolyNature. Floored grass texture comes from a noncolliding plain Grass part above the untouched ArenaFloor and below the paths.
+- Golden-hour style values are applied. The modern ShadowMap equivalent is LightingStyle.Soft with PrioritizeLightingQuality enabled.
+- [Undergrowth preview](../blender/review/BE_Nature_Undergrowth_mesh.png): two bushes and one flower clump, 60 triangles each, awaiting owner approval. No undergrowth exports or placements yet. No new stair route is needed.
+
+Placement is atomic per arena pass through Studio MCP's existing ChangeHistory recording (nested recordings are rejected). The facade/cap refinement and subsequently approved trees are separate undo steps; no per-prop recordings. The consolidated scripts/studio/place_nature_arena.luau installs the final approved sets in one recording on a fresh baseline.
 
 ## Prop schedule and budgets
 
@@ -50,7 +62,7 @@ All dimensions W x H x D, in studs. Budget is triangles per template, not per ar
 | FenceSection | 12 x 4 x 1 | 120 | #7A5236 / #5B3D29 | Existing lobby fence line after arena approval |
 | FencePost | 1 x 4 x 1 | 40 | same | Repeated ends/corners |
 
-Only cliffs + rocks are being built now. Stair trims do not authorize new routes or raised floors. Three rock templates do not reduce the current nine cover placements.
+Cliffs/rocks and trees are approved and installed. Undergrowth is mesh-only; stair trims and lobby fence remain deferred. Stair trims do not authorize new routes or raised floors. Three rock templates do not reduce the current nine cover placements.
 
 ## References and exceptions
 
@@ -76,4 +88,4 @@ Do not modify, rename, reparent or delete: ArenaFloor, BanditClearings (includin
 
 ## Skill availability
 
-The local `ai-map-building` and `map-style` skills were read. A standalone `asset-pipeline/SKILL.md` and `codex-workflow/SKILL.md` were not found in the checked repository/user skill locations; their repository workflow documents are present and read. Upload is outside this checkpoint; resolve the missing pipeline skill before that step rather than silently claiming it was used.
+The local ai-map-building and map-style skills were read at the mesh checkpoint. On continuation, asset-pipeline and codex-workflow skills were available and read. The owner supplied the repo-local ignored .env; its configured creator matches group 683974855. All ten approved models uploaded through Open Cloud and were inserted through Studio MCP. No key is recorded in artifacts.

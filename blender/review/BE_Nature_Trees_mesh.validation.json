@@ -1,0 +1,186 @@
+{
+  "stage": "mesh, owner approval pending",
+  "palette": [
+    "#6FAE4A",
+    "#4C8A3A",
+    "#7A5236",
+    "#62412C"
+  ],
+  "geometry_note": "Each tree is one mesh with ten closed overlapping solids. Crown lobes overlap intentionally; branch caps remain enclosed.",
+  "review_only": "TREE_REVIEW objects and 5-stud yellow gauge excluded",
+  "assets": [
+    {
+      "name": "BE_Nature_TreeRoundA",
+      "dimensions_W_H_D": [
+        22.0,
+        27.0,
+        20.0
+      ],
+      "target_W_H_D": [
+        22,
+        27,
+        20
+      ],
+      "triangles": 194,
+      "budget": 200,
+      "bounds_min_xyz": [
+        -11.0,
+        -10.0,
+        0.0
+      ],
+      "bounds_max_xyz": [
+        11.0,
+        10.0,
+        27.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "origin_at_base_center": true,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "loose_vertices": 0,
+      "inconsistent_winding_edges": 0,
+      "flat_shaded": true,
+      "material_triangles": {
+        "6FAE4A": 66,
+        "4C8A3A": 54,
+        "7A5236": 52,
+        "62412C": 22
+      },
+      "textures": 0,
+      "modifiers": 0,
+      "signed_volume": 2719.36645,
+      "pass": true
+    },
+    {
+      "name": "BE_Nature_TreeRoundB",
+      "dimensions_W_H_D": [
+        20.0,
+        25.0,
+        18.0
+      ],
+      "target_W_H_D": [
+        20,
+        25,
+        18
+      ],
+      "triangles": 194,
+      "budget": 200,
+      "bounds_min_xyz": [
+        -10.0,
+        -9.0,
+        0.0
+      ],
+      "bounds_max_xyz": [
+        10.0,
+        9.0,
+        25.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "origin_at_base_center": true,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "loose_vertices": 0,
+      "inconsistent_winding_edges": 0,
+      "flat_shaded": true,
+      "material_triangles": {
+        "6FAE4A": 66,
+        "4C8A3A": 54,
+        "7A5236": 52,
+        "62412C": 22
+      },
+      "textures": 0,
+      "modifiers": 0,
+      "signed_volume": 1998.29451,
+      "pass": true
+    },
+    {
+      "name": "BE_Nature_TreeRoundC",
+      "dimensions_W_H_D": [
+        24.0,
+        29.0,
+        22.0
+      ],
+      "target_W_H_D": [
+        24,
+        29,
+        22
+      ],
+      "triangles": 194,
+      "budget": 200,
+      "bounds_min_xyz": [
+        -12.0,
+        -11.0,
+        0.0
+      ],
+      "bounds_max_xyz": [
+        12.0,
+        11.0,
+        29.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "origin_at_base_center": true,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "loose_vertices": 0,
+      "inconsistent_winding_edges": 0,
+      "flat_shaded": true,
+      "material_triangles": {
+        "6FAE4A": 66,
+        "4C8A3A": 54,
+        "7A5236": 52,
+        "62412C": 22
+      },
+      "textures": 0,
+      "modifiers": 0,
+      "signed_volume": 3474.23157,
+      "pass": true
+    }
+  ],
+  "preexisting_objects_unchanged": true,
+  "pass": true
+}

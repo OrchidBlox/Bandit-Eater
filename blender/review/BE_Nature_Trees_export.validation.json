@@ -1,0 +1,683 @@
+{
+  "stage": "approved mesh finish/export only",
+  "source_blend": "C:\\Users\\Kobe\\source\\repos\\bandit-eater\\blender\\BE_Nature_Trees_mesh.blend",
+  "source_blend_sha256": "4260d583aa5b84b1e0c3a14e6660beea3cabb502bd5f2a30da3d2c08fad24b63",
+  "finish_blend": "C:\\Users\\Kobe\\source\\repos\\bandit-eater\\blender\\BE_Nature_Trees_finish.blend",
+  "axis_forward": "-Y",
+  "axis_up": "Z",
+  "apply_scale_options": "FBX_SCALE_ALL",
+  "apply_unit_scale": true,
+  "Blender_units_per_stud": 1,
+  "rigs": 0,
+  "animations": 0,
+  "textures": 0,
+  "assets": [
+    {
+      "name": "BE_Nature_TreeRoundA",
+      "file": "C:\\Users\\Kobe\\source\\repos\\bandit-eater\\blender\\export\\BE_Nature_TreeRoundA.fbx",
+      "sha256": "262a85f961bd8b7b0ce5b44608b5649ee32567b9622b220ca8bcd7f327be0ab3",
+      "triangles": 194,
+      "bounds": {
+        "min_xyz": [
+          -11.0,
+          -10.0,
+          0.0
+        ],
+        "max_xyz": [
+          11.0,
+          10.0,
+          27.0
+        ],
+        "W_H_D": [
+          22.0,
+          27.0,
+          20.0
+        ]
+      },
+      "component_count": 4,
+      "geometry_matches_approved": true,
+      "components": [
+        {
+          "name": "BE_Nature_TreeRoundA_LeafBase_6FAE4A",
+          "RobloxColor": "#6FAE4A",
+          "RobloxMaterial": "SmoothPlastic",
+          "triangles": 66,
+          "connected_regions": 6,
+          "bounds": {
+            "min_xyz": [
+              -10.989467,
+              -10.0,
+              15.999373
+            ],
+            "max_xyz": [
+              11.0,
+              10.0,
+              27.0
+            ],
+            "W_H_D": [
+              21.989467,
+              11.000627,
+              20.0
+            ]
+          },
+          "origin_xyz": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_xyz": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "scale_xyz": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "flat_shaded": true
+        },
+        {
+          "name": "BE_Nature_TreeRoundA_LeafShade_4C8A3A",
+          "RobloxColor": "#4C8A3A",
+          "RobloxMaterial": "SmoothPlastic",
+          "triangles": 54,
+          "connected_regions": 6,
+          "bounds": {
+            "min_xyz": [
+              -11.0,
+              -10.0,
+              13.75
+            ],
+            "max_xyz": [
+              11.0,
+              9.562662,
+              25.181641
+            ],
+            "W_H_D": [
+              22.0,
+              11.431641,
+              19.562662
+            ]
+          },
+          "origin_xyz": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_xyz": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "scale_xyz": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "flat_shaded": true
+        },
+        {
+          "name": "BE_Nature_TreeRoundA_TrunkBase_7A5236",
+          "RobloxColor": "#7A5236",
+          "RobloxMaterial": "SmoothPlastic",
+          "triangles": 52,
+          "connected_regions": 4,
+          "bounds": {
+            "min_xyz": [
+              -7.353488,
+              -1.96197,
+              0.0
+            ],
+            "max_xyz": [
+              6.49956,
+              5.156196,
+              22.114319
+            ],
+            "W_H_D": [
+              13.853049,
+              22.114319,
+              7.118166
+            ]
+          },
+          "origin_xyz": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_xyz": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "scale_xyz": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "flat_shaded": true
+        },
+        {
+          "name": "BE_Nature_TreeRoundA_TrunkShade_62412C",
+          "RobloxColor": "#62412C",
+          "RobloxMaterial": "SmoothPlastic",
+          "triangles": 22,
+          "connected_regions": 4,
+          "bounds": {
+            "min_xyz": [
+              -7.353488,
+              -1.96197,
+              0.0
+            ],
+            "max_xyz": [
+              6.49956,
+              5.156196,
+              21.937052
+            ],
+            "W_H_D": [
+              13.853049,
+              21.937052,
+              7.118166
+            ]
+          },
+          "origin_xyz": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_xyz": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "scale_xyz": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "flat_shaded": true
+        }
+      ],
+      "fbx_roundtrip": {
+        "mesh_components": 4,
+        "triangles": 194,
+        "bounds": {
+          "min_xyz": [
+            -11.0,
+            -10.0,
+            0.0
+          ],
+          "max_xyz": [
+            11.0,
+            10.0,
+            27.0
+          ],
+          "W_H_D": [
+            22.0,
+            27.0,
+            20.0
+          ]
+        },
+        "triangle_positions_match": true,
+        "absolute_coordinate_tolerance_studs": 1e-05,
+        "base_pivots_preserved": true,
+        "normals": {
+          "minimum_corner_to_face_dot": 0.99995653,
+          "flat_within_normal_quantization": true
+        },
+        "texture_nodes": 0
+      },
+      "pass": true
+    },
+    {
+      "name": "BE_Nature_TreeRoundB",
+      "file": "C:\\Users\\Kobe\\source\\repos\\bandit-eater\\blender\\export\\BE_Nature_TreeRoundB.fbx",
+      "sha256": "a2d382b492f43385a7521f8745f4926183c7407d2843cfb7e71486be009c7317",
+      "triangles": 194,
+      "bounds": {
+        "min_xyz": [
+          -10.0,
+          -9.0,
+          0.0
+        ],
+        "max_xyz": [
+          10.0,
+          9.0,
+          25.0
+        ],
+        "W_H_D": [
+          20.0,
+          25.0,
+          18.0
+        ]
+      },
+      "component_count": 4,
+      "geometry_matches_approved": true,
+      "components": [
+        {
+          "name": "BE_Nature_TreeRoundB_LeafBase_6FAE4A",
+          "RobloxColor": "#6FAE4A",
+          "RobloxMaterial": "SmoothPlastic",
+          "triangles": 66,
+          "connected_regions": 6,
+          "bounds": {
+            "min_xyz": [
+              -10.0,
+              -9.0,
+              13.840252
+            ],
+            "max_xyz": [
+              10.0,
+              9.0,
+              25.0
+            ],
+            "W_H_D": [
+              20.0,
+              11.159748,
+              18.0
+            ]
+          },
+          "origin_xyz": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_xyz": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "scale_xyz": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "flat_shaded": true
+        },
+        {
+          "name": "BE_Nature_TreeRoundB_LeafShade_4C8A3A",
+          "RobloxColor": "#4C8A3A",
+          "RobloxMaterial": "SmoothPlastic",
+          "triangles": 54,
+          "connected_regions": 6,
+          "bounds": {
+            "min_xyz": [
+              -10.0,
+              -9.0,
+              11.764706
+            ],
+            "max_xyz": [
+              10.0,
+              8.08843,
+              23.440132
+            ],
+            "W_H_D": [
+              20.0,
+              11.675426,
+              17.08843
+            ]
+          },
+          "origin_xyz": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_xyz": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "scale_xyz": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "flat_shaded": true
+        },
+        {
+          "name": "BE_Nature_TreeRoundB_TrunkBase_7A5236",
+          "RobloxColor": "#7A5236",
+          "RobloxMaterial": "SmoothPlastic",
+          "triangles": 52,
+          "connected_regions": 4,
+          "bounds": {
+            "min_xyz": [
+              -5.82697,
+              -1.738182,
+              0.0
+            ],
+            "max_xyz": [
+              7.828962,
+              4.404483,
+              19.71488
+            ],
+            "W_H_D": [
+              13.655932,
+              19.71488,
+              6.142665
+            ]
+          },
+          "origin_xyz": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_xyz": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "scale_xyz": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "flat_shaded": true
+        },
+        {
+          "name": "BE_Nature_TreeRoundB_TrunkShade_62412C",
+          "RobloxColor": "#62412C",
+          "RobloxMaterial": "SmoothPlastic",
+          "triangles": 22,
+          "connected_regions": 4,
+          "bounds": {
+            "min_xyz": [
+              -5.82697,
+              -1.738182,
+              0.0
+            ],
+            "max_xyz": [
+              7.828962,
+              4.404483,
+              19.548904
+            ],
+            "W_H_D": [
+              13.655932,
+              19.548904,
+              6.142665
+            ]
+          },
+          "origin_xyz": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_xyz": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "scale_xyz": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "flat_shaded": true
+        }
+      ],
+      "fbx_roundtrip": {
+        "mesh_components": 4,
+        "triangles": 194,
+        "bounds": {
+          "min_xyz": [
+            -10.0,
+            -9.0,
+            0.0
+          ],
+          "max_xyz": [
+            10.0,
+            9.0,
+            25.0
+          ],
+          "W_H_D": [
+            20.0,
+            25.0,
+            18.0
+          ]
+        },
+        "triangle_positions_match": true,
+        "absolute_coordinate_tolerance_studs": 1e-05,
+        "base_pivots_preserved": true,
+        "normals": {
+          "minimum_corner_to_face_dot": 0.99998495,
+          "flat_within_normal_quantization": true
+        },
+        "texture_nodes": 0
+      },
+      "pass": true
+    },
+    {
+      "name": "BE_Nature_TreeRoundC",
+      "file": "C:\\Users\\Kobe\\source\\repos\\bandit-eater\\blender\\export\\BE_Nature_TreeRoundC.fbx",
+      "sha256": "da16e7295de716ae4aac4eab7f383a40ff5b6d7f4d39300ef870f458f8b3e82d",
+      "triangles": 194,
+      "bounds": {
+        "min_xyz": [
+          -12.0,
+          -11.0,
+          0.0
+        ],
+        "max_xyz": [
+          12.0,
+          11.0,
+          29.0
+        ],
+        "W_H_D": [
+          24.0,
+          29.0,
+          22.0
+        ]
+      },
+      "component_count": 4,
+      "geometry_matches_approved": true,
+      "components": [
+        {
+          "name": "BE_Nature_TreeRoundC_LeafBase_6FAE4A",
+          "RobloxColor": "#6FAE4A",
+          "RobloxMaterial": "SmoothPlastic",
+          "triangles": 66,
+          "connected_regions": 6,
+          "bounds": {
+            "min_xyz": [
+              -12.0,
+              -11.0,
+              16.595558
+            ],
+            "max_xyz": [
+              12.0,
+              11.0,
+              29.0
+            ],
+            "W_H_D": [
+              24.0,
+              12.404442,
+              22.0
+            ]
+          },
+          "origin_xyz": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_xyz": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "scale_xyz": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "flat_shaded": true
+        },
+        {
+          "name": "BE_Nature_TreeRoundC_LeafShade_4C8A3A",
+          "RobloxColor": "#4C8A3A",
+          "RobloxMaterial": "SmoothPlastic",
+          "triangles": 54,
+          "connected_regions": 6,
+          "bounds": {
+            "min_xyz": [
+              -12.0,
+              -11.0,
+              14.254237
+            ],
+            "max_xyz": [
+              12.0,
+              10.512506,
+              26.989017
+            ],
+            "W_H_D": [
+              24.0,
+              12.73478,
+              21.512506
+            ]
+          },
+          "origin_xyz": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_xyz": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "scale_xyz": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "flat_shaded": true
+        },
+        {
+          "name": "BE_Nature_TreeRoundC_TrunkBase_7A5236",
+          "RobloxColor": "#7A5236",
+          "RobloxMaterial": "SmoothPlastic",
+          "triangles": 52,
+          "connected_regions": 4,
+          "bounds": {
+            "min_xyz": [
+              -8.026222,
+              -2.184456,
+              0.0
+            ],
+            "max_xyz": [
+              6.659106,
+              4.714904,
+              23.672781
+            ],
+            "W_H_D": [
+              14.685328,
+              23.672781,
+              6.899361
+            ]
+          },
+          "origin_xyz": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_xyz": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "scale_xyz": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "flat_shaded": true
+        },
+        {
+          "name": "BE_Nature_TreeRoundC_TrunkShade_62412C",
+          "RobloxColor": "#62412C",
+          "RobloxMaterial": "SmoothPlastic",
+          "triangles": 22,
+          "connected_regions": 4,
+          "bounds": {
+            "min_xyz": [
+              -8.026222,
+              -2.184456,
+              0.0
+            ],
+            "max_xyz": [
+              6.659106,
+              4.234341,
+              23.672781
+            ],
+            "W_H_D": [
+              14.685328,
+              23.672781,
+              6.418797
+            ]
+          },
+          "origin_xyz": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_xyz": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "scale_xyz": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "flat_shaded": true
+        }
+      ],
+      "fbx_roundtrip": {
+        "mesh_components": 4,
+        "triangles": 194,
+        "bounds": {
+          "min_xyz": [
+            -12.0,
+            -11.0,
+            0.0
+          ],
+          "max_xyz": [
+            12.0,
+            11.0,
+            29.0
+          ],
+          "W_H_D": [
+            24.0,
+            29.0,
+            22.0
+          ]
+        },
+        "triangle_positions_match": true,
+        "absolute_coordinate_tolerance_studs": 1e-05,
+        "base_pivots_preserved": true,
+        "normals": {
+          "minimum_corner_to_face_dot": 0.999944,
+          "flat_within_normal_quantization": true
+        },
+        "texture_nodes": 0
+      },
+      "pass": true
+    }
+  ],
+  "triangle_comparator_test": {
+    "pass": true,
+    "absolute_coordinate_tolerance_studs": 1e-05,
+    "checks": [
+      "sub-tolerance passes",
+      "above-tolerance fails",
+      "duplicate multiplicity",
+      "extra triangle fails",
+      "corner reordering passes"
+    ]
+  },
+  "material_strategy": "4 open face subsets reconstruct the original closed solid exactly. Keep all colocated with common base pivot. Set each Roblox MeshPart Color from component suffix, SmoothPlastic. No textures or SurfaceAppearance.",
+  "validation_limit": "Blender FBX round trip verified; Roblox import scale, pivot, colors and orientation still require Studio verification.",
+  "source_meshes_unchanged": true,
+  "source_blend_unchanged": true,
+  "pass": true
+}

@@ -1,4 +1,6 @@
-# BE Nature — trees (DEFERRED)
+# BE Nature — trees (APPROVED)
+
+2026-10-24: owner approved the mesh preview ("actually i like the new trees"). RoundA/B/C are each 194 triangles; all three exports pass and are uploaded for arena placement. The original mesh-stage scope below records the first build checkpoint.
 
 STAGE: mesh, only after cliffs/rocks approval. Do not run now.
 Reference: `docs/reference/concepts-v1-2026-10-24/grassland-arena-v2.png`; latest lobby reference `lobby-two-leaderboards-v3.png` for smaller garden usage. Match oak-like broad clustered crowns and branching trunks; no imported old rejected tree or perfectly round ball canopy.

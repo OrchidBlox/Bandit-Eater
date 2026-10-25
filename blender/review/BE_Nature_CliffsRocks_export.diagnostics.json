@@ -1,0 +1,29 @@
+{
+  "status": "Resolved by focused comparator repair; all seven exports pass",
+  "historical_failure": {
+    "asset": "BE_Nature_RockSmall",
+    "error": "FBX geometry differs",
+    "comparison": "Exact triangle equality after rounding coordinates to four decimals",
+    "rounding_grid_studs": 0.0001,
+    "original_W_H_D": [12, 3, 8],
+    "imported_W_H_D": [12, 3, 8],
+    "original_triangles": 46,
+    "imported_triangles": 46,
+    "maximum_nearest_vertex_distance_studs": 6.743495761743046e-7,
+    "maximum_coordinate_delta_studs": 5.364418029785156e-7,
+    "diagnosis": "Rounding-bin boundary caused false mismatch despite sub-microstud export drift"
+  },
+  "repair": {
+    "absolute_coordinate_tolerance_studs": 0.00001,
+    "method": "Perfect one-to-one triangle matching with one-to-one corner permutations; multiplicity retained",
+    "sub_tolerance_perturbation_passes": true,
+    "above_tolerance_perturbation_fails": true,
+    "duplicate_and_extra_triangle_checks_pass": true,
+    "other_validation_checks_unchanged": true,
+    "focused_resume_attempts": 1,
+    "existing_five_fbx_files_reused": true,
+    "new_exports": ["BE_Nature_RockMedium.fbx", "BE_Nature_RockLarge.fbx"],
+    "validated_export_count": 7,
+    "approved_source_sha256_unchanged": "70b42b04f85cebf5064c01d9b15a6eb06466d686f983ad86ec74e80c1251efa9"
+  }
+}

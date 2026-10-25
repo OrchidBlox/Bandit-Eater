@@ -1,1 +1,62 @@
-{}
+{
+  "blender/export/BE_Nature_CliffCorner.fbx": {
+    "assetId": "112073249066625",
+    "assetType": "Model",
+    "sha256": "c190582506cd3f345d810ed5d233cbefe66b3534329cea1cc248e6cde7fd7368",
+    "uploadedAt": "2026-10-25T01:00:34Z"
+  },
+  "blender/export/BE_Nature_CliffEnd.fbx": {
+    "assetId": "126597751109815",
+    "assetType": "Model",
+    "sha256": "78d902f202b536829bbd3c3735f0ad1e6f9c6d4247a47b419bf0eee23b736679",
+    "uploadedAt": "2026-10-25T00:59:32Z"
+  },
+  "blender/export/BE_Nature_CliffStraightA.fbx": {
+    "assetId": "106682946832392",
+    "assetType": "Model",
+    "sha256": "d8fa509306df20a739b5e2474fea308c076b11e9207a407d57f01c925263e0b6",
+    "uploadedAt": "2026-10-25T01:00:54Z"
+  },
+  "blender/export/BE_Nature_CliffStraightB.fbx": {
+    "assetId": "72135883362231",
+    "assetType": "Model",
+    "sha256": "d10d2a7f0321b659b8d59e0da3666180e213c820e1cdccb35d65050229d8d1a7",
+    "uploadedAt": "2026-10-25T01:01:14Z"
+  },
+  "blender/export/BE_Nature_RockLarge.fbx": {
+    "assetId": "124517673828669",
+    "assetType": "Model",
+    "sha256": "c6567e61c40e5b2ea5ca501bef890ad73c5715d4028d07b61d44c81020aca2a7",
+    "uploadedAt": "2026-10-25T01:01:28Z"
+  },
+  "blender/export/BE_Nature_RockMedium.fbx": {
+    "assetId": "139537776658541",
+    "assetType": "Model",
+    "sha256": "7b64fc8cda3f608b20bda91f69568209b2956fbc8c85ababbfd232ad7fbe3c87",
+    "uploadedAt": "2026-10-25T01:01:35Z"
+  },
+  "blender/export/BE_Nature_RockSmall.fbx": {
+    "assetId": "118888082757921",
+    "assetType": "Model",
+    "sha256": "2cc391d40d09a0207a64f9bec17a29fc7f5a5d2b0b0c2d631c4b8d9fcffbbce3",
+    "uploadedAt": "2026-10-25T01:01:55Z"
+  },
+  "blender/export/BE_Nature_TreeRoundA.fbx": {
+    "assetId": "89085584690121",
+    "assetType": "Model",
+    "sha256": "262a85f961bd8b7b0ce5b44608b5649ee32567b9622b220ca8bcd7f327be0ab3",
+    "uploadedAt": "2026-10-25T01:13:11Z"
+  },
+  "blender/export/BE_Nature_TreeRoundB.fbx": {
+    "assetId": "81178575091325",
+    "assetType": "Model",
+    "sha256": "a2d382b492f43385a7521f8745f4926183c7407d2843cfb7e71486be009c7317",
+    "uploadedAt": "2026-10-25T01:13:22Z"
+  },
+  "blender/export/BE_Nature_TreeRoundC.fbx": {
+    "assetId": "73468058864125",
+    "assetType": "Model",
+    "sha256": "da16e7295de716ae4aac4eab7f383a40ff5b6d7f4d39300ef870f458f8b3e82d",
+    "uploadedAt": "2026-10-25T01:13:38Z"
+  }
+}

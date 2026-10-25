@@ -1,0 +1,84 @@
+{
+  "trees": [
+    {
+      "pathClearance": 16.071456909179688,
+      "base": [
+        -229.71426391601562,
+        180,
+        37.582611083984375
+      ],
+      "index": 1,
+      "name": "TreeRoundA"
+    },
+    {
+      "pathClearance": 14.291526794433594,
+      "base": [
+        -181.7142791748047,
+        180,
+        -102.3075942993164
+      ],
+      "index": 2,
+      "name": "TreeRoundB"
+    },
+    {
+      "pathClearance": 3.5200042724609375,
+      "base": [
+        133.71426391601562,
+        180,
+        -129.11912536621094
+      ],
+      "index": 3,
+      "name": "TreeRoundC"
+    },
+    {
+      "pathClearance": 3.5199966430664062,
+      "base": [
+        144,
+        180,
+        113.0791244506836
+      ],
+      "index": 4,
+      "name": "TreeRoundA"
+    },
+    {
+      "pathClearance": 5.7857208251953125,
+      "base": [
+        240,
+        180,
+        16.7034854888916
+      ],
+      "index": 5,
+      "name": "TreeRoundB"
+    }
+  ],
+  "archiveRoots": 98,
+  "templates": 10,
+  "lighting": {
+    "haze": 1,
+    "contrast": 0.05000000074505806,
+    "prioritizeQuality": true,
+    "density": 0.30000001192092896,
+    "style": "Soft",
+    "outdoor": "a0b0c0",
+    "clock": 16.5,
+    "brightness": 2.5,
+    "bloom": 0.30000001192092896,
+    "ambient": "7d8fa0"
+  },
+  "wallColliders": 47,
+  "rockHeights": [
+    3,
+    3.3000001907348633,
+    3.5999999046325684,
+    3,
+    3.3000001907348633,
+    3.5999999046325684,
+    3,
+    3.3000001907348633,
+    3.5999999046325684
+  ],
+  "protectedParts": {
+    "count": 52,
+    "changed": []
+  }
+}

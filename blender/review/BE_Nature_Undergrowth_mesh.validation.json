@@ -1,0 +1,186 @@
+{
+  "stage": "mesh; owner approval pending",
+  "assets": [
+    {
+      "name": "BE_Nature_BushA",
+      "dimensions_W_H_D": [
+        4.0,
+        2.0,
+        3.0
+      ],
+      "target_W_H_D": [
+        4,
+        2,
+        3
+      ],
+      "triangles": 60,
+      "budget": 60,
+      "bounds_min_xyz": [
+        -2.0,
+        -1.5,
+        0.0
+      ],
+      "bounds_max_xyz": [
+        2.0,
+        1.5,
+        2.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "origin_at_base_center": true,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "loose_vertices": 0,
+      "inconsistent_winding_edges": 0,
+      "flat_shaded": true,
+      "palette": [
+        "#6FAE4A",
+        "#4C8A3A"
+      ],
+      "material_triangles": {
+        "6FAE4A": 33,
+        "4C8A3A": 27
+      },
+      "textures": 0,
+      "modifiers": 0,
+      "signed_volume": 9.193689,
+      "pass": true
+    },
+    {
+      "name": "BE_Nature_BushB",
+      "dimensions_W_H_D": [
+        5.0,
+        2.4,
+        4.0
+      ],
+      "target_W_H_D": [
+        5,
+        2.4,
+        4
+      ],
+      "triangles": 60,
+      "budget": 60,
+      "bounds_min_xyz": [
+        -2.5,
+        -2.0,
+        0.0
+      ],
+      "bounds_max_xyz": [
+        2.5,
+        2.0,
+        2.4000000953674316
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "origin_at_base_center": true,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "loose_vertices": 0,
+      "inconsistent_winding_edges": 0,
+      "flat_shaded": true,
+      "palette": [
+        "#6FAE4A",
+        "#4C8A3A"
+      ],
+      "material_triangles": {
+        "6FAE4A": 33,
+        "4C8A3A": 27
+      },
+      "textures": 0,
+      "modifiers": 0,
+      "signed_volume": 19.189482,
+      "pass": true
+    },
+    {
+      "name": "BE_Nature_FlowerClump",
+      "dimensions_W_H_D": [
+        2.0,
+        1.2,
+        2.0
+      ],
+      "target_W_H_D": [
+        2,
+        1.2,
+        2
+      ],
+      "triangles": 60,
+      "budget": 60,
+      "bounds_min_xyz": [
+        -1.0,
+        -1.0,
+        0.0
+      ],
+      "bounds_max_xyz": [
+        1.0,
+        1.0,
+        1.2000000476837158
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "origin_at_base_center": true,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "loose_vertices": 0,
+      "inconsistent_winding_edges": 0,
+      "flat_shaded": true,
+      "palette": [
+        "#4C8A3A",
+        "#F2E7CC"
+      ],
+      "material_triangles": {
+        "4C8A3A": 20,
+        "F2E7CC": 40
+      },
+      "textures": 0,
+      "modifiers": 0,
+      "signed_volume": 0.233802,
+      "pass": true
+    }
+  ],
+  "geometry_note": "Bushes contain three overlapping closed foliage solids; flower clump has one closed rosette, two closed stems and two closed cream blooms.",
+  "review_only": "UNDER_REVIEW objects and yellow gauge excluded",
+  "preexisting_objects_unchanged": true,
+  "pass": true
+}

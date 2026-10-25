@@ -3,6 +3,8 @@ local ServerStorage = game:GetService("ServerStorage")
 local P = require(script.Parent.EnvironmentProps)
 local Lobby = require(script.Parent.EnvironmentLobby)
 local Arena = require(script.Parent.EnvironmentArena)
+local NatureArenaPolish = require(script.Parent.NatureArenaPolish)
+local NatureArenaTrees = require(script.Parent.NatureArenaTrees)
 local Environment = { Version = 5 }
 Environment.BanditPosition = Arena.BanditPosition
 Environment.PlayerSpawnPosition = Arena.PlayerSpawnPosition
@@ -34,6 +36,8 @@ function Environment.Build(root)
 	lighting()
 	local existing = root:FindFirstChild("Environment")
 	if existing and existing:GetAttribute("Version") == Environment.Version then
+		NatureArenaPolish.Apply(existing)
+		NatureArenaTrees.Apply(existing)
 		return existing
 	end
 	if existing then
@@ -70,6 +74,8 @@ function Environment.Build(root)
 		P.Part(backdrop, "DistantGrassCap", Vector3.new(size.X, 1, size.Z), CFrame.new(position + Vector3.new(0, size.Y / 2, 0)) * CFrame.Angles(0, angle, 0),
 			Color3.fromRGB(111, 153, 72):Lerp(Color3.new(0, 0, 0), 0.28), Enum.Material.Grass, false)
 	end
+	NatureArenaPolish.Apply(model)
+	NatureArenaTrees.Apply(model)
 	task.wait()
 	return model
 end
