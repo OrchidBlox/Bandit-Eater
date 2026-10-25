@@ -10,6 +10,7 @@ local SERVICE_ORDER = {
 	"DataService",
 	"PlayerService",
 	"PilotService",
+	"DoubleJumpService",
 }
 
 local loaded = {}

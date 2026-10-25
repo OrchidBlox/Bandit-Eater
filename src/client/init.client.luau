@@ -9,6 +9,7 @@ local CONTROLLER_ORDER = {
 	"PilotSkyController",
 	"VfxController",
 	"RunController",
+	"DoubleJumpController",
 	"PilotController",
 }
 

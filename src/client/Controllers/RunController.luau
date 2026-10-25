@@ -4,6 +4,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ContentProvider = game:GetService("ContentProvider")
 local Config = require(ReplicatedStorage.Shared.Config.Animations)
 local Vfx = require(ReplicatedStorage.Shared.Config.Vfx)
+local Remotes = require(ReplicatedStorage.Shared.Remotes)
 local MovementTransitions = require(script.Parent.MovementTransitions)
 local Controller = {}
 local connections, bindings = {}, {}
@@ -410,6 +411,27 @@ function Controller.Start()
 		return
 	end
 	started, elapsed = true, 0
+	table.insert(connections, Remotes.DoubleJump.OnClientEvent:Connect(function(character)
+		for _, binding in bindings do
+			local state = binding.state
+			if not state or state.character ~= character or state.dead or not state.humanoid
+				or state.humanoid.Health <= 0 then continue end
+			local mode = state.humanoid:GetState()
+			if mode ~= Enum.HumanoidStateType.Jumping and mode ~= Enum.HumanoidStateType.Freefall then continue end
+			if state.transitions then
+				state.transitions:Play("Takeoff", Config.AirFade)
+			end
+			local root, camera = character:FindFirstChild("HumanoidRootPart"), workspace.CurrentCamera
+			if root and camera and (camera.CFrame.Position - root.Position).Magnitude <= Config.FootstepDistance then
+				for _, side in { "Left", "Right" } do
+					local particle = emitter(state, side)
+					if particle then
+						particle:Emit(1)
+					end
+				end
+			end
+		end
+	end))
 	table.insert(connections, Players.PlayerAdded:Connect(bindPlayer))
 	table.insert(connections, Players.PlayerRemoving:Connect(unbindPlayer))
 	for _, player in Players:GetPlayers() do
