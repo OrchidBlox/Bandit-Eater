@@ -27,7 +27,7 @@ Every model, visual, and map object the game uses. Code depends only on the anch
 
 ## Low-poly nature restyle — arena progress (2026-10-24)
 
-The environment remains version 12. Approved cliffs, rocks and trees are installed in the arena through separate NatureDecor modules; the lobby now reuses the approved trees and rocks. Undergrowth is awaiting mesh approval.
+The environment remains version 12. Approved cliffs, rocks and trees are installed in the arena through separate NatureDecor modules; the lobby now reuses the approved trees and rocks. Approved undergrowth is installed in the lobby gardens.
 
 | Deliverable | Status |
 | --- | --- |
@@ -36,10 +36,10 @@ The environment remains version 12. Approved cliffs, rocks and trees are install
 | [Cliffs/rocks Blender source](../blender/BE_Nature_CliffsRocks_mesh.blend) | Four cliff modules and three rocks; owner approved silhouettes on 2026-10-24 |
 | [Mesh review](../blender/review/BE_Nature_CliffsRocks_mesh.png) and [validation](../blender/review/BE_Nature_CliffsRocks_mesh.validation.json) | Seven meshes pass static budgets, dimensions, base origins and manifold checks; straight A/B interfaces match |
 | [Protected-part baseline](reference/low-poly-nature/protected-parts-before.json) | All 52 protected parts checked against the original snapshots; no anchor rebuild |
-| Roblox finish/export/upload and arena placement | Ten approved models uploaded to group 683974855; masters in ServerStorage.MapProps.LowPolyNature; old decoration in ServerStorage.PolishOld/Arena_Nature_v1. IDs/hashes in scripts/asset_ids.json |
+| Roblox finish/export/upload and arena placement | Thirteen approved models uploaded to group 683974855; masters in ServerStorage.MapProps.LowPolyNature; old decoration in ServerStorage.PolishOld/Arena_Nature_v1. IDs/hashes in scripts/asset_ids.json |
 | Arena trees | Five instances of three approved 194-triangle variants; two former path overlaps moved clear together with their existing colliders |
 | Golden-hour lighting, phone screenshots and yellow-bandit/VFX readability | Applied and inspected on desktop and iPhone 17 Pro landscape/portrait. [Validation and limits](nature-arena-validation.md); prototype HUD clipping remains |
-| [Undergrowth mesh review](../blender/review/BE_Nature_Undergrowth_mesh.png) | Two bushes and a flower clump, 60 triangles each; awaiting owner approval, not exported or placed |
+| [Undergrowth mesh review](../blender/review/BE_Nature_Undergrowth_mesh.png) | Two bushes and a flower clump, 60 triangles each; owner approved, exported, uploaded and installed across twelve lobby beds (48 bushes, 96 flower clumps) |
 | Lobby restyle | Installed after owner requested the same treatment: six approved trees, six rocks, twelve beds, smooth warm paving and coordinated furniture. Two boards, cyan gate and protected anchors unchanged. [Validation](nature-lobby-validation.md) |
 
 Floors, paths, spawn plates and collision bounds remain plain parts. A noncolliding textured Grass surface sits above the unchanged ArenaFloor. The nine arena cover centres remain the layout baseline. The cyan gate, two lobby boards, Elevation=180 and LobbyLift=60 are preserved.

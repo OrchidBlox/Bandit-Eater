@@ -62,9 +62,9 @@ All dimensions W x H x D, in studs. Budget is triangles per template, not per ar
 | FenceSection | 12 x 4 x 1 | 120 | #7A5236 / #5B3D29 | Existing lobby fence line after arena approval |
 | FencePost | 1 x 4 x 1 | 40 | same | Repeated ends/corners |
 
-Cliffs/rocks and trees are approved and installed. Undergrowth is mesh-only; stair trims and lobby fence remain deferred. Stair trims do not authorize new routes or raised floors. Three rock templates do not reduce the current nine cover placements.
+Cliffs/rocks and trees are approved and installed. Approved undergrowth is installed in the lobby; stair trims and new lobby fence meshes remain deferred. Stair trims do not authorize new routes or raised floors. Three rock templates do not reduce the current nine cover placements.
 
-Lobby continuation (2026-10-24): the owner's "lobby needs the same love" authorizes rolling out the approved scenery style. Six tree instances, six rocks, twelve beds, smooth warm paving and coordinated existing furniture are installed. New bush/flower meshes remain unapproved; existing small plants are retained. See [lobby validation](nature-lobby-validation.md). No new fence mesh or stair route was built.
+Lobby continuation (2026-10-24): the owner's "lobby needs the same love" authorizes rolling out the approved scenery style. Six tree instances, six rocks, twelve beds, smooth warm paving and coordinated existing furniture are installed. The owner subsequently approved the bushes/flowers; these now replace the small plants in all twelve lobby beds. See [lobby validation](nature-lobby-validation.md). No new fence mesh or stair route was built.
 
 ## References and exceptions
 
@@ -90,4 +90,4 @@ Do not modify, rename, reparent or delete: ArenaFloor, BanditClearings (includin
 
 ## Skill availability
 
-The local ai-map-building and map-style skills were read at the mesh checkpoint. On continuation, asset-pipeline and codex-workflow skills were available and read. The owner supplied the repo-local ignored .env; its configured creator matches group 683974855. All ten approved models uploaded through Open Cloud and were inserted through Studio MCP. No key is recorded in artifacts.
+The local ai-map-building and map-style skills were read at the mesh checkpoint. On continuation, asset-pipeline and codex-workflow skills were available and read. The owner supplied the repo-local ignored .env; its configured creator matches group 683974855. All thirteen approved models uploaded through Open Cloud and were inserted through Studio MCP. No key is recorded in artifacts.

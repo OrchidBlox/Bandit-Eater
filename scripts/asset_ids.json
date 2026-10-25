@@ -1,4 +1,16 @@
 {
+  "blender/export/BE_Nature_BushA.fbx": {
+    "assetId": "125190783968134",
+    "assetType": "Model",
+    "sha256": "011a31eb0a46eaf8ceb54702e2f662e53e1bdb7d95db3b8b6a439f0297f6905d",
+    "uploadedAt": "2026-10-25T01:34:48Z"
+  },
+  "blender/export/BE_Nature_BushB.fbx": {
+    "assetId": "136381056003772",
+    "assetType": "Model",
+    "sha256": "aa45eb65cad30f441505411dc71a7ef35def187db4f49fa9d4f7f1b7b8530ded",
+    "uploadedAt": "2026-10-25T01:35:07Z"
+  },
   "blender/export/BE_Nature_CliffCorner.fbx": {
     "assetId": "112073249066625",
     "assetType": "Model",
@@ -22,6 +34,12 @@
     "assetType": "Model",
     "sha256": "d10d2a7f0321b659b8d59e0da3666180e213c820e1cdccb35d65050229d8d1a7",
     "uploadedAt": "2026-10-25T01:01:14Z"
+  },
+  "blender/export/BE_Nature_FlowerClump.fbx": {
+    "assetId": "106816410291370",
+    "assetType": "Model",
+    "sha256": "71a60bcb8c40bb4035b678ebbf6d1dac3ac674b0d44519edc8fe4437bebd2c26",
+    "uploadedAt": "2026-10-25T01:35:19Z"
   },
   "blender/export/BE_Nature_RockLarge.fbx": {
     "assetId": "124517673828669",

@@ -118,7 +118,7 @@ local function planting(garden, sources)
 	local bed = garden.GrassBed
 	local group = Instance.new("Model")
 	group.Name, group.Parent = "GardenPlants", garden
-	local x, z = bed.Size.X / 2 - 2.8, bed.Size.Z / 2 - 2.2
+	local x, z = bed.Size.X / 2 - 2.8, bed.Size.Z / 2 - 2.7
 	for i, offset in { Vector3.new(-x, 0, -z), Vector3.new(x, 0, z), Vector3.new(-x, 0, z), Vector3.new(x, 0, -z) } do
 		local name = i % 2 == 0 and "BushA" or "BushB"
 		mesh(sources[name], group, 0.68 + i * 0.035,
@@ -126,9 +126,9 @@ local function planting(garden, sources)
 	end
 	for i = 1, 8 do
 		local side = i <= 4 and -1 or 1
-		local xOffset = ((i - 1) % 4 / 3 * 2 - 1) * (bed.Size.X / 2 - 1.3)
+		local xOffset = ((i - 1) % 4 / 3 * 2 - 1) * (bed.Size.X / 2 - 1.35)
 		mesh(sources.FlowerClump, group, 0.85,
-			bed.CFrame * CFrame.new(xOffset, bed.Size.Y / 2, side * (bed.Size.Z / 2 - 1)) * CFrame.Angles(0, i, 0))
+			bed.CFrame * CFrame.new(xOffset, bed.Size.Y / 2, side * (bed.Size.Z / 2 - 1.35)) * CFrame.Angles(0, i, 0))
 	end
 end
 
@@ -145,6 +145,51 @@ local function withinFloor(model, floor)
 	return true
 end
 
+-- Upgrade only the planting after the owner approves a new mesh set.
+function Nature.ApplyPlants(environment)
+	local lobby = environment and environment:FindFirstChild("Lobby")
+	local decor = lobby and lobby:FindFirstChild("NatureDecor")
+	if not decor then return false end
+	if decor:GetAttribute("PlantRevision") == 2 then return true end
+	local sources, ready = library()
+	if not ready then return false end
+	local archiveRoot = ServerStorage:FindFirstChild("PolishOld")
+	local archive = archiveRoot and archiveRoot:FindFirstChild("Lobby_Nature_v1")
+	if not archive then return false end
+	local plans = {}
+	local ok, failure = pcall(function()
+		for _, garden in decor:GetChildren() do
+			if garden.Name == "RaisedGarden" or garden.Name == "PortalGarden" then
+				assert(garden:FindFirstChild("GrassBed"), "Missing garden surface")
+				local copy = garden:Clone()
+				table.insert(plans, { original = garden, copy = copy })
+				planting(copy, sources)
+			end
+		end
+		assert(#plans == 12, "Expected twelve lobby gardens")
+	end)
+	if not ok then
+		for _, plan in plans do
+			plan.copy:Destroy()
+		end
+		error(failure)
+	end
+	for _, plan in plans do
+		local old = plan.original:FindFirstChild("GardenPlants")
+		if old then
+			old.Parent = archive
+		end
+		plan.copy.GardenPlants.Parent = plan.original
+		plan.copy:Destroy()
+	end
+	decor:SetAttribute("UsesUndergrowthMeshes", true)
+	decor:SetAttribute("PlantRevision", 2)
+	decor:SetAttribute("BushCount", 48)
+	decor:SetAttribute("FlowerClumpCount", 96)
+	decor:SetAttribute("ArchivedRoots", #archive:GetChildren())
+	return true
+end
+
 function Nature.Apply(environment)
 	local lobby = environment and environment:FindFirstChild("Lobby")
 	local floor = lobby and lobby:FindFirstChild("LobbyFloor")
@@ -152,7 +197,10 @@ function Nature.Apply(environment)
 	local existing = lobby:FindFirstChild("NatureDecor")
 	if existing then
 		local revision = existing:GetAttribute("Revision")
-		if revision == Nature.Revision then return true end
+		if revision == Nature.Revision then
+			Nature.ApplyPlants(environment)
+			return true
+		end
 		if revision ~= 1 and revision ~= 2 then return false end
 		local grass = existing:FindFirstChild("TexturedGrass")
 		if not grass or not grass:IsA("BasePart") then return false end
@@ -269,6 +317,11 @@ function Nature.Apply(environment)
 	staged:SetAttribute("RockCount", 6)
 	staged:SetAttribute("GardenCount", 12)
 	staged:SetAttribute("UsesUndergrowthMeshes", usePlants)
+	if usePlants then
+		staged:SetAttribute("PlantRevision", 2)
+		staged:SetAttribute("BushCount", 48)
+		staged:SetAttribute("FlowerClumpCount", 96)
+	end
 	local archiveRoot = ServerStorage:FindFirstChild("PolishOld") or Instance.new("Folder")
 	archiveRoot.Name, archiveRoot.Parent = "PolishOld", ServerStorage
 	local archive = Instance.new("Folder")

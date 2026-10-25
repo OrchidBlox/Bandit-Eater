@@ -2,7 +2,7 @@
 
 Owner requested the lobby receive the approved arena treatment. Installed six instances of the approved faceted trees, six low rocks, twelve garden beds, textured grass, warmer smooth paving, and coordinated wood/metal colors on the existing benches and fence. Four corner trees reuse the existing trunk colliders; two portal-side trees have matching small trunk colliders.
 
-The two server boards and simple cyan gate keep their original geometry and signs. Spawn, teleport pad, floor, bounds, footprint, elevation and arena geometry are unchanged. The central route stays clear. Existing small plants remain because the new undergrowth mesh preview has not yet received explicit approval.
+The two server boards and simple cyan gate keep their original geometry and signs. Spawn, teleport pad, floor, bounds, footprint, elevation and arena geometry are unchanged. The central route stays clear. The owner subsequently approved the new bushes/flower clump; they are installed in all twelve beds (see the planting follow-up below).
 
 ![Lobby in Play, HUD hidden temporarily for scenery review](reference/low-poly-nature/lobby-nature-overview.jpg)
 
@@ -29,4 +29,19 @@ The two server boards and simple cyan gate keep their original geometry and sign
 - Existing unrelated Output warnings: Studio data saving disabled; asset 203785492 type mismatch. No new lobby-script runtime errors observed.
 - Play stopped, default device viewport restored, Studio save shortcut completed. HUD hiding was Play-only and discarded on Stop. No game publication or Git push.
 
-This is a local Studio visual/functional check, not multiplayer release acceptance. The new bushes/flowers, new fence meshes and optional stair trim remain outside this installed pass.
+This is a local Studio visual/functional check, not multiplayer release acceptance. New fence meshes and optional stair trim remain outside this installed pass.
+
+## Approved planting follow-up ? 2026-10-24
+
+The owner answered "Yes, use those bushes and flowers". Finished the approved source unchanged, using the existing static FBX exporter: BushA, BushB and FlowerClump remain 60 triangles each, two colored MeshParts per model. All three round trips pass geometry, size, pivot and flat-normal validation. Uploaded to the same group as the experience; IDs and hashes are in scripts/asset_ids.json.
+
+- BushA: 125190783968134; BushB: 136381056003772; FlowerClump: 106816410291370.
+- Placed 48 bushes and 96 flower clumps in twelve beds. All rotated bounds stay within their grass bed; zero colliding/queryable/touchable plant components.
+- Old small-plant groups were archived, as were the first placement copies when their edge spacing was corrected. Lobby archive now contains 666 roots (644 initial, 10 old plant groups, 12 first-pass groups).
+- PlantRevision 2 is idempotent. All 324 lobby mesh components preload successfully in fresh Play. All 59 protected parts remain unchanged. Arena geometry was not edited.
+- Phone landscape review confirms cream flowers and green bushes read against the grass. Existing HUD overlays remain. Selene and Rojo pass; only the same unrelated Output warnings remain.
+- Play stopped, default viewport restored and Studio saved after placement. No publication or push.
+
+![Installed garden detail](reference/low-poly-nature/lobby-garden-detail.jpg)
+
+[Phone review](reference/low-poly-nature/lobby-garden-phone.jpg). Use `scripts/studio/normalize_nature_undergrowth.luau` after inserting the templates and `place_nature_lobby.luau` to apply planting to an existing lobby.

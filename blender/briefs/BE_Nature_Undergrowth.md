@@ -1,8 +1,10 @@
-# BE Nature — undergrowth (MESH REVIEW)
+# BE Nature — undergrowth (APPROVED)
 
 2026-10-24: after the owner approved cliffs/rocks and trees, this set was built at mesh stage. BushA, BushB and FlowerClump are each 60 triangles. See [preview](../review/BE_Nature_Undergrowth_mesh.png); export/placement await owner approval.
 
-STAGE: mesh after approved cliff/rock and tree review; do not run now.
+2026-10-24 continuation: owner explicitly approved "Yes, use those bushes and flowers" for the lobby gardens. Finish/export the approved shapes without remodeling, then upload and place in the lobby only.
+
+STAGE: finish; mesh review gate passed.
 References: `docs/reference/concepts-v1-2026-10-24/grassland-arena-v2.png` and `lobby-two-leaderboards-v3.png`. Sparse grouped planting, not noisy grass covering combat lanes.
 
 BushA 4 x 2 x 3; BushB 5 x 2.4 x 4; FlowerClump 2 x 1.2 x 2 studs. **60 triangles maximum per template**. Bushes use grass pair #6FAE4A/#4C8A3A; clump uses dark green and restrained cream flowers. Broad readable silhouettes; no alpha leaf cards, high-frequency detail or thousands of unique objects. Preserve the ground texture as a separate plain-part surface treatment.
