@@ -9,10 +9,10 @@ Animations are built in Blender (Codex through the Blender MCP, or headless scri
 
 ## Step 0: the style is the owner's choice, ask first
 
-Every animation in a game follows one style so the characters feel like they belong together. **Never pick a style for a game on your own.**
+Every animation in a game follows one style so the characters feel like they belong together. **The owner chooses, and you always bring a recommendation.**
 
 1. Check `CLAUDE.md` for the line `Animation style:`. If one is recorded, use it and skip the rest of this step.
-2. If none is recorded, stop and ask the owner before writing a brief or building any clip, with the AskUserQuestion tool. It takes at most four options, so offer the four that best fit the game and keep the rest reachable through "Other" or a second question. The owner can also describe a new style.
+2. If none is recorded, stop and ask the owner before writing a brief or building any clip, with the AskUserQuestion tool. **Always suggest one:** first read the game design doc, genre, audience, platform (mobile or desktop), any concept art, and the styles already chosen for the other areas (VFX, animation, map). Put your recommended style first in the options, labelled "(Recommended)", with a one-line reason tied to this game and to how it pairs with the other chosen styles. The owner still decides; never record a style they did not pick. It takes at most four options, so offer the four that best fit the game and keep the rest reachable through "Other" or a second question. The owner can also describe a new style.
 3. Record the answer in `CLAUDE.md` (`Animation style: <name>, chosen <date>`). From then on this step is skipped; ask again only if the owner wants to change the style or use a different one for one clip.
 4. Read the chosen style's file before briefing or building.
 

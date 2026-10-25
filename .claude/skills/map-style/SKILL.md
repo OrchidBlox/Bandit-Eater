@@ -9,10 +9,10 @@ A map style fixes the shape language, palette, materials, props, lighting and la
 
 ## Step 0: the style is the owner's choice, ask first
 
-**Never pick a map style for a game on your own.**
+**The owner chooses, and you always bring a recommendation.**
 
 1. Check `CLAUDE.md` for the line `Map style:`. If one is recorded, use it and skip the rest of this step.
-2. If none is recorded, stop and ask the owner before listing props or writing any brief, with the AskUserQuestion tool. It takes at most four options, so offer the four that best fit the game, keep the rest reachable through "Other" or a second question, and say that the owner can describe a new style or send reference images.
+2. If none is recorded, stop and ask the owner before listing props or writing any brief, with the AskUserQuestion tool. **Always suggest one:** first read the game design doc, genre, audience, platform (mobile or desktop), any concept art, and the styles already chosen for the other areas (VFX, animation, map). Put your recommended style first in the options, labelled "(Recommended)", with a one-line reason tied to this game and to how it pairs with the other chosen styles. The owner still decides; never record a style they did not pick. It takes at most four options, so offer the four that best fit the game, keep the rest reachable through "Other" or a second question, and say that the owner can describe a new style or send reference images.
 3. Record the answer in `CLAUDE.md` (`Map style: <name>, chosen <date>`). Ask again only if the owner wants to change it or use another style for one area (a lobby can differ from an arena if the owner says so).
 4. Read the chosen style's file before planning.
 

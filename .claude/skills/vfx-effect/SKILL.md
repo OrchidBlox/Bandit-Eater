@@ -9,10 +9,10 @@ Effects are built from the game's `Vfx/Kit` (small constructors), one module per
 
 ## Step 0: the style is the owner's choice, ask first
 
-Every effect in a game follows one style, so the game never reads as a pile of separately made effects. **Never pick a style for a game on your own.**
+Every effect in a game follows one style, so the game never reads as a pile of separately made effects. **The owner chooses, and you always bring a recommendation.**
 
 1. Check `CLAUDE.md` for the line `VFX style:` and for an existing `Vfx` helper module. If a style is recorded, use it and skip the rest of this step.
-2. If none is recorded, stop and ask the owner before building any effect, with the AskUserQuestion tool. It takes at most four options, so offer the four that best fit the game (the other styles stay reachable through "Other" or a second question), and say that the owner can also describe a new style.
+2. If none is recorded, stop and ask the owner before building any effect, with the AskUserQuestion tool. **Always suggest one:** first read the game design doc, genre, audience, platform (mobile or desktop), any concept art, and the styles already chosen for the other areas (VFX, animation, map). Put your recommended style first in the options, labelled "(Recommended)", with a one-line reason tied to this game and to how it pairs with the other chosen styles. The owner still decides; never record a style they did not pick. It takes at most four options, so offer the four that best fit the game (the other styles stay reachable through "Other" or a second question), and say that the owner can also describe a new style.
 3. Record the answer in `CLAUDE.md` (`VFX style: <name>, chosen <date>`) and in `Vfx.Style` in `Config/Vfx.luau` if the game has one. From then on this step is skipped; ask again only if the owner wants to change the style or use a different one for one effect.
 4. Read the chosen style's file before building, and copy its helpers or build the module it names.
 
