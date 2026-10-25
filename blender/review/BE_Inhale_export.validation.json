@@ -1,0 +1,67 @@
+{
+  "stage": "approved mesh finish/export",
+  "source_blend": "C:\\Users\\Kobe\\source\\repos\\bandit-eater\\blender\\BE_Inhale_mesh.blend",
+  "source_sha256": "83190510ad52d8d449bda441a9f397885204b9a7a482ee5436700865ace8c1c5",
+  "finish_blend": "C:\\Users\\Kobe\\source\\repos\\bandit-eater\\blender\\BE_Inhale.blend",
+  "export": "C:\\Users\\Kobe\\source\\repos\\bandit-eater\\blender\\export\\BE_Inhale_Crescent.fbx",
+  "object": "BE_Inhale_Crescent_Body",
+  "pivot": "ring center at (0,0,0), not bounding-box center",
+  "axis_forward": "-Y",
+  "axis_up": "Z",
+  "apply_scale_options": "FBX_SCALE_ALL",
+  "apply_unit_scale": true,
+  "unit": "1 Blender unit = 1 Roblox stud",
+  "Blender_plane": "XZ; depth Y",
+  "intended_Roblox_plane": "XY; depth Z; verify Studio import orientation",
+  "rig": false,
+  "animation": false,
+  "textures": 0,
+  "triangle_tolerance_studs": 1e-05,
+  "triangles": 1080,
+  "bounds": {
+    "min_xyz": [
+      -2.308547,
+      -0.26,
+      -2.0
+    ],
+    "max_xyz": [
+      1.691453,
+      0.26,
+      2.0
+    ],
+    "W_H_D": [
+      4.0,
+      4.0,
+      0.52
+    ]
+  },
+  "roundtrip_bounds": {
+    "min_xyz": [
+      -2.308547,
+      -0.26,
+      -2.0
+    ],
+    "max_xyz": [
+      1.691453,
+      0.26,
+      2.0
+    ],
+    "W_H_D": [
+      4.0,
+      4.0,
+      0.52
+    ]
+  },
+  "roundtrip_triangles": 1080,
+  "triangle_positions_match": true,
+  "center_pivot_preserved": true,
+  "material_count": 1,
+  "neutral_white": true,
+  "smooth_normals_min_dot": 0.99999985,
+  "smooth_normals_preserved": true,
+  "source_mesh_unchanged": true,
+  "source_blend_unchanged": true,
+  "preexisting_objects_unchanged": true,
+  "export_sha256": "445f2230f2cee8764e7ed599bc5bb3b92af6562f0e6f2917b6872dcdd629746f",
+  "pass": true
+}

@@ -1,4 +1,10 @@
 {
+  "blender/export/BE_Inhale_Crescent.fbx": {
+    "assetId": "93454476544369",
+    "assetType": "Model",
+    "sha256": "445f2230f2cee8764e7ed599bc5bb3b92af6562f0e6f2917b6872dcdd629746f",
+    "uploadedAt": "2026-10-25T01:55:15Z"
+  },
   "blender/export/BE_Nature_BushA.fbx": {
     "assetId": "125190783968134",
     "assetType": "Model",
@@ -76,5 +82,17 @@
     "assetType": "Model",
     "sha256": "da16e7295de716ae4aac4eab7f383a40ff5b6d7f4d39300ef870f458f8b3e82d",
     "uploadedAt": "2026-10-25T01:13:38Z"
+  },
+  "blender/export/textures/BE_Inhale_Puff.png": {
+    "assetId": "71229989533127",
+    "assetType": "Image",
+    "sha256": "4e9a9aaf9970420d957aae1e5f8e002cd0d33b3f0493ece7cc5a95c98beb58de",
+    "uploadedAt": "2026-10-25T01:44:45Z"
+  },
+  "blender/export/textures/BE_Inhale_Star.png": {
+    "assetId": "70777146536244",
+    "assetType": "Image",
+    "sha256": "f596e40cbc186db968625d2c34ec67907e4a82dd0186fdebe6a5946c0aa075d7",
+    "uploadedAt": "2026-10-25T01:44:50Z"
   }
 }

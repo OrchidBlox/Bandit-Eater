@@ -1,0 +1,59 @@
+{
+  "stage": "mesh; owner approval pending",
+  "object": "BE_Inhale_Crescent_Body",
+  "triangles": 1080,
+  "triangle_budget": 1200,
+  "vertices": 542,
+  "dimensions_W_H_D": [
+    4.0,
+    4.0,
+    0.52
+  ],
+  "bounds_min_xyz": [
+    -2.308546543121338,
+    -0.25999999046325684,
+    -2.0
+  ],
+  "bounds_max_xyz": [
+    1.691453456878662,
+    0.25999999046325684,
+    2.0
+  ],
+  "origin": "ring center (0,0,0), intentional VFX exception to ground/base pivots",
+  "plane": "Blender XZ, depth Y; intended Roblox XY, depth Z after import",
+  "opening": "right (+X)",
+  "centerline_arc_degrees": 290,
+  "caps": "rounded ellipsoidal hemispheres; radial body tapers to 0.18-stud cap radii before dimension normalization",
+  "location": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "rotation": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "scale": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "smooth_shaded": true,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "loose_vertices": 0,
+  "degenerate_faces": 0,
+  "inconsistent_winding_edges": 0,
+  "signed_volume": 2.463111,
+  "materials": [
+    "BE_Inhale_White"
+  ],
+  "textures": 0,
+  "modifiers": 0,
+  "rig": false,
+  "animation": false,
+  "preexisting_objects_unchanged": true,
+  "validation_limit": "Static mesh and review images only. Export, Roblox axes and effect animation not yet validated.",
+  "pass": true
+}

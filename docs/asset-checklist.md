@@ -43,3 +43,15 @@ The environment remains version 12. Approved cliffs, rocks and trees are install
 | Lobby restyle | Installed after owner requested the same treatment: six approved trees, six rocks, twelve beds, smooth warm paving and coordinated furniture. Two boards, cyan gate and protected anchors unchanged. [Validation](nature-lobby-validation.md) |
 
 Floors, paths, spawn plates and collision bounds remain plain parts. A noncolliding textured Grass surface sits above the unchanged ArenaFloor. The nine arena cover centres remain the layout baseline. The cyan gate, two lobby boards, Elevation=180 and LobbyLift=60 are preserved.
+
+
+## Inhale VFX - 2026-10-24
+
+| Asset | Runtime location / ID | Status |
+| --- | --- | --- |
+| Blender open crescent | `ReplicatedStorage.Assets.Vfx.Inhale.Crescent` | Approved, exported, imported; model 93454476544369 / mesh 86147450968995; 1,080 triangles |
+| Rounded puff PNG | `rbxassetid://71229989533127` | Group-owned, approved, rendered in Studio |
+| Rounded star PNG | `rbxassetid://70777146536244` | Group-owned, approved, rendered in Studio |
+| Client inhale presentation | `Workspace.PilotVfx.Inhale_<token>` | Server-signalled Start/Stop; full mesh + sprites tested: 22 parts/cast, max 6 casts; capture and cleanup pass |
+
+[Implementation, sources and validation](inhale-vfx-implementation.md). Rings and sprites move toward the player; capture pop is separate from swallow/spit. Avatar animation deferred. The crescent uses a ring-center pivot (VFX exception to the character/prop base-pivot rule). Arena/lobby and gameplay values are unchanged.

@@ -1,5 +1,6 @@
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local HttpService = game:GetService("HttpService")
 local C = require(ReplicatedStorage.Shared.PilotConfig)
 local Remotes = require(ReplicatedStorage.Shared.Remotes)
 local Data = require(script.Parent.DataService)
@@ -181,6 +182,7 @@ local function takeBandit(actor, index, bandit)
 			spawnBandit(index, "Normal")
 		end
 	end)
+	return true
 end
 
 local function inhale(actor)
@@ -202,29 +204,35 @@ local function inhale(actor)
 	actor.Inhaling = true
 	actor.InhaleTarget, actor.InhaleMessage = nil, nil
 	local model, started = actor.Model, os.clock()
+	local token, captured = HttpService:GenerateGUID(false), false
+	Remotes.PilotVfx:FireAllClients({ Effect = "Inhale", Phase = "Start", Caster = model, Token = token, Captured = false })
 	task.spawn(function()
-		while actor.Inhaling and Combat.Enabled and Combat.Alive(actor) and actor.Model == model and os.clock() - started < 2 do
-			local root = Combat.Root(actor)
-			local closest, candidate, distance = nil, nil, C.InhaleRange
-			for index, bandit in bandits do
-				local offset = bandit.Model.PrimaryPart.Position - root.Position
-				local d = offset.Magnitude
-				if d < distance and (d < 2 or offset.Unit:Dot(root.CFrame.LookVector) > 0.6)
-				and Combat.LineClear(root.Position, bandit.Model.PrimaryPart.Position, { model, bandit.Model }) then
-					closest, candidate, distance = index, bandit, d
+		local ok, failure = pcall(function()
+			while actor.Inhaling and Combat.Enabled and Combat.Alive(actor) and actor.Model == model and os.clock() - started < 2 do
+				local root = Combat.Root(actor)
+				local closest, candidate, distance = nil, nil, C.InhaleRange
+				for index, bandit in bandits do
+					local offset = bandit.Model.PrimaryPart.Position - root.Position
+					local d = offset.Magnitude
+					if d < distance and (d < 2 or offset.Unit:Dot(root.CFrame.LookVector) > 0.6)
+					and Combat.LineClear(root.Position, bandit.Model.PrimaryPart.Position, { model, bandit.Model }) then
+						closest, candidate, distance = index, bandit, d
+					end
 				end
-			end
-			actor.InhaleTarget = candidate and (candidate.Variant == "Mystery" and "Mystery" or candidate.Power) or nil
-			if candidate then
-				local direction = root.Position - candidate.Model.PrimaryPart.Position
-				candidate.Model:PivotTo(candidate.Model:GetPivot() + direction * 0.24)
-				if distance < 4 and os.clock() - started >= C.InhaleDuration then
-					takeBandit(actor, closest, candidate)
-					break
+				actor.InhaleTarget = candidate and (candidate.Variant == "Mystery" and "Mystery" or candidate.Power) or nil
+				if candidate then
+					local direction = root.Position - candidate.Model.PrimaryPart.Position
+					candidate.Model:PivotTo(candidate.Model:GetPivot() + direction * 0.24)
+					if distance < 4 and os.clock() - started >= C.InhaleDuration then
+						captured = takeBandit(actor, closest, candidate) == true
+						break
+					end
 				end
+				task.wait(0.06)
 			end
-			task.wait(0.06)
-		end
+		end)
+		-- The original caster/token closes even if death or respawn changed actor.Model.
+		Remotes.PilotVfx:FireAllClients({ Effect = "Inhale", Phase = "Stop", Caster = model, Token = token, Captured = captured })
 		if actor.Model == model then
 			actor.Inhaling = false
 			actor.InhaleTarget = nil
@@ -232,6 +240,9 @@ local function inhale(actor)
 				actor.InhaleMessage = "Hold F facing a yellow power bandit within 19 studs. Blue fighters cannot be inhaled."
 				actor.InhaleMessageUntil = os.clock() + 2
 			end
+		end
+		if not ok then
+			warn("[PilotService] Inhale ended early: " .. tostring(failure))
 		end
 	end)
 end

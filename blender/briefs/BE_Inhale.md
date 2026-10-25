@@ -1,0 +1,7 @@
+# Bandit Eater inhale — mesh stage
+
+Owner approved the concept and requested implementation with Blender and VFX images; player animation is explicitly deferred. Reference: `docs/reference/inhale-vfx-v1.png`.
+
+Build ONE reusable rounded open crescent suction ring. Static neutral-white mesh, no rig or animation. Model name BE_Inhale_Crescent; geometry object BE_Inhale_Crescent_Body. Plane Roblox XY, depth along Z after import; Blender XZ plane with depth along Y. Outer W/H about 4 studs; thickness .45–.6 studs. A broad 280–300 degree open arc, fat rounded cross section and rounded tapered ends (not needles). Slightly fuller at the back of the crescent, open right. Smooth shaded with clean normals. Center origin at ring center, not base. <=1200 triangles. One material white/gray; game recolors mint #7FE8CF, highlight #E8FFF8, dark teal #2FAE93. No textures, glow soup or black outline. One mesh exported later, game instantiates and scales it.
+
+Use a new Blender scene, preserve all existing nature scenes/meshes. Never open/switch blend files. Save source and a composite preview with front, side and perspective and approved concept inset. Mesh stage first; finish after mesh approval. Reuse model_tools.py for finish/export. Stop after two failures at the same step. Write only blender/BE_Inhale_mesh.blend, blender/scripts/build_inhale.py, blender/review/BE_Inhale_mesh.png and .validation.json. Do not edit src/docs, Studio, other models, or Git.

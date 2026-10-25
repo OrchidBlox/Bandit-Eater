@@ -7,6 +7,7 @@ local Controllers = script:WaitForChild("Controllers")
 local CONTROLLER_ORDER = {
 	"NotificationController",
 	"PilotSkyController",
+	"VfxController",
 	"PilotController",
 }
 

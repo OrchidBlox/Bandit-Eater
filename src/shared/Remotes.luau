@@ -15,6 +15,7 @@ local REMOTE_NAMES = {
 	"PilotInput", -- client -> server: action string, optional move/slot index or cosmetic id
 	"PilotState", -- server -> client: authoritative match / loadout / wallet snapshot
 	"PilotReveal", -- server -> client: resolved mystery power, presentation only
+	"PilotVfx", -- server -> client only: Effect, Phase, Caster, unique Token, Captured boolean
 }
 
 local Remotes = {}
