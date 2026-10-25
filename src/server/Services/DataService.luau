@@ -31,6 +31,16 @@ local TEMPLATE = {
 	version = DATA_VERSION,
 	coins = 0,
 	lastSeen = 0,
+	cosmetics = { Default = true },
+	equippedStar = "Default",
+	titles = {},
+	stats = { wins = 0, kos = 0, deaths = 0, matches = 0 },
+	rewardDay = 0,
+	boostedMatches = 0,
+	-- Reserved only. Temporary match loadouts never enter this schema.
+	savedSlots = {},
+	ownedPowers = {},
+	mastery = {},
 }
 
 local profileStore

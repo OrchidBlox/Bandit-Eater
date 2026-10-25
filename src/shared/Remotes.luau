@@ -12,6 +12,9 @@ local RunService = game:GetService("RunService")
 local FOLDER_NAME = "Remotes"
 local REMOTE_NAMES = {
 	"Notify",
+	"PilotInput", -- client -> server: action string, optional move/slot index or cosmetic id
+	"PilotState", -- server -> client: authoritative match / loadout / wallet snapshot
+	"PilotReveal", -- server -> client: resolved mystery power, presentation only
 }
 
 local Remotes = {}

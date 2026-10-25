@@ -9,6 +9,7 @@ local Services = script:WaitForChild("Services")
 local SERVICE_ORDER = {
 	"DataService",
 	"PlayerService",
+	"PilotService",
 }
 
 local loaded = {}
