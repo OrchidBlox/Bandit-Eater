@@ -1,0 +1,374 @@
+{
+  "stage": "mesh; visual approval pending",
+  "units": "studs; Blender Z-up, faces -Y",
+  "palette": [
+    "#8A8F99",
+    "#5F6672"
+  ],
+  "assets": [
+    {
+      "name": "BE_Nature_CliffStraightA",
+      "triangles": 128,
+      "triangle_budget": 600,
+      "dimensions_W_H_D": [
+        48.0,
+        28.0,
+        12.0
+      ],
+      "bounds_min_xyz": [
+        -24.0,
+        -6.0,
+        0.0
+      ],
+      "bounds_max_xyz": [
+        24.0,
+        6.0,
+        28.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "base_origin": true,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "loose_vertices": 0,
+      "degenerate_faces": 0,
+      "inconsistent_winding_edges": 0,
+      "signed_volume": 13294.7409,
+      "flat_shaded": true,
+      "material_count": 2,
+      "modifiers": 0,
+      "pass": true
+    },
+    {
+      "name": "BE_Nature_CliffStraightB",
+      "triangles": 128,
+      "triangle_budget": 600,
+      "dimensions_W_H_D": [
+        48.0,
+        24.0,
+        12.0
+      ],
+      "bounds_min_xyz": [
+        -24.0,
+        -6.0,
+        0.0
+      ],
+      "bounds_max_xyz": [
+        24.0,
+        6.0,
+        24.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "base_origin": true,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "loose_vertices": 0,
+      "degenerate_faces": 0,
+      "inconsistent_winding_edges": 0,
+      "signed_volume": 11917.14515,
+      "flat_shaded": true,
+      "material_count": 2,
+      "modifiers": 0,
+      "pass": true
+    },
+    {
+      "name": "BE_Nature_CliffCorner",
+      "triangles": 76,
+      "triangle_budget": 600,
+      "dimensions_W_H_D": [
+        26.0,
+        30.0,
+        26.0
+      ],
+      "bounds_min_xyz": [
+        -13.0,
+        -13.0,
+        0.0
+      ],
+      "bounds_max_xyz": [
+        13.0,
+        13.0,
+        30.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "base_origin": true,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "loose_vertices": 0,
+      "degenerate_faces": 0,
+      "inconsistent_winding_edges": 0,
+      "signed_volume": 17035.63999,
+      "flat_shaded": true,
+      "material_count": 2,
+      "modifiers": 0,
+      "pass": true
+    },
+    {
+      "name": "BE_Nature_CliffEnd",
+      "triangles": 52,
+      "triangle_budget": 600,
+      "dimensions_W_H_D": [
+        12.0,
+        24.0,
+        12.0
+      ],
+      "bounds_min_xyz": [
+        -6.0,
+        -6.0,
+        0.0
+      ],
+      "bounds_max_xyz": [
+        6.0,
+        6.0,
+        24.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "base_origin": true,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "loose_vertices": 0,
+      "degenerate_faces": 0,
+      "inconsistent_winding_edges": 0,
+      "signed_volume": 2607.1452,
+      "flat_shaded": true,
+      "material_count": 2,
+      "modifiers": 0,
+      "pass": true
+    },
+    {
+      "name": "BE_Nature_RockSmall",
+      "triangles": 46,
+      "triangle_budget": 80,
+      "dimensions_W_H_D": [
+        12.0,
+        3.0,
+        8.0
+      ],
+      "bounds_min_xyz": [
+        -6.0,
+        -4.0,
+        0.0
+      ],
+      "bounds_max_xyz": [
+        6.0,
+        4.0,
+        3.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "base_origin": true,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "loose_vertices": 0,
+      "degenerate_faces": 0,
+      "inconsistent_winding_edges": 0,
+      "signed_volume": 155.09391,
+      "flat_shaded": true,
+      "material_count": 2,
+      "modifiers": 0,
+      "pass": true
+    },
+    {
+      "name": "BE_Nature_RockMedium",
+      "triangles": 58,
+      "triangle_budget": 160,
+      "dimensions_W_H_D": [
+        16.0,
+        3.3,
+        11.0
+      ],
+      "bounds_min_xyz": [
+        -8.0,
+        -5.5,
+        0.0
+      ],
+      "bounds_max_xyz": [
+        8.0,
+        5.5,
+        3.299999952316284
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "base_origin": true,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "loose_vertices": 0,
+      "degenerate_faces": 0,
+      "inconsistent_winding_edges": 0,
+      "signed_volume": 321.61686,
+      "flat_shaded": true,
+      "material_count": 2,
+      "modifiers": 0,
+      "pass": true
+    },
+    {
+      "name": "BE_Nature_RockLarge",
+      "triangles": 64,
+      "triangle_budget": 250,
+      "dimensions_W_H_D": [
+        20.0,
+        3.6,
+        13.0
+      ],
+      "bounds_min_xyz": [
+        -10.0,
+        -6.5,
+        0.0
+      ],
+      "bounds_max_xyz": [
+        10.0,
+        6.5,
+        3.5999999046325684
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "base_origin": true,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "loose_vertices": 0,
+      "degenerate_faces": 0,
+      "inconsistent_winding_edges": 0,
+      "signed_volume": 516.35782,
+      "flat_shaded": true,
+      "material_count": 2,
+      "modifiers": 0,
+      "pass": true
+    }
+  ],
+  "review_only": "REVIEW_* objects, including yellow 5-stud marker, excluded",
+  "validation_limits": "Static mesh validation only. No Roblox import, placement, or gameplay test.",
+  "tile_interfaces": {
+    "all_four_end_sections_identical": true,
+    "join_plane_x": [
+      -24,
+      24
+    ],
+    "section_yz": [
+      [
+        -4.8,
+        0.0
+      ],
+      [
+        -4.35,
+        10.0
+      ],
+      [
+        -3.8,
+        20.0
+      ],
+      [
+        -3.1,
+        22.0
+      ],
+      [
+        6.0,
+        0.0
+      ],
+      [
+        6.0,
+        22.0
+      ]
+    ],
+    "ABA_centers_x": [
+      -48,
+      0,
+      48
+    ],
+    "gap_studs": 0
+  },
+  "pass": true
+}

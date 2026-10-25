@@ -24,3 +24,20 @@ Every model, visual, and map object the game uses. Code depends only on the anch
 - Set the pivot through `PrimaryPart.PivotOffset`: setting `WorldPivot` and then `PrimaryPart` switches to the part's own pivot.
 - FBX imports can arrive rotated 90°; check that the mesh part is upright before fixing the pivot.
 - Colours only survive import as a texture (a palette PNG embedded in the FBX), not as Blender material colours.
+
+## Low-poly nature restyle — mesh approval checkpoint (2026-10-24)
+
+The live environment remains version 12. This checkpoint supplies the audit, briefs and first Blender mesh set; it does not mark the map restyle as installed.
+
+| Deliverable | Status |
+| --- | --- |
+| [Arena/lobby audit and prop schedule](low-poly-nature-audit.md) | Complete: sizes, triangle caps, palette and protected contracts |
+| [Five Blender prop-set briefs](../blender/briefs/) | Cliffs/rocks built for review; trees, undergrowth, stair trim and fence deferred |
+| [Cliffs/rocks Blender source](../blender/BE_Nature_CliffsRocks_mesh.blend) | Four cliff modules and three rocks; awaiting owner silhouette approval |
+| [Mesh review](../blender/review/BE_Nature_CliffsRocks_mesh.png) and [validation](../blender/review/BE_Nature_CliffsRocks_mesh.validation.json) | Seven meshes pass static budgets, dimensions, base origins and manifold checks; straight A/B interfaces match |
+| [Protected-part baseline](reference/low-poly-nature/protected-parts-before.json) | All 52 protected parts rechecked unchanged after mesh construction |
+| Roblox finish/export/upload and arena placement | Deferred until mesh approval; archive replaced decoration in ServerStorage.PolishOld and use one recording per area |
+| Golden-hour lighting, phone screenshots and yellow-bandit/VFX readability | Deferred to installed arena review; Blender preview is not an in-game validation |
+| Lobby restyle | Deferred until arena approval; keep two boards, cyan gate, floors and teleport/spawn anchors |
+
+No mesh IDs are assigned yet. Preserve textured-grass intent without replacing plain-part floors. The existing nine arena rock placements remain the cover-layout baseline.
