@@ -29,3 +29,7 @@ sourcemap.json
 
 # Codex specs and run logs (scripts/codex-run.sh)
 .codex-tmp/
+
+# Machine-specific settings for imported production skills
+.claude/skills/**/LOCAL.md
+.agents/skills/**/LOCAL.md

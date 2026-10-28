@@ -69,3 +69,9 @@ Track work as NOW / NEXT / FUTURE. Only NOW gets significant development time; i
 - Keep the source file unchanged. Copy it into the project's `blender/` folder or append its rig into the working scene, and save project work separately. When a live Blender session is open, preserve unsaved work and append into a new scene rather than switching files.
 - If the source file is unavailable, report the missing path and ask for its location; do not silently substitute another rig.
 - This rule applies specifically to R15 work. Other asset rigs, including creatures and grimoires, retain their own project instructions. Existing assets are not migrated unless requested.
+
+## Imported Roblox production skills
+
+Three SyphoDev supplemental skills (animation tools, VFX library, SFX) are installed locally. Read
+[docs/syphodev-skills.md](docs/syphodev-skills.md) for usage and project overrides.
+Existing owner choices, visual approval gates and the required R15 rig take precedence.
