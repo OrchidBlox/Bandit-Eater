@@ -65,6 +65,8 @@ function World.Build()
 	end
 	World.Root = folder
 	local scenery = environment.Build(folder)
+	World.Environment = scenery
+	World.ArenaFloor = scenery:FindFirstChild("ArenaFloor", true)
 	World.Spawn = scenery:FindFirstChild("PilotLobbySpawn", true)
 	World.ArenaTeleportPad = scenery:FindFirstChild("ArenaTeleportPad", true)
 	World.Leaderboard = scenery.Lobby.Leaderboard

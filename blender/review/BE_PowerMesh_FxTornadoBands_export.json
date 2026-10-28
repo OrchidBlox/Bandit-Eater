@@ -1,0 +1,12 @@
+{
+  "model": "FxTornadoBands",
+  "triangles": 1392,
+  "materials": 1,
+  "dimensions_blender": [
+    9.0,
+    9.0,
+    11.0
+  ],
+  "palette": false,
+  "exported": true
+}

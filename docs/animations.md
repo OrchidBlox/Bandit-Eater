@@ -92,3 +92,20 @@ Source: `blender/anims/BE_CombatActionsV2.blend`, builder `build_combat_actions_
 | Dash | 108163526893560 | 15/30 s | Burst 2/30; Brake 11/30 |
 
 All are nonlooping Action priority. Moving/airborne variants mute lower-body poses to preserve locomotion. Full extension holds three frames. Measured forward fist reach improved from 1.90/1.61/0.71 to 2.92/3.01/2.41 studs. Dash now uses a lower asymmetric burst, changing glide pose and longer recovery; server travel is 20 studs with an eased stop. Config: `src/shared/Config/CombatActions.luau`. Fresh mouse/keyboard tests loaded all seven V2 clips at expected lengths with zero failed loads or fallback markers. [Validation and remaining acceptance](combat-actions-validation.md).
+
+## Power move rollout - 2026-10-26
+
+`Shared.Config.PowerAnimations` registers 36 V2 standing casts and 36 moving variants from `blender/anims/BE_PowerMovesV2.blend`, authored on the canonical MrXen0 rig. All 72 uploaded tracks loaded in fresh Studio Play. Release timing matches Shared.Config.PowerMoves; moving/airborne variants preserve locomotion. Shared swallow uses standing 134771684679502 and moving 99253369218549. Stronger reach and anticipation are implemented; owner gameplay visual review remains pending.
+
+## Two-handed sword set - 2026-10-28 (shared by every sword power)
+
+Authored WITH the sword attached to the canonical MrXen0 rig: `blender/anims/build_sword_rig.py` (both arms in IK; the right IK target carries the wrist and blade direction, the left target sits 0.8 stud down the handle, so both hands are on the grip in every frame; a reach fit keeps the short R15 arms on the grip). Exported through the validated V2 exporter. Sword, Wind/Earth/Water/Fire/Shadow Sword and Master Sword all use these clips (owner, 2026-10-28). Grip (sword relative to the RightHand part) comes from Blender: `blender/review/BE_SwordRig_Sword_grip.json`, used in `SwordController.luau`.
+
+| Clip | Asset ID | Moving (upper body) | Length | Strike |
+| --- | --- | --- | --- | --- |
+| Ready (loop, Action) | 107881919413642 | 107127975680104 | 48/30 s | - |
+| M1_1 horizontal slash | 129293301004480 | 82490956624816 | 18/30 s | 6/30 |
+| M1_2 backhand | 130407320980475 | 77362148225584 | 18/30 s | 6/30 |
+| M1_3 overhead chop | 105576524921428 | 140518167709606 | 20/30 s | 7/30 |
+
+Runtime: `SwordController` plays Ready (or ReadyMoving while running/airborne) and yields to any other Action-or-higher track; `CombatAnimationController` swaps M1 to these clips for sword powers. Revised the same day: handle lengthened to 1.9 studs so both fists sit on it (left hand one fist below the right), swings pushed wider with more torso commit. Tested in Studio Play: hold, running hold and M1 1-3 chain play the right IDs. The earlier one-handed `BE_SwordM1_Sword` clips (114620290008582 and siblings) are superseded.

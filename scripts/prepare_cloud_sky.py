@@ -1,12 +1,16 @@
 """Reproject the approved equirectangular panorama into Roblox cubemap faces."""
 from pathlib import Path
+import argparse
 
 import numpy as np
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "docs/reference/concepts-v1-2026-10-24/cloud-sky-panorama.png"
-DEST = ROOT / "assets/sky/cloud-panorama-v2"
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--source", type=Path, default=ROOT / "docs/reference/concepts-v1-2026-10-24/cloud-sky-panorama.png")
+parser.add_argument("--dest", type=Path, default=ROOT / "assets/sky/cloud-panorama-v2")
+args = parser.parse_args()
+SOURCE, DEST = args.source, args.dest
 DEST.mkdir(parents=True, exist_ok=True)
 pixels = np.asarray(Image.open(SOURCE).convert("RGB"), dtype=np.float32).copy()
 h, w, _ = pixels.shape

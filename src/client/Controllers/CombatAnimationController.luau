@@ -85,6 +85,14 @@ local function getState(character)
 		for name, id in Config.MovingAnimations do
 			assets[name .. "Moving"] = id
 		end
+		-- Every sword power shares one clip set, loaded once under the "Sword_" prefix.
+		local swords = Config.SwordM1.Sword
+		for name, id in swords.Animations do
+			assets["Sword_" .. name] = id
+		end
+		for name, id in swords.MovingAnimations do
+			assets["Sword_" .. name .. "Moving"] = id
+		end
 		for name, id in assets do
 			if asset(id) then
 				local animation = Instance.new("Animation")
@@ -142,7 +150,9 @@ local function phaseEffect(state, active, phase)
 	local root = character:FindFirstChild("HumanoidRootPart")
 	if not root or not root:IsA("BasePart") or humanoid.Health <= 0 then return end
 	if phase == "Strike" then
-		local hand = character:FindFirstChild(active.action == "M1_1" and "LeftHand" or "RightHand")
+		local power = character:GetAttribute("ActivePower")
+		local sword = power and Config.SwordM1[power]
+		local hand = character:FindFirstChild(not sword and active.action == "M1_1" and "LeftHand" or "RightHand")
 		draw(character, "Swing", hand and hand:IsA("BasePart") and hand.Position or root.Position + root.CFrame.LookVector * 2)
 	else
 		local mode = humanoid:GetState()
@@ -154,7 +164,9 @@ end
 
 local function play(state, active, elapsed)
 	if not state.playLocally then return end
-	local key = active.action
+	-- A fighter holding a sword uses that sword's combo clips; everyone else uses the fist combo.
+	local power = state.character:GetAttribute("ActivePower")
+	local key = power and Config.SwordM1[power] and "Sword_" .. active.action or active.action
 	local root = state.character:FindFirstChild("HumanoidRootPart")
 	local velocity = root and root:IsA("BasePart") and root.AssemblyLinearVelocity or Vector3.zero
 	local moving = Vector3.new(velocity.X, 0, velocity.Z).Magnitude > 1.5

@@ -21,12 +21,28 @@ One-line pitch: “Chase bouncing stars, swallow their powers, and fuse them whi
 
 Visual direction: low-poly nature, chunky cartoon VFX, exaggerated animations, readable silhouettes, and clearly telegraphed attacks. Player combat is the focus. Roaming power stars replace the NPC bandit collection/combat loop; stars are pickups, not enemies.
 
+### Shared power emblems (owner approved, 2026-10-26)
+
+Use one recognizable emblem per power as a shared visual language across roaming power stars, active/bench slot displays, swallow/equip effects, move icons and fusion previews. Reuse the same symbol and power palette across these contexts instead of designing unrelated icons for each screen or effect.
+
+- Emblems follow the chunky-cartoon style: bold rounded silhouettes, simple readable shapes, soft shade-color outlines and restrained highlights. They must remain distinguishable at small phone sizes and without relying on color alone.
+- The approved swallow concept establishes Fire as a flame and Water as a drop. Final artwork and the remaining power/fusion symbols remain open to visual iteration; approval of this system does not lock every emblem design.
+- A move icon may combine the power emblem with its own action silhouette so Q/E/R remain distinguishable. Fusion previews should communicate the ingredients and result clearly; the resulting fusion needs a recognizable identity rather than a crowded stack of symbols.
+- Keep emblem identity consistent while adapting size, background and brief animation to the context. Slot labels and active/bench placement must remain clear; color alone must not indicate which power is equipped.
+- Use the existing power identity as the common reference for emblem assets and palettes. Emblem animation is presentation only and never changes power ownership, slot rules, cooldowns or hitboxes.
+
+**Status:** approved design direction, not a completed reusable asset library or runtime integration. The owner may revise the artwork later. Reference: [Power Swallow animation + VFX concept](reference/move-concepts-v1-2026-10-26/power-swallow.png).
+
 ## 2. World and session loop
 
 One compact continuous combat map with a safe lobby/spawn area. No rounds, queue, match timer, winner screen, or match payouts.
 
+**Owner decision, 2026-10-28: no more "arena" matches.** The combat map is a **constant free-for-all (FFA)** that is always running. A player enters it by **stepping on the pad in the lobby, which teleports them into the FFA**; there is no "Join live arena" or "Join next round" flow, no intermission, no Match/Results phases and no match timer. "Arena" is retired as a game term (it only survives in older wording, asset names and code identifiers such as `ArenaTeleportPad`); say "the FFA" or "the combat zone". Players join and leave the FFA at any time, and the loop below runs continuously.
+
+**Implementation status:** the current build still runs the legacy match/intermission/results cycle, a "Join live arena" button and fighter bots. Replacing it with the constant FFA (pad teleport, always-on combat, respawn into the FFA, removal of the round, scoring and results UI) is a design change that still needs to be built; it is not part of the effects and animation work in progress.
+
 1. Spawn with one random base starter in slot 1; slot 2 is empty.
-2. Enter the combat zone and fight players.
+2. Step on the lobby pad to teleport into the FFA and fight players.
 3. Find a roaming power star, inhale it, then swallow for a temporary power or spit it as a projectile.
 4. Swap powers or optionally fuse a valid pair.
 5. Earn currency through meaningful combat participation and approved objectives.
@@ -77,7 +93,15 @@ Every base power has at least one clearly recognizable inhaleable attack. Sword 
 
 This owner-approved rule (2026-10-25) supersedes fixed-slot activation, selectable replacement, and the proposed active-only replacement that preserved the old bench. Preserve retained powers' cooldowns and do not use swallowing or swapping to reset cooldowns.
 
+### Fusion design principle (owner direction, 2026-10-28; internal, not shown to players)
+
+Most fusions are built as **element + item**: an element (Fire, Water, Shadow, Wind, Earth, and later ones such as Light) combined with an item (Sword now; bombs, bows and similar later). Each item gives the fusion its held object, M1 combo and move shapes, and the element supplies the palette and effects, as the current Sword + element kits already do. A few **rare fusions** are allowed to break this pattern (for example element + element, or something unique); they are exceptions, not the rule.
+
+Intent for later monetization (V2, when currency-based power purchases are designed): **items cost more than elements**, because items carry most of the fusions. This does not change the V1 rules above, authorizes no purchase or economy work now, and the exact prices remain OPEN. Light, Bomb and Bow are not in the launch roster (Bomb is already listed as a shelved power candidate in Part 3); any new element or item still needs owner approval before it is built.
+
 ## 5. Roaming power stars (replaces bandit NPCs)
+
+**Official pickup name (owner confirmed, 2026-10-26): Power Stars.** Use "Power Star" for one ability pickup and "Power Stars" for multiple pickups in player-facing text, onboarding, UI and asset descriptions. Players inhale and swallow Power Stars to obtain powers. A fired/spat star projectile must remain visually and contextually distinct from a roaming Power Star pickup.
 
 **Owner approved, 2026-10-25:** remove the bandit NPC concept from the current game loop. Powers come from bouncing stars that spawn randomly around the arena and move around it, not fixed spawn pads or KO drops. The project name remains Bandit Eater pending a separate naming decision.
 
@@ -97,6 +121,20 @@ PROPOSED: prototype without combat bots. Round-based bot fill is removed; whethe
 **Implementation status:** design change only; current bandit runtime and old swallow-slot behavior still need replacement. The earlier V1 audit describes the pre-star implementation and its bandit/slot recommendations are superseded by this section.
 
 ## 6. Swallow and star spit
+
+### Swallow presentation (owner accepted for now, 2026-10-26)
+
+Use the [five-stage concept](reference/move-concepts-v1-2026-10-26/power-swallow.png) as the current animation/VFX direction: **Gather -> Gulp -> Power Pop -> Equip -> Ready**. A separate pose-only strip in the image guides animation authoring. The owner may change the look later; exact durations and frame counts are not locked.
+
+1. **Gather:** draw the already-held power star toward the mouth with a small inward motion and white puffs.
+2. **Gulp:** tilt the head back slightly, raise the shoulders and compress the pose through joints; shrink the star into the mouth.
+3. **Power Pop:** lift the chest and open the arms in a small grounded rebound. Briefly show the swallowed power's emblem near the torso, with a compact colored accent, white puffs and rounded stars.
+4. **Equip:** communicate that the new power is active and the previous active power moves to the bench. The concept's Fire/Water example is illustrative; use the actual power identities. If both slots were full, discard the old bench as specified in section 4.
+5. **Ready:** fade the emblem flourish and return smoothly to the appropriate movement or combat pose.
+
+Use one shared swallow animation with power-specific emblems and palettes. Keep the character readable and the VFX close to the torso. Feet remain grounded in the reference poses; do not freeze movement or add a movement lock solely to force the reference pose. The concept's slot-update diagram explains the rule; it does not require permanent floating UI over the player. The torso accent is not a shield, invulnerability indicator, damage burst or new gameplay buff.
+
+**Status:** visual concept approved as a starting point; animation, shared emblem assets and runtime swallow presentation still need implementation and in-game review. Spitting continues to preserve both equipped powers.
 
 > Document integrity note (2026-10-25): this section currently jumps into purchase rules, and the Part 2 heading/earlier sections are absent. The following existing text is preserved pending recovery of the intended revision. Do not treat the misplaced purchase/save/build-order text as permission to implement V2 in V1. See [V1 implementation audit](v1-design-audit.md).
 
@@ -175,7 +213,7 @@ Shelved power candidates: Ice, Speed, Shock, Bomb. Shelved fusion concepts inclu
 | VIP daily mystery bandit | Recommend delete power-access benefit; cosmetic perks can be considered |
 | Mystery pity system | Only needed if random permanent collection is approved |
 | Fully random vs missing-power-weighted rewards | Resolve together with permanent mystery system |
-| Open-world PvP toggle / flagged arena zone | Adds scope and complex immunity rules; current design uses one PvP arena with roaming power-star pickups |
+| Open-world PvP toggle / flagged arena zone | Adds scope and complex immunity rules; current design uses one constant PvP FFA map with roaming power-star pickups |
 | Party-instanced bandits | Define ownership and rewards first |
 | Elemental advantages | Potentially frustrating hard counters; test first |
 | Inhale streak rewards | May encourage rushing/farming; original ~10-second window not approved |

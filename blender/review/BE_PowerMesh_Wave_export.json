@@ -1,0 +1,12 @@
+{
+  "model": "Wave",
+  "triangles": 1396,
+  "materials": 1,
+  "dimensions_blender": [
+    5.0,
+    1.5,
+    3.0
+  ],
+  "palette": true,
+  "exported": true
+}

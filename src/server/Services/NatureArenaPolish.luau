@@ -1,5 +1,5 @@
 -- Approved Blender scenery, applied without rebuilding gameplay anchors.
-local Lighting = game:GetService("Lighting")
+local EnvironmentLighting = require(script.Parent.EnvironmentLighting)
 local ServerStorage = game:GetService("ServerStorage")
 
 local Nature = { Revision = 1, FacadeRevision = 2 }
@@ -242,35 +242,8 @@ function Nature.RefreshFacades(environment)
 	return true
 end
 
-local function effect(name, className)
-	local current = Lighting:FindFirstChild(name)
-	if current and current:IsA(className) then
-		return current
-	end
-	local created = Instance.new(className)
-	created.Name, created.Parent = name, Lighting
-	return created
-end
-
 function Nature.ApplyLighting()
-	local shadowMapApplied = pcall(function()
-		-- Unified lighting's equivalent of the style's legacy ShadowMap setting.
-		Lighting.LightingStyle = Enum.LightingStyle.Soft
-		Lighting.PrioritizeLightingQuality = true
-	end)
-	Lighting:SetAttribute("NatureShadowMapApplied", shadowMapApplied)
-	Lighting.ClockTime, Lighting.Brightness = 16.5, 2.5
-	Lighting.Ambient = Color3.fromRGB(125, 143, 160)
-	Lighting.OutdoorAmbient = Color3.fromRGB(160, 176, 192)
-	Lighting.ExposureCompensation, Lighting.GlobalShadows = 0, true
-	local atmosphere = Lighting:FindFirstChildOfClass("Atmosphere") or effect("PilotAtmosphere", "Atmosphere")
-	atmosphere.Density, atmosphere.Haze = 0.3, 1
-	atmosphere.Color = Color3.fromRGB(214, 232, 240)
-	local bloom = effect("PilotBloom", "BloomEffect")
-	bloom.Intensity, bloom.Size, bloom.Threshold = 0.3, 20, 2
-	local grade = effect("PilotColor", "ColorCorrectionEffect")
-	grade.Brightness, grade.Contrast, grade.Saturation = 0, 0.05, 0
-	return shadowMapApplied
+	return EnvironmentLighting.Apply()
 end
 
 function Nature.Apply(environment)

@@ -1,0 +1,12 @@
+{
+  "model": "MasterSword",
+  "triangles": 1548,
+  "materials": 1,
+  "dimensions_blender": [
+    2.6395254135131836,
+    0.6635000109672546,
+    5.465892314910889
+  ],
+  "palette": true,
+  "exported": true
+}

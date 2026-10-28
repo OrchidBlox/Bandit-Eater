@@ -4,6 +4,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local C = require(ReplicatedStorage.Shared.PilotConfig)
 local World = require(script.Parent.PilotWorld)
 local Actions = require(script.Parent.CombatActions)
+local PowerMoves = require(script.Parent.PowerMoveService)
 local Combat = { Actors = {}, Bandits = {}, Enabled = false }
 Combat.CancelAction = Actions.Cancel
 
@@ -41,6 +42,8 @@ function Combat.Damage(source, target, amount, stun, heavy, cartoonHit)
 		amount *= 0.5
 	end
 	if stun > 0 and now > (target.StunImmune or 0) then
+		PowerMoves.Cancel(target)
+		target.Inhaling, target.InhaleCatchUntil = false, nil
 		Actions.Cancel(target)
 		target.Stunned = now + math.min(stun, 0.6)
 		target.StunImmune = target.Stunned + 1.5
@@ -146,11 +149,15 @@ end
 
 function Combat.Ready(actor, key, cooldown)
 	local now = os.clock()
-	if not Combat.Enabled or not Combat.Alive(actor) or now < (actor.Stunned or 0) or actor.Inhaling then
+	if not Combat.Enabled or not Combat.Alive(actor) or now < (actor.Stunned or 0) or (actor.Inhaling and key ~= "Dash") then
 		return false
 	end
 	if now < (actor.Cooldowns[key] or 0) then
 		return false
+	end
+	PowerMoves.Cancel(actor)
+	if key == "Dash" then
+		actor.Inhaling, actor.InhaleCatchUntil = false, nil
 	end
 	if actor.CombatAction and actor.CombatAction.name == "Dash" and key ~= "Dash" then
 		return false
@@ -163,7 +170,6 @@ function Combat.Ready(actor, key, cooldown)
 end
 
 function Combat.Action(actor, action, argument)
-	local root = Combat.Root(actor)
 	if not Combat.Alive(actor) then
 		return
 	end
@@ -171,16 +177,6 @@ function Combat.Action(actor, action, argument)
 		Actions.M1(Combat, actor)
 	elseif action == "Dash" then
 		Actions.Dash(Combat, actor)
-	elseif action == "Block" and Combat.Ready(actor, "Block", C.ShieldCooldown) then
-		actor.Shield = os.clock() + C.ShieldDuration
-		local bubble = Combat.Effect(root.Position, Color3.fromRGB(100, 210, 255), 3.5, C.ShieldDuration)
-		task.spawn(function()
-			while bubble.Parent and Combat.Alive(actor) and os.clock() < actor.Shield do
-				bubble.Position = root.Position
-				task.wait()
-			end
-			bubble:Destroy()
-		end)
 	elseif action == "Move" and type(argument) == "number" and argument % 1 == 0 and argument >= 1 and argument <= 3 then
 		local id = actor.Slots[actor.Slot]
 		local power = C.Powers[id]
@@ -191,29 +187,10 @@ function Combat.Action(actor, action, argument)
 		if not Combat.Ready(actor, id .. argument, move.Cooldown * move.PvpCooldown) then
 			return
 		end
-		local damage, stun = move.Damage * move.PvpDamage, move.Stun * move.PvpStun
-		if move.Kind == "Projectile" then
-			Combat.Projectile(actor, power.Color, damage, move.Range, false)
-		elseif move.Kind == "Guard" then
-			actor.Protection = os.clock() + 1.2
-			Combat.Effect(root.Position, power.Color, 4, 1.2)
-		elseif move.Kind == "Field" then
-			local center = root.Position + root.CFrame.LookVector * 10
-			Combat.Effect(center, power.Color, 8, 1.2)
-			Combat.Area(actor, center, 8, damage, stun, false)
-		elseif move.Kind == "Melee" then
-			local center = root.Position + root.CFrame.LookVector * 4
-			Combat.Effect(center, power.Color, 5)
-			Combat.Area(actor, center, 6, damage, stun, false)
-		else
-			local center = root.Position
-			Combat.Effect(center, power.Color, move.Range, 0.6)
-			task.delay(0.5, function()
-				if Combat.Alive(actor) then
-					Combat.Area(actor, center, move.Range, damage, stun, true)
-				end
-			end)
-		end
+		PowerMoves.Cast(Combat, actor, id, argument, move)
 	end
+end
+function Combat.TryInhaleProjectile(actor)
+	return PowerMoves.TryInhale(Combat, actor)
 end
 return Combat

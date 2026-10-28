@@ -148,6 +148,7 @@ function Controller.Start()
 		end
 	end)
 	table.insert(connections, Remotes.PilotVfx.OnClientEvent:Connect(function(data)
+		if type(data) ~= "table" or data.Effect ~= "Inhale" then return end
 		local isOwn = type(data) == "table" and data.Caster == Players.LocalPlayer.Character
 		Controller.Play("Inhale", data, isOwn)
 	end))

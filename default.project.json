@@ -4,6 +4,19 @@
   "tree": {
     "$className": "DataModel",
 
+    "MaterialService": {
+      "$className": "MaterialService",
+      "$ignoreUnknownInstances": true,
+      "BE_MeadowMatte": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "SmoothPlastic",
+          "ColorMap": "rbxassetid://118616090406429",
+          "RoughnessMap": "rbxassetid://118616090406429"
+        }
+      }
+    },
+
     "ReplicatedStorage": {
       "$className": "ReplicatedStorage",
       "Shared": {

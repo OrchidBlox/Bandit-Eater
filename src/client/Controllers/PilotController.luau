@@ -5,8 +5,15 @@ local CAS = game:GetService("ContextActionService")
 local UIS = game:GetService("UserInputService")
 local C = require(ReplicatedStorage.Shared.PilotConfig)
 local Remotes = require(ReplicatedStorage.Shared.Remotes)
+local Visuals = require(ReplicatedStorage.Shared.Config.PowerVisuals)
+local MoveIcons = require(ReplicatedStorage.Shared.Config.MoveIcons)
 local Controller = {}
 local state, buttons = {}, {}
+
+local function powerName(id)
+	local visual = id and Visuals.Powers[id]
+	return visual and visual.DisplayName or id or "Empty"
+end
 
 local function send(action, value)
 	Remotes.PilotInput:FireServer(action, value)
@@ -53,6 +60,24 @@ function Controller.Start()
 	gui.Parent = Players.LocalPlayer:WaitForChild("PlayerGui")
 	local top = text(gui, "Status", UDim2.fromScale(0.7, 0.07), UDim2.fromScale(0.15, 0))
 	local loadout = text(gui, "Loadout", UDim2.fromScale(0.7, 0.08), UDim2.fromScale(0.15, 0.075))
+	loadout.Text = ""
+	local slotLabels, slotIcons = {}, {}
+	for i, title in { "Active", "Bench" } do
+		local slot = Instance.new("Frame")
+		slot.Name, slot.BackgroundTransparency = title, 1
+		slot.Size, slot.Position = UDim2.fromScale(0.5, 1), UDim2.fromScale((i - 1) * 0.5, 0)
+		slot.Parent = loadout
+		local icon = Instance.new("ImageLabel")
+		icon.Name, icon.BackgroundTransparency, icon.ScaleType = "PowerIcon", 1, Enum.ScaleType.Fit
+		icon.Size, icon.Position = UDim2.fromScale(0.15, 0.8), UDim2.fromScale(0.02, 0.1)
+		icon.Parent = slot
+		local label = text(slot, "PowerName", UDim2.fromScale(0.8, 1), UDim2.fromScale(0.18, 0))
+		label.BackgroundTransparency, label.TextScaled = 1, true
+		local bounds = Instance.new("UITextSizeConstraint")
+		bounds.MinTextSize, bounds.MaxTextSize, bounds.Parent = 10, 15, label
+		label.Text = title .. ": Empty"
+		slotLabels[i], slotIcons[i] = label, icon
+	end
 	local prompt = text(gui, "Prompt", UDim2.fromScale(0.7, 0.07), UDim2.fromScale(0.15, 0.16))
 	local queue = button(gui, "Join arena", UDim2.fromScale(0.38, 0.25), UDim2.fromScale(0.24, 0.08), "Queue")
 	local board = text(gui, "Board", UDim2.fromScale(0.2, 0.31), UDim2.fromScale(0.01, 0.25))
@@ -71,22 +96,105 @@ function Controller.Start()
 	actions.Name, actions.Size, actions.Position, actions.BackgroundTransparency = "Actions", UDim2.fromScale(0.58, 0.26), UDim2.fromScale(0.23, 0.73), 1
 	actions.Parent = gui
 	local defs = {
-		{ "M1 [Click / RT]", "M1" }, { "Dash [Shift / B]", "Dash" }, { "Block [C / LB]", "Block" },
+		{ "M1 [Click / RT]", "M1" }, { "Dash [Shift / B]", "Dash" },
 		{ "Inhale [hold F / LT]", "Inhale" }, { "Swap [X / Y]", "Swap" },
 		{ "Q / X", "Move", 1 }, { "E / RB", "Move", 2 }, { "R / D-up", "Move", 3 },
 		{ "Swallow [G / D-down]", "Swallow" }, { "Spit [T / D-right]", "Spit" },
 	}
+	local moveIcons, moveLabels = {}, {}
 	for i, d in defs do
 		local col, row = (i - 1) % 5, math.floor((i - 1) / 5)
 		buttons[i] = button(actions, d[1], UDim2.fromScale(col * 0.2, row * 0.5), UDim2.fromScale(0.19, 0.46), d[2], d[3])
+		if d[2] == "Move" then
+			buttons[i].Text = ""
+			local icon = Instance.new("ImageLabel")
+			icon.Name, icon.BackgroundTransparency, icon.ScaleType = "MoveIcon", 1, Enum.ScaleType.Fit
+			icon.Size, icon.Position = UDim2.fromScale(0.28, 0.68), UDim2.fromScale(0.03, 0.16)
+			icon.Image, icon.Active = "", false
+			icon.Parent = buttons[i]
+			local label = text(buttons[i], "MoveName", UDim2.fromScale(0.65, 0.9), UDim2.fromScale(0.33, 0.05))
+			label.BackgroundTransparency, label.TextScaled, label.Active = 1, true, false
+			label.Text = d[1]
+			local bounds = Instance.new("UITextSizeConstraint")
+			bounds.MinTextSize, bounds.MaxTextSize, bounds.Parent = 10, 14, label
+			moveIcons[i], moveLabels[i] = icon, label
+		end
 	end
 	local fuse = button(gui, "Fuse [V / D-left]", UDim2.fromScale(0.35, 0.64), UDim2.fromScale(0.3, 0.07), "Fuse")
-	local replace1 = button(gui, "Replace 1 [1]", UDim2.fromScale(0.24, 0.55), UDim2.fromScale(0.25, 0.07), "Swallow", 1)
-	local replace2 = button(gui, "Replace 2 [2]", UDim2.fromScale(0.51, 0.55), UDim2.fromScale(0.25, 0.07), "Swallow", 2)
+	local compact = false
+	local function refreshActions()
+		local slots = state.Slots or {}
+		local active = slots[state.Slot or 1]
+		for i, d in defs do
+			local key = d[2] == "Move" and active and active .. d[3] or d[2]
+			local cd = (state.Cooldowns or {})[key] or 0
+			local name = d[2] == "Move" and active and C.Powers[active].Moves[d[3]].Name or (compact and d[2] or d[1])
+			buttons[i].Text = name .. (cd > 0 and string.format(" %.1fs", cd) or "")
+			if moveLabels[i] then
+				buttons[i].Text = ""
+				moveLabels[i].Text = (compact and ({ "Q", "E", "R" })[d[3]] or d[1]) .. "\n" .. name .. (cd > 0 and string.format("\n%.1fs", cd) or "")
+				local icons = active and MoveIcons[active]
+				local image = icons and icons[d[3]] or ""
+				moveIcons[i].Image = image
+				moveIcons[i].Visible = image ~= ""
+				moveIcons[i].ImageTransparency = cd > 0 and 0.35 or 0
+				moveLabels[i].Position = UDim2.fromScale(image ~= "" and 0.33 or 0.03, 0.05)
+				moveLabels[i].Size = UDim2.fromScale(image ~= "" and 0.65 or 0.94, 0.9)
+			end
+			if d[2] == "Inhale" and state.Inhaling then
+				buttons[i].Text = compact and "Hold inhale" or "INHALING - keep holding"
+			end
+			buttons[i].BackgroundColor3 = cd > 0 and Color3.fromRGB(55, 57, 65) or Color3.fromRGB(48, 87, 116)
+			buttons[i].Visible = (d[2] ~= "Swap" or slots[2] ~= nil) and ((d[2] ~= "Swallow" and d[2] ~= "Spit") or state.Held ~= nil)
+		end
+	end
+	local function layout()
+		local size = gui.AbsoluteSize
+		if size.X <= 0 or size.Y <= 0 then
+			return
+		end
+		compact = UIS.TouchEnabled or size.X < 700
+		board.Visible = not (compact and state.Active)
+		if compact then
+			local width = math.min(size.X * 0.62, 360)
+			local cellHeight = math.clamp(size.Y * 0.07, 48, 60)
+			local height = cellHeight * 3 + 12
+			local left = size.X - width - 12
+			local y = math.max(110, size.Y - height - 136)
+			actions.Position, actions.Size = UDim2.fromOffset(left, y), UDim2.fromOffset(width, height)
+			for i, b in buttons do
+				b.Position = UDim2.fromOffset(((i - 1) % 3) * (width + 6) / 3, math.floor((i - 1) / 3) * (cellHeight + 6))
+				b.Size = UDim2.fromOffset((width - 12) / 3, cellHeight)
+				b.TextSize = 12
+			end
+			top.Position, top.Size, top.TextSize = UDim2.fromOffset(12, 0), UDim2.new(1, -24, 0, 24), 12
+			loadout.Position, loadout.Size = UDim2.fromOffset(12, 28), UDim2.new(1, -24, 0, 34)
+			prompt.Position, prompt.Size, prompt.TextSize = UDim2.fromOffset(12, 66), UDim2.new(1, -24, 0, 38), 12
+			fuse.Position, fuse.Size = UDim2.fromOffset(12, y), UDim2.fromOffset(math.min(120, left - 24), 44)
+			fuse.Text = "Fuse"
+		else
+			actions.Position, actions.Size = UDim2.fromScale(0.23, 0.73), UDim2.fromScale(0.58, 0.26)
+			for i, b in buttons do
+				b.Position = UDim2.fromScale(((i - 1) % 5) * 0.2, math.floor((i - 1) / 5) * 0.5)
+				b.Size, b.TextSize = UDim2.fromScale(0.19, 0.46), 14
+			end
+			top.Position, top.Size, top.TextSize = UDim2.fromScale(0.15, 0), UDim2.fromScale(0.7, 0.07), 15
+			loadout.Position, loadout.Size = UDim2.fromScale(0.15, 0.075), UDim2.fromScale(0.7, 0.08)
+			prompt.Position, prompt.Size, prompt.TextSize = UDim2.fromScale(0.15, 0.16), UDim2.fromScale(0.7, 0.07), 15
+			fuse.Position, fuse.Size = UDim2.fromScale(0.35, 0.64), UDim2.fromScale(0.3, 0.07)
+			fuse.Text = "Fuse [V / D-left]"
+		end
+		refreshActions()
+	end
+	-- ScreenGui size follows viewport and safe insets, including camera replacement.
+	local resizeConnection = gui:GetPropertyChangedSignal("AbsoluteSize"):Connect(layout)
+	gui.Destroying:Once(function()
+		resizeConnection:Disconnect()
+	end)
+	layout()
 	local mappings = {
 		{ Action = "M1", Inputs = { Enum.UserInputType.MouseButton1, Enum.KeyCode.ButtonR2 } },
 		{ Action = "Dash", Inputs = { Enum.KeyCode.LeftShift, Enum.KeyCode.ButtonB } },
-		{ Action = "Block", Inputs = { Enum.KeyCode.C, Enum.KeyCode.ButtonL1 } },
 		{ Action = "Inhale", Inputs = { Enum.KeyCode.F, Enum.KeyCode.ButtonL2 } },
 		{ Action = "Swap", Inputs = { Enum.KeyCode.X, Enum.KeyCode.ButtonY } },
 		{ Action = "Move", Value = 1, Inputs = { Enum.KeyCode.Q, Enum.KeyCode.ButtonX } },
@@ -95,8 +203,6 @@ function Controller.Start()
 		{ Action = "Swallow", Inputs = { Enum.KeyCode.G, Enum.KeyCode.DPadDown } },
 		{ Action = "Spit", Inputs = { Enum.KeyCode.T, Enum.KeyCode.DPadRight } },
 		{ Action = "Fuse", Inputs = { Enum.KeyCode.V, Enum.KeyCode.DPadLeft } },
-		{ Action = "Swallow", Value = 1, Inputs = { Enum.KeyCode.One } },
-		{ Action = "Swallow", Value = 2, Inputs = { Enum.KeyCode.Two } },
 	}
 	for i, mapping in mappings do
 		CAS:BindAction("Pilot" .. i, function(_, inputState)
@@ -122,12 +228,21 @@ function Controller.Start()
 		local inMatch = state.Active and state.Phase == "Match"
 		local slots = state.Slots
 		local active = slots[state.Slot]
-		top.Text = string.format("BANDIT EATER | %s %ds | HP %d | %d coins", state.Phase, state.Seconds, state.HP, state.Coins)
-		loadout.Text = string.format("Active: %s   |   Bench: %s%s", active or "None", slots[3 - state.Slot] or "Empty", state.Title and "   | Arena Winner" or "")
-		prompt.Text = inMatch and (state.Held and "Holding " .. state.Held .. ": G to swallow, T to spit a star."
-			or state.Inhaling and (state.InhaleTarget and "Pulling " .. state.InhaleTarget .. " - keep holding F!"
-				or "INHALING - face a nearby yellow power bandit. Blue fighters cannot be inhaled.")
-			or state.InhaleMessage or "Hold F facing a yellow power bandit within 19 studs. Then G to swallow or T to spit.")
+		board.Visible = not (compact and state.Active)
+		top.Text = string.format(compact and "%s %ds | HP %d | %d coins" or "BANDIT EATER | %s %ds | HP %d | %d coins", state.Phase, state.Seconds, state.HP, state.Coins)
+		local bench = slots[3 - state.Slot]
+		slotLabels[1].Text = "Active: " .. powerName(active) .. (state.Title and not compact and " | Arena Winner" or "")
+		slotLabels[2].Text = "Bench: " .. powerName(bench)
+		for i, id in { active or "", bench or "" } do
+			local visual = Visuals.Powers[id]
+			slotIcons[i].Image, slotIcons[i].Visible = visual and visual.Icon or "", visual ~= nil
+		end
+		local heldPrompt = state.Held and ("Holding " .. powerName(state.Held) .. " Power Star: G to equip; T to spit."
+			.. (bench and " Swallow replaces bench: " .. powerName(bench) .. "." or " Current active moves to bench."))
+		prompt.Text = inMatch and (heldPrompt
+			or state.Inhaling and (state.InhaleTarget and "Pulling " .. powerName(state.InhaleTarget) .. " Power Star - keep holding F!"
+				or "INHALING - face a nearby bouncing Power Star.")
+			or state.InhaleMessage or "F: briefly catch a front shot; hold to pull Power Stars. G equips; T spits.")
 		or (state.Queued and "Joining the next round when it opens."
 			or "Walk onto the glowing ARENA pad to join the live server match.")
 		if os.clock() < revealUntil then
@@ -140,19 +255,7 @@ function Controller.Start()
 			or state.Phase == "Match" and "Join live arena" or "Join next round"
 		shop.Visible, actions.Visible = false, inMatch
 		fuse.Visible = inMatch and C.Fusion(slots[1], slots[2]) ~= nil
-		replace1.Visible = inMatch and state.Held ~= nil and slots[1] ~= nil and slots[2] ~= nil
-		replace2.Visible = replace1.Visible
-		for i, d in defs do
-			local key = d[2] == "Move" and active and active .. d[3] or d[2]
-			local cd = state.Cooldowns[key] or 0
-			local name = d[2] == "Move" and active and C.Powers[active].Moves[d[3]].Name or d[1]
-			buttons[i].Text = name .. (cd > 0 and string.format(" %.1fs", cd) or "")
-			if d[2] == "Inhale" and state.Inhaling then
-				buttons[i].Text = "INHALING - keep holding"
-			end
-			buttons[i].BackgroundColor3 = cd > 0 and Color3.fromRGB(55, 57, 65) or Color3.fromRGB(48, 87, 116)
-			buttons[i].Visible = (d[2] ~= "Swap" or slots[2] ~= nil) and ((d[2] ~= "Swallow" and d[2] ~= "Spit") or state.Held ~= nil)
-		end
+		refreshActions()
 		for id, b in shopButtons do
 			b.Text = id .. (state.Skin == id and " (equipped)" or state.Cosmetics[id] and " - equip" or " - " .. C.Skins[id].Price .. " coins")
 		end

@@ -1,0 +1,12 @@
+{
+  "model": "FxVortexSpiral",
+  "triangles": 1276,
+  "materials": 1,
+  "dimensions_blender": [
+    8.0,
+    8.0,
+    3.1999998092651367
+  ],
+  "palette": false,
+  "exported": true
+}

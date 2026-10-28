@@ -1,0 +1,17 @@
+{
+  "triangles": 1548,
+  "mesh_objects": 1,
+  "dimensions": [
+    2.6395254135131836,
+    0.6635000109672546,
+    5.465892314910889
+  ],
+  "stage": "mesh only; no export or upload",
+  "materials": [
+    "Silver",
+    "BrightEdge",
+    "WarmGold",
+    "Navy"
+  ],
+  "modifiers": 0
+}

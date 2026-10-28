@@ -83,6 +83,90 @@
     "sha256": "da16e7295de716ae4aac4eab7f383a40ff5b6d7f4d39300ef870f458f8b3e82d",
     "uploadedAt": "2026-10-25T01:13:38Z"
   },
+  "blender/export/BE_PowerMesh_Droplet.fbx": {
+    "assetId": "131415644286650",
+    "assetType": "Model",
+    "sha256": "0cfaf0bdc65d4996c0da6fae6b703d61a0c7e6a2c86de348778070a8d3882810",
+    "uploadedAt": "2026-10-26T17:56:52Z"
+  },
+  "blender/export/BE_PowerMesh_Flame.fbx": {
+    "assetId": "102251088549327",
+    "assetType": "Model",
+    "sha256": "b25d9af51a3d296e840c7fefa251150e0b051180c74f4d804aeffaa52a009db6",
+    "uploadedAt": "2026-10-26T17:56:56Z"
+  },
+  "blender/export/BE_PowerMesh_FxTornadoBands.fbx": {
+    "assetId": "113455707756067",
+    "assetType": "Model",
+    "sha256": "9c2ef0cb8edc171f821a887f01d308f3e063a4bd2569b0b8d3aeed1885c0bebe",
+    "uploadedAt": "2026-10-28T08:52:41Z"
+  },
+  "blender/export/BE_PowerMesh_FxVortexSpiral.fbx": {
+    "assetId": "82004670905229",
+    "assetType": "Model",
+    "sha256": "36f23eb9230e5cb47732a1ce5337daaf8dcfb236a5fdc61c0b79bd798ebf95aa",
+    "uploadedAt": "2026-10-28T08:52:54Z"
+  },
+  "blender/export/BE_PowerMesh_HeldSword.fbx": {
+    "assetId": "77894676362262",
+    "assetType": "Model",
+    "sha256": "a0add0ce028eb180589810b7f5b53f2cb44520c7da04842eb10e13b99d01c884",
+    "uploadedAt": "2026-10-28T09:21:38Z"
+  },
+  "blender/export/BE_PowerMesh_Leaf.fbx": {
+    "assetId": "102739312973688",
+    "assetType": "Model",
+    "sha256": "f874159abc91e61d7c6fa8b3b75c7f53f417e5cdc290c8eb7f4930610ca86a7b",
+    "uploadedAt": "2026-10-26T17:57:07Z"
+  },
+  "blender/export/BE_PowerMesh_MasterSword.fbx": {
+    "assetId": "123850029359018",
+    "assetType": "Model",
+    "sha256": "8220b037bc9f6ba1ff9c5be3cd9e382e890e7683f1814048cd4ac723a70f51fd",
+    "uploadedAt": "2026-10-26T17:57:14Z"
+  },
+  "blender/export/BE_PowerMesh_ShadowOrb.fbx": {
+    "assetId": "95185057003645",
+    "assetType": "Model",
+    "sha256": "65711dbbea59e91d0fde20ae55da1d78b6137dfeea0d74f31d5ca0be2128c40a",
+    "uploadedAt": "2026-10-26T17:57:21Z"
+  },
+  "blender/export/BE_PowerMesh_Sword.fbx": {
+    "assetId": "113097489818221",
+    "assetType": "Model",
+    "sha256": "677803ea490d035c9469053762a9ccb198ea9ff7dc30aaa9af141396570a41be",
+    "uploadedAt": "2026-10-26T17:57:34Z"
+  },
+  "blender/export/BE_PowerMesh_Wave.fbx": {
+    "assetId": "117701836399171",
+    "assetType": "Model",
+    "sha256": "0b9e98b1e8fd56f5b702b74c72f7d7587f02f8b8c002ce6d1ab5f114508b57ef",
+    "uploadedAt": "2026-10-26T17:57:41Z"
+  },
+  "blender/export/BE_PowerRock_Body.fbx": {
+    "assetId": "136137335673078",
+    "assetType": "Model",
+    "sha256": "2ee6408a89afceece5be1b0652beea18ffba2525aa723132165ac2b70f871af1",
+    "uploadedAt": "2026-10-26T17:43:32Z"
+  },
+  "blender/export/BE_PowerStarBubbly_Body.fbx": {
+    "assetId": "76772447924708",
+    "assetType": "Model",
+    "sha256": "059b5c74816ed6d1f90f186efd046c4d9aca28625e253a15cf749521ecfc1e75",
+    "uploadedAt": "2026-10-26T17:18:32Z"
+  },
+  "blender/export/BE_PowerStar_Body.fbx": {
+    "assetId": "74166799485619",
+    "assetType": "Model",
+    "sha256": "be1a29d8a3878f1329a38b1565f14bc1301e3e0b322fc646f7d55f06818e0efd",
+    "uploadedAt": "2026-10-26T17:11:04Z"
+  },
+  "blender/export/BE_PowerWind_WindFront.fbx": {
+    "assetId": "127594192425058",
+    "assetType": "Model",
+    "sha256": "df2d0deb2ee09881f68d50781d644629012592eb54c9feee3342fc045d8662c2",
+    "uploadedAt": "2026-10-26T17:41:26Z"
+  },
   "blender/export/animations/BE_CombatActionsV2_Dash.rbxmx": {
     "assetId": "108163526893560",
     "assetType": "Animation",
@@ -167,6 +251,18 @@
     "sha256": "b82903852e56101b2a1b0cb9c7c7b4258761113c775fda0f6d5ebf9db1fca47d",
     "uploadedAt": "2026-10-25T21:00:25Z"
   },
+  "blender/export/animations/BE_FireQ_Fire_1.rbxmx": {
+    "assetId": "126823225652265",
+    "assetType": "Animation",
+    "sha256": "a108845c4c04cc66ba56b0317d79496d22b9cf0d6b6e3b855e744d6528539d8c",
+    "uploadedAt": "2026-10-28T07:28:18Z"
+  },
+  "blender/export/animations/BE_FireQ_Fire_1Moving.rbxmx": {
+    "assetId": "131461487197799",
+    "assetType": "Animation",
+    "sha256": "3cb2c9d2a3d0aab48f65ae3c260e1c0b4988485264013d21436afd5a4e01f817",
+    "uploadedAt": "2026-10-28T07:28:20Z"
+  },
   "blender/export/animations/BE_HeroRun_Luau.rbxmx": {
     "assetId": "79021053592583",
     "assetType": "Animation",
@@ -245,6 +341,1278 @@
     "sha256": "b970772cdf14e41c279015ea8d29f20769ee185610e86170a0ab3382588f3956",
     "uploadedAt": "2026-10-25T20:22:34Z"
   },
+  "blender/export/animations/BE_PowerMovesV2_Earth_1.rbxmx": {
+    "assetId": "79940357553415",
+    "assetType": "Animation",
+    "sha256": "0fc5f3345300df97dddb4151d4398cfef5cff08419ef93158e994340069dcdcc",
+    "uploadedAt": "2026-10-26T17:52:58Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Earth_1Moving.rbxmx": {
+    "assetId": "96592357005818",
+    "assetType": "Animation",
+    "sha256": "c8243926f98c7fd1b3932b12fc829476d3b55fba51095d6ec521d846a6625764",
+    "uploadedAt": "2026-10-26T17:53:00Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Earth_2.rbxmx": {
+    "assetId": "129750290616791",
+    "assetType": "Animation",
+    "sha256": "8d71f80eb54ccebcab0084bb316a90f113b9ec6ab81ccea2f4580a4cc12d10b0",
+    "uploadedAt": "2026-10-26T17:53:03Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Earth_2Moving.rbxmx": {
+    "assetId": "134712979062957",
+    "assetType": "Animation",
+    "sha256": "d62d239d38fe42c6be1a4dc07e27e85ddc51e12102e53e2b18b8404b6c9778f1",
+    "uploadedAt": "2026-10-26T17:53:05Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Earth_3.rbxmx": {
+    "assetId": "127862211038256",
+    "assetType": "Animation",
+    "sha256": "f5c5b459a6b8a3fd66038214e0839350d0f9456462c152654d410308f9828349",
+    "uploadedAt": "2026-10-26T17:53:08Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Earth_3Moving.rbxmx": {
+    "assetId": "81877842940643",
+    "assetType": "Animation",
+    "sha256": "0cbadba4481a9b1f579be37420d5a08e992a4342c22fc41881079085c440c9f0",
+    "uploadedAt": "2026-10-26T17:53:10Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Fire_1.rbxmx": {
+    "assetId": "131727916530036",
+    "assetType": "Animation",
+    "sha256": "f1c399635a8bdcb9db6d02b5f30e7da0d55e092ac8642275f3ec99535591bf2f",
+    "uploadedAt": "2026-10-26T17:53:13Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Fire_1Moving.rbxmx": {
+    "assetId": "79732471635807",
+    "assetType": "Animation",
+    "sha256": "da9754217b540f7f1e4d3793afd8086f16c710a5322f7abc117e6e39a9f0bfd5",
+    "uploadedAt": "2026-10-26T17:53:15Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Fire_2.rbxmx": {
+    "assetId": "83348864252169",
+    "assetType": "Animation",
+    "sha256": "095fd886dc2af5808d74bb5a5a9218f6b515e90ad3281954e4a9026413a2131a",
+    "uploadedAt": "2026-10-26T17:53:17Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Fire_2Moving.rbxmx": {
+    "assetId": "108095318670187",
+    "assetType": "Animation",
+    "sha256": "5ab83d493fbaffd2ee36697ff028ae7ab923c790805284b9394a307a5188d417",
+    "uploadedAt": "2026-10-26T17:53:20Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Fire_3.rbxmx": {
+    "assetId": "91524148954500",
+    "assetType": "Animation",
+    "sha256": "203f56e2feceff96fbfdc1066adfe420dddd8df2d1b3109763ad7616bc4d0b3a",
+    "uploadedAt": "2026-10-26T17:53:22Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Fire_3Moving.rbxmx": {
+    "assetId": "135712369709466",
+    "assetType": "Animation",
+    "sha256": "e228ca85207070e6b9b542f714861f8221633822e9e3882f7ec7a0a8deccd091",
+    "uploadedAt": "2026-10-26T17:53:25Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Shadow_1.rbxmx": {
+    "assetId": "101073434633810",
+    "assetType": "Animation",
+    "sha256": "12a5fe69bbf151715f3ce3d2582c886a22a7535707f3d3e269a92d1837b1a09e",
+    "uploadedAt": "2026-10-26T17:53:27Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Shadow_1Moving.rbxmx": {
+    "assetId": "109817876203263",
+    "assetType": "Animation",
+    "sha256": "0c66754a3f5d896e3eeef374f6a23a5ccff56881d98991a434d5863f13907d91",
+    "uploadedAt": "2026-10-26T17:53:30Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Shadow_2.rbxmx": {
+    "assetId": "133055196749793",
+    "assetType": "Animation",
+    "sha256": "461826b0de687d8c067717d7af1b1d8c2a29ff8d7ebae0f95346d6edfacda695",
+    "uploadedAt": "2026-10-26T17:53:32Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Shadow_2Moving.rbxmx": {
+    "assetId": "101371728907175",
+    "assetType": "Animation",
+    "sha256": "b7b871f7dc5cc2854fa5738a783d192d5c1786beb690fecd1f0b7a0f09bfb545",
+    "uploadedAt": "2026-10-26T17:53:34Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Shadow_3.rbxmx": {
+    "assetId": "120521176853013",
+    "assetType": "Animation",
+    "sha256": "b4a929c08eece5d8cec68d3f54bce9d6949e84c2e49223a037c95a9d63e001cb",
+    "uploadedAt": "2026-10-26T17:53:37Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Shadow_3Moving.rbxmx": {
+    "assetId": "131529535388679",
+    "assetType": "Animation",
+    "sha256": "317aeefdc816800510b997db21bd3df147c356789e3d7a40f773764b1e72895e",
+    "uploadedAt": "2026-10-26T17:53:39Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_1.rbxmx": {
+    "assetId": "82321222955196",
+    "assetType": "Animation",
+    "sha256": "95b3e13fcf9db641f9bae3e060674ad0fc4f28e20c5afa7efaa48fed9cf8b8fc",
+    "uploadedAt": "2026-10-26T17:53:42Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_1Moving.rbxmx": {
+    "assetId": "98639800372126",
+    "assetType": "Animation",
+    "sha256": "cff13b202a58677f257bc6c0bc21a8dac9914373a718a4e2877eb60fc4faac0b",
+    "uploadedAt": "2026-10-26T17:53:44Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_2.rbxmx": {
+    "assetId": "99059830204132",
+    "assetType": "Animation",
+    "sha256": "97df45aa4feb9c93dfd20026632a730b3b7fa499425ff7076d28f3cbf9ea4d63",
+    "uploadedAt": "2026-10-26T17:53:47Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_2Moving.rbxmx": {
+    "assetId": "116839762988080",
+    "assetType": "Animation",
+    "sha256": "f24336ff4d387da35a51594f2fac7f66ffa7930046bcbd5117734b670f9c31f5",
+    "uploadedAt": "2026-10-26T17:53:49Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_3.rbxmx": {
+    "assetId": "107251555642774",
+    "assetType": "Animation",
+    "sha256": "4191f86af1cdd7f2bb23e03c29ee9273b77e416118b5508d3afa7e69db6edf1c",
+    "uploadedAt": "2026-10-26T17:53:52Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_3Moving.rbxmx": {
+    "assetId": "90423505115509",
+    "assetType": "Animation",
+    "sha256": "bdc48a3c964d50ed32f2075cfa502a0b865ddb28c1f1110fec8b4f8443388935",
+    "uploadedAt": "2026-10-26T17:53:54Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Earth_1.rbxmx": {
+    "assetId": "87561926139926",
+    "assetType": "Animation",
+    "sha256": "64ef0fa197d1dbf8cea642c0762ef40f414e00e23ff11a8c6231701ffbc650e4",
+    "uploadedAt": "2026-10-26T17:53:56Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Earth_1Moving.rbxmx": {
+    "assetId": "129767565462409",
+    "assetType": "Animation",
+    "sha256": "310aaad12a1a8def467c21df1ee7d9338d32e66b97a5ef495267349e518f1585",
+    "uploadedAt": "2026-10-26T17:53:59Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Earth_2.rbxmx": {
+    "assetId": "88057654853563",
+    "assetType": "Animation",
+    "sha256": "925fc1a05e610fb1e49c84c359f699a549edd24d7f88071113dda500e41914ad",
+    "uploadedAt": "2026-10-26T17:54:01Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Earth_2Moving.rbxmx": {
+    "assetId": "90763784165209",
+    "assetType": "Animation",
+    "sha256": "a6e56d3ba6cb9e840491b31b00c760f248b15e8c561bbf9fc0a2564d1cfd0b27",
+    "uploadedAt": "2026-10-26T17:54:04Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Earth_3.rbxmx": {
+    "assetId": "110251851319569",
+    "assetType": "Animation",
+    "sha256": "974bfe134dbf1621382775a3c3859ae058190b0db7bceea7ec35a56410e4c7c8",
+    "uploadedAt": "2026-10-26T17:54:06Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Earth_3Moving.rbxmx": {
+    "assetId": "90629995062694",
+    "assetType": "Animation",
+    "sha256": "04397a0822172b6b6087ff1d203609b2ec2c4c24d18cf094e8b0725c23567857",
+    "uploadedAt": "2026-10-26T17:54:09Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Fire_1.rbxmx": {
+    "assetId": "94472826701570",
+    "assetType": "Animation",
+    "sha256": "7993b6350a0de9745ad0afaea19840d36edd67b1e2718548570c15001c263eb6",
+    "uploadedAt": "2026-10-26T17:54:11Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Fire_1Moving.rbxmx": {
+    "assetId": "87914792659964",
+    "assetType": "Animation",
+    "sha256": "d3d40ebf96b58a964eae6bc903cc07511ba6593166472a80cd6f8c347df70a9e",
+    "uploadedAt": "2026-10-26T17:54:13Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Fire_2.rbxmx": {
+    "assetId": "128639770450870",
+    "assetType": "Animation",
+    "sha256": "7f4c47cd50f219060b9e0642f46e08da67c59c94546c13a672401dff8a17184f",
+    "uploadedAt": "2026-10-26T17:54:16Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Fire_2Moving.rbxmx": {
+    "assetId": "126027199122630",
+    "assetType": "Animation",
+    "sha256": "3b235bfc775d9e0264a8d95917ccc6049ce1963741a0e3ec510d2c22e0c0c3f3",
+    "uploadedAt": "2026-10-26T17:54:18Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Fire_3.rbxmx": {
+    "assetId": "122075088428982",
+    "assetType": "Animation",
+    "sha256": "eee58175c047243025bb64829a2e1f6a4ac077e796b819652de5054e01aa1929",
+    "uploadedAt": "2026-10-26T17:54:21Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Fire_3Moving.rbxmx": {
+    "assetId": "102764400236224",
+    "assetType": "Animation",
+    "sha256": "7f78f4105e297c59480fa65863352a2d821d5ba3bc32e8f1ba8d6eb06ccff25a",
+    "uploadedAt": "2026-10-26T17:54:23Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Shadow_1.rbxmx": {
+    "assetId": "108820651629021",
+    "assetType": "Animation",
+    "sha256": "508a80aa5382ebf1d9baca3101c527b392b9efa3b85b3687850903d566c07b57",
+    "uploadedAt": "2026-10-26T17:54:26Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Shadow_1Moving.rbxmx": {
+    "assetId": "105232381329648",
+    "assetType": "Animation",
+    "sha256": "154b05cc197c3ebc0317b086e75f4ea42aa54575046474afecc2b30f7afd85e7",
+    "uploadedAt": "2026-10-26T17:54:28Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Shadow_2.rbxmx": {
+    "assetId": "87291338534492",
+    "assetType": "Animation",
+    "sha256": "2c610068350a6a91009e663983176d1dbbd033b7eb57fba020090e5c26e77693",
+    "uploadedAt": "2026-10-26T17:54:31Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Shadow_2Moving.rbxmx": {
+    "assetId": "70572639125539",
+    "assetType": "Animation",
+    "sha256": "8d018587e3daf6bb8bc6ed27aa276dfd848a32b96c9ab5fbdb2ec50a01a7364d",
+    "uploadedAt": "2026-10-26T17:54:33Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Shadow_3.rbxmx": {
+    "assetId": "133842569383531",
+    "assetType": "Animation",
+    "sha256": "1a1129ffac1af7e9f204ad074da62c4eeac02607fd3c4e4016db0413f4738df3",
+    "uploadedAt": "2026-10-26T17:54:35Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Shadow_3Moving.rbxmx": {
+    "assetId": "108952600350109",
+    "assetType": "Animation",
+    "sha256": "a16c38cfb79dd104177d0079c521c867af13778aa902b894a70553691ef4a644",
+    "uploadedAt": "2026-10-26T17:54:38Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Sword_1.rbxmx": {
+    "assetId": "104858114756279",
+    "assetType": "Animation",
+    "sha256": "486880da049083d7de4064e8357b2f9c5b8e30bfc153521f3afe8a395c33c3ff",
+    "uploadedAt": "2026-10-26T17:54:40Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Sword_1Moving.rbxmx": {
+    "assetId": "118520888161210",
+    "assetType": "Animation",
+    "sha256": "18b6ccdad230983b27461552a79998949867fe8888132b1c22faf2e9ec25b912",
+    "uploadedAt": "2026-10-26T17:54:43Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Sword_2.rbxmx": {
+    "assetId": "81163947876830",
+    "assetType": "Animation",
+    "sha256": "5492d6a11e8d14bb3f7f18a5a4835b4e4fe60dab26d53efb13d8b12dcf5518cd",
+    "uploadedAt": "2026-10-26T17:54:45Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Sword_2Moving.rbxmx": {
+    "assetId": "109780852287019",
+    "assetType": "Animation",
+    "sha256": "a51339b66bf337e9a737512f40f155843bb7795cf8b032a1f1a14778f3eb60e0",
+    "uploadedAt": "2026-10-26T17:54:50Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Sword_3.rbxmx": {
+    "assetId": "127869914732492",
+    "assetType": "Animation",
+    "sha256": "31a93be884295f2d59646f6697134c61867f500bea43e4933b7c332b9bc84832",
+    "uploadedAt": "2026-10-26T17:54:52Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Sword_3Moving.rbxmx": {
+    "assetId": "79002668784361",
+    "assetType": "Animation",
+    "sha256": "c5f453d7798e14e2768d3b90336977fe9a4424692d911171b6076e8041ad968d",
+    "uploadedAt": "2026-10-26T17:54:55Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Water_1.rbxmx": {
+    "assetId": "127052758893797",
+    "assetType": "Animation",
+    "sha256": "139647fdc4ded1c5751697e9444355af29c6e580447a5b2be53578f1b5e39836",
+    "uploadedAt": "2026-10-26T17:54:57Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Water_1Moving.rbxmx": {
+    "assetId": "114116558934819",
+    "assetType": "Animation",
+    "sha256": "0fdd91e8b240a004619c75e0420fb2d14d429af388a356f5887fc796ff360ad0",
+    "uploadedAt": "2026-10-26T17:55:00Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Water_2.rbxmx": {
+    "assetId": "90956491796382",
+    "assetType": "Animation",
+    "sha256": "9f441dee4547063047c1d0e03f7c2a3ee5ce6468b6cc027887610c7153801362",
+    "uploadedAt": "2026-10-26T17:55:03Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Water_2Moving.rbxmx": {
+    "assetId": "139281542895128",
+    "assetType": "Animation",
+    "sha256": "043d4aeee87e97258348a36d6421b9f03a4f0f0510c5a42e48068bc825863f2f",
+    "uploadedAt": "2026-10-26T17:55:05Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Water_3.rbxmx": {
+    "assetId": "96388276026592",
+    "assetType": "Animation",
+    "sha256": "f2bcf17e98260aa1710b5d406b751045033cb946a4c699259031dd1c6f7ba110",
+    "uploadedAt": "2026-10-26T17:55:08Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Water_3Moving.rbxmx": {
+    "assetId": "112507263625832",
+    "assetType": "Animation",
+    "sha256": "4d70c9aa5c00d0535200c9b43ee70893c94812cb60b9ac92169334ed624f4b3c",
+    "uploadedAt": "2026-10-26T17:55:13Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Wind_1.rbxmx": {
+    "assetId": "84209155229803",
+    "assetType": "Animation",
+    "sha256": "4a166b4c6aa92537068176cff3705b2ba43a62371a07da198990b0b87745272a",
+    "uploadedAt": "2026-10-26T17:55:16Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Wind_1Moving.rbxmx": {
+    "assetId": "135933676725731",
+    "assetType": "Animation",
+    "sha256": "1278e7dc8e43d112c588fb8b69a867d1f3b088668373a0ae010da8a9e28d2ce4",
+    "uploadedAt": "2026-10-26T17:55:18Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Wind_2.rbxmx": {
+    "assetId": "140414378284349",
+    "assetType": "Animation",
+    "sha256": "4ca35c18943e19a90a88927c450f07651ff773c9bfda3720e2e02c50068491ac",
+    "uploadedAt": "2026-10-26T17:55:21Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Wind_2Moving.rbxmx": {
+    "assetId": "123153128429635",
+    "assetType": "Animation",
+    "sha256": "a626023698b08fb26db4b095e5dd0c6bedec9ac261bef41cefa6fcc599857750",
+    "uploadedAt": "2026-10-26T17:55:24Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Wind_3.rbxmx": {
+    "assetId": "100497877726743",
+    "assetType": "Animation",
+    "sha256": "f5de8273decbc8af21c3a0a6f3c493ea7b2837ec992e77b7814417d05be0aebf",
+    "uploadedAt": "2026-10-26T17:55:26Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Sword_Wind_3Moving.rbxmx": {
+    "assetId": "85328066173416",
+    "assetType": "Animation",
+    "sha256": "fa3a4c52282952e71b04ad8fbd19329068b3217fd5106d2c56491b33a6a80ff2",
+    "uploadedAt": "2026-10-26T17:55:29Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Water_1.rbxmx": {
+    "assetId": "127967970594074",
+    "assetType": "Animation",
+    "sha256": "c183c2b70498cc1d73d6d75c9c915af7029e4314e47f4b88440bf715cbe4c809",
+    "uploadedAt": "2026-10-26T17:55:32Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Water_1Moving.rbxmx": {
+    "assetId": "92891967532995",
+    "assetType": "Animation",
+    "sha256": "19faa723e23d166d6d60283ee0da1e251da24fc6d9b58aaea073f511b34032b2",
+    "uploadedAt": "2026-10-26T17:55:34Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Water_2.rbxmx": {
+    "assetId": "121374626984014",
+    "assetType": "Animation",
+    "sha256": "2e56ff3171c95ef0b77e6f99c12d0a4f926e6d1320e7727be8ff0f85a34679ec",
+    "uploadedAt": "2026-10-26T17:55:37Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Water_2Moving.rbxmx": {
+    "assetId": "97838299021775",
+    "assetType": "Animation",
+    "sha256": "cb476d95ec1125c40cdf22da7ab538b79d90e40376d4508cd5d7243111aa0b56",
+    "uploadedAt": "2026-10-26T17:55:40Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Water_3.rbxmx": {
+    "assetId": "137754292335472",
+    "assetType": "Animation",
+    "sha256": "648b85ae17edb298dc67d53e87388a8da9a24ddd80d08f53e7630a759cfaaa33",
+    "uploadedAt": "2026-10-26T17:55:43Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Water_3Moving.rbxmx": {
+    "assetId": "74493937703996",
+    "assetType": "Animation",
+    "sha256": "9d3cc2f5ccf664b43446d5878a45120873d63143d99ee8c0763e9cf11f064d21",
+    "uploadedAt": "2026-10-26T17:55:46Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Wind_1.rbxmx": {
+    "assetId": "110815704222170",
+    "assetType": "Animation",
+    "sha256": "c64b5b0c015de900774f7ac4e78caf3830be492e691916a790774da92bb974e6",
+    "uploadedAt": "2026-10-26T17:55:48Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Wind_1Moving.rbxmx": {
+    "assetId": "134519586770996",
+    "assetType": "Animation",
+    "sha256": "1a4d82c108f5b2c8786bef2e973d3e2c502083703ee497f82e328fc409648522",
+    "uploadedAt": "2026-10-26T17:55:51Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Wind_2.rbxmx": {
+    "assetId": "106957779200150",
+    "assetType": "Animation",
+    "sha256": "90cfce556632b38aa76b7d545f9c1a561dcbe958eb3964696aab28ec9a1eaf61",
+    "uploadedAt": "2026-10-26T17:55:54Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Wind_2Moving.rbxmx": {
+    "assetId": "110417341802635",
+    "assetType": "Animation",
+    "sha256": "d4962d668f8e09570bf2b1e14af2cc2eb30db2d1803d32f21e83348e646ebe00",
+    "uploadedAt": "2026-10-26T17:55:56Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Wind_3.rbxmx": {
+    "assetId": "115108810754037",
+    "assetType": "Animation",
+    "sha256": "eb575e57773c75d23f2d7afad7738086ad004866753764f89f5a4c6fc1d52ffe",
+    "uploadedAt": "2026-10-26T17:55:59Z"
+  },
+  "blender/export/animations/BE_PowerMovesV2_Wind_3Moving.rbxmx": {
+    "assetId": "72637756260484",
+    "assetType": "Animation",
+    "sha256": "2db4dde4a76c634adf2206c9d46625beac1a2d3a9415a920651620e833375d93",
+    "uploadedAt": "2026-10-26T17:56:02Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Earth_1.rbxmx": {
+    "assetId": "119669655832950",
+    "assetType": "Animation",
+    "sha256": "a725deb27520825ee9a28965ad72d3298fe6da72068005795ba85675ca4e078e",
+    "uploadedAt": "2026-10-26T17:28:43Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Earth_1Moving.rbxmx": {
+    "assetId": "76135382242076",
+    "assetType": "Animation",
+    "sha256": "79cad8964ea4a4d25b352b2d5c6da0e6eb39e6a175a633aab7d69dbde508ff2c",
+    "uploadedAt": "2026-10-26T17:28:45Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Earth_2.rbxmx": {
+    "assetId": "97161751826502",
+    "assetType": "Animation",
+    "sha256": "3d274902a49ca47652132067e99fd171a2773c4fe0c95345f339a45e7d6b1eda",
+    "uploadedAt": "2026-10-26T17:28:48Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Earth_2Moving.rbxmx": {
+    "assetId": "73283306739071",
+    "assetType": "Animation",
+    "sha256": "241cdb180701a92181ec8732d6053e460ddffb5daf6b2fc2116ee84def87737b",
+    "uploadedAt": "2026-10-26T17:28:51Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Earth_3.rbxmx": {
+    "assetId": "119658023912309",
+    "assetType": "Animation",
+    "sha256": "70047695eb1c099d44fad9efda15d039b748efbdc733c878264724b1e6f75f6b",
+    "uploadedAt": "2026-10-26T17:28:54Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Earth_3Moving.rbxmx": {
+    "assetId": "107826568829495",
+    "assetType": "Animation",
+    "sha256": "30d2b4eb56925afe86b885fa11607d0662fd926ec65ff6d76168ff859aa53955",
+    "uploadedAt": "2026-10-26T17:28:56Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Fire_1.rbxmx": {
+    "assetId": "106550090214895",
+    "assetType": "Animation",
+    "sha256": "021acf2356b2dfbd0988c8c1d38abf764ed0bba84bff5840767db059fdefbc54",
+    "uploadedAt": "2026-10-26T17:28:59Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Fire_1Moving.rbxmx": {
+    "assetId": "82318389725535",
+    "assetType": "Animation",
+    "sha256": "3c2226cd84b3ec8d9c2a486c0cdb86f7cf68603af986ee2f527ff811acab2bc8",
+    "uploadedAt": "2026-10-26T17:29:02Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Fire_2.rbxmx": {
+    "assetId": "72748992464579",
+    "assetType": "Animation",
+    "sha256": "a498a74f6d4b036c77448ac41f0fb69d25375ef05501843b83c65b2eae6e9ba8",
+    "uploadedAt": "2026-10-26T17:29:04Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Fire_2Moving.rbxmx": {
+    "assetId": "79558745773956",
+    "assetType": "Animation",
+    "sha256": "2800ac6d5b38a55524840afd109de62f789428abde509b0d67357ceb908aa268",
+    "uploadedAt": "2026-10-26T17:29:07Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Fire_3.rbxmx": {
+    "assetId": "71270184728208",
+    "assetType": "Animation",
+    "sha256": "62de24b7dd881771d76590a337a6069f14c542c5b0933ca8a863ba968331faa0",
+    "uploadedAt": "2026-10-26T17:29:09Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Fire_3Moving.rbxmx": {
+    "assetId": "118106423470708",
+    "assetType": "Animation",
+    "sha256": "b7059e8de36d8f64153a93f378cea4693a6239d94db71c832f2979b7295a72c0",
+    "uploadedAt": "2026-10-26T17:29:12Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Shadow_1.rbxmx": {
+    "assetId": "130403320877588",
+    "assetType": "Animation",
+    "sha256": "fc86667ba11dc3eff616e53437aa44ae4b2175360f7a7904111599d7a5a74ebc",
+    "uploadedAt": "2026-10-26T17:29:15Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Shadow_1Moving.rbxmx": {
+    "assetId": "134454783634530",
+    "assetType": "Animation",
+    "sha256": "dd59889a05ac5fb77b807c402d9373490d2d29ed4562fe8cbfc76a6509ad7c6c",
+    "uploadedAt": "2026-10-26T17:29:18Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Shadow_2.rbxmx": {
+    "assetId": "73231226039849",
+    "assetType": "Animation",
+    "sha256": "f69174bbcd7efe0bfafd437583e2ee12bb8ac70b8f100a0d337081f98a1cc6a3",
+    "uploadedAt": "2026-10-26T17:29:20Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Shadow_2Moving.rbxmx": {
+    "assetId": "123940281662486",
+    "assetType": "Animation",
+    "sha256": "f0fe358595080d51cbbc8182c0953b33432d10f54764624942fc20d2aeb0b700",
+    "uploadedAt": "2026-10-26T17:29:23Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Shadow_3.rbxmx": {
+    "assetId": "97291248758157",
+    "assetType": "Animation",
+    "sha256": "df85aee0a0b808c3a1ac84488c091035b3857bf2f7ac197b3dfae29c231c05f8",
+    "uploadedAt": "2026-10-26T17:29:26Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Shadow_3Moving.rbxmx": {
+    "assetId": "111172666561915",
+    "assetType": "Animation",
+    "sha256": "65ec5e090013296858440ea7e10b01cb4964ef847af8d5c67ab76d8c65270bad",
+    "uploadedAt": "2026-10-26T17:29:29Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_1.rbxmx": {
+    "assetId": "99626540544737",
+    "assetType": "Animation",
+    "sha256": "94374fe749f8f73f7eec45f540da846a74b9fff197c9efec3fb40713c331289f",
+    "uploadedAt": "2026-10-26T17:29:31Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_1Moving.rbxmx": {
+    "assetId": "93709699449339",
+    "assetType": "Animation",
+    "sha256": "2e04816da7496ce799a63b0903423d8762143989601e9b5a32a38891c5c4cab3",
+    "uploadedAt": "2026-10-26T17:29:37Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_2.rbxmx": {
+    "assetId": "114266457926719",
+    "assetType": "Animation",
+    "sha256": "a2253ea9beafa9a9c6cb0bec7471795ff036e7409ceb656055e4fd2bd710c0f0",
+    "uploadedAt": "2026-10-26T17:29:40Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_2Moving.rbxmx": {
+    "assetId": "71783077873740",
+    "assetType": "Animation",
+    "sha256": "a2af286930976c95528a783ad1e51765ba4e84ef813759e496446fb74b60495b",
+    "uploadedAt": "2026-10-26T17:29:42Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_3.rbxmx": {
+    "assetId": "76301121227030",
+    "assetType": "Animation",
+    "sha256": "2f23b421fe43e57e829836b7064223dd9483859d3f2179faa1b398541c711c58",
+    "uploadedAt": "2026-10-26T17:29:45Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_3Moving.rbxmx": {
+    "assetId": "107755340481750",
+    "assetType": "Animation",
+    "sha256": "78804cc18f1d52490b08611e17459dc8b1c5010e799a918d906745db9060a6e4",
+    "uploadedAt": "2026-10-26T17:29:48Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Earth_1.rbxmx": {
+    "assetId": "117299366897345",
+    "assetType": "Animation",
+    "sha256": "f85b2f846ebcea8c8e27efa7b33f8f54e507f6f77a1c8228e570f95c6b8d06aa",
+    "uploadedAt": "2026-10-26T17:29:51Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Earth_1Moving.rbxmx": {
+    "assetId": "123227012992033",
+    "assetType": "Animation",
+    "sha256": "a6059988b3ca55052794cd912feadff5611e672173be6056e4efd5a80f01e82e",
+    "uploadedAt": "2026-10-26T17:29:53Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Earth_2.rbxmx": {
+    "assetId": "126854621642856",
+    "assetType": "Animation",
+    "sha256": "1f5018c564522fc6f3219a3ba6650ffc49e4729b6c65ca28e1259d1ab51847c1",
+    "uploadedAt": "2026-10-26T17:29:56Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Earth_2Moving.rbxmx": {
+    "assetId": "115714806376617",
+    "assetType": "Animation",
+    "sha256": "76169a6e6f8b50480990da6a7ca90e2343fbbd42f37c928b7ec3af8339a3479b",
+    "uploadedAt": "2026-10-26T17:29:59Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Earth_3.rbxmx": {
+    "assetId": "120255370476218",
+    "assetType": "Animation",
+    "sha256": "53777e1279510b14e5a9e93c3ff78c2b8892492c440e0e434c62e22e798d3953",
+    "uploadedAt": "2026-10-26T17:30:01Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Earth_3Moving.rbxmx": {
+    "assetId": "74575870478514",
+    "assetType": "Animation",
+    "sha256": "4c8a603b8f5652351cd352a0ce76643bafae3f145833bf0accf9b71383bdb227",
+    "uploadedAt": "2026-10-26T17:30:04Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Fire_1.rbxmx": {
+    "assetId": "89758626030290",
+    "assetType": "Animation",
+    "sha256": "d099103ce28220a78298c1230007550332873dd1a474fa019b20b18522d4869a",
+    "uploadedAt": "2026-10-26T17:30:07Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Fire_1Moving.rbxmx": {
+    "assetId": "74191686099429",
+    "assetType": "Animation",
+    "sha256": "6e6c35ac2db181192efd003da0d5d5842fa62d7391cd778ece8fb386ddbcc8e4",
+    "uploadedAt": "2026-10-26T17:30:10Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Fire_2.rbxmx": {
+    "assetId": "108843634044188",
+    "assetType": "Animation",
+    "sha256": "a7adeef7a0b4201500c6dc44f34262a25c0596b130127f702665953c28d8b08b",
+    "uploadedAt": "2026-10-26T17:30:12Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Fire_2Moving.rbxmx": {
+    "assetId": "75517021071714",
+    "assetType": "Animation",
+    "sha256": "df612161368b58448ff501148bd5a4284987a529b13c9a8d3da1fc93aa11e907",
+    "uploadedAt": "2026-10-26T17:30:15Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Fire_3.rbxmx": {
+    "assetId": "73584719066170",
+    "assetType": "Animation",
+    "sha256": "18631f33c703ea07a14f344fc0a5c70f4d970066a0955143c9ac9820eebb23e2",
+    "uploadedAt": "2026-10-26T17:30:18Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Fire_3Moving.rbxmx": {
+    "assetId": "120181959706425",
+    "assetType": "Animation",
+    "sha256": "d8199f20343a3aa914abf87ad78e2ae37fa4f951ffbc9987f551e32fcaa0ce32",
+    "uploadedAt": "2026-10-26T17:30:21Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Shadow_1.rbxmx": {
+    "assetId": "86606271294976",
+    "assetType": "Animation",
+    "sha256": "169ac380bddff096ec69ee39b0181e55c4306c2ad9ff47add564ff65200ce32a",
+    "uploadedAt": "2026-10-26T17:30:24Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Shadow_1Moving.rbxmx": {
+    "assetId": "106063363804218",
+    "assetType": "Animation",
+    "sha256": "445f3fea77e34486ff5ee23d24ca7346e78667c96e72c3147f3ada7855f521f6",
+    "uploadedAt": "2026-10-26T17:30:27Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Shadow_2.rbxmx": {
+    "assetId": "140716511228369",
+    "assetType": "Animation",
+    "sha256": "3271523ede2459c12d1476dd8bab1378e2ee8e623eb22f6192b7166eab996545",
+    "uploadedAt": "2026-10-26T17:30:30Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Shadow_2Moving.rbxmx": {
+    "assetId": "80070434565444",
+    "assetType": "Animation",
+    "sha256": "d688765c84c0d23c90199a493afa575c09c44c830286ea31ff1c1ecbced37859",
+    "uploadedAt": "2026-10-26T17:30:32Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Shadow_3.rbxmx": {
+    "assetId": "135679605178426",
+    "assetType": "Animation",
+    "sha256": "0c78d2dbfc34a08f366a83a59ede47028dc4fd3ddf95c85bbedea6b34e2b9fde",
+    "uploadedAt": "2026-10-26T17:30:35Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Shadow_3Moving.rbxmx": {
+    "assetId": "98693956656769",
+    "assetType": "Animation",
+    "sha256": "b97d4ecc12499d71841e1672f239601000e8d4c0f0b90024c600987ac7dfe933",
+    "uploadedAt": "2026-10-26T17:30:38Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Sword_1.rbxmx": {
+    "assetId": "100949849635130",
+    "assetType": "Animation",
+    "sha256": "fb9e731bd80e46cad9d0ee61c6fae57734e9a8ae56fffa7911625ff0327b0794",
+    "uploadedAt": "2026-10-26T17:30:41Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Sword_1Moving.rbxmx": {
+    "assetId": "132048365188680",
+    "assetType": "Animation",
+    "sha256": "322823c5bf7a48a068649704dda2a2426a141c24e617ededa219f732dbe65f6e",
+    "uploadedAt": "2026-10-26T17:30:43Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Sword_2.rbxmx": {
+    "assetId": "97157313545350",
+    "assetType": "Animation",
+    "sha256": "47b9204e969d0a7afb189840adaf8d834121b3cdfcca1354acf8ae3188767f4b",
+    "uploadedAt": "2026-10-26T17:30:46Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Sword_2Moving.rbxmx": {
+    "assetId": "99639089336038",
+    "assetType": "Animation",
+    "sha256": "45986cb9926dfe46813ef0ba6fa89b2e89ed811a7e77631dc4464bff6424ac41",
+    "uploadedAt": "2026-10-26T17:30:49Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Sword_3.rbxmx": {
+    "assetId": "123219104898315",
+    "assetType": "Animation",
+    "sha256": "7cd0799296085d72b3ff7dc70488d9385ca376aebc0e3b83bb75570c69436d5b",
+    "uploadedAt": "2026-10-26T17:30:52Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Sword_3Moving.rbxmx": {
+    "assetId": "71352089845531",
+    "assetType": "Animation",
+    "sha256": "a07647fabf1b4b49bed9db46cd06c28250a6b4f759d7e1a7bd91962f15ab4929",
+    "uploadedAt": "2026-10-26T17:30:54Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Water_1.rbxmx": {
+    "assetId": "75214118993241",
+    "assetType": "Animation",
+    "sha256": "973265c438caff849e7981cb7b919c36e662b75495f4473a9eb32969cac415ed",
+    "uploadedAt": "2026-10-26T17:30:57Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Water_1Moving.rbxmx": {
+    "assetId": "109892595636739",
+    "assetType": "Animation",
+    "sha256": "32d3a650db2106c3f0db71b083beec3a25a935b3dbec75ce170ce0a6ef06c604",
+    "uploadedAt": "2026-10-26T17:31:00Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Water_2.rbxmx": {
+    "assetId": "80916287580726",
+    "assetType": "Animation",
+    "sha256": "dd88e4f7b12173df62f9962f860e031fae7c296a562b21b6dea1afee0fe31d61",
+    "uploadedAt": "2026-10-26T17:31:02Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Water_2Moving.rbxmx": {
+    "assetId": "98729783335802",
+    "assetType": "Animation",
+    "sha256": "4aa08165924881f10e2550b7933af186dd62f1dadd035abccfb26386ec71b992",
+    "uploadedAt": "2026-10-26T17:31:07Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Water_3.rbxmx": {
+    "assetId": "90072867677512",
+    "assetType": "Animation",
+    "sha256": "5e4fac12b85faab19936c7daea59b9f043058d67214e86aa8e3fe5f070a61bac",
+    "uploadedAt": "2026-10-26T17:31:10Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Water_3Moving.rbxmx": {
+    "assetId": "82063720890499",
+    "assetType": "Animation",
+    "sha256": "df7a07978d7a51a82549ee5380376e4ea4f6aae395f1492607115db61a54dfdf",
+    "uploadedAt": "2026-10-26T17:31:13Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Wind_1.rbxmx": {
+    "assetId": "92999829756156",
+    "assetType": "Animation",
+    "sha256": "b1d421939ea5e168e3b066d99b7a6387e08a96605aa68adb379f6cb94cd635b3",
+    "uploadedAt": "2026-10-26T17:31:16Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Wind_1Moving.rbxmx": {
+    "assetId": "122142517104904",
+    "assetType": "Animation",
+    "sha256": "0bc2353d3aa3819ed01f47a9d507118f4b13d179129015c9bf8722cf7f6cd5d0",
+    "uploadedAt": "2026-10-26T17:31:18Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Wind_2.rbxmx": {
+    "assetId": "135235346504907",
+    "assetType": "Animation",
+    "sha256": "014bb235c94a867af8b27cec710ba86c48720c04ebad4c3e5984a9c7bacb281c",
+    "uploadedAt": "2026-10-26T17:31:21Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Wind_2Moving.rbxmx": {
+    "assetId": "79091374363328",
+    "assetType": "Animation",
+    "sha256": "9a4e2d64a209f8a4655aae5dbb4d030dc086a064facc1205a3d7a1f934c138de",
+    "uploadedAt": "2026-10-26T17:31:24Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Wind_3.rbxmx": {
+    "assetId": "129495691917854",
+    "assetType": "Animation",
+    "sha256": "e2723e6fe6d99152c203b268f392521ce5aff105e9a4db8de97da2f02efaf230",
+    "uploadedAt": "2026-10-26T17:31:26Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Sword_Wind_3Moving.rbxmx": {
+    "assetId": "126510359966058",
+    "assetType": "Animation",
+    "sha256": "5349983965afa80ae092a95a3f0bfef93f920b47a7f66a882b69022911c64c91",
+    "uploadedAt": "2026-10-26T17:31:29Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Water_1.rbxmx": {
+    "assetId": "135068247115381",
+    "assetType": "Animation",
+    "sha256": "fa07d5d209d5acc635109d016c8a2352a0141a5cab5fe866bfe394d58b08bfc7",
+    "uploadedAt": "2026-10-26T17:31:32Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Water_1Moving.rbxmx": {
+    "assetId": "115024345679920",
+    "assetType": "Animation",
+    "sha256": "fb710466096ffa9a20e06866d275e8f9da376de309d089f9a0a541452448aa06",
+    "uploadedAt": "2026-10-26T17:31:34Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Water_2.rbxmx": {
+    "assetId": "129338546945897",
+    "assetType": "Animation",
+    "sha256": "b04d8991f7c33526af559b5ddc85ae922cda655899376f64e39bae53dc072492",
+    "uploadedAt": "2026-10-26T17:31:37Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Water_2Moving.rbxmx": {
+    "assetId": "101126443876890",
+    "assetType": "Animation",
+    "sha256": "eaea1cc2dcafb4552f37e090396a23d8ed50d137f339911d9240a49c67349042",
+    "uploadedAt": "2026-10-26T17:31:40Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Water_3.rbxmx": {
+    "assetId": "95216572231091",
+    "assetType": "Animation",
+    "sha256": "dab64f6d4c39f9bc20b6d98c6217b0cf23c4bece18f43deffd0d325eac240723",
+    "uploadedAt": "2026-10-26T17:31:42Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Water_3Moving.rbxmx": {
+    "assetId": "84463305882409",
+    "assetType": "Animation",
+    "sha256": "6d58f85c5fb69e6920faee29d48503c82ee3eba22b8dbcb553e15c61625084ef",
+    "uploadedAt": "2026-10-26T17:31:45Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Wind_1.rbxmx": {
+    "assetId": "94696747156563",
+    "assetType": "Animation",
+    "sha256": "099eefdfa7f0278d814655c88e9dda973e7b858e3e9e4ed7ef96abf0901c90ed",
+    "uploadedAt": "2026-10-26T17:31:48Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Wind_1Moving.rbxmx": {
+    "assetId": "136701589841378",
+    "assetType": "Animation",
+    "sha256": "3a51374116469d1303322bdd0d1577d47dd1731e73e45e89e0f5db580ac8b1b5",
+    "uploadedAt": "2026-10-26T17:31:51Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Wind_2.rbxmx": {
+    "assetId": "71201987459259",
+    "assetType": "Animation",
+    "sha256": "7cb2d1a55c8dea36564cf250de4a7bf08f851e62288eb86b80d280aff1114fc3",
+    "uploadedAt": "2026-10-26T17:31:53Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Wind_2Moving.rbxmx": {
+    "assetId": "103782331513130",
+    "assetType": "Animation",
+    "sha256": "0409d5cb755f85d3dde1d82ff1b3db264fda25b00967a00ed48501760fae4d48",
+    "uploadedAt": "2026-10-26T17:31:56Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Wind_3.rbxmx": {
+    "assetId": "111706766077483",
+    "assetType": "Animation",
+    "sha256": "0665e907ab947b1885a7cbcd0ea80604ecdb4a8b3f331cf5fa72ce5aca9e40ff",
+    "uploadedAt": "2026-10-26T17:31:59Z"
+  },
+  "blender/export/animations/BE_PowerMoves_Wind_3Moving.rbxmx": {
+    "assetId": "131473390490135",
+    "assetType": "Animation",
+    "sha256": "bfda5c4e4295e0d8d1de37d01ecb60c2e6cb3ce3bb8d9fd244f2f275cf94560a",
+    "uploadedAt": "2026-10-26T17:32:02Z"
+  },
+  "blender/export/animations/BE_PowerSwallow_Swallow.rbxmx": {
+    "assetId": "134771684679502",
+    "assetType": "Animation",
+    "sha256": "d3185aa45307a9ab5703bd1bf583dfba2ab4d09c61a5fdddb34e5fdc66fcea80",
+    "uploadedAt": "2026-10-26T17:01:08Z"
+  },
+  "blender/export/animations/BE_PowerSwallow_SwallowMoving.rbxmx": {
+    "assetId": "99253369218549",
+    "assetType": "Animation",
+    "sha256": "b61c7f91dbccce1179eabe3e0e683cb3b50b3f2270cbfe0586c6bcfc1d78eb28",
+    "uploadedAt": "2026-10-26T17:01:11Z"
+  },
+  "blender/export/animations/BE_QCasts_Earth_1.rbxmx": {
+    "assetId": "99493010397547",
+    "assetType": "Animation",
+    "sha256": "eade44580b19cf67b58f345a7149e53184f36a972bd8364fe87256d4deae1f0f",
+    "uploadedAt": "2026-10-28T07:39:20Z"
+  },
+  "blender/export/animations/BE_QCasts_Earth_1Moving.rbxmx": {
+    "assetId": "98725334412454",
+    "assetType": "Animation",
+    "sha256": "ba31ed99a083003a42c7c90e92e7f6cdd04d068cfe23867adacec8f0fcaf8211",
+    "uploadedAt": "2026-10-28T07:39:22Z"
+  },
+  "blender/export/animations/BE_QCasts_Earth_2.rbxmx": {
+    "assetId": "128298879035720",
+    "assetType": "Animation",
+    "sha256": "5e6d47cc14eea763eb0e6973a4d7f2dd4540a7da473ade238f4bdb3aa7811520",
+    "uploadedAt": "2026-10-28T08:25:02Z"
+  },
+  "blender/export/animations/BE_QCasts_Earth_2Moving.rbxmx": {
+    "assetId": "83226680282260",
+    "assetType": "Animation",
+    "sha256": "903566da43e2bb063870483566929330e3aa5078d4a22f14a7d75d73bfd2d47b",
+    "uploadedAt": "2026-10-28T08:25:05Z"
+  },
+  "blender/export/animations/BE_QCasts_Earth_3.rbxmx": {
+    "assetId": "97587451688967",
+    "assetType": "Animation",
+    "sha256": "0e8a9f1ed85d0c765ceb1c92c611e73ad39dfa8b10f4da6a299618fc4be702aa",
+    "uploadedAt": "2026-10-28T08:25:08Z"
+  },
+  "blender/export/animations/BE_QCasts_Earth_3Moving.rbxmx": {
+    "assetId": "126534185282485",
+    "assetType": "Animation",
+    "sha256": "2c1f5d6620f0017ecad7a12b96d7b01424109913c6433838b224ce5aaf388c7c",
+    "uploadedAt": "2026-10-28T08:25:11Z"
+  },
+  "blender/export/animations/BE_QCasts_Fire_2.rbxmx": {
+    "assetId": "97696515739588",
+    "assetType": "Animation",
+    "sha256": "dc736b5a11672af954306a0f6bb7c909fa6d661ca687059dccf890a23ceb41a3",
+    "uploadedAt": "2026-10-28T08:25:16Z"
+  },
+  "blender/export/animations/BE_QCasts_Fire_2Moving.rbxmx": {
+    "assetId": "77890384445235",
+    "assetType": "Animation",
+    "sha256": "1c8c05e634c4e045ce67fb530f27e68c6cf857807b2bf870222102b1b7b58f95",
+    "uploadedAt": "2026-10-28T08:25:18Z"
+  },
+  "blender/export/animations/BE_QCasts_Fire_3.rbxmx": {
+    "assetId": "77687284149521",
+    "assetType": "Animation",
+    "sha256": "7403c0cd3b381d17ad61fb28fe695bfc67b8dce23985db210e67a6c47b01e458",
+    "uploadedAt": "2026-10-28T08:25:21Z"
+  },
+  "blender/export/animations/BE_QCasts_Fire_3Moving.rbxmx": {
+    "assetId": "126568718679011",
+    "assetType": "Animation",
+    "sha256": "119df4dec78283bfdd5806727960296342df4a417a8dcb898ad6fdb5a3351fe7",
+    "uploadedAt": "2026-10-28T08:25:24Z"
+  },
+  "blender/export/animations/BE_QCasts_Shadow_1.rbxmx": {
+    "assetId": "132994777697737",
+    "assetType": "Animation",
+    "sha256": "8a722784e45628ae7647a4d73a426a7e62bb6779cbc8e87629323d5e94a04e2a",
+    "uploadedAt": "2026-10-28T07:39:25Z"
+  },
+  "blender/export/animations/BE_QCasts_Shadow_1Moving.rbxmx": {
+    "assetId": "120592579690284",
+    "assetType": "Animation",
+    "sha256": "724920c03b7700e976237c03ae232bf215dbe716eb162a0a574f086e59019944",
+    "uploadedAt": "2026-10-28T07:39:27Z"
+  },
+  "blender/export/animations/BE_QCasts_Shadow_2.rbxmx": {
+    "assetId": "88745006467555",
+    "assetType": "Animation",
+    "sha256": "bd1beda6020472e8c2c2ea3a88145baec5f07efe3a0bf5f4982bf72e160d917f",
+    "uploadedAt": "2026-10-28T08:25:27Z"
+  },
+  "blender/export/animations/BE_QCasts_Shadow_2Moving.rbxmx": {
+    "assetId": "111277217240827",
+    "assetType": "Animation",
+    "sha256": "0091a45b8103b6c4ee5aa617e1b307a331bba1885cbe544946d60100e7218fe3",
+    "uploadedAt": "2026-10-28T08:25:30Z"
+  },
+  "blender/export/animations/BE_QCasts_Shadow_3.rbxmx": {
+    "assetId": "116366070991548",
+    "assetType": "Animation",
+    "sha256": "e5da79b7f8ec9c21a67a268062a42d2687f5e619cb9061aadbd225da8de577e5",
+    "uploadedAt": "2026-10-28T08:25:32Z"
+  },
+  "blender/export/animations/BE_QCasts_Shadow_3Moving.rbxmx": {
+    "assetId": "130072065604092",
+    "assetType": "Animation",
+    "sha256": "f43cedbc4326d258e49477c89a23e31cb641d8aa6d1fae4650ee0ba0ad1525ad",
+    "uploadedAt": "2026-10-28T08:25:35Z"
+  },
+  "blender/export/animations/BE_QCasts_Sword_1.rbxmx": {
+    "assetId": "123130502051204",
+    "assetType": "Animation",
+    "sha256": "a09078d6a740ffb26451f9ea5644fed8f34596773c8971a87a59d46cf4d6bce8",
+    "uploadedAt": "2026-10-28T07:39:30Z"
+  },
+  "blender/export/animations/BE_QCasts_Sword_1Moving.rbxmx": {
+    "assetId": "124321926989453",
+    "assetType": "Animation",
+    "sha256": "47780cc1f2436b2a2e506abd715aa757d3d7f3996d889ab3ea60f61c395f7030",
+    "uploadedAt": "2026-10-28T07:39:33Z"
+  },
+  "blender/export/animations/BE_QCasts_Sword_2.rbxmx": {
+    "assetId": "128138553793651",
+    "assetType": "Animation",
+    "sha256": "c007177175484cee8b198d5d989fa74faa6ed7d7a3a4de2d72ef9e40a1328eca",
+    "uploadedAt": "2026-10-28T08:25:38Z"
+  },
+  "blender/export/animations/BE_QCasts_Sword_2Moving.rbxmx": {
+    "assetId": "124731765632790",
+    "assetType": "Animation",
+    "sha256": "704b20ffcfd5f7a2d04b74720bf135a746889b8dc7f1d455765df48de099faf2",
+    "uploadedAt": "2026-10-28T08:25:41Z"
+  },
+  "blender/export/animations/BE_QCasts_Sword_3.rbxmx": {
+    "assetId": "90373264559626",
+    "assetType": "Animation",
+    "sha256": "26c95f7dda36fafb6166d7d5579ae083fbe8165de83a91f1dde4fc267e2b14b9",
+    "uploadedAt": "2026-10-28T08:25:43Z"
+  },
+  "blender/export/animations/BE_QCasts_Sword_3Moving.rbxmx": {
+    "assetId": "102884088406655",
+    "assetType": "Animation",
+    "sha256": "1c58e03cb6ca9bde2dfb0dc002862c3efb86e7a60807637d5abfd4874ec2a270",
+    "uploadedAt": "2026-10-28T08:25:46Z"
+  },
+  "blender/export/animations/BE_QCasts_Sword_Earth_1.rbxmx": {
+    "assetId": "88555841779511",
+    "assetType": "Animation",
+    "sha256": "fcd7e92e777d76a5bf7473aec5a427f55dac30acae5de3e363bfb669abe719ec",
+    "uploadedAt": "2026-10-28T08:07:25Z"
+  },
+  "blender/export/animations/BE_QCasts_Sword_Earth_1Moving.rbxmx": {
+    "assetId": "84791158739296",
+    "assetType": "Animation",
+    "sha256": "eeff8b9ed2309633058fc8f81801ab25f8ab3402eb7403b6835eac2ad095166a",
+    "uploadedAt": "2026-10-28T08:07:28Z"
+  },
+  "blender/export/animations/BE_QCasts_Sword_Fire_1.rbxmx": {
+    "assetId": "74315673132074",
+    "assetType": "Animation",
+    "sha256": "0a145f2be04d0e8b932a99e8ffd6195ced75bb1f0c9865d46f13891a86b631cd",
+    "uploadedAt": "2026-10-28T08:07:30Z"
+  },
+  "blender/export/animations/BE_QCasts_Sword_Fire_1Moving.rbxmx": {
+    "assetId": "129659749635139",
+    "assetType": "Animation",
+    "sha256": "666dae0ae1f34aa9a80679d968f0b114b64d0206fe33245ea4abd89d25900395",
+    "uploadedAt": "2026-10-28T08:07:33Z"
+  },
+  "blender/export/animations/BE_QCasts_Sword_Shadow_1.rbxmx": {
+    "assetId": "128490339683200",
+    "assetType": "Animation",
+    "sha256": "46721a71bbe111110b3cd2c9e6f7ad5b8d603279bf9888e491bb2235a44212c6",
+    "uploadedAt": "2026-10-28T08:07:35Z"
+  },
+  "blender/export/animations/BE_QCasts_Sword_Shadow_1Moving.rbxmx": {
+    "assetId": "123303116805284",
+    "assetType": "Animation",
+    "sha256": "681c490af4ad02363238ad7e5996b818156d6904296a080eddd762d57b234b2e",
+    "uploadedAt": "2026-10-28T08:07:38Z"
+  },
+  "blender/export/animations/BE_QCasts_Sword_Sword_1.rbxmx": {
+    "assetId": "82386283754997",
+    "assetType": "Animation",
+    "sha256": "8c2fbbbd12af92e9837ed5b9fb83d27e6f75dc3365618134970b56c5f47d5ab7",
+    "uploadedAt": "2026-10-28T08:07:40Z"
+  },
+  "blender/export/animations/BE_QCasts_Sword_Sword_1Moving.rbxmx": {
+    "assetId": "93347344799184",
+    "assetType": "Animation",
+    "sha256": "76f6e4fe72cf15712c454dfb4027f485655fb019b042f535850c7316b4bf3019",
+    "uploadedAt": "2026-10-28T08:07:42Z"
+  },
+  "blender/export/animations/BE_QCasts_Sword_Water_1.rbxmx": {
+    "assetId": "115763588950449",
+    "assetType": "Animation",
+    "sha256": "f50d521259ebe01abb77ee152eedd56c099e26d01e5232e58d3da0352e893d30",
+    "uploadedAt": "2026-10-28T08:07:45Z"
+  },
+  "blender/export/animations/BE_QCasts_Sword_Water_1Moving.rbxmx": {
+    "assetId": "90380967260959",
+    "assetType": "Animation",
+    "sha256": "747efa0eb6eb23e119c2d9e8efcf7768b50ff6b82434b992010f97378b5695e7",
+    "uploadedAt": "2026-10-28T08:07:47Z"
+  },
+  "blender/export/animations/BE_QCasts_Sword_Wind_1.rbxmx": {
+    "assetId": "129844891801075",
+    "assetType": "Animation",
+    "sha256": "5068079b460b277e7179f5e68ba8e2223bcdec3899f9437e398a936794bd0575",
+    "uploadedAt": "2026-10-28T08:07:50Z"
+  },
+  "blender/export/animations/BE_QCasts_Sword_Wind_1Moving.rbxmx": {
+    "assetId": "89540226156072",
+    "assetType": "Animation",
+    "sha256": "b80d8133879520c872df8daf05520e013777695866d6ffea22b8fcacc624e076",
+    "uploadedAt": "2026-10-28T08:07:52Z"
+  },
+  "blender/export/animations/BE_QCasts_Water_1.rbxmx": {
+    "assetId": "94947886563375",
+    "assetType": "Animation",
+    "sha256": "ed667440452220babc88064d9df1eb1354ca1f68dce8f84a99c9977068398bbc",
+    "uploadedAt": "2026-10-28T07:39:35Z"
+  },
+  "blender/export/animations/BE_QCasts_Water_1Moving.rbxmx": {
+    "assetId": "74994280863660",
+    "assetType": "Animation",
+    "sha256": "2bbf204fd3bfbece8516bf303db93db54d57f0fd81788279b13e9675c291bd52",
+    "uploadedAt": "2026-10-28T07:39:38Z"
+  },
+  "blender/export/animations/BE_QCasts_Water_2.rbxmx": {
+    "assetId": "78072278968948",
+    "assetType": "Animation",
+    "sha256": "eb4d3958c06dbcfccaa643d1275ef5477cfcd39ac529efb1d09e003deb133dda",
+    "uploadedAt": "2026-10-28T08:25:49Z"
+  },
+  "blender/export/animations/BE_QCasts_Water_2Moving.rbxmx": {
+    "assetId": "76831166162702",
+    "assetType": "Animation",
+    "sha256": "44771fc88ee1a5a75a14f8aecf868e2de7a4eea449dd6f7109735714e9d81bf8",
+    "uploadedAt": "2026-10-28T08:25:51Z"
+  },
+  "blender/export/animations/BE_QCasts_Water_3.rbxmx": {
+    "assetId": "101774761987619",
+    "assetType": "Animation",
+    "sha256": "358e06036002a9cae9c06d6de6d04654b7eb0316ccb85bdd530a39a3f06b82cc",
+    "uploadedAt": "2026-10-28T08:25:54Z"
+  },
+  "blender/export/animations/BE_QCasts_Water_3Moving.rbxmx": {
+    "assetId": "114115116308521",
+    "assetType": "Animation",
+    "sha256": "d38b40ff9c9bea267d44f3b4f8a4a41519e4c6e93d138d302fbc3d73e71cfa67",
+    "uploadedAt": "2026-10-28T08:25:57Z"
+  },
+  "blender/export/animations/BE_QCasts_Wind_1.rbxmx": {
+    "assetId": "84191515429748",
+    "assetType": "Animation",
+    "sha256": "4415c6928552014a6fbbf3034b3dda0fe6dfe8254bfb8df5e95da56c44300cde",
+    "uploadedAt": "2026-10-28T07:39:40Z"
+  },
+  "blender/export/animations/BE_QCasts_Wind_1Moving.rbxmx": {
+    "assetId": "79588610011863",
+    "assetType": "Animation",
+    "sha256": "9b078c846746936a6aeb14074b4df6c09f4059ddcf4d742bfad764c5b9ffa60a",
+    "uploadedAt": "2026-10-28T07:39:43Z"
+  },
+  "blender/export/animations/BE_QCasts_Wind_2.rbxmx": {
+    "assetId": "125369355061030",
+    "assetType": "Animation",
+    "sha256": "d3975fe30386029753af89d436eb2deed2a8d4532f8d45ccbfc51d45b0ef5523",
+    "uploadedAt": "2026-10-28T08:26:00Z"
+  },
+  "blender/export/animations/BE_QCasts_Wind_2Moving.rbxmx": {
+    "assetId": "71264313960015",
+    "assetType": "Animation",
+    "sha256": "5f8a8810bf7d39bda29c8af8f422aa116a9f990baa2b25bd59bf43f8f79a9332",
+    "uploadedAt": "2026-10-28T08:26:02Z"
+  },
+  "blender/export/animations/BE_QCasts_Wind_3.rbxmx": {
+    "assetId": "129473404321654",
+    "assetType": "Animation",
+    "sha256": "2cc69bb509c5db9b4355afeaa7c6a5cb24fc9c8af37fc88e5be4b5adef5026a0",
+    "uploadedAt": "2026-10-28T08:26:05Z"
+  },
+  "blender/export/animations/BE_QCasts_Wind_3Moving.rbxmx": {
+    "assetId": "112815615456345",
+    "assetType": "Animation",
+    "sha256": "60b0da8d6ae9cf031ad3dfdc7754e608df24e7b34651578e1715c0818050af9c",
+    "uploadedAt": "2026-10-28T08:26:08Z"
+  },
+  "blender/export/animations/BE_SwordM1_Sword_M1_1.rbxmx": {
+    "assetId": "114620290008582",
+    "assetType": "Animation",
+    "sha256": "103d0285db79e612c74928319921ce2665c87a3b9ad2e29756403e20f95278c7",
+    "uploadedAt": "2026-10-28T08:47:28Z"
+  },
+  "blender/export/animations/BE_SwordM1_Sword_M1_1Moving.rbxmx": {
+    "assetId": "95184168951056",
+    "assetType": "Animation",
+    "sha256": "fa3d60102c8d68220b79ef10b69cefc4277d49e3171d350dad3bc9fa039f9a39",
+    "uploadedAt": "2026-10-28T08:47:31Z"
+  },
+  "blender/export/animations/BE_SwordM1_Sword_M1_2.rbxmx": {
+    "assetId": "130582779017206",
+    "assetType": "Animation",
+    "sha256": "1f8956f41cc80a9f0a2fafe31ee46960e37dfd87c70d3bceff3fd787e45d26a8",
+    "uploadedAt": "2026-10-28T08:47:33Z"
+  },
+  "blender/export/animations/BE_SwordM1_Sword_M1_2Moving.rbxmx": {
+    "assetId": "83617632377530",
+    "assetType": "Animation",
+    "sha256": "9d09a89e2e76fbdcb988a43a7f3ed50c81dc6733e1a87a4e5431224473a49228",
+    "uploadedAt": "2026-10-28T08:47:36Z"
+  },
+  "blender/export/animations/BE_SwordM1_Sword_M1_3.rbxmx": {
+    "assetId": "90936461621693",
+    "assetType": "Animation",
+    "sha256": "94dc93c4a74161e737af5fdcc4892653715779b029f51cd60ce2fedf696b5c0d",
+    "uploadedAt": "2026-10-28T08:47:38Z"
+  },
+  "blender/export/animations/BE_SwordM1_Sword_M1_3Moving.rbxmx": {
+    "assetId": "95335351109250",
+    "assetType": "Animation",
+    "sha256": "26e1ece761a86088969f1824a3c5a66912b38a4745f07e71e8c4d13d59f02de3",
+    "uploadedAt": "2026-10-28T08:47:41Z"
+  },
+  "blender/export/animations/BE_SwordRig_Sword_M1_1.rbxmx": {
+    "assetId": "129293301004480",
+    "assetType": "Animation",
+    "sha256": "ce65b9f7da49414a1df281b47dea6319ed377095dfebe1ef31765ba5dfc9826b",
+    "uploadedAt": "2026-10-28T09:21:03Z"
+  },
+  "blender/export/animations/BE_SwordRig_Sword_M1_1Moving.rbxmx": {
+    "assetId": "82490956624816",
+    "assetType": "Animation",
+    "sha256": "b46780a62d1fd48cb03992d0e14078585e594f3c7f9d65c754cbadc2cbd14b2f",
+    "uploadedAt": "2026-10-28T09:21:05Z"
+  },
+  "blender/export/animations/BE_SwordRig_Sword_M1_2.rbxmx": {
+    "assetId": "130407320980475",
+    "assetType": "Animation",
+    "sha256": "175da73ec226d615496243f4b081f0120a79e41bbeab1d1da0a2ebdf725a3a06",
+    "uploadedAt": "2026-10-28T09:21:08Z"
+  },
+  "blender/export/animations/BE_SwordRig_Sword_M1_2Moving.rbxmx": {
+    "assetId": "77362148225584",
+    "assetType": "Animation",
+    "sha256": "c4b320e18dfd600c9e334ab5838f7a5700106ed2f7e3e6b27f09e4546ba6c409",
+    "uploadedAt": "2026-10-28T09:21:11Z"
+  },
+  "blender/export/animations/BE_SwordRig_Sword_M1_3.rbxmx": {
+    "assetId": "105576524921428",
+    "assetType": "Animation",
+    "sha256": "bb8dcc06248a31a28441c07a4024e10545546e3495a01815f2055cf082a710d4",
+    "uploadedAt": "2026-10-28T09:21:13Z"
+  },
+  "blender/export/animations/BE_SwordRig_Sword_M1_3Moving.rbxmx": {
+    "assetId": "140518167709606",
+    "assetType": "Animation",
+    "sha256": "116e8037ff9f04c6990556640be645eb26b6eae362f831db59d6c9dec4c96195",
+    "uploadedAt": "2026-10-28T09:21:16Z"
+  },
+  "blender/export/animations/BE_SwordRig_Sword_Ready.rbxmx": {
+    "assetId": "107881919413642",
+    "assetType": "Animation",
+    "sha256": "3f2604eb759e322b89f2c8348713ed566902c014ae3c42dc486fdb7f71339bea",
+    "uploadedAt": "2026-10-28T09:21:20Z"
+  },
+  "blender/export/animations/BE_SwordRig_Sword_ReadyMoving.rbxmx": {
+    "assetId": "107127975680104",
+    "assetType": "Animation",
+    "sha256": "aa1db02bf79692ba6d0ab936b79fb76c6f0dd0e775efab8b73260c5b6df330c8",
+    "uploadedAt": "2026-10-28T09:21:22Z"
+  },
+  "blender/export/textures/BE_CartoonSkyV3_SkyboxBk.png": {
+    "assetId": "139424826510488",
+    "assetType": "Image",
+    "sha256": "72f9a8d26e6db2095b15dcbec3b5d732258cd11daa3b633153328b33d5c48d68",
+    "uploadedAt": "2026-10-25T21:41:14Z"
+  },
+  "blender/export/textures/BE_CartoonSkyV3_SkyboxDn.png": {
+    "assetId": "97701973509840",
+    "assetType": "Image",
+    "sha256": "ee8aa2b3d3f8810d4e2d2786966acaf0262230587df9eaf2647c0764a02f8495",
+    "uploadedAt": "2026-10-25T21:41:21Z"
+  },
+  "blender/export/textures/BE_CartoonSkyV3_SkyboxFt.png": {
+    "assetId": "70685245069272",
+    "assetType": "Image",
+    "sha256": "d15778930074f34aeb2f4e57e317db09998460aa5d8421de195bcbc8f4377044",
+    "uploadedAt": "2026-10-25T21:41:26Z"
+  },
+  "blender/export/textures/BE_CartoonSkyV3_SkyboxLf.png": {
+    "assetId": "128737946094833",
+    "assetType": "Image",
+    "sha256": "c57d821992e8abd7703b9dd70f1cba546ffa095fb3418203c5bfcf22c0b0779e",
+    "uploadedAt": "2026-10-25T21:41:31Z"
+  },
+  "blender/export/textures/BE_CartoonSkyV3_SkyboxRt.png": {
+    "assetId": "83542105288955",
+    "assetType": "Image",
+    "sha256": "d490a390388ed10ccf132d43faba95834dc7b850999bef0fae0e0309b5f4cb11",
+    "uploadedAt": "2026-10-25T21:41:36Z"
+  },
+  "blender/export/textures/BE_CartoonSkyV3_SkyboxUp.png": {
+    "assetId": "84958407621538",
+    "assetType": "Image",
+    "sha256": "e579b50fa56d4de0b2a4d2ac04051f7ab838bef3da415b88d4c9a98b1df7bb1f",
+    "uploadedAt": "2026-10-25T21:41:43Z"
+  },
   "blender/export/textures/BE_Inhale_Puff.png": {
     "assetId": "71229989533127",
     "assetType": "Image",
@@ -256,5 +1624,335 @@
     "assetType": "Image",
     "sha256": "f596e40cbc186db968625d2c34ec67907e4a82dd0186fdebe6a5946c0aa075d7",
     "uploadedAt": "2026-10-25T01:44:50Z"
+  },
+  "blender/export/textures/BE_MeadowV1_Grass.png": {
+    "assetId": "83475692374597",
+    "assetType": "Image",
+    "sha256": "cafb073cb7ea16336cfec20b6bcccfe23f0ec84716ca41cad765469a0f473b7b",
+    "uploadedAt": "2026-10-25T21:44:02Z"
+  },
+  "blender/export/textures/BE_MeadowV1_MatteWhite.png": {
+    "assetId": "118616090406429",
+    "assetType": "Image",
+    "sha256": "e56d54b889f8dae0b9bacf8e3cb38cbaa134cc92c7176b70c405fc4c10aed5ad",
+    "uploadedAt": "2026-10-25T21:45:09Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Earth_1.png": {
+    "assetId": "90125027382782",
+    "assetType": "Image",
+    "sha256": "9ab67322e80b51aac9870921cfa09323c806a0acc166ef9461b7fe01887acd87",
+    "uploadedAt": "2026-10-26T17:32:17Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Earth_2.png": {
+    "assetId": "140572390215183",
+    "assetType": "Image",
+    "sha256": "df14253fc9a77fce46f5bddec6b178bd2fec9fb23435ea35915b85ff09d6ef6f",
+    "uploadedAt": "2026-10-26T17:32:20Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Earth_3.png": {
+    "assetId": "129368915195200",
+    "assetType": "Image",
+    "sha256": "cffc2493bd978b05a142cf4a4ca6513b9889537807fb58ef859b1fae3c623807",
+    "uploadedAt": "2026-10-26T17:32:22Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Fire_1.png": {
+    "assetId": "86922815891745",
+    "assetType": "Image",
+    "sha256": "0d3ac97659a8fca466e19a293904ce41a91ba83e57fa0cff9a6406de4dda88d7",
+    "uploadedAt": "2026-10-26T17:32:25Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Fire_2.png": {
+    "assetId": "106189253727347",
+    "assetType": "Image",
+    "sha256": "752472b6915a8a40d43c069fb2a6a10fca8178319e2c5cd45ad966dc0793c6e5",
+    "uploadedAt": "2026-10-26T17:32:27Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Fire_3.png": {
+    "assetId": "93841149551410",
+    "assetType": "Image",
+    "sha256": "ec554737c5081174e45fe42d4b232dd901155191720d9921789cad15ca3bb4b5",
+    "uploadedAt": "2026-10-26T17:32:30Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Shadow_1.png": {
+    "assetId": "120736007232393",
+    "assetType": "Image",
+    "sha256": "303f1997d73dfae88fcd43a0f9d823f8796c73730c7c2abb1295df36230a13c5",
+    "uploadedAt": "2026-10-26T17:32:32Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Shadow_2.png": {
+    "assetId": "119429303439205",
+    "assetType": "Image",
+    "sha256": "905e3696181b5934c7bd34bff8c619ba7baf8de8c02950a207200d9d4941c53c",
+    "uploadedAt": "2026-10-26T17:32:35Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Shadow_3.png": {
+    "assetId": "104582119727372",
+    "assetType": "Image",
+    "sha256": "bd62008e652c381f0a7a9d97523adda54ba7cdc5122db35ee9b95e89ce04aed0",
+    "uploadedAt": "2026-10-26T17:32:37Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Sword_1.png": {
+    "assetId": "103048722660051",
+    "assetType": "Image",
+    "sha256": "7c0efc75dcfdecfdab261ba87be73fd907e4bd5ba87667e56cc23dcd9551870c",
+    "uploadedAt": "2026-10-26T17:32:40Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Sword_2.png": {
+    "assetId": "94700249981126",
+    "assetType": "Image",
+    "sha256": "caa3c2319fef6970e5e5d94f5a8d54457de8e09fea0775c5b1bcffe9a4cb46eb",
+    "uploadedAt": "2026-10-26T17:32:43Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Sword_3.png": {
+    "assetId": "101768111365997",
+    "assetType": "Image",
+    "sha256": "460d44689dfad5d96c8743f011891fb781030da9da204fbc8ff4696ebcbc8ca9",
+    "uploadedAt": "2026-10-26T17:32:45Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Sword_Earth_1.png": {
+    "assetId": "117694307931818",
+    "assetType": "Image",
+    "sha256": "7c0613132f054f8f2169fd09186cf5827649068643ee42378a3a2b8a9a75c5aa",
+    "uploadedAt": "2026-10-26T17:32:48Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Sword_Earth_2.png": {
+    "assetId": "101722207210092",
+    "assetType": "Image",
+    "sha256": "b5e442c9b8aa72dcfb3b5787927cf06753af49667c55e631b1537a86fcca1594",
+    "uploadedAt": "2026-10-26T17:32:50Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Sword_Earth_3.png": {
+    "assetId": "111557391230011",
+    "assetType": "Image",
+    "sha256": "31c8c08c71dfa8cd371760fa7c518a8c2934f6bc04d200672e512120a974cd0f",
+    "uploadedAt": "2026-10-26T17:32:53Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Sword_Fire_1.png": {
+    "assetId": "74144924303341",
+    "assetType": "Image",
+    "sha256": "8380a590badf4e835ed24e1137b88402d4bfa85e4bcc5019e2551332f7ffb111",
+    "uploadedAt": "2026-10-26T17:32:55Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Sword_Fire_2.png": {
+    "assetId": "131937449113067",
+    "assetType": "Image",
+    "sha256": "29a67f7abdff630f70c683bbbebf422725454e7e2c70c5578032596d7e60cc88",
+    "uploadedAt": "2026-10-26T17:32:58Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Sword_Fire_3.png": {
+    "assetId": "72814256844674",
+    "assetType": "Image",
+    "sha256": "fd7977b8d8153aad1ba54b6fa1ab047f8ef71a30920b8590ae4b7a9b8099ed04",
+    "uploadedAt": "2026-10-26T17:33:01Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Sword_Shadow_1.png": {
+    "assetId": "79340161311508",
+    "assetType": "Image",
+    "sha256": "0ded14956ba9f733f48e7eb51f2b14c0329907fbc9948ffad5f620f553f83f54",
+    "uploadedAt": "2026-10-26T17:33:03Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Sword_Shadow_2.png": {
+    "assetId": "105567675320447",
+    "assetType": "Image",
+    "sha256": "8e2186dac8a4dc43ec39ea3ffe581bfa5c05a8142db7e04f482d8a4c583c2907",
+    "uploadedAt": "2026-10-26T17:33:06Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Sword_Shadow_3.png": {
+    "assetId": "83842895571707",
+    "assetType": "Image",
+    "sha256": "c84cf865b460d1e7eebc566fa47f6407d0819ebff2386c21c4fb9387fb191ff4",
+    "uploadedAt": "2026-10-26T17:33:08Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Sword_Sword_1.png": {
+    "assetId": "74952465630894",
+    "assetType": "Image",
+    "sha256": "8c5f56f94b4938ef8ce2c206d205df4e116f5313af820293242b726176f97226",
+    "uploadedAt": "2026-10-26T17:33:11Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Sword_Sword_2.png": {
+    "assetId": "120488331397503",
+    "assetType": "Image",
+    "sha256": "16d02a4d2ad0ac8f2239bd295296f68d0177265c58cf06ac549c6feeaf128bb7",
+    "uploadedAt": "2026-10-26T17:33:13Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Sword_Sword_3.png": {
+    "assetId": "95811263808088",
+    "assetType": "Image",
+    "sha256": "9bc6239ad93b07a2f823a00ac8a27ffd55c1fb68d49bf77fcce1ef9cd1ba0ed9",
+    "uploadedAt": "2026-10-26T17:33:16Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Sword_Water_1.png": {
+    "assetId": "118054896867731",
+    "assetType": "Image",
+    "sha256": "0b918a11dc25df5c0157c0e9a1b32b39b47d9af7e8f6dffffce93930372d9840",
+    "uploadedAt": "2026-10-26T17:33:18Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Sword_Water_2.png": {
+    "assetId": "103628535773260",
+    "assetType": "Image",
+    "sha256": "16975395d9aad5aff8b26aabf42669fdd91cdaddb959f05408b4a4245b38aef5",
+    "uploadedAt": "2026-10-26T17:33:21Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Sword_Water_3.png": {
+    "assetId": "80838150043742",
+    "assetType": "Image",
+    "sha256": "5e84ccd7c056b59d92d882403de5b5efee477219562b6ca6cf191e7a21c9e2b2",
+    "uploadedAt": "2026-10-26T17:33:24Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Sword_Wind_1.png": {
+    "assetId": "83342811604786",
+    "assetType": "Image",
+    "sha256": "8db094a67785cb01f2e6982a4b06bb78c1b862516f6032335315c249cbd927bd",
+    "uploadedAt": "2026-10-26T17:33:26Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Sword_Wind_2.png": {
+    "assetId": "114365777395587",
+    "assetType": "Image",
+    "sha256": "03b9057aab1138211efe7bccf61083e72b013cd246ddd7c00446e46030d33b3d",
+    "uploadedAt": "2026-10-26T17:33:29Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Sword_Wind_3.png": {
+    "assetId": "118617862050271",
+    "assetType": "Image",
+    "sha256": "5c42e501ec50320dd4c1ca9c5b946124e47022381107eb5b5943febd9e7bc6c7",
+    "uploadedAt": "2026-10-26T17:33:31Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Water_1.png": {
+    "assetId": "78372817309150",
+    "assetType": "Image",
+    "sha256": "34173b0f72742e4015402e7ca837d9a4a22ee70b3f3ebcb986cf8143ad4befcb",
+    "uploadedAt": "2026-10-26T17:33:34Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Water_2.png": {
+    "assetId": "114424443495104",
+    "assetType": "Image",
+    "sha256": "c911ddf9f14da17aa2905f526a2e8ba7586487459dbd1bb0341ff330ebab4e1a",
+    "uploadedAt": "2026-10-26T17:33:36Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Water_3.png": {
+    "assetId": "87243794005638",
+    "assetType": "Image",
+    "sha256": "562d19605cfbdaa790938d467178dcc0a9fb9c3dbbcb7ecda1b3a42babbb93c1",
+    "uploadedAt": "2026-10-26T17:33:39Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Wind_1.png": {
+    "assetId": "128041985044613",
+    "assetType": "Image",
+    "sha256": "b6859e715b2970c779385f0357db7a8cedd021e0cba347cafc70584f0275d92c",
+    "uploadedAt": "2026-10-26T17:33:42Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Wind_2.png": {
+    "assetId": "131016669290970",
+    "assetType": "Image",
+    "sha256": "d447647b824a68270d63ef8b0134a42635083e0d4467076855abd8d2256057b4",
+    "uploadedAt": "2026-10-26T17:33:44Z"
+  },
+  "blender/export/textures/BE_MoveIcons_Wind_3.png": {
+    "assetId": "96810680880675",
+    "assetType": "Image",
+    "sha256": "d03b03743636059b504717c602ce022aa76cd32948a770cdde22593bc7c526df",
+    "uploadedAt": "2026-10-26T17:33:47Z"
+  },
+  "blender/export/textures/BE_PowerIcons_Earth.png": {
+    "assetId": "115503973262283",
+    "assetType": "Image",
+    "sha256": "553788fa442244d19e2e247a613fc9fc776df5f8287cd8080710936052861042",
+    "uploadedAt": "2026-10-26T17:00:18Z"
+  },
+  "blender/export/textures/BE_PowerIcons_Fire.png": {
+    "assetId": "138192374849125",
+    "assetType": "Image",
+    "sha256": "f07b81704b0e7e23aa727eb6e7b7ae73bdee890c4503804ce8098d017546e740",
+    "uploadedAt": "2026-10-26T17:00:20Z"
+  },
+  "blender/export/textures/BE_PowerIcons_Shadow.png": {
+    "assetId": "139922773922773",
+    "assetType": "Image",
+    "sha256": "075cc4f1b267baa874aa78418e0d7fe9f6837bbbed6c44dbe6474b539faa2512",
+    "uploadedAt": "2026-10-26T17:00:23Z"
+  },
+  "blender/export/textures/BE_PowerIcons_Sword.png": {
+    "assetId": "136252600941129",
+    "assetType": "Image",
+    "sha256": "2c53c08b08af26d2235faef0cdd1d2c03b62bcd1a1791582ea109a6ad58f0375",
+    "uploadedAt": "2026-10-26T17:00:26Z"
+  },
+  "blender/export/textures/BE_PowerIcons_Sword_Earth.png": {
+    "assetId": "91523572995838",
+    "assetType": "Image",
+    "sha256": "13ea31a05646b8cc2c17a28b841c72be3cfe3f2c0a34344bd093290a49290d5f",
+    "uploadedAt": "2026-10-26T17:00:28Z"
+  },
+  "blender/export/textures/BE_PowerIcons_Sword_Fire.png": {
+    "assetId": "83994361002930",
+    "assetType": "Image",
+    "sha256": "905e7a5bd788da8c579e9efa6bd9df9db23455e7e3a62cd19971121329402866",
+    "uploadedAt": "2026-10-26T17:00:31Z"
+  },
+  "blender/export/textures/BE_PowerIcons_Sword_Shadow.png": {
+    "assetId": "95378118481294",
+    "assetType": "Image",
+    "sha256": "0f89c58b2671efbe1fe876deca7583e66bb4cd87c97c8c8493d40d329b49b8c1",
+    "uploadedAt": "2026-10-26T17:00:33Z"
+  },
+  "blender/export/textures/BE_PowerIcons_Sword_Sword.png": {
+    "assetId": "105078622955025",
+    "assetType": "Image",
+    "sha256": "3a1196c234916f121275692e7f2414a29efa80ca7df9da285d7ee68168a7db6a",
+    "uploadedAt": "2026-10-26T17:00:36Z"
+  },
+  "blender/export/textures/BE_PowerIcons_Sword_Water.png": {
+    "assetId": "99814366776493",
+    "assetType": "Image",
+    "sha256": "4cd97844757cda943754ea2414ad17f3d32335bc3fdab36001a4b153e699a328",
+    "uploadedAt": "2026-10-26T17:00:39Z"
+  },
+  "blender/export/textures/BE_PowerIcons_Sword_Wind.png": {
+    "assetId": "81295627407302",
+    "assetType": "Image",
+    "sha256": "a51edc7fe166721b1ff77e2c9b490046c8d7aeec02288adbe34df6716c5d36af",
+    "uploadedAt": "2026-10-26T17:00:41Z"
+  },
+  "blender/export/textures/BE_PowerIcons_Water.png": {
+    "assetId": "132075750363145",
+    "assetType": "Image",
+    "sha256": "e951e92c87b50979fe9946be49130ade373a9e7810ca242f017a2aaba873f3fc",
+    "uploadedAt": "2026-10-26T17:00:44Z"
+  },
+  "blender/export/textures/BE_PowerIcons_Wind.png": {
+    "assetId": "127320336061449",
+    "assetType": "Image",
+    "sha256": "63111c1269030a8e1b1a35cc878c3b4600bc43d5c6c8dc3a20dce270e21d0143",
+    "uploadedAt": "2026-10-26T17:00:46Z"
+  },
+  "blender/export/textures/BE_PowerMesh_HeldSword_Color.png": {
+    "assetId": "114069347460825",
+    "assetType": "Image",
+    "sha256": "6b4dd9d924e6ad4d9e919c0202fd224833084cf869bfffb2e3848bacd73a4a03",
+    "uploadedAt": "2026-10-28T08:43:01Z"
+  },
+  "blender/export/textures/BE_PowerMesh_MasterSword_Color.png": {
+    "assetId": "74015133819972",
+    "assetType": "Image",
+    "sha256": "f728e6bbe86e7e442eb731409fddcde807b36c47620ada56e1f05cea2733ecfd",
+    "uploadedAt": "2026-10-26T17:57:43Z"
+  },
+  "blender/export/textures/BE_PowerMesh_ShadowOrb_Color.png": {
+    "assetId": "74726169660937",
+    "assetType": "Image",
+    "sha256": "ab7a1ff0e0939c4259d22cc6f15e465c3b9d529408a85d8a2c6a8317e181f31e",
+    "uploadedAt": "2026-10-26T17:57:45Z"
+  },
+  "blender/export/textures/BE_PowerMesh_Sword_Color.png": {
+    "assetId": "107578941879603",
+    "assetType": "Image",
+    "sha256": "f728e6bbe86e7e442eb731409fddcde807b36c47620ada56e1f05cea2733ecfd",
+    "uploadedAt": "2026-10-26T17:57:48Z"
+  },
+  "blender/export/textures/BE_PowerMesh_Wave_Color.png": {
+    "assetId": "101823800043202",
+    "assetType": "Image",
+    "sha256": "4d86a79ada651c9d1718fb6c4b7522933fd55dc4e342e4c7adc7ff76999254ec",
+    "uploadedAt": "2026-10-26T17:57:50Z"
   }
 }

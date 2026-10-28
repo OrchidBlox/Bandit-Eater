@@ -6,6 +6,7 @@ local Remotes = require(ReplicatedStorage.Shared.Remotes)
 local Data = require(script.Parent.DataService)
 local World = require(script.Parent.PilotWorld)
 local Combat = require(script.Parent.PilotCombat)
+local Stars = require(script.Parent.PowerStarService)
 local Service = {}
 local actors, bandits = Combat.Actors, Combat.Bandits
 local phase, deadline, matchId = "Lobby", 0, 0
@@ -66,7 +67,7 @@ local function createBot(index)
 	actor.Name, actor.Active, actor.Bot = "Bot " .. index, true, true
 	resetActor(actor)
 	actor.Model = World.Dummy(World.Root, actor.Name, spawnPosition(index) - Vector3.new(0, 3, 0), C.Powers[actor.Slots[1]].Color)
-	-- Only the yellow power bandits are inhale targets; make fighters distinct.
+	-- Power Stars are the inhale targets; make practice fighters distinct.
 	for _, part in actor.Model:GetChildren() do
 		if part:IsA("BasePart") and part.Name ~= "PowerTell" then
 			part.Color = Color3.fromRGB(80, 140, 220)
@@ -122,7 +123,7 @@ local function joinMatch(actor)
 	actor.Active, actor.Queued, actor.Dead, actor.Payout = true, false, false, 0
 	actor.Score, actor.Damage, actor.Inhales, actor.EarnedKOs, actor.Opponents = 0, 0, 0, 0, {}
 	placeCharacter(actor)
-	notify(actor.Player, "Inhale a bandit to get a second power. Hold F, then G to swallow or T to spit.")
+	notify(actor.Player, "Inhale a bouncing Power Star. Hold F, then G to equip its power or T to spit.")
 end
 
 local function checkArenaEntry()
@@ -150,15 +151,17 @@ local function checkArenaEntry()
 	end
 end
 
-local function spawnBandit(index, variant)
-	local power = randomPower()
-	if variant == "Normal" then
-		power = C.BaseIds[(index - 1) % #C.BaseIds + 1]
+local function spawnBandit(index)
+	local spawned = Stars.Spawn(World, bandits, index, C.BaseIds)
+	if not spawned and not bandits[index] then
+		local id = matchId
+		task.delay(2, function()
+			if phase == "Match" and matchId == id and not bandits[index] then
+				spawnBandit(index)
+			end
+		end)
 	end
-	local position = World.BanditPosition(index)
-	local model = World.Dummy(World.Root, variant == "Mystery" and "Mystery" or power, position,
-	variant == "Mystery" and Color3.new(1, 1, 1) or C.Powers[power].Color, variant)
-	bandits[index] = { Model = model, Power = power, Variant = variant, NextAttack = os.clock() + 2 }
+	return spawned
 end
 
 local function clearBandits()
@@ -171,7 +174,7 @@ local function clearBandits()
 end
 
 local function takeBandit(actor, index, bandit)
-	if bandits[index] ~= bandit or not bandit.Model.Parent then
+	if bandits[index] ~= bandit or not bandit.Model.Parent or bandit.ReservedBy ~= actor then
 		return
 	end
 	local held = { Power = bandit.Power, Variant = bandit.Variant }
@@ -179,9 +182,9 @@ local function takeBandit(actor, index, bandit)
 	bandit.Model:Destroy()
 	bandits[index] = nil
 	local id = matchId
-	task.delay(C.BanditRespawn, function()
-		if phase == "Match" and matchId == id and index <= 6 and not bandits[index] then
-			spawnBandit(index, "Normal")
+	task.delay((C.PowerStarRespawn or C.BanditRespawn), function()
+		if phase == "Match" and matchId == id and index <= Stars.MaxCount and not bandits[index] then
+			spawnBandit(index)
 		end
 	end)
 	return true
@@ -192,7 +195,7 @@ local function inhale(actor)
 		return
 	end
 	if actor.Held then
-		actor.InhaleMessage = "Already holding a bandit: G to swallow or T to spit."
+		actor.InhaleMessage = "Already holding a Power Star: G to swallow or T to spit."
 		actor.InhaleMessageUntil = os.clock() + 2
 		return
 	end
@@ -204,25 +207,31 @@ local function inhale(actor)
 		return
 	end
 	actor.Inhaling = true
+	actor.InhaleCatchUntil = os.clock() + 0.35
 	actor.InhaleTarget, actor.InhaleMessage = nil, nil
 	local model, started = actor.Model, os.clock()
 	local token, captured = HttpService:GenerateGUID(false), false
 	Remotes.PilotVfx:FireAllClients({ Effect = "Inhale", Phase = "Start", Caster = model, Token = token, Captured = false })
 	task.spawn(function()
 		local ok, failure = pcall(function()
-			while actor.Inhaling and Combat.Enabled and Combat.Alive(actor) and actor.Model == model and os.clock() - started < 2 do
+			while actor.Inhaling and Combat.Enabled and Combat.Alive(actor) and actor.Model == model and os.clock() >= (actor.Stunned or 0) and os.clock() - started < 2 do
+				if Combat.TryInhaleProjectile(actor) then
+					captured = true
+					break
+				end
 				local root = Combat.Root(actor)
 				local closest, candidate, distance = nil, nil, C.InhaleRange
 				for index, bandit in bandits do
 					local offset = bandit.Model.PrimaryPart.Position - root.Position
 					local d = offset.Magnitude
 					if d < distance and (d < 2 or offset.Unit:Dot(root.CFrame.LookVector) > 0.6)
+					and (not bandit.ReservedBy or bandit.ReservedBy == actor or os.clock() >= bandit.ReservedUntil)
 					and Combat.LineClear(root.Position, bandit.Model.PrimaryPart.Position, { model, bandit.Model }) then
 						closest, candidate, distance = index, bandit, d
 					end
 				end
 				actor.InhaleTarget = candidate and (candidate.Variant == "Mystery" and "Mystery" or candidate.Power) or nil
-				if candidate then
+				if candidate and Stars.Reserve(candidate, actor) then
 					local direction = root.Position - candidate.Model.PrimaryPart.Position
 					candidate.Model:PivotTo(candidate.Model:GetPivot() + direction * 0.24)
 					if distance < 4 and os.clock() - started >= C.InhaleDuration then
@@ -233,13 +242,15 @@ local function inhale(actor)
 				task.wait(0.06)
 			end
 		end)
+		Stars.Release(bandits, actor)
 		-- The original caster/token closes even if death or respawn changed actor.Model.
 		Remotes.PilotVfx:FireAllClients({ Effect = "Inhale", Phase = "Stop", Caster = model, Token = token, Captured = captured })
 		if actor.Model == model then
 			actor.Inhaling = false
+			actor.InhaleCatchUntil = nil
 			actor.InhaleTarget = nil
 			if not actor.Held then
-				actor.InhaleMessage = "Hold F facing a yellow power bandit within 19 studs. Blue fighters cannot be inhaled."
+				actor.InhaleMessage = "Hold F facing a bouncing Power Star within 19 studs. Fighters cannot be inhaled."
 				actor.InhaleMessageUntil = os.clock() + 2
 			end
 		end
@@ -249,26 +260,17 @@ local function inhale(actor)
 	end)
 end
 
-local function swallow(actor, replacement)
-	if not actor.Held or os.clock() < (actor.Stunned or 0) then
-		return
-	end
-	local slot = not actor.Slots[1] and 1 or not actor.Slots[2] and 2 or replacement
-	if slot ~= 1 and slot ~= 2 then
-		if actor.Player then
-			notify(actor.Player, "Both slots full: choose Replace 1 or Replace 2.")
-		end
-		return
-	end
-	local held = actor.Held
+local function swallow(actor)
+	if not actor.Held or os.clock() < (actor.Stunned or 0) then return end
+	local power = actor.Held.Power
+	if not C.Powers[power] then return end
+	local previousPower = actor.Slots[actor.Slot or 1]
 	actor.Held = nil
-	local power = held.Variant == "Mystery" and randomPower() or held.Power
-	actor.Slots[slot] = power
-	actor.Protection = os.clock() + C.SwallowProtection
-	Combat.Effect(Combat.Root(actor).Position, C.Powers[power].Color, 4, C.SwallowProtection)
-	if held.Variant == "Mystery" and actor.Player then
-		Remotes.PilotReveal:FireClient(actor.Player, power)
-	end
+	actor.Slots, actor.Slot = { power, previousPower }, 1
+	-- Keep per-power cooldown deadlines; swallowing never resets a move.
+	Remotes.PilotVfx:FireAllClients({ Effect = "PowerSwallow", Phase = "Start", Caster = actor.Model,
+		Power = power, PreviousPower = previousPower, Token = HttpService:GenerateGUID(false),
+		StartedAt = workspace:GetServerTimeNow() })
 end
 
 local function input(player, action, argument)
@@ -318,17 +320,19 @@ local function input(player, action, argument)
 	end
 	if action == "InhaleEnd" then
 		actor.Inhaling = false
+			actor.InhaleCatchUntil = nil
 	elseif action == "Inhale" then
 		inhale(actor)
 	elseif action == "Swallow" then
-		swallow(actor, argument)
+		swallow(actor)
 	elseif action == "Spit" and actor.Held and Combat.Ready(actor, "Spit", 1.5) then
 		actor.Held = nil
 		local data = Data.GetData(player)
 		local skin = C.Skins[data and data.equippedStar or "Default"] or C.Skins.Default
 		Combat.Projectile(actor, skin.Color, 20, 65, true)
 	elseif action == "Swap" and actor.Slots[2] and Combat.Ready(actor, "Swap", C.SwapCooldown) then
-		actor.Slot = 3 - actor.Slot
+		actor.Slots[1], actor.Slots[2] = actor.Slots[2], actor.Slots[1]
+		actor.Slot = 1
 	elseif action == "Fuse" and Combat.Ready(actor, "Fuse", 1) then
 		local fusion = C.Fusion(actor.Slots[1], actor.Slots[2])
 		if fusion then
@@ -468,6 +472,11 @@ local function sendState()
 	end)
 	updateLeaderboard(World.KOLeaderboard, koBoard, "KOs", "KOs")
 	for player, actor in actors do
+		-- Presentation only: lets every client show the right held weapon for this fighter's active power.
+		local character = actor.Bot and actor.Model or (typeof(player) == "Instance" and player.Character or nil)
+		if character then
+			character:SetAttribute("ActivePower", actor.Active and actor.Slots[actor.Slot or 1] or nil)
+		end
 		if actor.Bot then
 			continue
 		end
@@ -494,7 +503,7 @@ local function stepAI(dt)
 		end
 		local humanoid = actor.Model:FindFirstChildOfClass("Humanoid")
 		if humanoid then
-			humanoid.WalkSpeed = os.clock() < (actor.Stunned or 0) and 0 or actor.Inhaling and 8 or C.WalkSpeed
+			humanoid.WalkSpeed = os.clock() < (actor.Stunned or 0) and 0 or C.WalkSpeed
 		end
 		if not actor.Bot then
 			continue
@@ -531,34 +540,7 @@ local function stepAI(dt)
 			end
 		end
 	end
-	for _, bandit in bandits do
-		if os.clock() < bandit.NextAttack then
-			continue
-		end
-		local position, target, distance = bandit.Model.PrimaryPart.Position, nil, 23
-		for _, actor in actors do
-			-- Bandits prioritize the nearest human player, never match score.
-			if actor.Player and Combat.Alive(actor) then
-				local d = (Combat.Root(actor).Position - position).Magnitude
-				if d < distance then
-					target, distance = actor, d
-				end
-			end
-		end
-		if target then
-			bandit.NextAttack = os.clock() + (bandit.Variant == "Rare" and 2 or 3)
-			Combat.Effect(position, C.Powers[bandit.Power].Color, 3, 0.5)
-			local model = bandit.Model
-			task.delay(0.5, function()
-				if phase == "Match" and model.Parent and Combat.Alive(target)
-				and (Combat.Root(target).Position - position).Magnitude < 25
-				and Combat.LineClear(position, Combat.Root(target).Position, { model, target.Model }) then
-					Combat.Effect(Combat.Root(target).Position, C.Powers[bandit.Power].Color, 2)
-					Combat.Damage(nil, target, 4, 0, false)
-				end
-			end)
-		end
-	end
+	Stars.Step(World, bandits, dt)
 end
 
 local function runMatches()
@@ -572,23 +554,10 @@ local function runMatches()
 			end
 		end
 		fillBots()
-		for i = 1, 6 do
-			spawnBandit(i, "Normal")
+		for i = 1, Stars.MaxCount do
+			spawnBandit(i)
 		end
-		local nextRare, nextMystery = os.clock() + 20, os.clock() + 30
 		while os.clock() < deadline do
-			if os.clock() >= nextRare then
-				if not bandits[7] then
-					spawnBandit(7, "Rare")
-				end
-				nextRare = os.clock() + 25
-			end
-			if os.clock() >= nextMystery then
-				if not bandits[8] then
-					spawnBandit(8, "Mystery")
-				end
-				nextMystery = os.clock() + 30
-			end
 			stepAI(0.1)
 			task.wait(0.1)
 		end
@@ -602,6 +571,7 @@ local function runMatches()
 		clearBots()
 		for _, actor in actors do
 			actor.Active, actor.Dead, actor.Held, actor.Inhaling = false, false, nil, nil
+			actor.InhaleCatchUntil = nil
 			actor.Slots = {}
 			if actor.Player then
 				placeCharacter(actor)
@@ -642,6 +612,7 @@ function Service.Start()
 		if actor then
 			actor.Active = false
 			actor.Inhaling = false
+			actor.InhaleCatchUntil = nil
 		end
 		actors[player] = nil
 	end)

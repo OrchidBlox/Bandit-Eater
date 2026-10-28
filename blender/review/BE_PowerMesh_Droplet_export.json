@@ -1,0 +1,12 @@
+{
+  "model": "Droplet",
+  "triangles": 528,
+  "materials": 1,
+  "dimensions_blender": [
+    1.9999992847442627,
+    1.4399998188018799,
+    2.700000047683716
+  ],
+  "palette": false,
+  "exported": true
+}

@@ -1,0 +1,12 @@
+{
+  "model": "Sword",
+  "triangles": 308,
+  "materials": 1,
+  "dimensions_blender": [
+    1.794877290725708,
+    0.42500001192092896,
+    3.97775936126709
+  ],
+  "palette": true,
+  "exported": true
+}

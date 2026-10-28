@@ -1,9 +1,12 @@
 """Check all 12 joins after decoding Roblox's face orientation."""
 from pathlib import Path
+import argparse
 import numpy as np
 from PIL import Image
 
-root = Path(__file__).resolve().parents[1] / "assets/sky/cloud-panorama-v2"
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1] / "assets/sky/cloud-panorama-v2")
+root = parser.parse_args().root
 raw = {key: np.asarray(Image.open(root / f"Skybox{key}.png")).astype(int)
        for key in ("Ft", "Bk", "Rt", "Lf", "Up", "Dn")}
 # Convert the Roblox layout back to an inside-facing cube for edge comparisons.

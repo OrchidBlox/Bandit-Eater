@@ -1,0 +1,9 @@
+# BE Power Swallow
+
+Reference: docs/reference/move-concepts-v1-2026-10-26/power-swallow.png. Snappy-action style; original MrXen0 R15 source appended in an isolated headless Blender process. Source rig, rest pose, hierarchy, mesh geometry and live Blender session preserved.
+
+24 frames at 30 fps, 0.8 seconds, nonlooping, Action priority. Gather at frame4: hands toward stomach, softened knees and torso forward. Gulp at8: elbows in, head back, body compressed; held through10. PowerPop at12: chest lifts and arms open, knees straighten, held through14. Equip at18: shoulders turn and hands drop. Ready at24: balanced slight crouch with raised hands. No scale, cheek deformation, locomotion freeze, gameplay root travel or actual power props embedded in animation.
+
+Markers (zero-based): Gulp 8/30 seconds, PowerPop12/30, Equip18/30. Cosmetic markers only; server remains authoritative for power inventory. Fullbody Swallow and SwallowMoving share timing. Moving variant mutes HumanoidRootPart, LowerTorso and all legs/feet, retaining UpperTorso, head and arms. Use moving variant whenever moving or airborne. Suggested 0.06s entry / 0.10s release; movement continues underneath. Interrupt on higher priority attack, dash, death, respawn or cancellation, and clear queued cosmetic effects. These blend recommendations require Studio runtime review; no runtime testing claimed here.
+
+Build: Blender 5.2 blender.exe -b --factory-startup --python blender/anims/build_power_swallow.py -- --export. Then python blender/anims/build_power_swallow.py --compose. Export uses evaluated canonical joint transforms and proven R15 mapping from combat V2; per-frame baking preserves nonlinear timing. Review sheet and GIF are in blender/review/BE_PowerSwallow*. Measured checks in BE_PowerSwallow.validation.json cover both feet, joint lengths, mapping, orthonormal matrices and canonical source hash. Actual rigid character rendered from side and three-quarter viewpoints.

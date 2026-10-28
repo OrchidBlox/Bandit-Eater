@@ -14,10 +14,13 @@ local REMOTE_NAMES = {
 	"Notify",
 	"DoubleJump", -- client -> server: current character; server -> all: approved character
 	"CombatAction", -- server -> client only: Character, Action, Phase, Token, Time, optional hit Position
-	"PilotInput", -- client -> server: action string, optional move/slot index or cosmetic id
+	"PilotInput", -- client -> server: action string, optional move index or cosmetic id
 	"PilotState", -- server -> client: authoritative match / loadout / wallet snapshot
 	"PilotReveal", -- server -> client: resolved mystery power, presentation only
-	"PilotVfx", -- server -> client only: Effect, Phase, Caster, unique Token, Captured boolean
+	"PilotVfx", -- server -> client: Inhale(Start/Stop), PowerSwallow(Start), PowerMove(Start/Release/Stop/Impact).
+	-- PowerMove: Power, Q/E/R Key, Origin, Direction, StartedAt, Delay, Duration, Radius, Speed, optional impact Position.
+	-- Q Release includes authoritative live-character Origin/Direction and ReleaseTime after windup.
+	-- PowerSwallow: Power, optional PreviousPower, StartedAt; all effects include Caster and unique Token.
 }
 
 local Remotes = {}

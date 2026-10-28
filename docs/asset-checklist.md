@@ -1,5 +1,42 @@
 # Asset checklist
 
+## Power assets, first production set — 2026-10-26
+
+- [x] Twelve transparent 512px base/fusion emblems packaged and group-uploaded; IDs registered in `Shared.Config.PowerVisuals`.
+- [x] Standing and moving swallow animations authored on canonical R15, exported and uploaded. Real LocalScript playback loaded both at 0.8 seconds.
+- [x] Swallow VFX module created; Studio lifecycle check confirmed 11 parts and cleanup. Selene and Rojo passed.
+- [x] Icon delivery recheck: all twelve actual ImageLabels loaded in Studio, zero preload failures.
+- [x] Power Star mesh approved, FBX exported and model uploaded as `76772447924708`; six-variant factory and bounce/spin helper built.
+- [x] Installed `ReplicatedStorage.Assets.PowerStars` in Edit mode: Body template plus six base-power variants, each with front/back emblems. Studio screenshot confirmed upright meshes, matching colors and visible icons; temporary review lineup removed.
+- [x] Automatic swallow gameplay triggering verified in Studio; full owner visual, two-client and mobile review remain pending.
+- [x] 36 move icons, 72 V2 animation clips and ten move mesh templates installed. All 36 effects passed cleanup with zero mesh fallbacks. See [mesh manifest](power-mesh-installed.md).
+
+See [production manifest](power-assets-production.md) for sources, markers, integration contract and remaining scope.
+
+## Painted meadow lobby — 2026-10-25
+
+- `LobbyMeadowPolish` restyles the lobby specifically: painted grass across 12 beds and surrounding ground, matte limestone paving with restrained warm variation, and coordinated gray-green planter rims.
+- Reuses meadow texture `83475692374597` and the existing matte material; preserves approved trees, bushes, flowers, portal and two boards. Original 539 surfaces archived under `ServerStorage.PolishOld.LobbyMeadow_<timestamp>`; replacement dimensions and collision flags preserved.
+- Fresh Play confirmed 13 grass textures, 12 beds, 539 replacements and idempotent application. All 52 protected parts matched the original transform/size/collision/query snapshot. Selene and Rojo passed.
+- Final screenshot capture returned a blank frame; owner visual review and phone review remain pending. Applied on next Play; no commit, push or place publish.
+
+## Painted meadow arena — 2026-10-25
+
+- [x] Painted grass texture uploaded; matte ground, softened dirt shoulders, 29 pockets using approved bushes/flowers.
+- [x] Original decorative grass archived; original path appearance backed up. All 52 protected part transforms/sizes/collision/query settings unchanged.
+- [x] Fresh Studio visual and texture-load checks, idempotent application, Selene and Rojo validation.
+- [ ] Owner visual acceptance and phone/performance review.
+
+[Implementation, assets, generation prompt and validation](arena-meadow-pass.md). Applies on Play through `ArenaMeadowPolish`; lobby pass remains separate.
+
+## Cartoon sky and lighting — 2026-10-25
+
+- Source artwork: `docs/reference/cartoon-cloud-sky-v3.png`; built-in image generation, [prompt and rebuild steps](reference/cartoon-cloud-sky-v3-prompt.md).
+- Six 1024px faces: `assets/sky/cartoon-cloud-v3/`; uploaded IDs in `src/shared/PilotSkyConfig.luau` and `scripts/asset_ids.json`. Previous panorama/faces retained.
+- One shared `EnvironmentLighting.Apply()` replaces competing initial-world and nature-polish settings: 16.5 clock, brightness 2.5, blue-gray ambient fill, density 0.3/haze 1, glare 0, bloom 0.08, contrast 0.05, gentle warm tint. Lower bloom is intentional to preserve the cyan portal and white VFX.
+- Verified all twelve cube joins (zero channel mismatch), all six asset fetches succeeded in fresh Studio Play, active sky ID matched V3, and final clock/bloom matched configuration. Lobby and arena screenshots reviewed; yellow character silhouette remained clear against the ground. Selene and Rojo passed.
+- Owner visual acceptance and hands-on phone review pending. No geometry, anchors, gameplay or elevation changes. No place publish or Git push.
+
 Every model, visual, and map object the game uses. Code depends only on the anchors listed here (names and attributes), so assets can be swapped without breaking gameplay. Update this file whenever a feature adds or changes an asset.
 
 `ReplicatedStorage.Assets`, `Workspace.Map`, and Terrain are not managed by Rojo, so anything added there in Studio is kept.
@@ -93,3 +130,7 @@ Floors, paths, spawn plates and collision bounds remain plain parts. A noncollid
 - [ ] Owner V2 visual acceptance; mobile/gamepad, two-client replication and broad avatar-proportion testing.
 
 [Validation](combat-actions-validation.md), [preview](../blender/review/BE_CombatActionsV2.gif).
+
+## Fire Q/R polish
+
+See [Fire polish](fire-polish.md): approved Flame mesh reused; six lifecycle cases and actual Q/R input passed. Owner visual acceptance remains pending.

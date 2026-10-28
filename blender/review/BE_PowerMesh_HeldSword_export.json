@@ -1,0 +1,12 @@
+{
+  "model": "HeldSword",
+  "triangles": 504,
+  "materials": 1,
+  "dimensions_blender": [
+    1.899999976158142,
+    0.46000000834465027,
+    6.59999942779541
+  ],
+  "palette": true,
+  "exported": true
+}

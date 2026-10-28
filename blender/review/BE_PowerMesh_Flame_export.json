@@ -1,0 +1,12 @@
+{
+  "model": "Flame",
+  "triangles": 1250,
+  "materials": 1,
+  "dimensions_blender": [
+    2.0,
+    1.2999998331069946,
+    2.4000003337860107
+  ],
+  "palette": false,
+  "exported": true
+}
