@@ -1,11 +1,15 @@
 ---
 name: vfx-hero-spell
-description: Produce a cinematic hero spell or big visual move end to end - real 3D meshes from Codex in Blender, rigged creatures, a keyed cast animation, upload and Studio placement, server and client modules, and testing, in the game's chosen VFX style. Use when a move should look like a key frame rather than a particle burst, needs a mesh, a creature, a dash or a chasing move, or when planning the asset queue for a batch of spells. For small particle-style effects use vfx-effect instead.
+description: Produce a cinematic hero spell or big visual move end to end - real 3D meshes from Codex in Blender, rigged creatures, a keyed cast animation, upload and Studio placement, server and client modules, and testing, in the game's chosen VFX style. Blender meshes from Codex are mandatory for every move. Use when a move should look like a key frame rather than a particle burst, needs a mesh, a creature, a dash or a chasing move, or when planning the asset queue for a batch of spells. For small particle-style effects use vfx-effect instead.
 ---
 
 # VFX hero spell
 
 The production line for any big visual move. Related skills: `vfx-effect` (styles, budgets, counting script), `codex-workflow` (running Codex), `asset-pipeline` (uploads, animation export). Look at how the game's existing spells are structured and copy the closest sibling; this skill describes the method, not any one spell.
+
+## Hard rule: Blender meshes for every move (owner, 2026-10-30)
+
+Blender meshes built by Codex are a **must** for moves, not an option. Every move's hero shapes (the flame tongue, the boulder, the blade, the creature, the wave) are modelled in Blender by Codex from the approved concept image, one model per run. Code builds only the support layers around them. Do not ship a move whose main shape is part-built, reused from another move without approval, or approximated with a texture or particle. If the Blender MCP or Codex is unavailable, report it and wait; do not substitute a code-only version.
 
 ## Who does what
 

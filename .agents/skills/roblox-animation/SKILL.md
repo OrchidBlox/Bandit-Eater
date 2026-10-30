@@ -1,9 +1,11 @@
 ---
 name: roblox-animation
-description: Supplement the project animation workflow with Blender pose-spec scripts, rig calibration, contact sheets, GIF previews and rig troubleshooting. Use for these specific tools; the existing animation skill owns style, movement transitions and delivery, and asset-pipeline owns export/upload.
+description: (Mandatory for any R15 animation.) Supplement the project animation workflow with Blender pose-spec scripts, rig calibration, contact sheets, GIF previews and rig troubleshooting. Use for these specific tools; the existing animation skill owns style, movement transitions and delivery, and asset-pipeline owns export/upload.
 ---
 
 # Roblox animation, headless
+
+> **Hard rule (owner, 2026-10-30):** this skill is mandatory for any R15 animation work in any repo, together with `animation`. Compatibility note: on Blender 5.x the scripts that read `Action.fcurves` (for example `calibrate_rig.py`) fail because Blender 5 moved to layered actions; if that happens, follow this same method with the project's working scripts (for example `blender/anims/build_sword_rig.py` in Bandit Eater) and say so.
 
 > Use the existing project tools and paths. If a helper needs an unset path,
 > consult `LOCAL.template.md` and optionally record it in git-ignored `LOCAL.md`.

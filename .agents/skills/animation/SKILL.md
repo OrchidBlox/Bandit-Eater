@@ -1,11 +1,15 @@
 ---
 name: animation
-description: Plan, build, tune and review character animations (M1 combos, dash, block, idle, run, casts, creature clips) in a chosen animation style (snappy-action, heavy-weighty, fluid-martial-arts, stepped, cartoony-exaggerated, realistic, robotic, or a new one), asking the owner first if the game has no style yet. Use when writing a Blender animation brief for Codex, fixing animations that feel flat, floaty or stiff, syncing hits to strike frames, or exporting and registering animation IDs.
+description: (Mandatory for any R15 animation, with roblox-animation.) Plan, build, tune and review character animations (M1 combos, dash, block, idle, run, casts, creature clips) in a chosen animation style (snappy-action, heavy-weighty, fluid-martial-arts, stepped, cartoony-exaggerated, realistic, robotic, or a new one), asking the owner first if the game has no style yet. Use when writing a Blender animation brief for Codex, fixing animations that feel flat, floaty or stiff, syncing hits to strike frames, or exporting and registering animation IDs.
 ---
 
 # Animation
 
 Animations are built in Blender (Codex through the Blender MCP, or headless scripts), exported with `scripts/export_animations.py` or `scripts/export_r15_animations.py`, uploaded with `scripts/upload_assets.py` and registered in [docs/animations.md](../../../docs/animations.md). The upload and export mechanics are in the `asset-pipeline` skill; this skill is about how the animation should look and how to fix it when it doesn't.
+
+## Hard rule for R15 work (owner, 2026-10-30)
+
+Every R15 animation task uses this skill together with `roblox-animation`: FK authoring (not IK), five poses with per-segment easing, prop-hold research, a GIF judged against the reference, and an idle or carry clip that never masks walk and run. Do not author poses from numbers and stills alone, and do not call a clip done on technical checks alone: the owner approves the GIF.
 
 ## Step 0: the style is the owner's choice, ask first
 
