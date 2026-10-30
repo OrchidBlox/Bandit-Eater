@@ -32,7 +32,7 @@ MESHES = {
         title='Earth E Stone Field: tall chunky stone',
         ref=['earth.png (row E STONE FIELD, RELEASE and IMPACT panels)'],
         size='3.4 x 5 x 3.2', tris='target 280, max 450',
-        desc='One chunky faceted stone like the tall boulders in the concept: wide at the base, slightly tapering, a lumpy flat-ish top, big flat facets (8 to 12), rounded bevelled edges, a little asymmetry. It sits as if half buried: the bottom is flat. No cracks, moss or pebbles.'),
+        desc='One chunky faceted stone like the tall boulders in the concept: wide at the base, slightly tapering, a lumpy flat-ish top, big flat facets (8 to 12), rounded bevelled edges, a little asymmetry. It sits as if half buried: the bottom is flat. No cracks, moss or pebbles. REWORK NOTE: the first build was a smooth tapered slab. Make it a lumpy BOULDER: irregular, asymmetric silhouette (one side bulging, the top leaning and uneven), 9 to 12 large flat facets of different sizes, deeply bevelled rounded edges, wider and rounder at the base than a column. It must read as a stone from every side, not a box or pillar.'),
     'FxGroundCrack': dict(
         title='Earth R Quake: ground crack',
         ref=['earth.png (row R QUAKE, WINDUP and RELEASE panels)'],
@@ -47,17 +47,17 @@ MESHES = {
         title='Water R Tidal Wave: curling wave',
         ref=['water.png (row R TIDAL WAVE, RELEASE and IMPACT panels)'],
         size='12 x 7 x 6', tris='target 1800, max 2600',
-        desc='One broad plump curling wave, wider than tall: a gentle sloping back (toward Roblox +Z), a tall rounded crest that curls OVER toward the travel direction (-Z) with a hollow barrel underneath, a row of thick rounded foam scallops along the crest lip and chunky foam blobs along the base. The ends taper into rounded points. Flat base. Two material slots: `Water` (body) and `Foam` (scallops and blobs). Keep the barrel open (see-through from the side).'),
+        desc='One broad plump curling wave, wider than tall: a gentle sloping back (toward Roblox +Z), a tall rounded crest that curls OVER toward the travel direction (-Z) with a hollow barrel underneath, a row of thick rounded foam scallops along the crest lip and chunky foam blobs along the base. The ends taper into rounded points. Flat base. Two material slots: `Water` (body) and `Foam` (scallops and blobs). Keep the barrel open (see-through from the side). REWORK NOTE: the first build read as an open scoop with a row of ball-shaped teeth. Make it ONE plump wave: a thick rounded back that rises into a fat curling crest, a deep but clearly closed-in barrel, and the foam as 5 to 7 BIG fat cloud-like scallops fused into the crest lip and a thick foam band along the base, merged with the body (no separate floating spheres, no row of teeth). Smooth, inflated look. REWORK NOTE (owner review 2026-10-29): the first build was too faceted and crystal-like. Build it from smooth rounded forms: sculpt with a Subdivision Surface modifier (level 1 or 2), shade smooth, then APPLY the modifier and decimate to the triangle budget. Silhouette must be soft, plump and toy-like, like inflated foam, with no flat crystal facets, no sharp ridges and no spikes.'),
     'FxFlameBlob': dict(
         title='Fire E Flame Field: squat flame blob',
         ref=['fire.png (row E FLAME FIELD, RELEASE panel)', 'fusion-arcane.png (Fire E)'],
         size='2.6 x 2.8 x 2.2', tris='target 350, max 600',
-        desc='A squat, rounded, bouncy flame blob: wide bulbous base, three short fat rounded lobes on top (tallest in the middle), a soft hump, no thin tongues. Cute and friendly like the small flames in the concept. Flat bottom, base 2.6 wide.'),
+        desc='A squat, rounded, bouncy flame blob: wide bulbous base, three short fat rounded lobes on top (tallest in the middle), a soft hump, no thin tongues. Cute and friendly like the small flames in the concept. Flat bottom, base 2.6 wide. REWORK NOTE (owner review 2026-10-29): the first build was too faceted and crystal-like. Build it from smooth rounded forms: sculpt with a Subdivision Surface modifier (level 1 or 2), shade smooth, then APPLY the modifier and decimate to the triangle budget. Silhouette must be soft, plump and toy-like, like inflated foam, with no flat crystal facets, no sharp ridges and no spikes. Think of three overlapping soft jelly bulbs, not a gem.'),
     'FxFlameGeyser': dict(
         title='Fire R Eruption: flame geyser',
         ref=['fire.png (row R ERUPTION, RELEASE and IMPACT panels)'],
         size='7 x 12 x 6', tris='target 1300, max 2000',
-        desc='A single big rounded flame geyser: a wide stable base, one tall central column with a plump rounded top, and four to six fat rounded side lobes of different heights fused to it (like the concept), blunt soft tips, no thin spikes, no smoke. Slightly flattened front to back (Roblox Z). Flat bottom. Centred on X and Z so runtime can scale it up from the ground.'),
+        desc='A single big rounded flame geyser: a wide stable base, one tall central column with a plump rounded top, and four to six fat rounded side lobes of different heights fused to it (like the concept), blunt soft tips, no thin spikes, no smoke. Slightly flattened front to back (Roblox Z). Flat bottom. Centred on X and Z so runtime can scale it up from the ground. REWORK NOTE (owner review 2026-10-29): the first build was too faceted and crystal-like. Build it from smooth rounded forms: sculpt with a Subdivision Surface modifier (level 1 or 2), shade smooth, then APPLY the modifier and decimate to the triangle budget. Silhouette must be soft, plump and toy-like, like inflated foam, with no flat crystal facets, no sharp ridges and no spikes. Think of a cluster of fat rounded flame lobes, like inflated candy, with a smooth bulbous base.'),
     'FxBladeChunky': dict(
         title='Sword R Blade Storm: chunky blade',
         ref=['sword.png (row R BLADE STORM, RELEASE panel)'],

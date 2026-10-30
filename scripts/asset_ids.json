@@ -95,6 +95,132 @@
     "sha256": "b25d9af51a3d296e840c7fefa251150e0b051180c74f4d804aeffaa52a009db6",
     "uploadedAt": "2026-10-26T17:56:56Z"
   },
+  "blender/export/BE_PowerMesh_FxAirfrontFan.fbx": {
+    "assetId": "79230338707030",
+    "assetType": "Model",
+    "sha256": "0c3c6afd94af6153a09d3d9f664a283b12d500b4c9dcf9d9739b4016905bfe84",
+    "uploadedAt": "2026-10-30T03:45:01Z"
+  },
+  "blender/export/BE_PowerMesh_FxBladeChunky.fbx": {
+    "assetId": "137811840397315",
+    "assetType": "Model",
+    "sha256": "258da616b692738059432ea7f0ee778c90b613ae262d372317245fc686061b66",
+    "uploadedAt": "2026-10-29T21:03:35Z"
+  },
+  "blender/export/BE_PowerMesh_FxBoulderShot.fbx": {
+    "assetId": "120054852461461",
+    "assetType": "Model",
+    "sha256": "f478411c65008ba13facbad8855975e57f38210b91196b3c9ec3f89213d7b808",
+    "uploadedAt": "2026-10-30T03:45:39Z"
+  },
+  "blender/export/BE_PowerMesh_FxChunkyCrescent.fbx": {
+    "assetId": "78294859213035",
+    "assetType": "Model",
+    "sha256": "827f2bce1664e08b60d3c4f241b917083958499fa7ec6b5226b8e39c873735ec",
+    "uploadedAt": "2026-10-29T21:03:52Z"
+  },
+  "blender/export/BE_PowerMesh_FxCometTail.fbx": {
+    "assetId": "135477774612489",
+    "assetType": "Model",
+    "sha256": "2ad413c93d807f8d11a66f6e51880bbffd3dae5e5787635dbc0a6824819f5446",
+    "uploadedAt": "2026-10-30T02:58:39Z"
+  },
+  "blender/export/BE_PowerMesh_FxCycloneColumn.fbx": {
+    "assetId": "109454544989604",
+    "assetType": "Model",
+    "sha256": "f9c95239cbddd7b9e4095f603ecf3e3fe98e301cfdc242acde7100bd94bad965",
+    "uploadedAt": "2026-10-30T03:45:21Z"
+  },
+  "blender/export/BE_PowerMesh_FxEmberShard.fbx": {
+    "assetId": "140075801868489",
+    "assetType": "Model",
+    "sha256": "c318a1452103db9881e56bec7b6594fcd03c11858c601657252a3440fb6174a2",
+    "uploadedAt": "2026-10-30T02:58:55Z"
+  },
+  "blender/export/BE_PowerMesh_FxFlameBlob.fbx": {
+    "assetId": "109534958446592",
+    "assetType": "Model",
+    "sha256": "184b90c3188caacc9666a2a9d60ea76506fda21501362555c9942bd4ef215d0d",
+    "uploadedAt": "2026-10-29T21:03:57Z"
+  },
+  "blender/export/BE_PowerMesh_FxFlameCluster.fbx": {
+    "assetId": "108413603664925",
+    "assetType": "Model",
+    "sha256": "59b06b6c2ca7303248b41ae28659dd3a59bf468ca78959930589104985ae1a03",
+    "uploadedAt": "2026-10-30T02:58:27Z"
+  },
+  "blender/export/BE_PowerMesh_FxFlameGeyser.fbx": {
+    "assetId": "99279058186970",
+    "assetType": "Model",
+    "sha256": "56744b0a2ee4364d3639dc1f9be8666b5c22ef46b422d6ba60d5aa7de77a206d",
+    "uploadedAt": "2026-10-29T21:04:07Z"
+  },
+  "blender/export/BE_PowerMesh_FxGroundCrack.fbx": {
+    "assetId": "73085769547865",
+    "assetType": "Model",
+    "sha256": "73832b0ae77d140186ed52076d501e61c98cc368eac8fbaf67d147d53b38387d",
+    "uploadedAt": "2026-10-29T21:04:14Z"
+  },
+  "blender/export/BE_PowerMesh_FxGustCurl.fbx": {
+    "assetId": "140636452717168",
+    "assetType": "Model",
+    "sha256": "6b8f959e652dd24973d8a728b6210c469b883e1be7a8e0d40523ad2f5f3b5be8",
+    "uploadedAt": "2026-10-30T02:14:13Z"
+  },
+  "blender/export/BE_PowerMesh_FxMeteorCore.fbx": {
+    "assetId": "124012555482368",
+    "assetType": "Model",
+    "sha256": "ed3453485616e97436e542ba3365698ead1fd5f9d2a8c49672c99022eff60477",
+    "uploadedAt": "2026-10-30T02:58:48Z"
+  },
+  "blender/export/BE_PowerMesh_FxQuakePillars.fbx": {
+    "assetId": "80711168395245",
+    "assetType": "Model",
+    "sha256": "632a7fd0785b9225f816ac22897c45d58aaf032889ef6a2932ec6cce1f303302",
+    "uploadedAt": "2026-10-30T03:46:20Z"
+  },
+  "blender/export/BE_PowerMesh_FxRibbonLoop.fbx": {
+    "assetId": "87434538245322",
+    "assetType": "Model",
+    "sha256": "6dfe242bd9ceb7583484f90307526a99caf25695cd81a86fd9fca035ade52428",
+    "uploadedAt": "2026-10-30T02:14:27Z"
+  },
+  "blender/export/BE_PowerMesh_FxRingStack.fbx": {
+    "assetId": "75568202253684",
+    "assetType": "Model",
+    "sha256": "180bf023ea792cbf0f4a94982ad466a30013bf207aca76683e092bbe5a4e3f0f",
+    "uploadedAt": "2026-10-29T21:04:56Z"
+  },
+  "blender/export/BE_PowerMesh_FxShadowArrow.fbx": {
+    "assetId": "72114691094103",
+    "assetType": "Model",
+    "sha256": "4d2907aeee77432c3c64864eca6e6026705b80676ecdebf7a477d105ba800318",
+    "uploadedAt": "2026-10-30T04:25:50Z"
+  },
+  "blender/export/BE_PowerMesh_FxSlashCrescent.fbx": {
+    "assetId": "107663274823242",
+    "assetType": "Model",
+    "sha256": "ea63dc5dd83f02d00ffd492fff3e7e3e5415fdf3ff17f118c89ea4c476af2227",
+    "uploadedAt": "2026-10-30T03:47:02Z"
+  },
+  "blender/export/BE_PowerMesh_FxStoneSpikes.fbx": {
+    "assetId": "114044700021987",
+    "assetType": "Model",
+    "sha256": "819e409a5f12d89a11d3ca109e8883bf948ad40cec7054130a52b4b5b0848d73",
+    "uploadedAt": "2026-10-30T03:46:03Z"
+  },
+  "blender/export/BE_PowerMesh_FxStoneTall.fbx": {
+    "assetId": "110661676621502",
+    "assetType": "Model",
+    "sha256": "1647d5a4282a408f6d6f9cdf2f5a5f16788bb87390dbe59c528327b2bba2ba88",
+    "uploadedAt": "2026-10-29T21:11:49Z"
+  },
+  "blender/export/BE_PowerMesh_FxTidalWave.fbx": {
+    "assetId": "122751148593998",
+    "assetType": "Model",
+    "sha256": "3a0f5b86c5839125ae349774cb69f92975d6ea31e65c227db6ee0ff92a117316",
+    "uploadedAt": "2026-10-29T21:05:32Z"
+  },
   "blender/export/BE_PowerMesh_FxTornadoBands.fbx": {
     "assetId": "113455707756067",
     "assetType": "Model",
@@ -107,11 +233,71 @@
     "sha256": "36f23eb9230e5cb47732a1ce5337daaf8dcfb236a5fdc61c0b79bd798ebf95aa",
     "uploadedAt": "2026-10-28T08:52:54Z"
   },
-  "blender/export/BE_PowerMesh_HeldSword.fbx": {
-    "assetId": "77894676362262",
+  "blender/export/BE_PowerMesh_FxWaterLance.fbx": {
+    "assetId": "74639425800886",
     "assetType": "Model",
-    "sha256": "a0add0ce028eb180589810b7f5b53f2cb44520c7da04842eb10e13b99d01c884",
-    "uploadedAt": "2026-10-28T09:21:38Z"
+    "sha256": "212f627222d9d13459d25c5463f5a6241b074714fcd7fb8f5414f0fd665b7494",
+    "uploadedAt": "2026-10-30T03:46:31Z"
+  },
+  "blender/export/BE_PowerMesh_FxWhirlpoolBasin.fbx": {
+    "assetId": "121969996048709",
+    "assetType": "Model",
+    "sha256": "33208b2fa4d9cb2e3733ca238d11a2c5364b3afb56c465321f380bdba2f62ff3",
+    "uploadedAt": "2026-10-29T21:05:37Z"
+  },
+  "blender/export/BE_PowerMesh_FxWhirlpoolDisc.fbx": {
+    "assetId": "123836237780242",
+    "assetType": "Model",
+    "sha256": "75e7378894973961f8dbcf045de535881976250ea1b3c4479a24e791d4f22ee1",
+    "uploadedAt": "2026-10-30T03:46:45Z"
+  },
+  "blender/export/BE_PowerMesh_FxWindCrescent.fbx": {
+    "assetId": "106063994928977",
+    "assetType": "Model",
+    "sha256": "3613621d03306b84da152113229de3fb74032ba9cfcd35817938c4994781fd4d",
+    "uploadedAt": "2026-10-30T03:26:43Z"
+  },
+  "blender/export/BE_PowerMesh_HeldEarthSword.fbx": {
+    "assetId": "79710038315303",
+    "assetType": "Model",
+    "sha256": "b34627a9cc93ebc351044846b507ddb65f0f8905577f87a35ed213343280e0c6",
+    "uploadedAt": "2026-10-30T01:48:32Z"
+  },
+  "blender/export/BE_PowerMesh_HeldFireSword.fbx": {
+    "assetId": "129901857689289",
+    "assetType": "Model",
+    "sha256": "1d47b8f106e78aabb72cb80437de0296d333c2eb8f11bc31d0b18a8224577ef4",
+    "uploadedAt": "2026-10-30T01:48:42Z"
+  },
+  "blender/export/BE_PowerMesh_HeldMasterSword.fbx": {
+    "assetId": "116421334234782",
+    "assetType": "Model",
+    "sha256": "b3ca028355c7e91920ee2fcb9cee794fbdd9df40d37042ba2fce879813ed024c",
+    "uploadedAt": "2026-10-30T01:49:00Z"
+  },
+  "blender/export/BE_PowerMesh_HeldShadowSword.fbx": {
+    "assetId": "87038439277306",
+    "assetType": "Model",
+    "sha256": "13dbd5118b4a4c127686c97664d607f722de3be300bca462bf8049b499692b68",
+    "uploadedAt": "2026-10-30T01:49:21Z"
+  },
+  "blender/export/BE_PowerMesh_HeldSword.fbx": {
+    "assetId": "103458148300625",
+    "assetType": "Model",
+    "sha256": "86062895d8c6c6fe9461f6bb383f02914747192ddf971d56782e21c87d6c3270",
+    "uploadedAt": "2026-10-30T01:49:35Z"
+  },
+  "blender/export/BE_PowerMesh_HeldWaterSword.fbx": {
+    "assetId": "101974404871246",
+    "assetType": "Model",
+    "sha256": "2f99f894870d4641f262753cb895f5eca335a6adc24d0f3cabb4766d116f6a5c",
+    "uploadedAt": "2026-10-30T01:49:40Z"
+  },
+  "blender/export/BE_PowerMesh_HeldWindSword.fbx": {
+    "assetId": "73053976761771",
+    "assetType": "Model",
+    "sha256": "56efe5fdf75ba011e1e73a91ff7e6657e13b90d1f00585b87c7e87603c5dc909",
+    "uploadedAt": "2026-10-30T01:49:52Z"
   },
   "blender/export/BE_PowerMesh_Leaf.fbx": {
     "assetId": "102739312973688",
@@ -1529,6 +1715,432 @@
     "sha256": "26e1ece761a86088969f1824a3c5a66912b38a4745f07e71e8c4d13d59f02de3",
     "uploadedAt": "2026-10-28T08:47:41Z"
   },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_E.rbxmx": {
+    "assetId": "93858041961608",
+    "assetType": "Animation",
+    "sha256": "1ffdf494d876528a56c048b7e43dc7ad9c9b254edf838005c5ef09628de5b9ef",
+    "uploadedAt": "2026-10-29T21:16:28Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_EMoving.rbxmx": {
+    "assetId": "135040659413614",
+    "assetType": "Animation",
+    "sha256": "3fe205359998435e8fa72ef23e17b815b3d7d65344b4b3da5e963d9405fcebec",
+    "uploadedAt": "2026-10-29T21:16:53Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Earth_E.rbxmx": {
+    "assetId": "70454992116249",
+    "assetType": "Animation",
+    "sha256": "4e33118b4f02ec169bb3ae6f78d24b88f8734a1a30240871f536a5f5343abbf2",
+    "uploadedAt": "2026-10-29T21:16:31Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Earth_EMoving.rbxmx": {
+    "assetId": "74189192768494",
+    "assetType": "Animation",
+    "sha256": "9f4162ffabc1c1cf9aed8e33c1e0c66e543dfdc62175fe7949c9afd1bfc22f28",
+    "uploadedAt": "2026-10-29T21:16:34Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Earth_Q.rbxmx": {
+    "assetId": "74641532113691",
+    "assetType": "Animation",
+    "sha256": "fe25b2e2d29c54e678e754baf395e3cc7633b4b1c4deaf990f2ba55dc13d5159",
+    "uploadedAt": "2026-10-29T21:16:37Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Earth_QMoving.rbxmx": {
+    "assetId": "71550996576859",
+    "assetType": "Animation",
+    "sha256": "da1ed5b56070ffbb230718f6d2c71e41d2a493993b5e77818628480052e09104",
+    "uploadedAt": "2026-10-29T21:16:40Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Earth_R.rbxmx": {
+    "assetId": "71206028775577",
+    "assetType": "Animation",
+    "sha256": "62c220f811820d74f068be7d1341a82c3bb0f23d438e6d3e9b51ff2f21be481a",
+    "uploadedAt": "2026-10-29T21:16:43Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Earth_RMoving.rbxmx": {
+    "assetId": "103821064199695",
+    "assetType": "Animation",
+    "sha256": "a5b8ac566cc7d48ec289325db53ab60835f5efc11c159ead1debe61b3dee347f",
+    "uploadedAt": "2026-10-29T21:16:50Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Fire_E.rbxmx": {
+    "assetId": "83517497369089",
+    "assetType": "Animation",
+    "sha256": "dd3cebd36a01babcb5c66602f4aaf9c01554ff349b0fbf0cfb8adef37de63ea6",
+    "uploadedAt": "2026-10-29T21:16:56Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Fire_EMoving.rbxmx": {
+    "assetId": "109012997892107",
+    "assetType": "Animation",
+    "sha256": "955cfd6ba781773b701a67e755b93e6dc65592f01e0c82aee1044c27aff78249",
+    "uploadedAt": "2026-10-29T21:16:59Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Fire_Q.rbxmx": {
+    "assetId": "84061074042650",
+    "assetType": "Animation",
+    "sha256": "3094fce7973c305b242a77c5c22cecce1b28073af8004b09d59319e1da59048b",
+    "uploadedAt": "2026-10-29T21:17:01Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Fire_QMoving.rbxmx": {
+    "assetId": "81497029535442",
+    "assetType": "Animation",
+    "sha256": "06271018e716051a55ea66a56e7fa1670d2f58bffb49086afe259ff82dd2702a",
+    "uploadedAt": "2026-10-29T21:17:04Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Fire_R.rbxmx": {
+    "assetId": "139642445328500",
+    "assetType": "Animation",
+    "sha256": "b28fa0adcad45c32911c0113f88e1805cb464c9afb8e961153809ffd8c9cff96",
+    "uploadedAt": "2026-10-29T21:17:07Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Fire_RMoving.rbxmx": {
+    "assetId": "73143029166647",
+    "assetType": "Animation",
+    "sha256": "2181fa1562445df759976fa7dfdc864f1d0cd0f529f4bfbcf0be70cad68e33f5",
+    "uploadedAt": "2026-10-29T21:17:10Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Q.rbxmx": {
+    "assetId": "88794026792990",
+    "assetType": "Animation",
+    "sha256": "7af8965aabcb86022173446977ca376d68a42804be5354ffbd9728893e63b551",
+    "uploadedAt": "2026-10-29T21:17:13Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_QMoving.rbxmx": {
+    "assetId": "85555823896434",
+    "assetType": "Animation",
+    "sha256": "583a4074b86d9a5451decee69a33f5c5a1f47dd0b0422d1052bbb1207435f7c5",
+    "uploadedAt": "2026-10-29T21:17:15Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_R.rbxmx": {
+    "assetId": "107878981045280",
+    "assetType": "Animation",
+    "sha256": "3eaf1fb0d091e0405c24ac9198a23b3461ecdbe6551f5f3f09cfd5a4967d27ad",
+    "uploadedAt": "2026-10-29T21:17:18Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_RMoving.rbxmx": {
+    "assetId": "92290438202787",
+    "assetType": "Animation",
+    "sha256": "741cd1c614e9c87c44fff41376c4dbb5e2e187a51ef6e3e118669e8eb803f695",
+    "uploadedAt": "2026-10-29T21:17:21Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Shadow_E.rbxmx": {
+    "assetId": "135065555660381",
+    "assetType": "Animation",
+    "sha256": "02d83151feab966f768f2b6e1980bb631ac9b4c1d1f2ca2acdeccea712f01ade",
+    "uploadedAt": "2026-10-29T21:17:24Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Shadow_EMoving.rbxmx": {
+    "assetId": "83289703240562",
+    "assetType": "Animation",
+    "sha256": "9b069323066991e591c1cbce1cc423b62f9c30049f23b6c9f2b5eac256e492a1",
+    "uploadedAt": "2026-10-29T21:17:27Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Shadow_Q.rbxmx": {
+    "assetId": "97480935101076",
+    "assetType": "Animation",
+    "sha256": "8692a59c570075bb3d82dc486268995daed2ef1d859e0b2d8456d7ac4eef2804",
+    "uploadedAt": "2026-10-29T21:17:30Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Shadow_QMoving.rbxmx": {
+    "assetId": "82099278134539",
+    "assetType": "Animation",
+    "sha256": "9b59a42a519861486c157ea671e038a512edfe816aedc0f1cab41240884b73d8",
+    "uploadedAt": "2026-10-29T21:17:32Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Shadow_R.rbxmx": {
+    "assetId": "87846521401325",
+    "assetType": "Animation",
+    "sha256": "26da34e98414d9cc72c095691d24014a45162c37783c6950bc61fbf7229edf87",
+    "uploadedAt": "2026-10-29T21:17:35Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Shadow_RMoving.rbxmx": {
+    "assetId": "102200744909976",
+    "assetType": "Animation",
+    "sha256": "b2b29a4b6b6ae38c0dac3a878b6b701361f447c49b4109aa565e5d3f329ef1ea",
+    "uploadedAt": "2026-10-29T21:17:38Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Sword_E.rbxmx": {
+    "assetId": "129844491152051",
+    "assetType": "Animation",
+    "sha256": "1db41e8842c156f12699f1d2b194c7625957e32ce88728aceaa1582e009e7375",
+    "uploadedAt": "2026-10-29T21:17:41Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Sword_EMoving.rbxmx": {
+    "assetId": "119421474992144",
+    "assetType": "Animation",
+    "sha256": "30ef291eda7cacc9eaf0040f4e2f67cb0ec77a248e9e303137f9a57be0cc7b41",
+    "uploadedAt": "2026-10-29T21:17:44Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Sword_Q.rbxmx": {
+    "assetId": "134303999859065",
+    "assetType": "Animation",
+    "sha256": "07eee905b9f957b7b00a9dc54a3fc5bb21506c70a731c91e295d1a6c2b2c0f51",
+    "uploadedAt": "2026-10-29T21:17:46Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Sword_QMoving.rbxmx": {
+    "assetId": "135721447068835",
+    "assetType": "Animation",
+    "sha256": "df1c7a7a86be58788b8a653f64eb5e0bd192d52f676da81c1b09dd004aae0302",
+    "uploadedAt": "2026-10-29T21:17:50Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Sword_R.rbxmx": {
+    "assetId": "91733219862588",
+    "assetType": "Animation",
+    "sha256": "f6d4df806abb0b20b65b6146fa9af96cc4da4f1694b5aa19c375fcdec601a99a",
+    "uploadedAt": "2026-10-29T21:17:53Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Sword_RMoving.rbxmx": {
+    "assetId": "74922170656524",
+    "assetType": "Animation",
+    "sha256": "401f6cbcc917b4d89713bf6447df0b5adce31c15f216ca2e1a91c9fea59f7b6b",
+    "uploadedAt": "2026-10-29T21:17:55Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Water_E.rbxmx": {
+    "assetId": "137013922633222",
+    "assetType": "Animation",
+    "sha256": "d163f2e8ac85bf514478827a712bc29d5115d0cb52fd116ab0e23e376aecacee",
+    "uploadedAt": "2026-10-29T21:17:58Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Water_EMoving.rbxmx": {
+    "assetId": "106731612158044",
+    "assetType": "Animation",
+    "sha256": "9e45febf31057c8a8c2ebce0354b56cb91b9f6ea85b6e2bdc5659c24457c31c4",
+    "uploadedAt": "2026-10-29T21:18:01Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Water_Q.rbxmx": {
+    "assetId": "94435789966137",
+    "assetType": "Animation",
+    "sha256": "1601c0df717084d42dd21b83fdcc218629c3f07a60deb4ce8589bd986eb8e57d",
+    "uploadedAt": "2026-10-29T21:18:04Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Water_QMoving.rbxmx": {
+    "assetId": "138475963901206",
+    "assetType": "Animation",
+    "sha256": "c251b0293ca4a46aef0dea796ff63c8d674d893a3f6e266de203514da24248ce",
+    "uploadedAt": "2026-10-29T21:18:06Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Water_R.rbxmx": {
+    "assetId": "86687199084799",
+    "assetType": "Animation",
+    "sha256": "9b7adcc37d0ef054e97939b09b59a81c854d5c8f907f14b5e98fbd1d76d24e84",
+    "uploadedAt": "2026-10-29T21:18:09Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Water_RMoving.rbxmx": {
+    "assetId": "87892319071401",
+    "assetType": "Animation",
+    "sha256": "766768e0f3a1b15c651346a1259b121688755a6d0c0dce229166d8bc0bc76a3e",
+    "uploadedAt": "2026-10-29T21:18:12Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Wind_E.rbxmx": {
+    "assetId": "131078889758732",
+    "assetType": "Animation",
+    "sha256": "05cad68f4c2b5197ecd8283e34449f42c443d8477d02055564f8404b042df548",
+    "uploadedAt": "2026-10-29T21:18:15Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Wind_EMoving.rbxmx": {
+    "assetId": "104196125468048",
+    "assetType": "Animation",
+    "sha256": "95c07cf8c763e410407e1348627128bf1e400c4d269e13795db86f57128fd0f0",
+    "uploadedAt": "2026-10-29T21:18:18Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Wind_Q.rbxmx": {
+    "assetId": "104031365008407",
+    "assetType": "Animation",
+    "sha256": "d7a9c2bf61ba393273a50e37b98449dbecc1570a0123eb5d3235a759e8dff4f0",
+    "uploadedAt": "2026-10-29T21:18:22Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Wind_QMoving.rbxmx": {
+    "assetId": "107118202864539",
+    "assetType": "Animation",
+    "sha256": "ed1ed65ed4d8c8b5873e53be867aa4b13a51817e281294138871a02e628b6e4e",
+    "uploadedAt": "2026-10-29T21:18:24Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Wind_R.rbxmx": {
+    "assetId": "83944980122451",
+    "assetType": "Animation",
+    "sha256": "fe4532da56ff79df2287552d5a37559e58a61fb809bb5ab709ab67a29c3f974c",
+    "uploadedAt": "2026-10-29T21:18:27Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordCasts_Cast_Sword_Wind_RMoving.rbxmx": {
+    "assetId": "130208077086233",
+    "assetType": "Animation",
+    "sha256": "f11d1062f1b6430db4d285d66f7ff76a63e4679a4ed938cbcf69427676c80ce5",
+    "uploadedAt": "2026-10-29T21:18:30Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOHE_Cast_Sword_E.rbxmx": {
+    "assetId": "114699973381646",
+    "assetType": "Animation",
+    "sha256": "092f50e4df48ac8e48a38b925be7743a82a40e2e3373e858014525fa7bde29b1",
+    "uploadedAt": "2026-10-30T01:43:56Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOHE_Cast_Sword_EMoving.rbxmx": {
+    "assetId": "86420505557078",
+    "assetType": "Animation",
+    "sha256": "b4c0d6efc0b25e36f08080d7fb6e704486bb38d05ea41a817ece2190a2775f48",
+    "uploadedAt": "2026-10-30T01:44:05Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOHE_Cast_Sword_Earth_E.rbxmx": {
+    "assetId": "94762387849438",
+    "assetType": "Animation",
+    "sha256": "1dee834601bd84107658ab43f14c7bcb61464183ebb6d6cfd0bf4168c523e4fc",
+    "uploadedAt": "2026-10-30T01:43:59Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOHE_Cast_Sword_Earth_EMoving.rbxmx": {
+    "assetId": "118496910754646",
+    "assetType": "Animation",
+    "sha256": "18b4eda8d6f8cf4a8e5e12ad34d957fb3071d918ba2f1718ac8faa758ddda117",
+    "uploadedAt": "2026-10-30T01:44:02Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOHE_Cast_Sword_Fire_E.rbxmx": {
+    "assetId": "107627739102988",
+    "assetType": "Animation",
+    "sha256": "1cbb9ffdfb77d133ae5f559b9394f7009b15999f2e5fd191740a478cfacb0689",
+    "uploadedAt": "2026-10-30T01:44:08Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOHE_Cast_Sword_Fire_EMoving.rbxmx": {
+    "assetId": "129980805578302",
+    "assetType": "Animation",
+    "sha256": "0c064b44629d6db38e0bfbafe774aba253eb056ef81fc61f8587f2f5050e7f4f",
+    "uploadedAt": "2026-10-30T01:44:10Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOHE_Cast_Sword_Shadow_E.rbxmx": {
+    "assetId": "76521295441571",
+    "assetType": "Animation",
+    "sha256": "e85b2d710a492dae348dbb37a5676f08c6d3587b73b4b5c2c86039b8df2b29e5",
+    "uploadedAt": "2026-10-30T01:44:14Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOHE_Cast_Sword_Shadow_EMoving.rbxmx": {
+    "assetId": "116815176448523",
+    "assetType": "Animation",
+    "sha256": "48e742d540cee2ca97eeea572f9157bf04099a02d820c9570756b36c99114496",
+    "uploadedAt": "2026-10-30T01:44:17Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOHE_Cast_Sword_Sword_E.rbxmx": {
+    "assetId": "80511002753656",
+    "assetType": "Animation",
+    "sha256": "6d10b9ea50ae24ce6027f0be7ec0ecb25ff8deacfde858239def8f013e1b5fca",
+    "uploadedAt": "2026-10-30T01:44:20Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOHE_Cast_Sword_Sword_EMoving.rbxmx": {
+    "assetId": "109405704973761",
+    "assetType": "Animation",
+    "sha256": "4c5cc7b952772c255fc06c0d8a7de98d47c66df5c47ed7ebad0cf54a36b60aef",
+    "uploadedAt": "2026-10-30T01:44:24Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOHE_Cast_Sword_Water_E.rbxmx": {
+    "assetId": "78359262404115",
+    "assetType": "Animation",
+    "sha256": "a04f2e74705ad80a53e50af44542a52b5cf7f469768558c91ba8bb2421963704",
+    "uploadedAt": "2026-10-30T01:44:27Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOHE_Cast_Sword_Water_EMoving.rbxmx": {
+    "assetId": "84957632618319",
+    "assetType": "Animation",
+    "sha256": "f7b1f3492ac7e90e3044af246e463da5bcb686faed69c01a89cceeb999ec847f",
+    "uploadedAt": "2026-10-30T01:44:30Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOHE_Cast_Sword_Wind_E.rbxmx": {
+    "assetId": "115113431681705",
+    "assetType": "Animation",
+    "sha256": "10c19645d5f5d99db0a50155bb297f5e4a72e6d07c76bf63ae4a183c7d354ab7",
+    "uploadedAt": "2026-10-30T01:44:33Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOHE_Cast_Sword_Wind_EMoving.rbxmx": {
+    "assetId": "101710023760196",
+    "assetType": "Animation",
+    "sha256": "7257a087bb2cdf77100ce1ab92a7ac5f194174385609834a82841d646d903d9e",
+    "uploadedAt": "2026-10-30T01:44:35Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOneHandE_Cast_Sword_E.rbxmx": {
+    "assetId": "95289603323041",
+    "assetType": "Animation",
+    "sha256": "3a0bb1f35785ce0a014ce10625706e0ddc5083e2950d38e79d373ef79111a039",
+    "uploadedAt": "2026-10-30T01:43:01Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOneHandE_Cast_Sword_EMoving.rbxmx": {
+    "assetId": "139125318156896",
+    "assetType": "Animation",
+    "sha256": "3f181d9a0d17eeafd8393d70d27a2cf3a278e472fabf697e9140430e25314c89",
+    "uploadedAt": "2026-10-30T01:43:09Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOneHandE_Cast_Sword_Earth_E.rbxmx": {
+    "assetId": "106769591890066",
+    "assetType": "Animation",
+    "sha256": "1dee834601bd84107658ab43f14c7bcb61464183ebb6d6cfd0bf4168c523e4fc",
+    "uploadedAt": "2026-10-30T01:43:03Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOneHandE_Cast_Sword_Earth_EMoving.rbxmx": {
+    "assetId": "102049720925656",
+    "assetType": "Animation",
+    "sha256": "18b4eda8d6f8cf4a8e5e12ad34d957fb3071d918ba2f1718ac8faa758ddda117",
+    "uploadedAt": "2026-10-30T01:43:06Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOneHandE_Cast_Sword_Fire_E.rbxmx": {
+    "assetId": "111824852323727",
+    "assetType": "Animation",
+    "sha256": "1cbb9ffdfb77d133ae5f559b9394f7009b15999f2e5fd191740a478cfacb0689",
+    "uploadedAt": "2026-10-30T01:43:12Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOneHandE_Cast_Sword_Fire_EMoving.rbxmx": {
+    "assetId": "104899980030630",
+    "assetType": "Animation",
+    "sha256": "0c064b44629d6db38e0bfbafe774aba253eb056ef81fc61f8587f2f5050e7f4f",
+    "uploadedAt": "2026-10-30T01:43:15Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOneHandE_Cast_Sword_Shadow_E.rbxmx": {
+    "assetId": "133743044711365",
+    "assetType": "Animation",
+    "sha256": "e85b2d710a492dae348dbb37a5676f08c6d3587b73b4b5c2c86039b8df2b29e5",
+    "uploadedAt": "2026-10-30T01:43:17Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOneHand_M1_1.rbxmx": {
+    "assetId": "72670018414017",
+    "assetType": "Animation",
+    "sha256": "14bbbf5fb78f5ab8c120311bb3912013c46f0f2cff09aaea2e1005d78cb51a00",
+    "uploadedAt": "2026-10-30T01:35:54Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOneHand_M1_1Moving.rbxmx": {
+    "assetId": "112378455881304",
+    "assetType": "Animation",
+    "sha256": "13532d367e9b4693a8fccaf3a66951dfcce2d305f4970789574a9f19095a3cef",
+    "uploadedAt": "2026-10-30T01:35:56Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOneHand_M1_2.rbxmx": {
+    "assetId": "118829196559938",
+    "assetType": "Animation",
+    "sha256": "e73a8f363cfcaa201de636bccdcd704c8fa4515499355b976b62be52a0270ea6",
+    "uploadedAt": "2026-10-30T01:35:59Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOneHand_M1_2Moving.rbxmx": {
+    "assetId": "120156129228871",
+    "assetType": "Animation",
+    "sha256": "2dfba60767f7fb7280315940ff8e41133ff7f290b906f92c7fef8aea96f6cf77",
+    "uploadedAt": "2026-10-30T01:36:02Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOneHand_M1_3.rbxmx": {
+    "assetId": "129888720665241",
+    "assetType": "Animation",
+    "sha256": "c75b8729eb72dc6950863f34203437f4a4b1b8bb0ecb79f0ccfa8551c0de1ab9",
+    "uploadedAt": "2026-10-30T01:36:05Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOneHand_M1_3Moving.rbxmx": {
+    "assetId": "131711130057198",
+    "assetType": "Animation",
+    "sha256": "484b1216c1925c4b7da1812db9fc9325498e1db742384bf613737d3b502ddefd",
+    "uploadedAt": "2026-10-30T01:36:07Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOneHand_Ready.rbxmx": {
+    "assetId": "122687599909505",
+    "assetType": "Animation",
+    "sha256": "b843d853ad606b240f28996e7f0c8ecbf9cc1d155e06ddb4b160655c78fdc248",
+    "uploadedAt": "2026-10-30T01:36:10Z"
+  },
+  "blender/export/animations/BE_SwordRig_SwordOneHand_ReadyMoving.rbxmx": {
+    "assetId": "74205099586374",
+    "assetType": "Animation",
+    "sha256": "176c251805ced5b9eb823c8d621cc73820a78b31ff0723d7c1bd5328c4af7121",
+    "uploadedAt": "2026-10-30T01:36:13Z"
+  },
   "blender/export/animations/BE_SwordRig_Sword_M1_1.rbxmx": {
     "assetId": "129293301004480",
     "assetType": "Animation",
@@ -1612,6 +2224,180 @@
     "assetType": "Image",
     "sha256": "e579b50fa56d4de0b2a4d2ac04051f7ab838bef3da415b88d4c9a98b1df7bb1f",
     "uploadedAt": "2026-10-25T21:41:43Z"
+  },
+  "blender/export/textures/BE_Hud_frame_callout_tag.png": {
+    "assetId": "119063132528237",
+    "assetType": "Image",
+    "sha256": "5d388adbf6e831505b92a733c43e342b72077b03eaac7a5ef81912619a6b63e4",
+    "uploadedAt": "2026-10-29T20:50:59Z"
+  },
+  "blender/export/textures/BE_Hud_frame_cooldown_disc.png": {
+    "assetId": "86044430250695",
+    "assetType": "Image",
+    "sha256": "a4fad30c1dd2093934c17636a0d44099db930ccb92bdd9bd48103782c61f85c5",
+    "uploadedAt": "2026-10-29T20:51:01Z"
+  },
+  "blender/export/textures/BE_Hud_frame_currency_pill.png": {
+    "assetId": "130501514473420",
+    "assetType": "Image",
+    "sha256": "5b87b8bef054a105a0ff69fb193b331460df7c3d34c069a335835b038086b136",
+    "uploadedAt": "2026-10-29T20:51:04Z"
+  },
+  "blender/export/textures/BE_Hud_frame_health_fill.png": {
+    "assetId": "92469425101550",
+    "assetType": "Image",
+    "sha256": "4d0fd6a600458e995b7ee77d93f0b4665014d39d649676db5822c1f81af69378",
+    "uploadedAt": "2026-10-29T20:51:07Z"
+  },
+  "blender/export/textures/BE_Hud_frame_health_track.png": {
+    "assetId": "138438837419879",
+    "assetType": "Image",
+    "sha256": "5e27f6dd91d45be71fb642c535abbab282bb27a03d83ec8e8a9cd5131976c6de",
+    "uploadedAt": "2026-10-29T20:51:10Z"
+  },
+  "blender/export/textures/BE_Hud_frame_key_chip.png": {
+    "assetId": "104502965950155",
+    "assetType": "Image",
+    "sha256": "712dce3e6fa77fb46595fc45f2a94449e99e956a901ec991d5015f950d197fcb",
+    "uploadedAt": "2026-10-29T20:51:13Z"
+  },
+  "blender/export/textures/BE_Hud_frame_leaderboard_card.png": {
+    "assetId": "104286169657982",
+    "assetType": "Image",
+    "sha256": "44ca57d0ee30b4f806328c6b7eaefd8859c3724cad6b774472cc619e36d8d93b",
+    "uploadedAt": "2026-10-29T20:51:16Z"
+  },
+  "blender/export/textures/BE_Hud_frame_move_button.png": {
+    "assetId": "129384465284570",
+    "assetType": "Image",
+    "sha256": "d4b28bcde89fe2a60d5a46e8149c60c994d6df92d8294bffb6ef7c13334387da",
+    "uploadedAt": "2026-10-29T20:51:19Z"
+  },
+  "blender/export/textures/BE_Hud_frame_prompt_banner.png": {
+    "assetId": "97134579148991",
+    "assetType": "Image",
+    "sha256": "2c343ae4233b0094b7d50e89ec10b77080ec355dc9e1af33d686c10172b5a795",
+    "uploadedAt": "2026-10-29T20:51:21Z"
+  },
+  "blender/export/textures/BE_Hud_frame_round_button.png": {
+    "assetId": "119236226837307",
+    "assetType": "Image",
+    "sha256": "697162ffd6e2e6a153057c4a2a564c6efaafaab55551059db0deb3594484cae4",
+    "uploadedAt": "2026-10-29T20:51:24Z"
+  },
+  "blender/export/textures/BE_Hud_frame_slot_active.png": {
+    "assetId": "116895777994265",
+    "assetType": "Image",
+    "sha256": "999634a157f1d3aedff6befbe00fb65ff30a2ad53a82a3deb54cd9aeea99b042",
+    "uploadedAt": "2026-10-29T20:51:27Z"
+  },
+  "blender/export/textures/BE_Hud_frame_slot_bench.png": {
+    "assetId": "134318999371346",
+    "assetType": "Image",
+    "sha256": "afdc48eebaf2287ee2a0948636bef150ce04bc83d0103fe4c0b5da87e4bfded4",
+    "uploadedAt": "2026-10-29T20:51:29Z"
+  },
+  "blender/export/textures/BE_Hud_frame_small_button.png": {
+    "assetId": "74063251740150",
+    "assetType": "Image",
+    "sha256": "b453e443883523e15699b7991889fce3fe7ac3f9edce279c0e6432f3205198b2",
+    "uploadedAt": "2026-10-29T20:51:32Z"
+  },
+  "blender/export/textures/BE_Hud_icon_blades_r.png": {
+    "assetId": "117973807605811",
+    "assetType": "Image",
+    "sha256": "e2ec7ae0e5d19e30a598bf123555921dbb30c05cda6c662626e8218cc90e23c1",
+    "uploadedAt": "2026-10-29T20:51:35Z"
+  },
+  "blender/export/textures/BE_Hud_icon_coin.png": {
+    "assetId": "94337541977817",
+    "assetType": "Image",
+    "sha256": "7e2df8c5bb47b4a07d861fb638ffa6b19a1fe29f53e0de76c90a86f3d218ccb4",
+    "uploadedAt": "2026-10-29T20:51:38Z"
+  },
+  "blender/export/textures/BE_Hud_icon_crown.png": {
+    "assetId": "134274222067160",
+    "assetType": "Image",
+    "sha256": "e1563ffa42034619f1e16871a95f914a3d8e8a417437c9ebbf0f37607cfb4bb2",
+    "uploadedAt": "2026-10-29T20:51:40Z"
+  },
+  "blender/export/textures/BE_Hud_icon_dash.png": {
+    "assetId": "75671896841875",
+    "assetType": "Image",
+    "sha256": "cd608d4c726eca637268d7a13066efa643e606881ec5a395708737af86eb14f0",
+    "uploadedAt": "2026-10-29T20:51:43Z"
+  },
+  "blender/export/textures/BE_Hud_icon_flame.png": {
+    "assetId": "130199682145748",
+    "assetType": "Image",
+    "sha256": "c446532740759eab78416e56e230835df86fc8db435ed8134a98d8e1b0b12a31",
+    "uploadedAt": "2026-10-29T20:51:46Z"
+  },
+  "blender/export/textures/BE_Hud_icon_heart.png": {
+    "assetId": "119362691983817",
+    "assetType": "Image",
+    "sha256": "07e0b3e8b29cdf3f2fe5e4cb660505a67fdd994323ff186adda4657f936946d3",
+    "uploadedAt": "2026-10-29T20:51:48Z"
+  },
+  "blender/export/textures/BE_Hud_icon_inhale.png": {
+    "assetId": "139222384373294",
+    "assetType": "Image",
+    "sha256": "9d5c5ec73a858176807fa33a0ff7c9e681317875c772a304c8a22668d6296ab0",
+    "uploadedAt": "2026-10-29T20:51:51Z"
+  },
+  "blender/export/textures/BE_Hud_icon_m1.png": {
+    "assetId": "121564875055419",
+    "assetType": "Image",
+    "sha256": "4b6bc854650b5fc5380569c15b1de126806a9915869036914f8de82681446c8d",
+    "uploadedAt": "2026-10-29T20:51:54Z"
+  },
+  "blender/export/textures/BE_Hud_icon_rising_e.png": {
+    "assetId": "81138247842844",
+    "assetType": "Image",
+    "sha256": "549aeb45954a1609adcc9c7bdcd9018e443eae63e7786eb05391fc51f95f06e2",
+    "uploadedAt": "2026-10-29T20:51:57Z"
+  },
+  "blender/export/textures/BE_Hud_icon_rock.png": {
+    "assetId": "140096084092780",
+    "assetType": "Image",
+    "sha256": "e7e6a5280d6da554752c4f473b8dade5b40837174c2f6e8aa9f1b1f13e3f7d4f",
+    "uploadedAt": "2026-10-29T20:52:00Z"
+  },
+  "blender/export/textures/BE_Hud_icon_shadow.png": {
+    "assetId": "110365722008169",
+    "assetType": "Image",
+    "sha256": "8ea7ac917c1c97d0d41f075a0ea062b891f31430a099557a1797e05ed2a3c062",
+    "uploadedAt": "2026-10-29T20:52:02Z"
+  },
+  "blender/export/textures/BE_Hud_icon_slash_q.png": {
+    "assetId": "110671532996400",
+    "assetType": "Image",
+    "sha256": "99581b6894f4f4b4e90c5e789574a48f42ddce129e96469d62a56c0b6b72f0f9",
+    "uploadedAt": "2026-10-29T20:52:05Z"
+  },
+  "blender/export/textures/BE_Hud_icon_star.png": {
+    "assetId": "73049764306410",
+    "assetType": "Image",
+    "sha256": "c66b3b3a3b748582c5a0a09a99331c88fadf703f88e7950ba7bb0ce89762df04",
+    "uploadedAt": "2026-10-29T20:52:08Z"
+  },
+  "blender/export/textures/BE_Hud_icon_sword.png": {
+    "assetId": "138077197644110",
+    "assetType": "Image",
+    "sha256": "f5935aa380c6e1bddaf3d1451f6de5047438a10e7b492fab6de9665a792105e9",
+    "uploadedAt": "2026-10-29T20:52:10Z"
+  },
+  "blender/export/textures/BE_Hud_icon_water.png": {
+    "assetId": "135104014194954",
+    "assetType": "Image",
+    "sha256": "6a12b7a8c3e9461fd0b2c79cb351a09f03b57ee6d4fb51229d9afd0fbc72f318",
+    "uploadedAt": "2026-10-29T20:52:13Z"
+  },
+  "blender/export/textures/BE_Hud_icon_wind.png": {
+    "assetId": "72716958678471",
+    "assetType": "Image",
+    "sha256": "17aabd869bfd6340c5ae0f91937bca62b21143d586e5009c336e95629b35f599",
+    "uploadedAt": "2026-10-29T20:52:16Z"
   },
   "blender/export/textures/BE_Inhale_Puff.png": {
     "assetId": "71229989533127",
@@ -1925,11 +2711,65 @@
     "sha256": "63111c1269030a8e1b1a35cc878c3b4600bc43d5c6c8dc3a20dce270e21d0143",
     "uploadedAt": "2026-10-26T17:00:46Z"
   },
+  "blender/export/textures/BE_PowerMesh_FxBladeChunky_Color.png": {
+    "assetId": "116540126326960",
+    "assetType": "Image",
+    "sha256": "7e8d892d06114710fe0bd971d28e61f699677cde1461f2b5fe6457887d71523e",
+    "uploadedAt": "2026-10-29T21:05:39Z"
+  },
+  "blender/export/textures/BE_PowerMesh_FxTidalWave_Color.png": {
+    "assetId": "119371762261240",
+    "assetType": "Image",
+    "sha256": "68fafaaf8e0a999ef93c137c50e98620c5d7e9bb2ec8c2007314e9db26bf1b72",
+    "uploadedAt": "2026-10-29T21:05:42Z"
+  },
+  "blender/export/textures/BE_PowerMesh_FxWhirlpoolBasin_Color.png": {
+    "assetId": "84200860650089",
+    "assetType": "Image",
+    "sha256": "47621abe275bae215952b7a69bbf2d383f482d5e646682aa7aa03209910690cf",
+    "uploadedAt": "2026-10-29T21:05:44Z"
+  },
+  "blender/export/textures/BE_PowerMesh_HeldEarthSword_Color.png": {
+    "assetId": "128544826006735",
+    "assetType": "Image",
+    "sha256": "6b7c4dc2182fd30640ddca11af3132d6f6e446dae69f4014c63e6cc3dd0f970a",
+    "uploadedAt": "2026-10-29T21:06:51Z"
+  },
+  "blender/export/textures/BE_PowerMesh_HeldFireSword_Color.png": {
+    "assetId": "93027077541073",
+    "assetType": "Image",
+    "sha256": "49da3523977622cc9b40e3f157565a0e051e73a67f4c2731e2048ccd65beb804",
+    "uploadedAt": "2026-10-29T21:06:53Z"
+  },
+  "blender/export/textures/BE_PowerMesh_HeldMasterSword_Color.png": {
+    "assetId": "92110267244368",
+    "assetType": "Image",
+    "sha256": "7d6826a9d473577f1c06db53a7334a47b176e559195b3ed38c46bc842590666d",
+    "uploadedAt": "2026-10-29T21:06:56Z"
+  },
+  "blender/export/textures/BE_PowerMesh_HeldShadowSword_Color.png": {
+    "assetId": "120245734950223",
+    "assetType": "Image",
+    "sha256": "c8faf8d5dba19ca97bf032b29f7a036d792efadf239571791f8452f5d25b8d36",
+    "uploadedAt": "2026-10-29T21:06:59Z"
+  },
   "blender/export/textures/BE_PowerMesh_HeldSword_Color.png": {
-    "assetId": "114069347460825",
+    "assetId": "100819268663470",
     "assetType": "Image",
     "sha256": "6b4dd9d924e6ad4d9e919c0202fd224833084cf869bfffb2e3848bacd73a4a03",
-    "uploadedAt": "2026-10-28T08:43:01Z"
+    "uploadedAt": "2026-10-30T01:48:08Z"
+  },
+  "blender/export/textures/BE_PowerMesh_HeldWaterSword_Color.png": {
+    "assetId": "108332915169713",
+    "assetType": "Image",
+    "sha256": "7415f017871d068849ee1ee3ccfcb27a6dee4dc51a0660573d65145e3976aa3c",
+    "uploadedAt": "2026-10-29T21:07:01Z"
+  },
+  "blender/export/textures/BE_PowerMesh_HeldWindSword_Color.png": {
+    "assetId": "96333633343453",
+    "assetType": "Image",
+    "sha256": "f9f65efee5ea4bfdd12726297c2b0a2a2fa8130c9681a60813df20a320e1c97a",
+    "uploadedAt": "2026-10-29T21:07:04Z"
   },
   "blender/export/textures/BE_PowerMesh_MasterSword_Color.png": {
     "assetId": "74015133819972",
