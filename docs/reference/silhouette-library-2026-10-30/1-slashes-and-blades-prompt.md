@@ -1,0 +1,3 @@
+# Silhouette Library: Slashes and Blades
+
+Create a polished landscape 16:9 concept sheet titled **SILHOUETTE LIBRARY: SLASHES AND BLADES** with a clean 4-by-4 grid on an off-white background. Each numbered cell pairs one solid-black silhouette on the left with the same original anime-slick, two-tone cel-shaded effect on the right: thin dark outline, bright core, hard facets, crisp planar edges, and sharp needle tips. Rotate orange fire, mint wind, blue water, violet shadow, gold light, and brown earth. Use the exact 16 labels from the brief, keep every design clearly distinct, and include no soft blobs, cloud puffs, brands, or watermark.

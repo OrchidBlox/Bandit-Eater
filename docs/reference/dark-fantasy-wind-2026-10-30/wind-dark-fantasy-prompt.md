@@ -1,0 +1,3 @@
+# WIND: DARK FANTASY prompt
+
+Create one polished 16:9 Roblox VFX concept sheet titled "WIND: DARK FANTASY." Use a blocky yellow R15 sword caster in navy and grey rivals. Show a 3-by-3 WINDUP / RELEASE / IMPACT grid for "1 GUST," "2 AIRFRONT," and "3 ROAMING CYCLONE," with exact glowing lane, 125-degree fan, and spiral-band hit markings. Invent a heavy dark-fantasy wind language of torn teal-grey cloth, ghostly clawed hands, screaming spectral faces, crows, ash, debris, layered smoke, and sparse sickly-green glow. Add eight numbered black-silhouette-and-muted-render signature pairs below. Avoid anime crescents, needle tips, thin speed lines, neon streaks, white cloud puffs, logos, and watermarks.

@@ -1,0 +1,3 @@
+# Calligraphy and Crystal Prompt
+
+Create a polished 16:9 game-VFX silhouette sheet on off-white, split into equal horizontal bands titled exactly "CALLIGRAPHY AND BRUSH" and "CRYSTAL AND GEOMETRIC." Give each band a 2-by-4 grid numbered 1-8; every cell pairs one solid-black silhouette on the left with the identical hard-edged cel-shaded shape on the right. Use flowing tapered, hooked, splattered brush forms in vermilion for the first band and clean symmetric faceted crystal forms in cyan, teal, and violet for the second. Effects only; original shapes; no characters, logos, copied designs, or watermark.

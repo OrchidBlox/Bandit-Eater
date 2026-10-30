@@ -1,0 +1,7 @@
+# Slots and Fusions HUD prompt
+
+Create one polished 16:9 Roblox cartoon PvP-brawler HUD concept sheet as a 2x3 grid over soft low-poly grassland. Match the supplied HUD reference's chunky vibrant-blocky style: thick dark outlines, navy panels, gold highlights, rounded white text with heavy dark stroke, and glossy 3D icons. Match the supplied Fire, Water, Wind, Earth, Shadow, Sword, and fused-sword emblems.
+
+Panels 1-5 show three move buttons numbered `1`, `2`, `3`, plus a bottom tray with a larger gold-outlined `IN HAND` tile, smaller dim `BACKUP` tile, round `+` socket, and `X SWAP` chip. `START`: Fire in hand; empty backup reading `Swallow a star to fill`. `HOLDING A STAR`: Water to `IN HAND`, Fire to `BACKUP`, Wind crossed out as `LOST`; chips `G SWALLOW` and `T SPIT (keep both)`. `READY TO FUSE`: Sword plus Fire, glowing `FUSE` button, `Sword + Fire = Fire Sword`, `V`, and linking gold sparkles. `NO FUSION YET`: Water plus Fire, dim `+`, hint `Sword + any element`. `AFTER FUSING`: large `FIRE SWORD` tile with `Sword`, `+ Fire`, `Until KO`; backup empty. `FUSION GUIDE`: blue-header window with red close button, five rows for Wind Sword, Earth Sword, Water Sword, Fire Sword, and Shadow Sword, each shown as Sword + element = result; footer `Fusions last until you are knocked out.`
+
+Render all quoted text exactly and legibly. No Q/E/R move labels, cloud-like white puffs, real logos, watermark, or extra text.

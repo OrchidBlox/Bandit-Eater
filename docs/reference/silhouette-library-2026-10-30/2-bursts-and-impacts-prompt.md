@@ -1,0 +1,5 @@
+# Silhouette Library: Bursts and Impacts
+
+Create one landscape 16:9, off-white reference sheet with a clean 4x4 grid. Each of 16 cells pairs a solid-black silhouette on the left with the identical two-tone cel-shaded elemental version on the right, using thin dark outlines, bright cores, sharp tapered needle tips, and crisp planar facets in the supplied anime-slick style.
+
+Use these exact numbered designs and labels: four-point star; eight-point spiked star; jagged starburst (irregular); radial line burst; shockwave ring with spikes; crown burst (spikes curving up); cracked-ground star (impact crack); diamond sparkle with trail; claw-mark impact (three scratches); bullet-hole-style puncture ring; exploding shard fan; lightning-bolt zigzag; sun-ray fan; cross flare (plus with long arms); swirl burst (spiral arms outward); comet impact (round core with long spikes). Alternate orange fire, mint wind, blue water, violet shadow, gold light, and brown earth. Keep every silhouette distinct and fully visible. No characters, scenery, logos, watermark, gradients, soft blobs, smoke, or cloud puffs.

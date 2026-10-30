@@ -1,0 +1,5 @@
+# MASTER SWORD MOVES (ANIME-SLICK)
+
+Create one polished landscape 16:9 Roblox PvP concept sheet on a dark concrete arena, using the supplied anime-slick VFX references and the yellow R15/navy sword character reference. Show three rows—`1 CROWN SLASH`, `2 CROWN RUSH`, `3 GRAND CLEAVE`—with three equal panels per row labelled exactly `WINDUP`, `RELEASE`, `IMPACT`. Keep the sword in one hand with the free arm balancing.
+
+Use sharp tapered gold `#FFD34D`, white-hot, and royal-blue effects with thin hard speed lines, two-tone cel shading, crown stars, impact frames, and no soft cloud puffs. Every windup must show the exact bright dodgeable ground hit area: CROWN SLASH is a thin 42-stud projectile lane; CROWN RUSH is a 13-by-18-stud dash lane ending in a huge crescent launch; GRAND CLEAVE is an 18-by-32-stud wide forward band carrying a huge overhead wave. Keep the same caster and rival through each row, face effects toward the rival, show true release scale inside each telegraph, and show the rival visibly hit with clear push or launch motion. No logos or watermark.

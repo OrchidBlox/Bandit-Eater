@@ -1,0 +1,3 @@
+# Sword M1 Combo (One Hand)
+
+Create a polished 16:9 Roblox cartoon PvP pose sheet matching the supplied yellow R15 mannequin, navy clothing, plain silver sword, chunky-cartoon rendering, and low-poly grassland. Show three rows—HIT 1 rising diagonal, HIT 2 wide backhand, HIT 3 overhead crash—with four panels each labeled WIND-UP, STRIKE, FOLLOW-THROUGH, RECOVER, plus an IDLE CARRY panel. The sword stays in the right hand only and the free left arm balances each large, committed whole-body swing. Add a thin white-silver arc in each STRIKE panel. Keep every quoted label exact and legible; make the three directions and silhouettes clearly different; no logos, watermark, copied choreography, extra weapons, or two-handed grips.

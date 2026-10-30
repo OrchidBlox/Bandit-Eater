@@ -1,0 +1,3 @@
+# Motion Language prompt
+
+Create one polished 16:9 educational infographic on dark charcoal titled **MOTION LANGUAGE**. Use a 5x2 grid of ten equal cells. Each cell is a left-to-right four-frame strip with arrows, the same camera, dark floor, lighting, tiny blocky yellow R15 mannequin in navy clothes (matching the supplied reference), and a simple mint-green energy shape. Label and demonstrate: 1 SNAP SWEEP; 2 ORBIT SPIRAL; 3 RADIAL BURST; 4 RISE AND ERUPT; 5 ROLLING WALL; 6 PULSE RINGS; 7 ANGULAR DASH; 8 DRAG AND PULL; 9 ECHO TRAIL; 10 FALL AND SLAM. Show each motion exactly as named with a short plain caption. Clean chunky-cartoon 3D style, thin mint dividers, ample padding, large legible exact text. No sword, logos, watermark, extra cells, characters, or scenery.
