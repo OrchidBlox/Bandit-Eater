@@ -9,10 +9,7 @@ return function(ctx)
 	local foot = ctx.dashRing(c.Highlight, 10, 0.16, 0.05)
 	local warn = ctx.dashRing(c.Body, 22, 0.09, 0.025)
 	local waves = { ctx.dashRing(c.Highlight, 26, 0.08, 0.035), ctx.dashRing(c.Body, 26, 0.08, 0.03), ctx.ring(c.Highlight, 16) }
-	local cracks = {}
-	for i = 1, 12 do
-		cracks[i] = ctx.part(Enum.PartType.Block, Color3.fromRGB(88, 56, 30), Fx.SMOOTH, 1)
-	end
+	local crack = ctx.mesh("GroundCrack", Color3.fromRGB(88, 56, 30), Fx.SMOOTH, 1)
 	local rocks = {}
 	local function add(size, speed, angle, tint, hop)
 		local part = ctx.mesh("Rock", tint, Fx.SMOOTH, 0)
@@ -37,10 +34,7 @@ return function(ctx)
 			for _, w in waves do
 				w.set(center, 1, 0, 0)
 			end
-			for i, crack in cracks do
-				place(crack, CFrame.new(center + orbit(i * 0.5236, 1.4 * p.charge) + Vector3.new(0, 0.1, 0)) * CFrame.Angles(0, -i * 0.5236, 0),
-					Vector3.new(2.8 * p.charge, 0.06, 0.2), 1, 0)
-			end
+			place(crack, CFrame.new(center + Vector3.new(0, 0.12, 0)), Vector3.new(3 * p.charge, 0.25, 3 * p.charge), 1, 0)
 			for _, rock in rocks do
 				rock.part.Transparency = 1
 			end
@@ -57,12 +51,8 @@ return function(ctx)
 			local kk = ease((p.t - (i - 1) * 0.08) / 0.4)
 			w.set(center, math.max(1, r * 2 * kk), (1 - kk) * p.fade * (i == 3 and 0.85 or 1), p.t * (i == 1 and 70 or -70))
 		end
-		for i, crack in cracks do
-			local a = i * 0.5236
-			local len = r * 0.95 * k * (0.7 + 0.3 * ((i * 0.37) % 1))
-			place(crack, CFrame.new(center + orbit(a, len * 0.5) + Vector3.new(0, 0.1, 0)) * CFrame.Angles(0, -a, 0), Vector3.new(len, 0.06, 0.24 + 0.1 * (i % 2)),
-				p.fade * math.clamp(1.6 - p.t, 0, 1), 0)
-		end
+		place(crack, CFrame.new(center + Vector3.new(0, 0.12, 0)), Vector3.new(r * 1.9 * math.max(k, 0.05), 0.25, r * 1.9 * math.max(k, 0.05)),
+			p.fade * math.clamp(1.6 - p.t, 0, 1), 0)
 		edge.CFrame = CFrame.new(center + orbit(p.t * 14, r * k) + Vector3.new(0, 0.4, 0))
 		local alive = p.t < 0.42
 		dust.Rate, debris.Rate = alive and 70 or 0, alive and 16 or 0

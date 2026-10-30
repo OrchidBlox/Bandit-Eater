@@ -1,5 +1,4 @@
--- Wind R Cyclone. Concept: broad dashed warning ring with swooshes around the caster, then a tall plump tornado of
--- three thick spiralling mint bands with white puffs and grey rock chips. Hit area is the server field radius.
+-- Wind R Roaming Cyclone: a tornado that rolls forward along the server wave (travelling pull). Old look; anime-slick redo pending.
 local Fx = require(script.Parent.Fx)
 local backOut, place, orbit = Fx.backOut, Fx.place, Fx.orbit
 
@@ -47,23 +46,26 @@ return function(ctx)
 			end
 			ctx.bump(0.035)
 		end
+		-- The cyclone now travels: it rolls forward at the server wave's speed and pulls enemies along its path.
+		local center = ctx.caster + ctx.dir * (2 + math.min(ctx.def.Range, p.t * ctx.data.Speed))
+		base.CFrame = CFrame.new(center + Vector3.new(0, 0.3, 0))
 		local grow = backOut(p.t / 0.45)
-		dashed.set(ctx.center, r * 2, math.max(0.3, 0.9 - p.t) * p.fade, p.t * -60)
-		solid.set(ctx.center, r * 2 * 0.62, 0.35 * p.fade)
+		dashed.set(center, r * 2, math.max(0.3, 0.9 - p.t) * p.fade, p.t * -60)
+		solid.set(center, r * 2 * 0.62, 0.35 * p.fade)
 		light.Brightness = 1.6 * p.fade
 		if hero then
-			place(hero, CFrame.new(ctx.center + Vector3.new(0, height * 0.5 * grow, 0)) * CFrame.Angles(0, p.t * 3.2, 0),
+			place(hero, CFrame.new(center + Vector3.new(0, height * 0.5 * grow, 0)) * CFrame.Angles(0, p.t * 3.2, 0),
 				Vector3.new(r * 1.7, height * grow, r * 1.7), p.fade, 0.3)
 		end
 		if inner then
-			place(inner, CFrame.new(ctx.center + Vector3.new(0, height * 0.46 * grow, 0)) * CFrame.Angles(0, -p.t * 4.4, 0),
+			place(inner, CFrame.new(center + Vector3.new(0, height * 0.46 * grow, 0)) * CFrame.Angles(0, -p.t * 4.4, 0),
 				Vector3.new(r * 1.1, height * 0.9 * grow, r * 1.1), p.fade, 0.4)
 		end
 		for i, chip in chips do
 			local angle = p.t * 5 + i * 1.26
 			local y = (p.t * 5 + i * 2.3) % height
 			local R = r * (0.4 + 0.45 * y / height)
-			place(chip, CFrame.new(ctx.center + orbit(angle, R) + Vector3.new(0, y, 0)) * CFrame.Angles(p.t * 6 + i, p.t * 4, 0),
+			place(chip, CFrame.new(center + orbit(angle, R) + Vector3.new(0, y, 0)) * CFrame.Angles(p.t * 6 + i, p.t * 4, 0),
 				Vector3.new(1.2, 1.1, 1.2) * grow, p.fade, 0)
 		end
 		dust.Rate = 24 * p.fade

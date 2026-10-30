@@ -35,12 +35,7 @@ return function(ctx)
 		end
 	end
 
-	local wave = ctx.mesh("Wave", c.Body, Fx.SMOOTH, 0.12)
-	local crest = ctx.mesh("Wave", c.Highlight, Fx.NEON, 0.2)
-	local foam = {}
-	for i = 1, 7 do
-		foam[i] = ctx.part(Enum.PartType.Ball, Fx.WHITE, Fx.SMOOTH, 0)
-	end
+	local wave = ctx.mesh("TidalWave", Fx.WHITE, Fx.SMOOTH, 0, true)
 	local mover = ctx.anchor(ctx.caster, 2)
 	local spray = Fx.puffs(mover, Fx.WHITE, c.Highlight, 2.8, { SpreadAngle = Vector2.new(50, 50), Drag = 2 })
 	local drops = Fx.stars(mover, c.Highlight, 1.0, NumberRange.new(6, 14), { SpreadAngle = Vector2.new(60, 60) })
@@ -71,13 +66,8 @@ return function(ctx)
 		end
 		local height = 7.5 * rise
 		local face = cf0 * CFrame.new(0, height * 0.5 - 0.3, -d) * CFrame.Angles(math.sin(p.t * 7) * 0.05, 0, 0)
-		place(wave, face, Vector3.new(width, height, 4.6), p.fade, 0.1)
-		place(crest, face * CFrame.new(0, height * 0.18, -0.9), Vector3.new(width * 0.94, height * 0.6, 2.4), p.fade, 0.2)
-		for i, ball in foam do
-			local k = (i - 4) / 3
-			place(ball, cf0 * CFrame.new(k * width * 0.46, height * 0.95 + math.sin(p.t * 9 + i * 2) * 0.35, -d - 0.6),
-				Vector3.new(2.5, 2.0, 2.5) * rise, p.fade, 0)
-		end
+		-- The mesh is 12 wide, 7 tall and 6 deep: stretch only its width to the server wave strip.
+		place(wave, face, Vector3.new(width, 7.5 * math.max(rise, 0.05), 6.4 * math.max(rise, 0.3)), p.fade, 0)
 		mover.CFrame = cf0 * CFrame.new(0, 1, -d + 1.5)
 		spray.Rate = 40 * p.fade
 		if d >= range and not crashed then

@@ -41,10 +41,11 @@ return function(ctx)
 
 	return function(p)
 		if not p.active then
-			-- Ground warning: thin bright lines in the cone that tighten as the cut is drawn.
+			-- Ground warning across the real hit fan (server test: within range and dot > 0.6, about 53 degrees each side).
 			for i = 1, 3 do
-				local lateral = (i - 2) * 1.8 * (1 - 0.5 * p.charge)
-				place(streaks[i], cf0 * CFrame.new(lateral, 0.12, -range * 0.55), Vector3.new(0.12, 0.08, range * 0.9), 0.3 + 0.6 * p.charge, 0.1)
+				local angle = math.rad((i - 2) * 45)
+				place(streaks[i], cf0 * CFrame.Angles(0, -angle, 0) * CFrame.new(0, 0.12, -range * 0.5), Vector3.new(0.12, 0.08, range * 0.95),
+					0.3 + 0.6 * p.charge, 0.1)
 			end
 			return true
 		end

@@ -84,6 +84,10 @@ local function template(name)
 	return item and (item:IsA("MeshPart") and item or item:FindFirstChildWhichIsA("MeshPart", true))
 end
 
+function Fx.hasMesh(name)
+	return template(name) ~= nil
+end
+
 -- Per-cast context: ground height, flat direction, and factories that register their parts for the budget.
 function Fx.context(data, look, group, c)
 	local ctx = { data = data, look = look, group = group, c = c, radius = data.Radius, parts = 0, fallback = 0 }
@@ -117,7 +121,8 @@ function Fx.context(data, look, group, c)
 	end
 
 	-- Returns nil when the mesh is missing (counted as a fallback); callers skip nil parts.
-	function ctx.mesh(name, color, material, transparency)
+	-- keepTexture: palette meshes (water and foam, blade and hilt) keep their baked colours instead of one flat tint.
+	function ctx.mesh(name, color, material, transparency, keepTexture)
 		local tpl = template(name)
 		if not tpl then
 			ctx.fallback += 1
@@ -125,7 +130,7 @@ function Fx.context(data, look, group, c)
 		end
 		local part = Kit.safePart(tpl:Clone())
 		part:ClearAllChildren()
-		part.TextureID, part.Color, part.Material, part.Transparency = "", color, material, transparency
+		part.TextureID, part.Color, part.Material, part.Transparency = keepTexture and part.TextureID or "", keepTexture and Fx.WHITE or color, material, transparency
 		part.Parent = group
 		ctx.parts += 1
 		return part

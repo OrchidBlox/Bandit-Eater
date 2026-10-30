@@ -25,9 +25,11 @@ return function(ctx)
 	local started = false
 	return function(p)
 		if not p.active then
+			-- Radial warning lines across the real hit fan (server test: within range and dot > 0.6, about 53 degrees each side).
 			for i, line in warn do
-				local lateral = (i - 3) * width * 0.16
-				place(line, cf0 * CFrame.new(lateral, 0.12, -range * 0.5), Vector3.new(0.18 + 0.2 * p.charge, 0.08, range * 0.8), 0.3 + 0.5 * p.charge, 0.2)
+				local angle = math.rad((i - 3) * 26)
+				place(line, cf0 * CFrame.Angles(0, -angle, 0) * CFrame.new(0, 0.12, -range * 0.5), Vector3.new(0.18 + 0.2 * p.charge, 0.08, range * 0.9),
+					0.3 + 0.5 * p.charge, 0.2)
 			end
 			return true
 		end
@@ -40,7 +42,7 @@ return function(ctx)
 		for i, front in fronts do
 			local k = ease((p.t - (i - 1) * 0.1) / 0.5)
 			local d = 2 + k * (range - 2)
-			local w = width * (0.45 + 0.4 * k)
+			local w = math.min(1.6 * d * 0.92, width * 1.5) -- chord of the hit fan at this distance
 			place(front, cf0 * CFrame.new(0, 1.2 + i * 0.7 + math.sin(p.t * 8 + i) * 0.35, -d) * CFrame.Angles(0, 0, math.sin(p.t * 6 + i) * 0.08),
 				Vector3.new(w, 2.4, 1.0), p.fade * (1 - k * 0.6), 0.25)
 		end

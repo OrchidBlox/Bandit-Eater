@@ -8,14 +8,14 @@ return function(ctx)
 	local dashed, patch = ctx.dashRing(c.Highlight, 20, 0.1, 0.03), ctx.ring(c.Body, 6, 0.2)
 	-- Mixed sizes: a few tall boulders in the middle ring, medium stones around them, small pebbles scattered.
 	local stones = {}
-	local function add(size, dist, angle, delay, tint)
-		local part = ctx.mesh("Rock", tint, Fx.SMOOTH, 0)
+	local function add(size, dist, angle, delay, tint, meshName)
+		local part = ctx.mesh(meshName or "Rock", tint, Fx.SMOOTH, 0)
 		if part then
 			table.insert(stones, { part = part, pos = ctx.center + orbit(angle, dist), size = size, delay = delay, yaw = angle * 3 })
 		end
 	end
 	for i = 1, 3 do
-		add(Vector3.new(4.2, 5.4, 3.9), r * 0.3, i * 2.1 + 0.4, 0.02 * i, c.Body)
+		add(Vector3.new(3.8, 5.6, 3.6), r * 0.3, i * 2.1 + 0.4, 0.02 * i, c.Body, "StoneTall")
 	end
 	for i = 1, 6 do
 		add(Vector3.new(2.8, 3.2, 2.6), r * 0.62, i * 1.05 + 0.2, 0.05 + 0.025 * i, i % 2 == 0 and c.Highlight or c.Body)

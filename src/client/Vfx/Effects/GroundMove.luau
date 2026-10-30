@@ -6,14 +6,51 @@ local Kit = require(script.Parent.Parent.Kit)
 local Visuals = require(ReplicatedStorage.Shared.Config.PowerVisuals)
 local Fx = require(script.Parent.Ground.Fx)
 
+local G = script.Parent.Ground
+local SlickGround = require(G.SlickGround)
+local SlickWave = require(G.SlickWave)
+
+-- Each entry is a Codex-mesh anime-slick config (ground = SlickGround, wave = SlickWave) with the older module as a
+-- fallback that plays while the mesh is not installed in the place. Plain script entries are single modules.
+local function ground(cfg, fallback)
+	return { make = SlickGround.make, cfg = cfg, fallback = fallback }
+end
+local function wave(cfg, fallback)
+	return { make = SlickWave.make, cfg = cfg, fallback = fallback }
+end
+
 local MOVES = {
-	Wind = { E = script.Parent.Ground.WindAirfront, R = script.Parent.Ground.WindCyclone },
-	Earth = { E = script.Parent.Ground.EarthStoneField, R = script.Parent.Ground.EarthQuake },
-	Water = { E = script.Parent.Ground.WaterWhirlpool, R = script.Parent.Ground.WaterTidalWave },
-	Fire = { E = script.Parent.Ground.FireFlameField, R = script.Parent.Ground.FireEruption },
-	Sword = { E = script.Parent.Ground.SwordRisingSlash, R = script.Parent.Ground.SwordBladeStorm },
-	Shadow = { E = script.Parent.Ground.ShadowSnare, R = script.Parent.Ground.ShadowNightfall },
+	Wind = {
+		E = wave({ mesh = "AirfrontFan", shape = Vector3.new(16, 1.2, 9), mode = "fan" }, G.WindAirfront),
+		R = wave({ mesh = "CycloneColumn", shape = Vector3.new(7, 12, 7), mode = "column", spin = 5 }, G.WindCyclone),
+	},
+	Earth = {
+		E = ground({ mesh = "StoneSpikes", shape = Vector3.new(6, 6, 6), mode = "ring", count = 7, inner = 4, height = 7, lean = 0.08, turn = 0.2, pulses = 1 }, G.EarthStoneField),
+		R = ground({ mesh = "QuakePillars", shape = Vector3.new(9, 10, 9), mode = "ring", count = 6, inner = 3, height = 10, lean = 0.1, turn = 0, pulses = 2, ringFrac = 0.75, refRadius = 18 }, G.EarthQuake),
+	},
+	Water = {
+		E = ground({ mesh = "WhirlpoolDisc", shape = Vector3.new(14, 1.5, 14), mode = "disc", turn = 1.2, pulses = 1 }, G.WaterWhirlpool),
+		R = wave({ mesh = "TidalCrest", shape = Vector3.new(14, 8, 6), mode = "wall" }, G.WaterTidalWave),
+	},
+	Fire = { E = G.FireFlameField },
+	Sword = {
+		E = G.SwordDash,
+		R = ground({ mesh = "FloatBlade", shape = Vector3.new(1, 6, 0.6), mode = "orbit", count = 10, height = 5, ringFrac = 0.7, turn = 3, refRadius = 13 }, G.SwordBladeStorm),
+	},
+	Shadow = {
+		E = ground({ mesh = "SnareTendrils", shape = Vector3.new(8, 6, 8), mode = "ring", count = 5, inner = 3, height = 5.5, lean = 0.15, ringFrac = 0.6, turn = 0.8, pulses = 1 }, G.ShadowSnare),
+		R = G.SwordDash,
+	},
 }
+-- Sword fusions: E is the dash-slash (its own trail per power); R is each power's own finisher.
+for _, fusion in { "Sword_Wind", "Sword_Earth", "Sword_Water", "Sword_Fire", "Sword_Shadow", "Sword_Sword" } do
+	MOVES[fusion] = { E = G.SwordDash }
+end
+MOVES.Sword_Water.R = ground({ mesh = "WhirlpoolDisc", shape = Vector3.new(14, 1.5, 14), mode = "disc", turn = 2, pulses = 3 }, G.SwordBladeStorm)
+MOVES.Sword_Earth.R = wave({ mesh = "SplitterRidge", shape = Vector3.new(6, 4, 10), mode = "row", count = 4 }, G.SwordCleaveWave)
+MOVES.Sword_Fire.R = wave({ mesh = "FlameCluster", shape = Vector3.new(5, 9, 3), mode = "row", count = 4 }, G.SwordCleaveWave)
+MOVES.Sword_Sword.R = wave({ mesh = "GoldWave", shape = Vector3.new(14, 5, 7), mode = "wall" }, G.SwordCleaveWave)
+MOVES.Sword_Shadow.R = ground({ mesh = "EclipseDisc", shape = Vector3.new(12, 1, 12), mode = "disc", turn = 0.8, pulses = 1 }, G.ShadowNightfall)
 
 local Ground = {}
 
@@ -32,7 +69,17 @@ function Ground.Play(data, look)
 	group.Parent = Kit.folder()
 	Debris:AddItem(group, data.Duration + 2)
 	local ctx = Fx.context(data, look, group, c)
-	local update = require(module)(ctx)
+	local update
+	if typeof(module) == "table" then
+		-- Slick config: use it when its mesh is installed, otherwise the older module.
+		if Fx.hasMesh(module.cfg.mesh) then
+			update = module.make(module.cfg)(ctx)
+		else
+			update = require(module.fallback)(ctx)
+		end
+	else
+		update = require(module)(ctx)
+	end
 	local e = { group = group, position = ctx.center, caster = data.Caster, partCount = ctx.parts, meshFallbacks = ctx.fallback }
 	function e:Destroy()
 		if self.destroyed then

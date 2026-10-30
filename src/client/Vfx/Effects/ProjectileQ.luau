@@ -143,23 +143,23 @@ end
 local HEROES = {}
 
 function HEROES.Wind(group, c)
+	-- Codex GustCurl: a fat ball of air with two spiral ridges and a trailing curl; it spins around the travel axis.
 	local set, core = ballLayers(group, c, Enum.Material.Neon)
-	local bands = {}
-	for i = 1, 3 do
-		local part = meshPart(group, "WindFront", c.Highlight, Enum.Material.Neon, 0.25)
-		if part then
-			bands[i] = part
-		end
-	end
+	local curl = meshPart(group, "GustCurl", c.Highlight, Enum.Material.Neon, 0.2)
+	local halo = meshPart(group, "GustCurl", c.Body, Enum.Material.Neon, 0.55)
 	return {
-		core = core, count = 3 + #bands, fallback = #bands == 0,
+		core = core, count = 3 + (curl and 1 or 0) + (halo and 1 or 0), fallback = curl == nil,
 		set = function(cf, scale, stretch, time, opacity)
-			set(cf, scale, stretch, opacity, 2.2)
-			for i, part in bands do
-				local spin = CFrame.Angles(0, 0, time * 9 + i * math.pi * 2 / 3)
-				part.CFrame = cf * spin * CFrame.new(0, 1.0 * scale, 0.2 * i)
-				part.Size = Vector3.new(3.0, 0.8, 0.4) * scale
-				part.Transparency = 1 - 0.75 * opacity
+			set(cf, scale, stretch, opacity, 1.6)
+			if curl then
+				curl.CFrame = cf * CFrame.Angles(0, 0, time * 9) * CFrame.new(0, 0, 0.5 * scale)
+				curl.Size = Vector3.new(3, 3, 3.6) * scale
+				curl.Transparency = 1 - 0.8 * opacity
+			end
+			if halo then
+				halo.CFrame = cf * CFrame.Angles(0, 0, -time * 5) * CFrame.new(0, 0, 0.5 * scale)
+				halo.Size = Vector3.new(3.6, 3.6, 4.2) * scale
+				halo.Transparency = 1 - 0.45 * opacity
 			end
 		end,
 	}

@@ -17,7 +17,7 @@ end
 function Fire.Play(data, look)
  if look.distanceFactor == 0 then return nil
  end
- if data.Key=="Q" then return Fireball.Play(data,look) end
+ if data.Key=="Q" or data.Key=="R" then return Fireball.Play(data,look) end
  local library=ReplicatedStorage:FindFirstChild("Assets")
  local template=library and library:FindFirstChild("PowerMoves")
  template=template and template:FindFirstChild("Flame")

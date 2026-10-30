@@ -1,70 +1,100 @@
--- Fire E Flame Field. Concept: a double golden ring with small flame ticks on the ground, then several squat, bouncy,
--- rounded flame blobs fill it and stay see-through; each server pulse flashes a ring. Embers drift up.
+-- Fire E Flame Field (anime-slick). The windup draws the exact server circle on the floor with a runic circle at the
+-- caster's feet; the release raises a ring of tall, sharp, outlined flame wedges that lean and turn clockwise, with an
+-- inner counter-turning ring, thin spiral speed bars, dark shards and a hard pulse ring per server pulse.
 local Fx = require(script.Parent.Fx)
-local backOut, place, orbit = Fx.backOut, Fx.place, Fx.orbit
+local Slick = require(script.Parent.Slick)
+local backOut, orbit = Fx.backOut, Fx.orbit
 
 return function(ctx)
 	local c, r = ctx.c, ctx.radius
-	local dashed, outer, inner = ctx.dashRing(c.Highlight, 24, 0.07, 0.03), ctx.ring(c.Body, 14, 0.14), ctx.ring(c.Highlight, 6)
-	local pulse = ctx.ring(c.Highlight, 16)
-	local ticks = {}
-	for i = 1, 14 do
-		local mesh = ctx.mesh("Flame", i % 2 == 0 and c.Highlight or c.Body, Fx.NEON, 0)
-		if mesh then
-			table.insert(ticks, { part = mesh, angle = i * math.pi * 2 / 14 })
-		end
+	local size = math.max(1, r / 11) -- flame height scales with the hit radius so bigger fields get taller fire
+	local area, areaGlow, dashed = ctx.ring(c.Highlight, 7, 0.06), ctx.ring(c.Body, 16, 0.12), ctx.dashRing(c.Highlight, 28, 0.06, 0.03)
+	local scorch = ctx.ring(Slick.INK, 0, 0.5)
+	local pulse = ctx.ring(c.Highlight, 12)
+	local runes = Slick.runes(ctx, c)
+	local spokes = Slick.bars(ctx, 12, c.Highlight)
+	local flames = Instance.new("Model")
+	flames.Name, flames.Parent = "Flames", ctx.group
+	Slick.outline(flames)
+	local outer, inner = {}, {}
+	local cluster = Vector3.new(5, 9, 3)
+	for i = 1, 9 do
+		outer[i] = Slick.wedge(ctx, c, flames, "FlameCluster", cluster)
 	end
-	local blobs = {}
 	for i = 1, 5 do
-		local angle = i * 2.399
-		local dist = r * (0.3 + 0.5 * ((i * 0.41) % 1))
-		local shell, core = ctx.mesh("Flame", c.Body, Fx.NEON, 0), ctx.mesh("Flame", c.Highlight, Fx.NEON, 0)
-		if shell and core then
-			table.insert(blobs, { shell = shell, core = core, pos = ctx.center + orbit(angle, dist), phase = i * 1.3 })
-		end
+		inner[i] = Slick.wedge(ctx, c, flames, "FlameCluster", cluster)
 	end
+	local spirals = Slick.bars(ctx, 8, c.Highlight)
+	local shards = Slick.shards(ctx, 8)
 	local anchor = ctx.anchor(ctx.center, r * 1.4)
-	local embers = Fx.emitter(anchor, Fx.Textures.Puff, ColorSequence.new(c.Highlight, c.Shade), Fx.numbers(0.9, 0.6, 0), Fx.numbers(0.1, 0.4, 1),
-		NumberRange.new(0.8, 1.3), NumberRange.new(3, 7), { SpreadAngle = Vector2.new(15, 15), Acceleration = Vector3.new(0, 7, 0), LightEmission = 1, Shape = Enum.ParticleEmitterShape.Box })
+	local sparks = Fx.stars(anchor, c.Highlight, 1.1, NumberRange.new(12, 22), { SpreadAngle = Vector2.new(25, 25), Shape = Enum.ParticleEmitterShape.Box,
+		Acceleration = Vector3.new(0, 6, 0) })
+	local smoke = Fx.emitter(anchor, Fx.Textures.Puff, ColorSequence.new(Color3.fromRGB(70, 28, 22), Color3.fromRGB(36, 14, 12)), Fx.numbers(2.2, 3.6, 4.4),
+		Fx.numbers(0.55, 0.8, 1), NumberRange.new(0.8, 1.3), NumberRange.new(2, 5), { SpreadAngle = Vector2.new(20, 20), Shape = Enum.ParticleEmitterShape.Box,
+			Acceleration = Vector3.new(0, 4, 0) })
 	local light = Instance.new("PointLight")
-	light.Color, light.Range, light.Brightness, light.Parent = c.Body, 16, 0, anchor
+	light.Color, light.Range, light.Brightness, light.Parent = c.Body, 18, 0, anchor
 	local started = false
 	return function(p)
 		if not p.active then
-			dashed.set(ctx.center, r * 2, 0.45 + 0.5 * p.charge, p.elapsed * 30)
-			outer.set(ctx.center, r * 2, 0.3 + 0.5 * p.charge)
-			inner.set(ctx.center, r * 2 * (0.4 + 0.6 * p.charge), 0.2 + 0.5 * p.charge)
+			-- Windup: the exact hit circle, spokes toward the rim, runes under the caster.
+			local k = 0.35 + 0.65 * p.charge
+			area.set(ctx.center, r * 2, k)
+			areaGlow.set(ctx.center, r * 2, 0.3 + 0.5 * p.charge)
+			dashed.set(ctx.center, r * 2 * 0.82, 0.3 + 0.6 * p.charge, p.elapsed * -35)
+			scorch.set(ctx.center, r * 2, 0.15 + 0.3 * p.charge)
 			pulse.set(ctx.center, 1, 0)
-			for _, tick in ticks do
-				place(tick.part, CFrame.new(ctx.center + orbit(tick.angle, r * 0.97)), Vector3.new(0.5, 1.4, 0.4) * p.charge, 1, 0)
+			for i, spoke in spokes do
+				local a = (i - 1) / #spokes * math.pi * 2 + p.elapsed * 0.6
+				Slick.bar(spoke, ctx.center + orbit(a, r * 0.35) + Vector3.new(0, 0.14, 0), ctx.center + orbit(a, r * (0.35 + 0.6 * p.charge)) + Vector3.new(0, 0.14, 0),
+					0.12, 0.35 + 0.5 * p.charge)
+			end
+			runes.set(ctx.caster, 3.2, 0.4 + 0.6 * p.charge, p.elapsed * 3)
+			for _, wedge in outer do
+				wedge.hide()
+			end
+			for _, wedge in inner do
+				wedge.hide()
 			end
 			return true
 		end
 		if not started then
 			started = true
-			embers.Rate = 14
-			ctx.bump(0.025)
+			runes.hide()
+			Fx.hide(spokes)
+			sparks.Rate, smoke.Rate = 18, 7
+			ctx.bump(0.03)
 		end
-		dashed.set(ctx.center, r * 2, 0.8 * p.fade, p.t * 40)
-		outer.set(ctx.center, r * 2, 0.7 * p.fade)
-		inner.set(ctx.center, r * 2 * 0.6, 0.4 * p.fade)
+		local fade = p.fade
+		area.set(ctx.center, r * 2, 0.8 * fade)
+		areaGlow.set(ctx.center, r * 2, 0.5 * fade)
+		dashed.set(ctx.center, r * 2 * 0.82, 0.7 * fade, p.t * -60)
+		scorch.set(ctx.center, r * 2, 0.5 * fade)
+		-- One hard ring flash per server pulse (three pulses, 0.2 s apart).
 		local phase = (p.t % 0.2) / 0.2
-		pulse.set(ctx.center, r * 2 * (0.3 + 0.7 * phase), (1 - phase) * 0.8 * p.fade)
-		light.Brightness = 1.6 * p.fade
-		for _, tick in ticks do
-			local lick = 0.8 + 0.4 * math.sin(p.t * 12 + tick.angle * 3)
-			place(tick.part, CFrame.new(ctx.center + orbit(tick.angle, r * 0.97) + Vector3.new(0, 0.6 * lick, 0)), Vector3.new(0.7, 1.7 * lick, 0.5), p.fade, 0)
+		pulse.set(ctx.center, r * 2 * (0.25 + 0.75 * phase), (1 - phase) * 0.9 * fade)
+		light.Brightness = 1.8 * fade
+		local turn = p.t * 1.5
+		for i, wedge in outer do
+			local a = (i - 1) / #outer * math.pi * 2 + turn
+			local grow = backOut((p.t - i * 0.012) / 0.2)
+			local height = (9 + 2.5 * math.sin(i * 1.9 + p.t * 9)) * size * math.max(grow, 0.02)
+			wedge.set(ctx.center + orbit(a, r * 0.94), a + math.pi, 0.35, height, 0, fade)
 		end
-		for i, blob in blobs do
-			local k = backOut((p.t - i * 0.03) / 0.25)
-			local bounce = 1 + 0.18 * math.sin(p.t * 11 + blob.phase)
-			local squash = 1 - 0.1 * math.sin(p.t * 11 + blob.phase)
-			local sway = math.sin(p.t * 6 + blob.phase) * 0.15
-			local pos = blob.pos + Vector3.new(0, 1.5 * k * bounce, 0)
-			place(blob.shell, CFrame.new(pos) * CFrame.Angles(0, blob.phase, sway), Vector3.new(2.7 * squash, 3.1 * bounce, 2.2) * k, p.fade, 0)
-			place(blob.core, CFrame.new(pos + Vector3.new(0, -0.2, 0.1)) * CFrame.Angles(0, blob.phase, sway), Vector3.new(1.6 * squash, 2.1 * bounce, 1.3) * k, p.fade, 0)
+		for i, wedge in inner do
+			local a = (i - 1) / #inner * math.pi * 2 - turn * 1.3
+			local grow = backOut((p.t - 0.05 - i * 0.015) / 0.2)
+			local height = (6 + 1.6 * math.sin(i * 2.3 + p.t * 11)) * size * math.max(grow, 0.02)
+			wedge.set(ctx.center + orbit(a, r * 0.52), a + math.pi, 0.3, height, 0, fade)
 		end
-		embers.Rate = 14 * p.fade
+		-- Spiral speed bars hugging the ring, rising as they turn.
+		for i, bar in spirals do
+			local a = (i - 1) / #spirals * math.pi * 2 + turn * 2.2
+			local y = 1.2 + ((p.t * 3 + i * 0.37) % 1) * 5
+			Slick.bar(bar, ctx.center + orbit(a, r * 0.98) + Vector3.new(0, y, 0), ctx.center + orbit(a + 0.4, r * 0.98) + Vector3.new(0, y + 0.3, 0), 0.13, fade * 0.9, 0.05)
+		end
+		shards.update(ctx.center + orbit(0, r * 0.9), p.t, fade)
+		sparks.Rate, smoke.Rate = 18 * fade, 7 * fade
 		return true
 	end
 end

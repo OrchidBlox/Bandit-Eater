@@ -6,6 +6,7 @@ local Kit = require(script.Parent.Parent.Kit)
 local Cartoon = require(script.Parent.Parent.Cartoon)
 local Definitions = require(ReplicatedStorage.Shared.Config.PowerMoves)
 local FireHero = require(script.Parent.FireHero)
+local SlickQ = require(script.Parent.SlickQ)
 local ProjectileQ = require(script.Parent.ProjectileQ)
 local GroundMove = require(script.Parent.GroundMove)
 local Moves = {}
@@ -70,13 +71,17 @@ function Moves.Play(data, look)
  if age >= data.Duration + 0.3 then
   return nil
  end
- if data.Power == "Fire" and data.Key == "Q" then
+ if data.Power == "Fire" and (data.Key == "Q" or data.Key == "R") then
   local fire = FireHero.Play(data, look)
   if fire then return fire end
  end
  if (data.Key == "E" or data.Key == "R") and GroundMove.Supports(data.Power, data.Key) then
   local ground = GroundMove.Play(data, look)
   if ground then return ground end
+ end
+ if (data.Key == "Q" or data.Key == "R") and SlickQ.Supports(data.Power, data.Key) then
+  local slick = SlickQ.Play(data, look)
+  if slick then return slick end
  end
  if data.Key == "Q" and ProjectileQ.Supports(data.Power) then
   local projectile = ProjectileQ.Play(data, look)

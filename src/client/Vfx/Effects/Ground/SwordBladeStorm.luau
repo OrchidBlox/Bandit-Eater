@@ -10,7 +10,7 @@ return function(ctx)
 	local slashRing = ctx.ring(Fx.WHITE, 24)
 	local blades = {}
 	for i = 1, 5 do
-		local blade = ctx.mesh("Sword", Color3.fromRGB(240, 245, 252), Fx.SMOOTH, 0)
+		local blade = ctx.mesh("BladeChunky", Fx.WHITE, Fx.SMOOTH, 0, true)
 		if blade then
 			local trailPart = ctx.anchor(center, 0.4)
 			table.insert(blades, { part = blade, trail = trailPart, puff = Fx.puffs(trailPart, Fx.WHITE, c.Highlight, 1.8, { SpreadAngle = Vector2.new(15, 15), Drag = 2 }),
