@@ -1,0 +1,12 @@
+{
+  "model": "FxSnareTendrils",
+  "triangles": 480,
+  "materials": 1,
+  "dimensions_blender": [
+    8.0,
+    8.0,
+    6.0
+  ],
+  "palette": false,
+  "exported": true
+}

@@ -14,7 +14,7 @@ from pathlib import Path
 import sys
 ROOT = Path(r'C:\Users\Kobe\source\repos\bandit-eater')
 V2 = ROOT / 'blender/anims/build_power_moves_v2.py'
-KEY = 'SwordFK' if '--fk' in sys.argv else 'SwordOHE' if '--onehand' in sys.argv and '--casts' in sys.argv else 'SwordOneHand' if '--onehand' in sys.argv else 'SwordCasts' if '--casts' in sys.argv else 'Sword'
+KEY = 'FistFK' if '--fist' in sys.argv else 'BaseFK' if '--base' in sys.argv else 'SwordFKC' if '--fk' in sys.argv and '--casts' in sys.argv else 'SwordFK' if '--fk' in sys.argv else 'SwordOHE' if '--onehand' in sys.argv and '--casts' in sys.argv else 'SwordOneHand' if '--onehand' in sys.argv else 'SwordCasts' if '--casts' in sys.argv else 'Sword'
 source = V2.read_text().rsplit("\nif '--compose' in sys.argv:", 1)[0]
 source = (source.replace("BE_PowerMovesV2.blend", f"BE_SwordRig_{KEY}.blend")
           .replace("power-moves-v2", f"sword-rig-{KEY.lower()}")
@@ -30,24 +30,28 @@ import math
 from mathutils import Matrix, Vector
 
 CLIPS = {'Ready': (48, None), 'M1_1': (18, 6), 'M1_2': (18, 6), 'M1_3': (20, 7)}
-CAST_POWERS = ['Sword', 'Sword_Wind', 'Sword_Earth', 'Sword_Water', 'Sword_Fire', 'Sword_Shadow', 'Sword_Sword']
+CAST_POWERS = ['Wind', 'Earth', 'Water', 'Fire', 'Shadow'] if '--base' in sys.argv else ['Sword', 'Sword_Wind', 'Sword_Earth', 'Sword_Water', 'Sword_Fire', 'Sword_Shadow', 'Sword_Sword']
 CAST_R = {'Sword': 'spin', 'Sword_Wind': 'spin', 'Sword_Water': 'spin', 'Sword_Earth': 'cleave', 'Sword_Fire': 'cleave',
           'Sword_Sword': 'cleave', 'Sword_Shadow': 'eclipse'}
 CAST_DELAY = {}
-ONEHAND = '--onehand' in sys.argv or '--fk' in sys.argv
-FKMODE = '--fk' in sys.argv
-if '--casts' in sys.argv:
+ONEHAND = '--onehand' in sys.argv or '--fk' in sys.argv or '--base' in sys.argv or '--fist' in sys.argv
+FISTMODE = '--fist' in sys.argv
+BASEMODE = '--base' in sys.argv
+FKMODE = '--fk' in sys.argv or BASEMODE or FISTMODE
+if '--casts' in sys.argv or '--base' in sys.argv:
     CLIPS = {}
     for _power in CAST_POWERS:
-        for _slot, _index in ((('E', 2),) if ONEHAND else (('Q', 1), ('E', 2), ('R', 3))):
+        for _slot, _index in ((('E', 2),) if ONEHAND and not FKMODE else (('Q', 1), ('E', 2), ('R', 3))):
             _delay = MOVES[_power + '_' + str(_index)]['delay']
             _name = 'Cast_' + _power + '_' + _slot
             CAST_DELAY[_name] = _delay * 30
             CLIPS[_name] = (round((_delay + 0.5) * 30), _delay * 30)
 if ONEHAND and '--casts' not in sys.argv:
     CLIPS = {'Ready': (48, None), 'M1_1': (18, 6), 'M1_2': (18, 6), 'M1_3': (20, 7)}
-if FKMODE and '--casts' not in sys.argv:
-    CLIPS = {'M1_1': (18, 6)}
+if FKMODE and not FISTMODE and '--casts' not in sys.argv:
+    CLIPS = {'Ready': (48, None), 'M1_1': (18, 6), 'M1_2': (18, 6), 'M1_3': (20, 7)}
+if FISTMODE:
+    CLIPS = {'M1_1': (18, 6), 'M1_2': (18, 6), 'M1_3': (20, 7)}
 SELECTED = list(CLIPS)
 for _name, (_frames, _strike) in CLIPS.items():
     MOVES[_name] = {'power': KEY, 'index': 0, 'name': _name, 'delay': (_strike or 0) / 30}
@@ -97,6 +101,8 @@ CARRY2 = P(lean=-6, twist=-10, head=-4, front=(-16, 25), back=(12, 24), blade=(0
 
 def cast_keys(name, d):
     """Two-handed key poses for one cast: pull-back, release at d, hold, follow-through, back to Ready."""
+    if FKMODE:
+        return fk_cast_keys(name, d)
     slot = name[-1]
     power = name[len('Cast_'):-2]
     if slot == 'Q':       # horizontal slash that launches the wave
@@ -129,7 +135,8 @@ def cast_keys(name, d):
     return keys
 
 for _cast, _d in CAST_DELAY.items():
-    KEYS[_cast] = cast_keys(_cast, _d)
+    if not FKMODE:
+        KEYS[_cast] = cast_keys(_cast, _d)
 
 # One-handed set (owner-approved concept docs/reference/sword-m1-onehand-concepts-v1-2026-10-29): `off` is the sword hand
 # relative to the right shoulder, `free` the free left hand relative to the left shoulder (x right, y forward, z up).
@@ -187,6 +194,195 @@ if FKMODE:
                     (8, FKP(**FK_FOLLOW), 'out'),
                     (11, FKP(**FK_FOLLOW)),
                     (18, CARRY_FK, 'out')]
+
+
+# ---- FK sword set (roblox-animation skill). Intent (one-hand sword): the sword is carried angled up and forward from a
+# lowered hand; every swing is carried by the whole torso with the free arm counter-swinging; five poses per clip with
+# ease-in into the strike and ease-out into the settle. FK: X negative = forward/up, Z positive = to the right (negative to
+# the left), child angles compound with the parent. Twist negative = wound to the right, positive = turned to the left.
+def A(ur=(0, 0, 0), lr=(0, 0, 0), hr=(0, 0, 0), ul=(0, 0, 0), ll=(0, 0, 0)):
+    return {'UpperArm.R': ur, 'LowerArm.R': lr, 'Hand.R': hr, 'UpperArm.L': ul, 'LowerArm.L': ll}
+
+def FP(lean, twist, head, front, back, arms):
+    return P(lean=lean, twist=twist, head=head, front=front, back=back, arms=arms)
+
+FK_LUNGE_F, FK_LUNGE_B = (-50, 64), (36, 24)
+FK_CARRY2 = dict(lean=-4, twist=-8, head=-4, front=(-14, 22), back=(10, 22),
+                 arms=A(ur=(-24, 0, 10), lr=(-48, 0, 0), hr=(-34, 0, 0), ul=(-8, 0, -8), ll=(-15, 0, 0)))
+FK_BREATH = dict(lean=-6, twist=-10, head=-4, front=(-16, 25), back=(12, 24),
+                 arms=A(ur=(-26, 0, 11), lr=(-50, 0, 0), hr=(-36, 0, 0), ul=(-10, 0, -9), ll=(-17, 0, 0)))
+FK_POSES = {
+    # Hit 2: wide backhand. Sword drawn across the chest to the left, then a flat sweep out to the right.
+    'h2_antic': dict(lean=2, twist=50, head=-14, front=(-26, 40), back=(18, 34),
+                     arms=A(ur=(-38, 0, -48), lr=(-62, 0, 0), hr=(0, 0, 0), ul=(-58, 0, -10), ll=(-20, 0, 0))),
+    'h2_mid': dict(lean=-8, twist=0, head=-6, front=(-40, 56), back=(28, 28),
+                   arms=A(ur=(-84, 0, 18), lr=(-14, 0, 0), hr=(0, 0, 0), ul=(10, 0, -45), ll=(-10, 0, 0))),
+    'h2_contact': dict(lean=-16, twist=-46, head=0, front=FK_LUNGE_F, back=FK_LUNGE_B,
+                       arms=A(ur=(-80, 0, 62), lr=(-10, 0, 0), hr=(0, 0, 8), ul=(24, 0, -58), ll=(-8, 0, 0))),
+    'h2_follow': dict(lean=-16, twist=-54, head=0, front=FK_LUNGE_F, back=FK_LUNGE_B,
+                      arms=A(ur=(-70, 0, 78), lr=(-8, 0, 0), hr=(0, 0, 12), ul=(34, 0, -72), ll=(-6, 0, 0))),
+    # Hit 3: overhead crash. Hop back with the sword straight up, then a hard chop into a deep lunge.
+    'h3_rise': dict(lean=6, twist=-2, head=4, front=(-14, 24), back=(10, 22),
+                    arms=A(ur=(-110, 0, 8), lr=(-30, 0, 0), hr=(-20, 0, 0), ul=(-40, 0, -12), ll=(-18, 0, 0))),
+    'h3_antic': dict(lean=14, twist=-6, head=10, front=(-6, 18), back=(8, 18),
+                     arms=A(ur=(-168, 0, 6), lr=(-12, 0, 0), hr=(-20, 0, 0), ul=(-58, 0, -10), ll=(-22, 0, 0))),
+    'h3_contact': dict(lean=-24, twist=6, head=-8, front=(-52, 68), back=(34, 28),
+                       arms=A(ur=(-62, 0, 4), lr=(-8, 0, 0), hr=(28, 0, 0), ul=(18, 0, -52), ll=(-10, 0, 0))),
+    'h3_follow': dict(lean=-26, twist=8, head=-8, front=(-52, 68), back=(34, 28),
+                      arms=A(ur=(-48, 0, 4), lr=(-6, 0, 0), hr=(38, 0, 0), ul=(26, 0, -58), ll=(-8, 0, 0))),
+    # Q: horizontal slash that launches the wave.
+    'q_antic': dict(lean=6, twist=-42, head=10, front=(-18, 34), back=(14, 30),
+                    arms=A(ur=(8, 0, 38), lr=(-30, 0, 0), hr=(-10, 0, 0), ul=(-52, 0, -10), ll=(-18, 0, 0))),
+    'q_contact': dict(lean=-20, twist=40, head=-6, front=FK_LUNGE_F, back=FK_LUNGE_B,
+                      arms=A(ur=(-98, 0, -24), lr=(-10, 0, 0), hr=(6, 0, 0), ul=(20, 0, -58), ll=(-8, 0, 0))),
+    'q_follow': dict(lean=-22, twist=48, head=-8, front=FK_LUNGE_F, back=FK_LUNGE_B,
+                     arms=A(ur=(-104, 0, -40), lr=(-8, 0, 0), hr=(8, 0, 0), ul=(28, 0, -70), ll=(-6, 0, 0))),
+    # E: one-hand dash-slash. Crouch with the sword back, a forward thrust held through the dash, then a cross cut.
+    'e_antic': dict(lean=12, twist=-30, head=6, front=(-10, 30), back=(12, 38),
+                    arms=A(ur=(28, 0, 26), lr=(-22, 0, 0), hr=(-16, 0, 0), ul=(-60, 0, -10), ll=(-20, 0, 0))),
+    'e_lunge': dict(lean=-36, twist=8, head=-14, front=(-55, 70), back=(42, 18),
+                    arms=A(ur=(-88, 0, 10), lr=(-4, 0, 0), hr=(4, 0, 0), ul=(14, 0, -50), ll=(-10, 0, 0))),
+    'e_cut': dict(lean=-28, twist=-40, head=-8, front=(-48, 62), back=(36, 24),
+                  arms=A(ur=(-92, 0, -48), lr=(-8, 0, 0), hr=(8, 0, 0), ul=(26, 0, -58), ll=(-8, 0, 0))),
+    # R spin (Sword, Wind, Water): big wind-up and a wide sweeping cut.
+    'rs_antic': dict(lean=8, twist=-62, head=14, front=(-22, 40), back=(16, 36),
+                     arms=A(ur=(4, 0, 55), lr=(-20, 0, 0), hr=(-10, 0, 0), ul=(-30, 0, -50), ll=(-12, 0, 0))),
+    'rs_contact': dict(lean=-18, twist=58, head=-10, front=FK_LUNGE_F, back=FK_LUNGE_B,
+                       arms=A(ur=(-86, 0, -14), lr=(-8, 0, 0), hr=(4, 0, 0), ul=(18, 0, 60), ll=(-8, 0, 0))),
+    'rs_follow': dict(lean=-20, twist=78, head=-14, front=FK_LUNGE_F, back=FK_LUNGE_B,
+                      arms=A(ur=(-80, 0, -34), lr=(-6, 0, 0), hr=(8, 0, 0), ul=(24, 0, 75), ll=(-6, 0, 0))),
+    # R cleave (Earth, Fire, Master) and eclipse (Shadow): sword raised overhead, then driven down into a lunge.
+    'rc_antic': dict(lean=16, twist=0, head=10, front=(-8, 18), back=(10, 18),
+                     arms=A(ur=(-176, 0, 8), lr=(-8, 0, 0), hr=(-24, 0, 0), ul=(-62, 0, -12), ll=(-24, 0, 0))),
+    'rc_contact': dict(lean=-26, twist=4, head=-8, front=(-55, 72), back=(36, 26),
+                       arms=A(ur=(-58, 0, 2), lr=(-6, 0, 0), hr=(34, 0, 0), ul=(20, 0, -55), ll=(-10, 0, 0))),
+    'rc_follow': dict(lean=-28, twist=6, head=-8, front=(-55, 72), back=(36, 26),
+                      arms=A(ur=(-44, 0, 2), lr=(-4, 0, 0), hr=(40, 0, 0), ul=(28, 0, -60), ll=(-8, 0, 0))),
+}
+
+def fk(name):
+    return FP(**FK_POSES[name])
+
+def fk_cast_keys(name, d):
+    slot = name[-1]
+    power = name[len('Cast_'):-2]
+    carry = FP(**FK_CARRY2)
+    if slot == 'Q':
+        a, c, f = fk('q_antic'), fk('q_contact'), fk('q_follow')
+        keys = [(0, carry), (max(2, d - 3), a, 'out'), (d, c, 'in'), (d + 3, f, 'out'), (d + 6, f)]
+    elif slot == 'E':
+        a, l, c = fk('e_antic'), fk('e_lunge'), fk('e_cut')
+        keys = [(0, carry), (max(2, d - 3), a, 'out'), (d, l, 'in'), (d + 6, l), (d + 8, c, 'in'), (d + 11, c)]
+    elif CAST_R[power] == 'spin':
+        a, c, f = fk('rs_antic'), fk('rs_contact'), fk('rs_follow')
+        keys = [(0, carry), (max(2, d - 4), a, 'out'), (d, c, 'in'), (d + 4, f, 'out'), (d + 8, f)]
+    else:   # cleave and eclipse
+        a, c, f = fk('rc_antic'), fk('rc_contact'), fk('rc_follow')
+        hold = 2 + (d - 2) * 0.6 if d > 8 else None
+        keys = [(0, carry), (2, a, 'out')]
+        if hold:
+            keys.append((hold, a))
+        keys += [(d, c, 'in'), (d + 3, f, 'out'), (d + 8, f)]
+    keys.append((d + 15, carry, 'out'))
+    return keys
+
+if FKMODE and not BASEMODE and not FISTMODE:
+    for _cast, _d in CAST_DELAY.items():
+        KEYS[_cast] = fk_cast_keys(_cast, _d)
+    _C = FP(**FK_CARRY2)
+    _B = FP(**FK_BREATH)
+    KEYS['Ready'] = [(0, _C), (24, _B, 'out'), (48, _C, 'out')]
+    KEYS['M1_1'] = [(0, _C), (4, FP(**FK_ANTIC), 'out'), (6, FP(**FK_CONTACT), 'in'), (8, FP(**FK_FOLLOW), 'out'), (11, FP(**FK_FOLLOW)), (18, _C, 'out')]
+    KEYS['M1_2'] = [(0, _C), (3, fk('h2_antic'), 'out'), (5, fk('h2_mid'), 'in'), (6, fk('h2_contact'), 'in'), (8, fk('h2_follow'), 'out'),
+                    (11, fk('h2_follow')), (18, _C, 'out')]
+    KEYS['M1_3'] = [(0, _C), (2, fk('h3_rise'), 'out'), (4, fk('h3_antic'), 'out'), (7, fk('h3_contact'), 'in'), (10, fk('h3_follow'), 'out'),
+                    (13, fk('h3_follow')), (20, _C, 'out')]
+
+
+# ---- FK base-element casts (no sword; hands only). Per element archetypes for Q (projectile), E (field) and R (finisher).
+BASE_ARM = dict(ur=(-10, 0, 8), lr=(-25, 0, 0), ul=(-10, 0, -8), ll=(-25, 0, 0))
+def BP(lean, twist, head, front, back, **arms):
+    return FP(lean, twist, head, front, back, A(**arms))
+BASE_CARRY = BP(-4, 0, -4, (-12, 20), (8, 20), **BASE_ARM)
+BASE_Q = {
+    'Wind':   [BP(10, 0, 8, (-14, 28), (10, 26), ur=(15, 0, 15), lr=(-30, 0, 0), ul=(15, 0, -15), ll=(-30, 0, 0)),
+               BP(-22, 0, -8, (-50, 64), (34, 24), ur=(-95, 0, 6), lr=(-6, 0, 0), ul=(-95, 0, -6), ll=(-6, 0, 0)),
+               BP(-24, 0, -8, (-50, 64), (34, 24), ur=(-100, 0, 8), lr=(-4, 0, 0), ul=(-100, 0, -8), ll=(-4, 0, 0))],
+    'Earth':  [BP(14, 0, 10, (-10, 24), (10, 22), ur=(-150, 0, 20), lr=(-25, 0, 0), ul=(-150, 0, -20), ll=(-25, 0, 0)),
+               BP(-28, 0, -10, (-52, 66), (36, 26), ur=(-72, 0, 4), lr=(-8, 0, 0), ul=(-72, 0, -4), ll=(-8, 0, 0)),
+               BP(-30, 0, -10, (-52, 66), (36, 26), ur=(-60, 0, 4), lr=(-6, 0, 0), ul=(-60, 0, -4), ll=(-6, 0, 0))],
+    'Water':  [BP(6, -45, 10, (-18, 34), (14, 30), ur=(10, 0, 48), lr=(-20, 0, 0), ul=(10, 0, 36), ll=(-20, 0, 0)),
+               BP(-18, 42, -8, (-48, 62), (34, 24), ur=(-88, 0, -28), lr=(-8, 0, 0), ul=(-88, 0, -40), ll=(-8, 0, 0)),
+               BP(-20, 50, -8, (-48, 62), (34, 24), ur=(-92, 0, -40), lr=(-6, 0, 0), ul=(-92, 0, -52), ll=(-6, 0, 0))],
+    'Fire':   [BP(8, -34, 10, (-18, 34), (14, 30), ur=(26, 0, 30), lr=(-30, 0, 0), ul=(-58, 0, -10), ll=(-18, 0, 0)),
+               BP(-20, 34, -6, (-50, 64), (36, 24), ur=(-100, 0, -14), lr=(-8, 0, 0), ul=(22, 0, -55), ll=(-8, 0, 0)),
+               BP(-22, 42, -8, (-50, 64), (36, 24), ur=(-108, 0, -24), lr=(-6, 0, 0), ul=(28, 0, -66), ll=(-6, 0, 0))],
+    'Shadow': [BP(6, 0, 4, (-12, 26), (10, 24), ur=(-60, 0, 10), lr=(-112, 0, 0), ul=(-60, 0, -10), ll=(-112, 0, 0)),
+               BP(-20, 0, -8, (-50, 64), (34, 24), ur=(-96, 0, 6), lr=(-4, 0, 0), ul=(-70, 0, -12), ll=(-20, 0, 0)),
+               BP(-22, 0, -8, (-50, 64), (34, 24), ur=(-98, 0, 8), lr=(-3, 0, 0), ul=(-72, 0, -14), ll=(-18, 0, 0))],
+}
+BASE_E = {
+    'slam':  [BP(12, 0, 10, (-10, 24), (10, 22), ur=(-165, 0, 10), lr=(-10, 0, 0), ul=(-165, 0, -10), ll=(-10, 0, 0)),
+              BP(-30, 0, -10, (-55, 70), (38, 26), ur=(-40, 0, 2), lr=(-6, 0, 0), ul=(-40, 0, -2), ll=(-6, 0, 0)),
+              BP(-32, 0, -10, (-55, 70), (38, 26), ur=(-34, 0, 2), lr=(-4, 0, 0), ul=(-34, 0, -2), ll=(-4, 0, 0))],
+    'sweep': [BP(4, 40, 6, (-18, 34), (14, 30), ur=(-30, 0, -36), lr=(-40, 0, 0), ul=(-30, 0, -26), ll=(-40, 0, 0)),
+              BP(-16, -42, -6, (-48, 62), (34, 24), ur=(-82, 0, 52), lr=(-8, 0, 0), ul=(-82, 0, 40), ll=(-8, 0, 0)),
+              BP(-18, -50, -8, (-48, 62), (34, 24), ur=(-84, 0, 66), lr=(-6, 0, 0), ul=(-84, 0, 52), ll=(-6, 0, 0))],
+    'snare': [BP(2, 0, 4, (-14, 28), (10, 26), ur=(-20, 0, 72), lr=(-20, 0, 0), ul=(-20, 0, -72), ll=(-20, 0, 0)),
+              BP(-16, 0, -6, (-46, 60), (32, 24), ur=(-88, 0, -6), lr=(-6, 0, 0), ul=(-88, 0, 6), ll=(-6, 0, 0)),
+              BP(-18, 0, -6, (-46, 60), (32, 24), ur=(-90, 0, -8), lr=(-4, 0, 0), ul=(-90, 0, 8), ll=(-4, 0, 0))],
+}
+BASE_E_KIND = {'Wind': 'sweep', 'Water': 'sweep', 'Earth': 'slam', 'Fire': 'slam', 'Shadow': 'snare'}
+BASE_R = [BP(8, 0, 12, (-8, 22), (8, 20), ur=(-170, 0, 6), lr=(-8, 0, 0), ul=(-170, 0, -6), ll=(-8, 0, 0)),
+          BP(-12, 0, -4, (-30, 44), (22, 26), ur=(-72, 0, 82), lr=(-6, 0, 0), ul=(-72, 0, -82), ll=(-6, 0, 0)),
+          BP(-14, 0, -6, (-30, 44), (22, 26), ur=(-62, 0, 50), lr=(-6, 0, 0), ul=(-62, 0, -50), ll=(-6, 0, 0))]
+
+def base_cast_keys(name, d):
+    slot, power = name[-1], name[len('Cast_'):-2]
+    if slot == 'Q':
+        a, c, f = BASE_Q[power]
+    elif slot == 'E':
+        a, c, f = BASE_E[BASE_E_KIND[power]]
+    else:
+        a, c, f = BASE_R
+    if slot == 'R':
+        hold = 2 + (d - 2) * 0.6 if d > 8 else None
+        keys = [(0, BASE_CARRY), (2, a, 'out')]
+        if hold:
+            keys.append((hold, a))
+        keys += [(d, c, 'in'), (d + 4, f, 'out'), (d + 9, f)]
+    else:
+        keys = [(0, BASE_CARRY), (max(2, d - 3), a, 'out'), (d, c, 'in'), (d + 3, f, 'out'), (d + 7, f)]
+    keys.append((d + 15, BASE_CARRY, 'out'))
+    return keys
+
+if BASEMODE:
+    for _cast, _d in CAST_DELAY.items():
+        KEYS[_cast] = base_cast_keys(_cast, _d)
+
+
+# ---- FK fist combo (no sword). Guard: elbows bent, hands up. Hit 1 left jab, hit 2 right cross, hit 3 overhead slam finisher.
+GUARD = BP(-4, 0, -4, (-12, 20), (8, 20), ur=(-32, 0, 12), lr=(-78, 0, 0), ul=(-32, 0, -12), ll=(-78, 0, 0))
+FIST_KEYS = {
+    'M1_1': [(0, GUARD),
+             (3, BP(6, 18, 4, (-18, 32), (14, 28), ur=(-34, 0, 14), lr=(-80, 0, 0), ul=(18, 0, -14), ll=(-95, 0, 0)), 'out'),
+             (6, BP(-14, -12, -6, (-46, 60), (32, 24), ur=(-40, 0, 14), lr=(-82, 0, 0), ul=(-92, 0, -4), ll=(-4, 0, 0)), 'in'),
+             (9, BP(-14, -12, -6, (-46, 60), (32, 24), ur=(-40, 0, 14), lr=(-82, 0, 0), ul=(-90, 0, -4), ll=(-6, 0, 0)), 'out'),
+             (18, GUARD, 'out')],
+    'M1_2': [(0, GUARD),
+             (3, BP(6, 34, 4, (-18, 32), (14, 28), ur=(14, 0, 14), lr=(-96, 0, 0), ul=(-40, 0, -14), ll=(-82, 0, 0)), 'out'),
+             (6, BP(-16, -38, -6, (-48, 62), (34, 24), ur=(-94, 0, 4), lr=(-4, 0, 0), ul=(-34, 0, -14), ll=(-84, 0, 0)), 'in'),
+             (9, BP(-16, -38, -6, (-48, 62), (34, 24), ur=(-92, 0, 4), lr=(-6, 0, 0), ul=(-34, 0, -14), ll=(-84, 0, 0)), 'out'),
+             (18, GUARD, 'out')],
+    'M1_3': [(0, GUARD),
+             (4, BP(14, -4, 10, (-8, 18), (8, 18), ur=(-168, 0, 8), lr=(-14, 0, 0), ul=(-150, 0, -8), ll=(-20, 0, 0)), 'out'),
+             (7, BP(-28, 4, -10, (-54, 70), (38, 26), ur=(-58, 0, 4), lr=(-8, 0, 0), ul=(-44, 0, -4), ll=(-10, 0, 0)), 'in'),
+             (13, BP(-30, 4, -10, (-54, 70), (38, 26), ur=(-50, 0, 4), lr=(-6, 0, 0), ul=(-40, 0, -4), ll=(-8, 0, 0)), 'out'),
+             (20, GUARD, 'out')],
+}
+if FISTMODE:
+    for _k, _v in FIST_KEYS.items():
+        KEYS[_k] = _v
 
 def blend_arms(a, b, t):
     if a is None or b is None:
@@ -428,6 +624,9 @@ import bpy
 from mathutils import Matrix, Vector
 setup()
 build_sword()
+if BASEMODE or FISTMODE:
+    SWORD.hide_render = True
+    SWORD.hide_viewport = True
 author()
 if ('--grip' in sys.argv or '--export' in sys.argv) and '--casts' not in sys.argv: grip_report()
 if '--clip' in sys.argv:

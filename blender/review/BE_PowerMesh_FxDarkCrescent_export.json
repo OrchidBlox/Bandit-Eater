@@ -1,0 +1,12 @@
+{
+  "model": "FxDarkCrescent",
+  "triangles": 312,
+  "materials": 1,
+  "dimensions_blender": [
+    8.0,
+    10.0,
+    1.5
+  ],
+  "palette": false,
+  "exported": true
+}

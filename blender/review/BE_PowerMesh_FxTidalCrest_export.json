@@ -1,0 +1,12 @@
+{
+  "model": "FxTidalCrest",
+  "triangles": 608,
+  "materials": 1,
+  "dimensions_blender": [
+    14.0,
+    6.0,
+    8.0
+  ],
+  "palette": false,
+  "exported": true
+}

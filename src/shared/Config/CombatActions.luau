@@ -3,18 +3,21 @@
 -- one-handed BE_SwordM1_Sword M1 114620290008582 / 130582779017206 / 90936461621693 (moving 95184168951056 /
 -- 83617632377530 / 95335351109250) and the two-handed set 129293301004480 / 130407320980475 / 105576524921428
 -- (moving 82490956624816 / 77362148225584 / 140518167709606, Ready 107881919413642, ReadyMoving 107127975680104).
+-- FK-authored one-hand set (BE_SwordRig_SwordFK, roblox-animation method, 2026-10-30). Previous sets: one-hand IK 72670018414017 / 118829196559938 / 129888720665241
+-- (moving 112378455881304 / 120156129228871 / 131711130057198, Ready 122687599909505, ReadyMoving 74205099586374); two-handed and first one-hand sets are listed in docs/animations.md.
 local SWORD_CLIPS = {
-	Animations = { M1_1 = "rbxassetid://72670018414017", M1_2 = "rbxassetid://118829196559938", M1_3 = "rbxassetid://129888720665241" },
-	MovingAnimations = { M1_1 = "rbxassetid://112378455881304", M1_2 = "rbxassetid://120156129228871", M1_3 = "rbxassetid://131711130057198" },
-	Ready = "rbxassetid://122687599909505", -- looping one-handed carry (standing)
-	ReadyMoving = "rbxassetid://74205099586374", -- same carry, upper body only, while running or airborne
+	Animations = { M1_1 = "rbxassetid://119520592714669", M1_2 = "rbxassetid://100756639062539", M1_3 = "rbxassetid://93441918066279" },
+	MovingAnimations = { M1_1 = "rbxassetid://77163557845826", M1_2 = "rbxassetid://133044354208208", M1_3 = "rbxassetid://105123217295450" },
+	Ready = "rbxassetid://78784924631632", -- looping one-handed carry (standing), FK-authored
+	ReadyMoving = "rbxassetid://138484378702206", -- same carry, upper body only, while running or airborne
 }
 
 local config = {
-	Animations = { M1_1 = "rbxassetid://124340796371674", M1_2 = "rbxassetid://137589820930478",
-		M1_3 = "rbxassetid://97511758227791", Dash = "rbxassetid://108163526893560" },
-	MovingAnimations = { M1_1 = "rbxassetid://99026701617574", M1_2 = "rbxassetid://132325822094557",
-		M1_3 = "rbxassetid://140611227228767" },
+	-- FK fist combo (build_sword_rig.py --fist, roblox-animation method, 2026-10-30). Earlier IDs: 124340796371674 / 137589820930478 / 97511758227791 (moving 99026701617574 / 132325822094557 / 140611227228767).
+	Animations = { M1_1 = "rbxassetid://114840764499664", M1_2 = "rbxassetid://127305833965693",
+		M1_3 = "rbxassetid://115635517184706", Dash = "rbxassetid://108163526893560" },
+	MovingAnimations = { M1_1 = "rbxassetid://106984870383750", M1_2 = "rbxassetid://100916820549531",
+		M1_3 = "rbxassetid://96312761722418" },
 	-- Every sword power shares the sword clip set above. Same lengths and strike times as the fist combo.
 	SwordM1 = {},
 	Durations = { M1_1 = 18 / 30, M1_2 = 18 / 30, M1_3 = 20 / 30, Dash = 15 / 30 },
