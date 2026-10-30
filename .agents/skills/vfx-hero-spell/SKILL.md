@@ -33,7 +33,7 @@ The owner approves each look before Codex spends credits on it. Claude's artifac
    - Creatures are rigged skinned meshes; static effects are plain meshes. Prefix every object with its set name so sets never clash in one Blender file.
    - One short brief per set (`blender/briefs/vfx/<Set>.md`: style, objects, sizes, origin, triangle budget) and one per creature (`blender/briefs/<Creature>.md`: model, rig bone names, animations with exact action names and durations). State which pieces the game moves from code.
 4. **Codex builds meshes and creatures.** `bash scripts/codex-run.sh <spec.md> <model> <reasoning> blender` per job.
-   - One job per set or creature. A run must never open or switch Blender files (it drops the MCP connection); specs tell Codex to build in a new scene and save with `bpy.data.libraries.write`.
+   - One job per set or creature. A run must never open or switch Blender files (it drops the MCP connection); specs tell Codex to create the working scene with `bpy.ops.scene.new(type='EMPTY')` (never `bpy.data.scenes.new`: it crashes Blender 5.2.2) and save the finished mesh with `bpy.data.libraries.write(path, {obj}, fake_user=True)` (the object only, never a scene; see the crash trap in docs/codex-workflow.md).
    - Queue jobs in a script that skips any job whose FBX exists, logs DONE, FAIL and STOP to a status file and stops cleanly on a usage limit (`scripts/run-spell-assets.sh`). Re-run to resume.
    - A failed job usually means leftovers in the live Blender file; delete them yourself and re-run.
    - Look at the check image before moving on. Reject flat or generic models and send a stronger brief (a smooth tube is not a 40-segment body).
