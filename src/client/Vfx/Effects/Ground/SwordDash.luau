@@ -161,6 +161,13 @@ return function(ctx)
 	local lane = ctx.part(Enum.PartType.Block, c.Highlight, Fx.NEON, 1)
 	local endMark = ctx.part(Enum.PartType.Cylinder, c.Highlight, Fx.NEON, 1)
 	local fin = FINISH[style]
+	-- Codex anime-slick crescents when installed (SlashCrescent 6x1x9, DarkCrescent 8x1.5x10); the older meshes otherwise.
+	local newName = style == "Shadow" and "DarkCrescent" or "SlashCrescent"
+	local useNew = Fx.hasMesh(newName)
+	local native = newName == "DarkCrescent" and Vector3.new(8, 1.5, 10) or Vector3.new(6, 1, 9)
+	if useNew then
+		fin = { newName, fin[2], fin[3] }
+	end
 	local cutRim = ctx.mesh(fin[1], c.Shade, Fx.SMOOTH, 0.2)
 	local cut = ctx.mesh(fin[1], c.Body, Fx.SMOOTH, 0)
 	local cutGlow = ctx.mesh(fin[1], c.Highlight, Fx.NEON, 0.35)
@@ -209,11 +216,20 @@ return function(ctx)
 			local k = (p.t - cutAt) / 0.28
 			local size = fin[2] * S * (0.5 + 0.5 * Fx.backOut(k))
 			local pos = floor + fwd * range + Vector3.new(0, 2.6, 0)
-			local cf = CFrame.lookAt(pos, pos + fwd) * CFrame.Angles(0, math.pi / 2, fin[3])
 			local opacity = p.fade * math.clamp(1 - k, 0, 1)
-			place(cutRim, cf, Vector3.new(size * 1.1, size * 1.1, 1.6), opacity, 0.2)
-			place(cut, cf, Vector3.new(size, size, 1.2), opacity, 0)
-			place(cutGlow, cf * CFrame.new(0, 0, 0.3), Vector3.new(size * 0.8, size * 0.8, 0.6), opacity, 0.35)
+			if useNew then
+				-- The crescent lies flat with its convex edge forward; roll it upright so it slices across the dash lane.
+				local cf = CFrame.lookAt(pos, pos + fwd) * CFrame.Angles(0, 0, math.pi / 2 + fin[3])
+				local scale = size / 6
+				place(cutRim, cf, native * scale * 1.1, opacity, 0.2)
+				place(cut, cf, native * scale, opacity, 0)
+				place(cutGlow, cf, native * scale * 0.7, opacity, 0.35)
+			else
+				local cf = CFrame.lookAt(pos, pos + fwd) * CFrame.Angles(0, math.pi / 2, fin[3])
+				place(cutRim, cf, Vector3.new(size * 1.1, size * 1.1, 1.6), opacity, 0.2)
+				place(cut, cf, Vector3.new(size, size, 1.2), opacity, 0)
+				place(cutGlow, cf * CFrame.new(0, 0, 0.3), Vector3.new(size * 0.8, size * 0.8, 0.6), opacity, 0.35)
+			end
 		else
 			for _, part in { cutRim, cut, cutGlow } do
 				part.Transparency = 1
