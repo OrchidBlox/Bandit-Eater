@@ -6,7 +6,7 @@ Reference images (approved concepts; match their shapes, proportions and chunky-
 
 - Final size (Roblox X x Y x Z studs): **7 x 12 x 6**.
 - Triangle budget: **target 1300, max 2000**.
-- Shape: A single big rounded flame geyser: a wide stable base, one tall central column with a plump rounded top, and four to six fat rounded side lobes of different heights fused to it (like the concept), blunt soft tips, no thin spikes, no smoke. Slightly flattened front to back (Roblox Z). Flat bottom. Centred on X and Z so runtime can scale it up from the ground.
+- Shape: A single big rounded flame geyser: a wide stable base, one tall central column with a plump rounded top, and four to six fat rounded side lobes of different heights fused to it (like the concept), blunt soft tips, no thin spikes, no smoke. Slightly flattened front to back (Roblox Z). Flat bottom. Centred on X and Z so runtime can scale it up from the ground. REWORK NOTE (owner review 2026-10-29): the first build was too faceted and crystal-like. Build it from smooth rounded forms: sculpt with a Subdivision Surface modifier (level 1 or 2), shade smooth, then APPLY the modifier and decimate to the triangle budget. Silhouette must be soft, plump and toy-like, like inflated foam, with no flat crystal facets, no sharp ridges and no spikes. Think of a cluster of fat rounded flame lobes, like inflated candy, with a smooth bulbous base.
 
 ## Mesh-stage contract (all models)
 - Style: `.claude/skills/vfx-effect/styles/chunky-cartoon.md`: fat rounded silhouette, low-poly broad surfaces, soft blunt tips, nothing needle-thin, readable at phone size. Soft flat shading, no realism.

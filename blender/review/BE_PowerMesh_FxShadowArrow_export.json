@@ -1,0 +1,12 @@
+{
+  "model": "FxShadowArrow",
+  "triangles": 264,
+  "materials": 1,
+  "dimensions_blender": [
+    2.4000000953674316,
+    7.0,
+    2.4000000953674316
+  ],
+  "palette": false,
+  "exported": true
+}

@@ -6,7 +6,7 @@ Reference images (approved concepts; match their shapes, proportions and chunky-
 
 - Final size (Roblox X x Y x Z studs): **3 x 3 x 3.6**.
 - Triangle budget: **target 600, max 1000**.
-- Shape: A compact fat curled air projectile: a plump ball of air with two thick spiral ridges curling around it and one short rounded curl trailing behind. Reads as a swirl even from behind. Travel direction is Roblox -Z; the trailing curl points toward +Z. Not a beam, no spikes.
+- Shape: REDO (v1 came out as a faceted lumpy ball, reject that). A clean curled gust: build it from smooth parts, not by displacing a sphere. A plump smooth teardrop core (a UV sphere stretched along travel, subdivision-smoothed, smooth shading) wrapped by TWO thick rounded spiral tubes (bevelled round curves, about 0.55 stud diameter, each making about 1.25 turns around the core and tapering to rounded tips) that sweep back and flow into one short fat curl trailing behind (toward +Z). Clear, elegant spiral lines like a cartoon wind swirl; all surfaces smooth-shaded with soft rounded edges, no flat facets, no spikes, one joined mesh.
 
 ## Mesh-stage contract (all models)
 - Style: `.claude/skills/vfx-effect/styles/chunky-cartoon.md`: fat rounded silhouette, low-poly broad surfaces, soft blunt tips, nothing needle-thin, readable at phone size. Soft flat shading, no realism.

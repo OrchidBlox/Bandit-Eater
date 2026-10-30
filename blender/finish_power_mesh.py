@@ -18,12 +18,12 @@ filename,name=sources.get(model,(f'BE_{model}.blend',f'BE_{model}'))
 with bpy.data.libraries.load(str(root/'blender'/filename),link=False) as (source,target):
     target.scenes=source.scenes[:1]
 scene=target.scenes[0];bpy.context.window.scene=scene
-obj=next(o for o in scene.objects if o.type=='MESH' and o.name.startswith(name))
+obj=next(o for o in scene.objects if o.type=='MESH' and (o.name.startswith(name) or (name.startswith('BE_') and o.name.startswith(name[3:]))))
 bpy.ops.object.select_all(action='DESELECT');obj.select_set(True);bpy.context.view_layer.objects.active=obj
 bpy.ops.object.transform_apply(location=False,rotation=True,scale=True)
 if not model.startswith('Held'):  # held weapons keep their grip-centre origin
     bpy.ops.object.origin_set(type='ORIGIN_GEOMETRY',center='BOUNDS');obj.location=(0,0,0)
-materials=list(obj.data.materials)
+materials=[m for m in obj.data.materials if m]
 palette=model in {'Sword','MasterSword','Wave','ShadowOrb'} or len(materials)>1
 mat=bpy.data.materials.new('BE_PowerMesh_'+model+'_Runtime');mat.use_nodes=True
 bsdf=next(n for n in mat.node_tree.nodes if n.type=='BSDF_PRINCIPLED');bsdf.inputs['Roughness'].default_value=.55

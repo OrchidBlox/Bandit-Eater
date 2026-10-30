@@ -6,7 +6,7 @@ Reference images (approved concepts; match their shapes, proportions and chunky-
 
 - Final size (Roblox X x Y x Z studs): **3.4 x 5 x 3.2**.
 - Triangle budget: **target 280, max 450**.
-- Shape: One chunky faceted stone like the tall boulders in the concept: wide at the base, slightly tapering, a lumpy flat-ish top, big flat facets (8 to 12), rounded bevelled edges, a little asymmetry. It sits as if half buried: the bottom is flat. No cracks, moss or pebbles.
+- Shape: One chunky faceted stone like the tall boulders in the concept: wide at the base, slightly tapering, a lumpy flat-ish top, big flat facets (8 to 12), rounded bevelled edges, a little asymmetry. It sits as if half buried: the bottom is flat. No cracks, moss or pebbles. REWORK NOTE: the first build was a smooth tapered slab. Make it a lumpy BOULDER: irregular, asymmetric silhouette (one side bulging, the top leaning and uneven), 9 to 12 large flat facets of different sizes, deeply bevelled rounded edges, wider and rounder at the base than a column. It must read as a stone from every side, not a box or pillar.
 
 ## Mesh-stage contract (all models)
 - Style: `.claude/skills/vfx-effect/styles/chunky-cartoon.md`: fat rounded silhouette, low-poly broad surfaces, soft blunt tips, nothing needle-thin, readable at phone size. Soft flat shading, no realism.

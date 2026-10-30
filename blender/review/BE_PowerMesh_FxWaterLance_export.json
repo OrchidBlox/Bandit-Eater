@@ -1,0 +1,12 @@
+{
+  "model": "FxWaterLance",
+  "triangles": 264,
+  "materials": 1,
+  "dimensions_blender": [
+    2.0,
+    8.0,
+    2.0
+  ],
+  "palette": false,
+  "exported": true
+}

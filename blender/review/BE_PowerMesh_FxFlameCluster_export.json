@@ -1,0 +1,12 @@
+{
+  "model": "FxFlameCluster",
+  "triangles": 438,
+  "materials": 1,
+  "dimensions_blender": [
+    5.0,
+    3.0,
+    9.0
+  ],
+  "palette": false,
+  "exported": true
+}

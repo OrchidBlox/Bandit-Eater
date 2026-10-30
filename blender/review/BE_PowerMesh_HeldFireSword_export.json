@@ -1,0 +1,12 @@
+{
+  "model": "HeldFireSword",
+  "triangles": 766,
+  "materials": 1,
+  "dimensions_blender": [
+    1.899999976158142,
+    0.4044741988182068,
+    5.601276874542236
+  ],
+  "palette": true,
+  "exported": true
+}

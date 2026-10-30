@@ -1,0 +1,12 @@
+{
+  "model": "FxMeteorCore",
+  "triangles": 336,
+  "materials": 1,
+  "dimensions_blender": [
+    4.199999809265137,
+    4.599999904632568,
+    3.799999952316284
+  ],
+  "palette": false,
+  "exported": true
+}

@@ -1,0 +1,12 @@
+{
+  "model": "FxGroundCrack",
+  "triangles": 444,
+  "materials": 1,
+  "dimensions_blender": [
+    12.0,
+    12.0,
+    0.25
+  ],
+  "palette": false,
+  "exported": true
+}

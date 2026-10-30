@@ -1,0 +1,12 @@
+{
+  "model": "FxRingStack",
+  "triangles": 768,
+  "materials": 1,
+  "dimensions_blender": [
+    4.599999904632568,
+    4.599999904632568,
+    2.799999952316284
+  ],
+  "palette": false,
+  "exported": true
+}

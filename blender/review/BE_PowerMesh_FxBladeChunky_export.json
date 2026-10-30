@@ -1,0 +1,12 @@
+{
+  "model": "FxBladeChunky",
+  "triangles": 604,
+  "materials": 1,
+  "dimensions_blender": [
+    2.200000047683716,
+    1.2000000476837158,
+    7.0
+  ],
+  "palette": true,
+  "exported": true
+}

@@ -1,0 +1,12 @@
+{
+  "model": "FxWhirlpoolDisc",
+  "triangles": 486,
+  "materials": 1,
+  "dimensions_blender": [
+    14.0,
+    14.0,
+    1.5
+  ],
+  "palette": false,
+  "exported": true
+}

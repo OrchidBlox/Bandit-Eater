@@ -1,0 +1,12 @@
+{
+  "model": "FxFlameGeyser",
+  "triangles": 1244,
+  "materials": 1,
+  "dimensions_blender": [
+    7.0,
+    6.0,
+    12.0
+  ],
+  "palette": false,
+  "exported": true
+}

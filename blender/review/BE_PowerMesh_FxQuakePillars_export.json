@@ -1,0 +1,12 @@
+{
+  "model": "FxQuakePillars",
+  "triangles": 724,
+  "materials": 1,
+  "dimensions_blender": [
+    9.0,
+    9.0,
+    10.0
+  ],
+  "palette": false,
+  "exported": true
+}

@@ -1,0 +1,12 @@
+{
+  "model": "FxEmberShard",
+  "triangles": 40,
+  "materials": 1,
+  "dimensions_blender": [
+    1.0,
+    0.699999988079071,
+    1.7999999523162842
+  ],
+  "palette": false,
+  "exported": true
+}

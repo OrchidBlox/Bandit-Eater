@@ -1,0 +1,12 @@
+{
+  "model": "FxCycloneColumn",
+  "triangles": 608,
+  "materials": 1,
+  "dimensions_blender": [
+    7.0,
+    7.0,
+    12.0
+  ],
+  "palette": false,
+  "exported": true
+}

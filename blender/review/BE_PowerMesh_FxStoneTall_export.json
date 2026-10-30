@@ -1,0 +1,12 @@
+{
+  "model": "FxStoneTall",
+  "triangles": 116,
+  "materials": 1,
+  "dimensions_blender": [
+    3.4000000953674316,
+    3.200000047683716,
+    5.0
+  ],
+  "palette": false,
+  "exported": true
+}

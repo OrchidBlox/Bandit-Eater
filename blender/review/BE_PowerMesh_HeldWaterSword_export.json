@@ -1,0 +1,12 @@
+{
+  "model": "HeldWaterSword",
+  "triangles": 688,
+  "materials": 1,
+  "dimensions_blender": [
+    1.899999976158142,
+    0.5019075870513916,
+    5.600000381469727
+  ],
+  "palette": true,
+  "exported": true
+}

@@ -1,0 +1,12 @@
+{
+  "model": "FxTidalWave",
+  "triangles": 2350,
+  "materials": 1,
+  "dimensions_blender": [
+    12.0,
+    6.0,
+    7.0
+  ],
+  "palette": true,
+  "exported": true
+}

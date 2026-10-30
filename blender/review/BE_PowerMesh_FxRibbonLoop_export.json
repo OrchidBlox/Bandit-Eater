@@ -1,0 +1,12 @@
+{
+  "model": "FxRibbonLoop",
+  "triangles": 680,
+  "materials": 1,
+  "dimensions_blender": [
+    5.999999523162842,
+    4.0,
+    8.0
+  ],
+  "palette": false,
+  "exported": true
+}

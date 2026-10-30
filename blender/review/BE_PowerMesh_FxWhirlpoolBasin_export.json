@@ -1,0 +1,12 @@
+{
+  "model": "FxWhirlpoolBasin",
+  "triangles": 1536,
+  "materials": 1,
+  "dimensions_blender": [
+    10.0,
+    10.0,
+    0.8999999761581421
+  ],
+  "palette": true,
+  "exported": true
+}

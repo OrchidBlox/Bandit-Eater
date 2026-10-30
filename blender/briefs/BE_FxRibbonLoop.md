@@ -6,7 +6,7 @@ Reference images (approved concepts; match their shapes, proportions and chunky-
 
 - Final size (Roblox X x Y x Z studs): **6 x 8 x 4**.
 - Triangle budget: **target 1100, max 1800**.
-- Shape: One thick glossy rounded ribbon tube (diameter about 1.0 stud, round cross-section) that rises from a small base, curls into a figure-eight style double loop and finishes in a soft rounded end, like the purple ribbon in the concept. Smooth and plump, no flat tape, no thin ends: end caps are rounded. One continuous tube.
+- Shape: REDO (v1 came out as a plain S-tube, reject that). One thick rounded ribbon tube (round cross-section about 1.0 stud thick, built from a bevelled Bezier curve, smooth shading) that rises from a small rounded base, makes a clearly open FIGURE-EIGHT: a large loop on the left, a crossing in the middle where the tube passes over itself with a visible gap between the two strands, a second loop on the right, then finishes in a soft curl with a rounded end cap. Both loops read from the front view with open holes you can see through. Plump, glossy, no flat tape, no thin ends.
 
 ## Mesh-stage contract (all models)
 - Style: `.claude/skills/vfx-effect/styles/chunky-cartoon.md`: fat rounded silhouette, low-poly broad surfaces, soft blunt tips, nothing needle-thin, readable at phone size. Soft flat shading, no realism.

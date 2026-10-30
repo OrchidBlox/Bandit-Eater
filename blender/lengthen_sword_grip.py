@@ -17,7 +17,7 @@ if not backup.exists():
     shutil.copy2(path, backup)
 
 bpy.ops.wm.open_mainfile(filepath=str(path))
-obj = next(o for o in bpy.data.objects if o.type == 'MESH' and o.name.startswith(f'BE_{TEMPLATE}'))
+obj = next(o for o in bpy.data.objects if o.type == 'MESH' and (o.name.startswith(f'BE_{TEMPLATE}') or o.name.startswith(TEMPLATE)))
 me = obj.data
 names = [m.name.split('.')[0] for m in me.materials]
 grip_index = names.index('Grip')

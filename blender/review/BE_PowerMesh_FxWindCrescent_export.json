@@ -1,0 +1,12 @@
+{
+  "model": "FxWindCrescent",
+  "triangles": 264,
+  "materials": 1,
+  "dimensions_blender": [
+    4.0,
+    7.0,
+    1.0
+  ],
+  "palette": false,
+  "exported": true
+}

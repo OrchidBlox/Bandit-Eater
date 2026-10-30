@@ -1,0 +1,12 @@
+{
+  "model": "FxSlashCrescent",
+  "triangles": 304,
+  "materials": 1,
+  "dimensions_blender": [
+    6.0,
+    9.0,
+    1.0
+  ],
+  "palette": false,
+  "exported": true
+}

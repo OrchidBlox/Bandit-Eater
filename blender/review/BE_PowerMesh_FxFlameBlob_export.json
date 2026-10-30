@@ -1,0 +1,12 @@
+{
+  "model": "FxFlameBlob",
+  "triangles": 350,
+  "materials": 1,
+  "dimensions_blender": [
+    2.5999999046325684,
+    2.1999998092651367,
+    2.799999952316284
+  ],
+  "palette": false,
+  "exported": true
+}

@@ -1,0 +1,12 @@
+{
+  "model": "HeldMasterSword",
+  "triangles": 728,
+  "materials": 1,
+  "dimensions_blender": [
+    1.899999976158142,
+    0.531000018119812,
+    6.494514465332031
+  ],
+  "palette": true,
+  "exported": true
+}

@@ -10,7 +10,8 @@ import math
 import sys
 
 ROOT=Path(r'C:\Users\Kobe\source\repos\bandit-eater')
-SOURCE=Path(r'C:\Users\Kobe\source\repos\R15 - Blener Model\MrXen0_R15RIG_v1.2.blend')
+_REPO_RIG=Path(__file__).resolve().parents[1]/'rigs'/'MrXen0_R15RIG_v1.2.blend'  # canonical rig kept in the repo
+SOURCE=_REPO_RIG if _REPO_RIG.exists() else Path(r'C:\Users\Kobe\source\repos\R15 - Blener Model\MrXen0_R15RIG_v1.2.blend')
 SCENE='BE_HeroSprint_MrXen0_V5'
 ACTION='BE_HeroSprintMrXen0_V5'
 FILE=ROOT/'blender/anims/BE_HeroSprint_MrXen0_V5.blend'

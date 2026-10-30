@@ -6,7 +6,7 @@ Reference images (approved concepts; match their shapes, proportions and chunky-
 
 - Final size (Roblox X x Y x Z studs): **2.6 x 2.8 x 2.2**.
 - Triangle budget: **target 350, max 600**.
-- Shape: A squat, rounded, bouncy flame blob: wide bulbous base, three short fat rounded lobes on top (tallest in the middle), a soft hump, no thin tongues. Cute and friendly like the small flames in the concept. Flat bottom, base 2.6 wide.
+- Shape: A squat, rounded, bouncy flame blob: wide bulbous base, three short fat rounded lobes on top (tallest in the middle), a soft hump, no thin tongues. Cute and friendly like the small flames in the concept. Flat bottom, base 2.6 wide. REWORK NOTE (owner review 2026-10-29): the first build was too faceted and crystal-like. Build it from smooth rounded forms: sculpt with a Subdivision Surface modifier (level 1 or 2), shade smooth, then APPLY the modifier and decimate to the triangle budget. Silhouette must be soft, plump and toy-like, like inflated foam, with no flat crystal facets, no sharp ridges and no spikes. Think of three overlapping soft jelly bulbs, not a gem.
 
 ## Mesh-stage contract (all models)
 - Style: `.claude/skills/vfx-effect/styles/chunky-cartoon.md`: fat rounded silhouette, low-poly broad surfaces, soft blunt tips, nothing needle-thin, readable at phone size. Soft flat shading, no realism.
