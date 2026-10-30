@@ -22,3 +22,9 @@ Everything that does not need Blender was finished and committed first. This not
 - Real playtests: fights with several moves at once, phone-size readability and part counts, two clients.
 - Sound is skipped on purpose.
 - Save the Studio place after installing meshes.
+
+## Update 2026-10-30 (later)
+
+- The Blender crashes came from saving a `bpy.data.scenes.new()` scene with `bpy.data.libraries.write(path, {scene})` (Blender 5.2.2, access violation in `scene_copy_data`, reproduced headless). The Codex Blender prompt, briefs and `finish_power_mesh.py` now use object-only saves; see "Blender 5.2.2 crash trap" in docs/codex-workflow.md. After that fix the Codex mesh queue ran without crashes.
+- Meshes installed in Studio: all except FxSkywheelDisc, FxSplitterRidge, FxEclipseDisc and FxGoldWave (check `.codex-tmp/allmesh.status`).
+- All combat animations were redone FK (see docs/animations.md).

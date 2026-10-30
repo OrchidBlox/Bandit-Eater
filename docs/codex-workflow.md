@@ -93,3 +93,7 @@ THE BRIEF:
 5. Fix small problems directly; send big ones back to Codex with a focused follow-up spec.
 6. Run `rojo build`, sync, playtest through the Studio MCP, and check Output for errors.
 7. Commit with a message that says what was built and what was tested.
+
+## Blender 5.2.2 crash trap (found 2026-10-30)
+
+Writing a Scene created with `bpy.data.scenes.new()` to a `.blend` with `bpy.data.libraries.write(path, {scene})` crashes Blender 5.2.2 (EXCEPTION_ACCESS_VIOLATION in `scene_copy_data`; reproduced headless). Specs and briefs used to tell Codex to do exactly that. Safe: create the working scene with `bpy.ops.scene.new(type='EMPTY')` and save with `bpy.data.libraries.write(path, {obj}, fake_user=True)` (the object only). Scenes loaded from a file with `bpy.data.libraries.load` can still be written. `finish_power_mesh.py` accepts both kinds of file.

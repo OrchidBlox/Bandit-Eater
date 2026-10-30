@@ -126,3 +126,16 @@ Built from the owner-approved concept (`docs/reference/sword-m1-onehand-concepts
 
 - E casts: `python blender/anims/build_sword_rig.py -- --onehand --casts --export` builds seven one-handed dash-slash clips (draw back low, thrust lunge held through the dash, finishing cross cut), outputs `BE_SwordRig_SwordOHE_*`. Wired into the `Sword*_2` entries of `PowerAnimations.luau` (Profile "dash"); the earlier rising-cut IDs are in the comment above each entry. Timed to the server's dash windups (Delay).
 - Handles: `blender/lengthen_sword_grip.py <Template> -1.0` took the extra stud back out of all seven `BE_Held*.blend` (grip 0.9 studs again; the script now also finds unprefixed object names). Finished through `blender/finish_power_mesh.py`, FBX uploaded (`BE_PowerMesh_HeldSword` 103458148300625, Wind 73053976761771, Earth 79710038315303, Water 101974404871246, Fire 129901857689289, Shadow 87038439277306, Master 116421334234782) and the templates in `ReplicatedStorage.Assets.Swords` replaced in Studio (Size and PivotOffset from the loaded mesh / 100, palette textures kept). Swords are 5.6 studs long now (Master 6.5: its big pommel hangs about 1.4 below the fist). The place must be saved.
+
+## FK redo of every combat clip - 2026-10-30
+
+All sword, base-element and fist combat clips were re-authored with the roblox-animation method (FK controls only, five poses per clip with ease-in into the strike and ease-out into the settle, free-arm counter-swing, exaggerated extremes) in `blender/anims/build_sword_rig.py`: `--fk` (sword Ready carry and three hits), `--fk --casts` (21 sword Q/E/R casts, timed to each move's server Delay), `--base --casts` (15 hands-only Wind, Earth, Water, Fire and Shadow casts, archetypes: Q throw or shove, E slam, sweep or snare, R arms-raise burst), `--fist` (fist jab, cross and overhead slam). Exporter mapping errors are about 0.01 (the IK clips reached 0.08). Review GIFs for a sample of each set are in `blender/review/` (`SwordFK_*`, `SwordFKC_*`, `BaseFK_*`, `FistFK_*`); the owner approves them. All 86 new tracks were verified in Studio to load at their configured durations.
+
+| Set | File prefix | Count |
+| --- | --- | --- |
+| Sword carry and 3 hits (+ moving) | `BE_SwordRig_SwordFK_` | 8 |
+| Sword Q/E/R casts (+ moving) | `BE_SwordRig_SwordFKC_` | 42 |
+| Base element casts (+ moving) | `BE_SwordRig_BaseFK_` | 30 |
+| Fist M1 combo (+ moving) | `BE_SwordRig_FistFK_` | 6 |
+
+IDs are in `scripts/asset_ids.json`, wired in `Config/CombatActions.luau` (M1, carry, fists) and `Config/PowerAnimations.luau` (casts; the previous IDs are in the comment above each entry). Still on the earlier clips: the fist Dash, the swallow animation and movement transitions (jump, run, landing).
