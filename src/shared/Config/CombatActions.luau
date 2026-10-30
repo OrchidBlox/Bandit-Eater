@@ -1,8 +1,13 @@
+-- One-handed sword clips (BE_SwordRig_SwordOneHand, build_sword_rig.py --onehand; owner-approved concept
+-- docs/reference/sword-m1-onehand-concepts-v1-2026-10-29). Every sword power shares them. Earlier sets: the first
+-- one-handed BE_SwordM1_Sword M1 114620290008582 / 130582779017206 / 90936461621693 (moving 95184168951056 /
+-- 83617632377530 / 95335351109250) and the two-handed set 129293301004480 / 130407320980475 / 105576524921428
+-- (moving 82490956624816 / 77362148225584 / 140518167709606, Ready 107881919413642, ReadyMoving 107127975680104).
 local SWORD_CLIPS = {
-	Animations = { M1_1 = "rbxassetid://129293301004480", M1_2 = "rbxassetid://130407320980475", M1_3 = "rbxassetid://105576524921428" },
-	MovingAnimations = { M1_1 = "rbxassetid://82490956624816", M1_2 = "rbxassetid://77362148225584", M1_3 = "rbxassetid://140518167709606" },
-	Ready = "rbxassetid://107881919413642", -- looping two-handed ready stance (standing)
-	ReadyMoving = "rbxassetid://107127975680104", -- same hold, upper body only, while running or airborne
+	Animations = { M1_1 = "rbxassetid://72670018414017", M1_2 = "rbxassetid://118829196559938", M1_3 = "rbxassetid://129888720665241" },
+	MovingAnimations = { M1_1 = "rbxassetid://112378455881304", M1_2 = "rbxassetid://120156129228871", M1_3 = "rbxassetid://131711130057198" },
+	Ready = "rbxassetid://122687599909505", -- looping one-handed carry (standing)
+	ReadyMoving = "rbxassetid://74205099586374", -- same carry, upper body only, while running or airborne
 }
 
 local config = {
@@ -10,8 +15,7 @@ local config = {
 		M1_3 = "rbxassetid://97511758227791", Dash = "rbxassetid://108163526893560" },
 	MovingAnimations = { M1_1 = "rbxassetid://99026701617574", M1_2 = "rbxassetid://132325822094557",
 		M1_3 = "rbxassetid://140611227228767" },
-	-- Two-handed sword clips (BE_SwordRig_Sword, authored with the sword attached; build_sword_rig.py). Every sword
-	-- power shares them (owner, 2026-10-28). Same lengths and strike times as the fist combo, so gameplay is unchanged.
+	-- Every sword power shares the sword clip set above. Same lengths and strike times as the fist combo.
 	SwordM1 = {},
 	Durations = { M1_1 = 18 / 30, M1_2 = 18 / 30, M1_3 = 20 / 30, Dash = 15 / 30 },
 	StrikeTimes = { M1_1 = 6 / 30, M1_2 = 6 / 30, M1_3 = 7 / 30 },

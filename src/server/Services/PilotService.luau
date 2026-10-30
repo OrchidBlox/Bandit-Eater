@@ -1,4 +1,5 @@
 local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local HttpService = game:GetService("HttpService")
 local C = require(ReplicatedStorage.Shared.PilotConfig)
@@ -9,9 +10,8 @@ local Combat = require(script.Parent.PilotCombat)
 local Stars = require(script.Parent.PowerStarService)
 local Service = {}
 local actors, bandits = Combat.Actors, Combat.Bandits
-local phase, deadline, matchId = "Lobby", 0, 0
+local phase = "FFA" -- always on: no rounds, timer, results or intermission (owner, 2026-10-28)
 local rng = Random.new()
-local results = {}
 
 local function randomPower()
 	return C.BaseIds[rng:NextInteger(1, #C.BaseIds)]
@@ -80,16 +80,6 @@ local function createBot(index)
 	actors[actor.Name] = actor
 end
 
-local function clearBots()
-	for key, actor in actors do
-		if actor.Bot then
-			actor.Active = false
-			actor.Model:Destroy()
-			actors[key] = nil
-		end
-	end
-end
-
 local function fillBots()
 	local humans = 0
 	for _, actor in actors do
@@ -112,7 +102,7 @@ local function fillBots()
 end
 
 local function joinMatch(actor)
-	if phase ~= "Match" or actor.Active or not Data.GetData(actor.Player) then
+	if actor.Active or not Data.GetData(actor.Player) then
 		return
 	end
 	local character = actor.Player.Character
@@ -146,31 +136,19 @@ local function checkArenaEntry()
 			joinMatch(actor)
 		end
 	end
-	if phase == "Match" then
-		fillBots()
-	end
+	fillBots()
 end
 
 local function spawnBandit(index)
 	local spawned = Stars.Spawn(World, bandits, index, C.BaseIds)
 	if not spawned and not bandits[index] then
-		local id = matchId
 		task.delay(2, function()
-			if phase == "Match" and matchId == id and not bandits[index] then
+			if not bandits[index] then
 				spawnBandit(index)
 			end
 		end)
 	end
 	return spawned
-end
-
-local function clearBandits()
-	for index, bandit in bandits do
-		if bandit.Model then
-			bandit.Model:Destroy()
-		end
-		bandits[index] = nil
-	end
 end
 
 local function takeBandit(actor, index, bandit)
@@ -181,9 +159,8 @@ local function takeBandit(actor, index, bandit)
 	actor.Held, actor.Inhales = held, actor.Inhales + 1
 	bandit.Model:Destroy()
 	bandits[index] = nil
-	local id = matchId
 	task.delay((C.PowerStarRespawn or C.BanditRespawn), function()
-		if phase == "Match" and matchId == id and index <= Stars.MaxCount and not bandits[index] then
+		if index <= Stars.MaxCount and not bandits[index] then
 			spawnBandit(index)
 		end
 	end)
@@ -214,7 +191,7 @@ local function inhale(actor)
 	Remotes.PilotVfx:FireAllClients({ Effect = "Inhale", Phase = "Start", Caster = model, Token = token, Captured = false })
 	task.spawn(function()
 		local ok, failure = pcall(function()
-			while actor.Inhaling and Combat.Enabled and Combat.Alive(actor) and actor.Model == model and os.clock() >= (actor.Stunned or 0) and os.clock() - started < 2 do
+			while actor.Inhaling and Combat.Enabled and Combat.Alive(actor) and actor.Model == model and os.clock() >= (actor.Stunned or 0) and os.clock() - started < 3 do
 				if Combat.TryInhaleProjectile(actor) then
 					captured = true
 					break
@@ -224,7 +201,7 @@ local function inhale(actor)
 				for index, bandit in bandits do
 					local offset = bandit.Model.PrimaryPart.Position - root.Position
 					local d = offset.Magnitude
-					if d < distance and (d < 2 or offset.Unit:Dot(root.CFrame.LookVector) > 0.6)
+					if d < distance and (d < 9 or offset.Unit:Dot(root.CFrame.LookVector) > 0.3)
 					and (not bandit.ReservedBy or bandit.ReservedBy == actor or os.clock() >= bandit.ReservedUntil)
 					and Combat.LineClear(root.Position, bandit.Model.PrimaryPart.Position, { model, bandit.Model }) then
 						closest, candidate, distance = index, bandit, d
@@ -233,8 +210,8 @@ local function inhale(actor)
 				actor.InhaleTarget = candidate and (candidate.Variant == "Mystery" and "Mystery" or candidate.Power) or nil
 				if candidate and Stars.Reserve(candidate, actor) then
 					local direction = root.Position - candidate.Model.PrimaryPart.Position
-					candidate.Model:PivotTo(candidate.Model:GetPivot() + direction * 0.24)
-					if distance < 4 and os.clock() - started >= C.InhaleDuration then
+					candidate.Model:PivotTo(candidate.Model:GetPivot() + direction * 0.4)
+					if distance < 6 and os.clock() - started >= C.InhaleDuration then
 						captured = takeBandit(actor, closest, candidate) == true
 						break
 					end
@@ -250,7 +227,7 @@ local function inhale(actor)
 			actor.InhaleCatchUntil = nil
 			actor.InhaleTarget = nil
 			if not actor.Held then
-				actor.InhaleMessage = "Hold F facing a bouncing Power Star within 19 studs. Fighters cannot be inhaled."
+				actor.InhaleMessage = "Hold F facing a bouncing Power Star within 28 studs. Fighters cannot be inhaled."
 				actor.InhaleMessageUntil = os.clock() + 2
 			end
 		end
@@ -286,36 +263,7 @@ local function input(player, action, argument)
 		return
 	end
 	actor.Tokens -= 1
-	if action == "Queue" then
-		if not Data.GetData(player) then
-			notify(player, "Your save is loading. Try joining again shortly.")
-			return
-		end
-		if actor.Active then
-			return
-		end
-		actor.Queued = not actor.Queued
-		if actor.Queued then
-			joinMatch(actor)
-		end
-		return
-	elseif action == "Shop" then
-		local data, skin = Data.GetData(player), type(argument) == "string" and C.Skins[argument]
-		if actor.Active or not data or not skin then
-			return
-		end
-		if not data.cosmetics[argument] then
-			if data.coins < skin.Price then
-				notify(player, "Not enough coins.")
-				return
-			end
-			data.coins -= skin.Price
-			data.cosmetics[argument] = true
-		end
-		data.equippedStar = argument
-		return
-	end
-	if phase ~= "Match" or not Combat.Alive(actor) then
+	if not Combat.Alive(actor) then
 		return
 	end
 	if action == "InhaleEnd" then
@@ -358,11 +306,23 @@ function Combat.OnKO(source, target)
 	end
 	Combat.CancelAction(target)
 	target.Dead, target.HP, target.Inhaling, target.Held = true, 0, nil, nil
+	if not target.Bot then
+		target.Active = false -- respawn in the lobby; the FFA pad is the only way back in (owner, 2026-10-29)
+	end
 	if source then
 		source.Score += 1
 		local key = target.Player and tostring(target.Player.UserId) or target.Name
 		source.Opponents[key] = (source.Opponents[key] or 0) + 1
 		source.EarnedKOs += (target.Bot and 0.25 or 1) / source.Opponents[key]
+		-- Continuous FFA: coins and stats are paid per KO instead of at the end of a match. Repeat KOs of the same
+		-- opponent pay less, and bots pay little, so farming one target is not worth it.
+		local sourceData = source.Player and Data.GetData(source.Player)
+		if sourceData then
+			local pay = math.max(1, math.floor(5 * (target.Bot and 0.25 or 1) / source.Opponents[key]))
+			sourceData.coins += pay
+			sourceData.stats.kos += 1
+			source.Payout = (source.Payout or 0) + pay
+		end
 	end
 	local data = target.Player and Data.GetData(target.Player)
 	if data then
@@ -372,9 +332,8 @@ function Combat.OnKO(source, target)
 	if humanoid then
 		humanoid.Health = 0
 	end
-	local id = matchId
 	task.delay(3, function()
-		if phase ~= "Match" or id ~= matchId or not target.Active then
+		if not target.Active then
 			return
 		end
 		if target.Bot then
@@ -401,45 +360,6 @@ local function standings()
 	return rows
 end
 
-local function payout()
-	results = standings()
-	local best = results[1] and results[1].Score or 0
-	for _, actor in actors do
-		if not actor.Player or not actor.Active then
-			continue
-		end
-		local data = Data.GetData(actor.Player)
-		local eligible = actor.Damage >= 20 or actor.Inhales >= 2
-		actor.Payout = 0
-		if data and eligible then
-			local day = math.floor(os.time() / 86400)
-			if data.rewardDay ~= day then
-				data.rewardDay, data.boostedMatches = day, 0
-			end
-			local won = actor.Score == best and actor.Score > 0
-			local base = 10 + math.floor(math.min(actor.EarnedKOs, 10) * 2) + (won and 10 or 0)
-			local humans = 0
-			for _, other in actors do
-				if other.Active and other.Player then
-					humans += 1
-				end
-			end
-			if humans <= 1 then
-				base = math.max(5, math.floor(base * 0.5))
-			end
-			actor.Payout = base * (data.boostedMatches < 10 and 2 or 1)
-			data.boostedMatches += 1
-			data.coins += actor.Payout
-			data.stats.matches += 1
-			data.stats.kos += actor.Score
-			if won then
-				data.stats.wins += 1
-				data.titles.ArenaWinner = true
-			end
-		end
-	end
-end
-
 local function updateLeaderboard(model, rows, stat, suffix)
 	if not model then
 		return
@@ -454,18 +374,19 @@ local function updateLeaderboard(model, rows, stat, suffix)
 end
 
 local function sendState()
-	local rows = phase == "Results" and results or standings()
+	local rows = standings()
 	local board = {}
 	for _, player in Players:GetPlayers() do
 		local data = Data.GetData(player)
 		if data then
-			table.insert(board, { Name = player.DisplayName, Wins = data.stats.wins, KOs = data.stats.kos })
+			local actor = actors[player]
+			table.insert(board, { Name = player.DisplayName, Wins = data.stats.wins, KOs = data.stats.kos, Session = actor and actor.Score or 0 })
 		end
 	end
 	table.sort(board, function(a, b)
-		return a.Wins > b.Wins
+		return a.Session > b.Session
 	end)
-	updateLeaderboard(World.Leaderboard, board, "Wins", "wins")
+	updateLeaderboard(World.Leaderboard, board, "Session", "KOs this session")
 	local koBoard = table.clone(board)
 	table.sort(koBoard, function(a, b)
 		return a.KOs > b.KOs
@@ -485,12 +406,12 @@ local function sendState()
 		for key, time in actor.Cooldowns do
 			cooldowns[key] = math.max(0, time - os.clock())
 		end
-		Remotes.PilotState:FireClient(player, { Phase = phase, Seconds = math.max(0, math.ceil(deadline - os.clock())),
+		Remotes.PilotState:FireClient(player, { Phase = phase, Seconds = 0,
 			Queued = actor.Queued, Active = actor.Active, HP = math.ceil(actor.HP), Slots = actor.Slots, Slot = actor.Slot,
 			Inhaling = actor.Inhaling == true, InhaleTarget = actor.InhaleTarget,
 			InhaleMessage = os.clock() < (actor.InhaleMessageUntil or 0) and actor.InhaleMessage or nil,
 			Held = actor.Held and actor.Held.Variant == "Mystery" and "Mystery" or actor.Held and actor.Held.Power,
-			Cooldowns = cooldowns, Coins = data and data.coins or 0, Cosmetics = data and data.cosmetics or {},
+			Cooldowns = cooldowns, Coins = data and data.coins or 0, Cosmetics = data and data.cosmetics or {}, Score = actor.Score,
 			Skin = data and data.equippedStar or "Default", Rows = rows, Board = board, Payout = actor.Payout or 0,
 			Ready = data ~= nil, Title = data and data.titles.ArenaWinner == true })
 	end
@@ -543,45 +464,15 @@ local function stepAI(dt)
 	Stars.Step(World, bandits, dt)
 end
 
-local function runMatches()
+local function runFFA()
+	Combat.Enabled = true
+	fillBots()
+	for i = 1, Stars.MaxCount do
+		spawnBandit(i)
+	end
 	while true do
-		matchId += 1
-		phase, deadline = "Match", os.clock() + C.MatchSeconds
-		Combat.Enabled = true
-		for _, actor in actors do
-			if actor.Queued and actor.Player then
-				joinMatch(actor)
-			end
-		end
-		fillBots()
-		for i = 1, Stars.MaxCount do
-			spawnBandit(i)
-		end
-		while os.clock() < deadline do
-			stepAI(0.1)
-			task.wait(0.1)
-		end
-		phase, deadline = "Results", os.clock() + C.ResultsSeconds
-		Combat.Enabled = false
-		payout()
-		clearBandits()
-		repeat
-			task.wait(0.25)
-		until os.clock() >= deadline
-		clearBots()
-		for _, actor in actors do
-			actor.Active, actor.Dead, actor.Held, actor.Inhaling = false, false, nil, nil
-			actor.InhaleCatchUntil = nil
-			actor.Slots = {}
-			if actor.Player then
-				placeCharacter(actor)
-				actor.Slots = {}
-			end
-		end
-		phase, deadline = "Intermission", os.clock() + C.IntermissionSeconds
-		repeat
-			task.wait(0.25)
-		until os.clock() >= deadline
+		stepAI(0.1)
+		task.wait(0.1)
 	end
 end
 
@@ -595,6 +486,15 @@ function Service.Start()
 		local actor = newActor(player)
 		actors[player] = actor
 		player.RespawnLocation = World.Spawn
+		if RunService:IsStudio() then
+			-- Studio test hook: player:SetAttribute("DevPower", "Fire") puts that power in hand (never runs in a live server).
+			player:GetAttributeChangedSignal("DevPower"):Connect(function()
+				local id = player:GetAttribute("DevPower")
+				if C.Powers[id] then
+					actor.Slots, actor.Slot, actor.Cooldowns = { id }, 1, {}
+				end
+			end)
+		end
 		player.CharacterAdded:Connect(function()
 			actor.Dead = false
 			placeCharacter(actor)
@@ -620,7 +520,7 @@ function Service.Start()
 		added(player)
 	end
 	Remotes.PilotInput.OnServerEvent:Connect(input)
-	task.spawn(runMatches)
+	task.spawn(runFFA)
 	task.spawn(function()
 		while true do
 			checkArenaEntry()

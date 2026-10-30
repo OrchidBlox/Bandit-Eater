@@ -93,7 +93,7 @@ local function hitArea(combat, state, center, amount, cone, hitSet)
 			if cone then
 				local offset = root.Position - state.packet.Origin
 				allowed = offset.Magnitude <= state.move.Range and (offset.Magnitude < 0.01
-					or offset.Unit:Dot(state.packet.Direction) > 0.35)
+					or offset.Unit:Dot(state.packet.Direction) > 0.45)
 			end
 			if allowed and combat.LineClear(center, root.Position, { state.model, other.Model }) then
 				damage(combat, state, other, amount, center)
@@ -136,6 +136,11 @@ local function hitWave(combat, state, before, after, hitSet, params)
 			end
 		end
 	end
+end
+
+-- Fast launch that eases out: the share of a dash's distance covered after t of total seconds.
+local function dashEase(t, total)
+	return 1 - (1 - math.clamp(t / total, 0, 1)) ^ 2
 end
 
 local function launch(combat, state)
@@ -224,7 +229,8 @@ function Service.Cast(combat, actor, power, index, move)
 		origin += direction * (hit and math.max(0, hit.Distance - 2) or move.Range)
 	end
 	local delay = move.Delay or 0.2
-	local duration = delay + ((move.Kind == "Projectile" or move.Kind == "Wave") and move.Range / move.Speed or 0.9)
+	local duration = delay + ((move.Kind == "Projectile" or move.Kind == "Wave") and move.Range / move.Speed
+		or move.Kind == "Dash" and move.DashTime + 0.4 or 0.9)
 	local state = { actor = actor, model = model, move = move, packet = {
 		Effect = "PowerMove", Phase = "Start", Caster = model, Power = power,
 		Key = ({ "Q", "E", "R" })[index], Token = HttpService:GenerateGUID(false), Origin = origin,
@@ -242,7 +248,57 @@ function Service.Cast(combat, actor, power, index, move)
 			launch(combat, state)
 			return
 		end
-		if move.Kind == "Wave" then
+		if move.Kind == "Dash" then
+			-- The caster lunges along their facing (Range studs over DashTime), cutting everyone within Radius of the path.
+			local humanoid = model:FindFirstChildOfClass("Humanoid")
+			if root.Anchored or (humanoid and (humanoid.Sit or humanoid.PlatformStand)) then
+				finish(state)
+				return
+			end
+			local flat = Vector3.new(direction.X, 0, direction.Z)
+			local dash = flat.Magnitude > 0.01 and flat.Unit or direction
+			local autoRotate = humanoid and humanoid.AutoRotate
+			if humanoid then
+				humanoid.AutoRotate = false
+			end
+			local owned = pcall(function()
+				root:SetNetworkOwner(nil)
+			end)
+			actor.Invulnerable = os.clock() + move.DashTime
+			local params = worldParameters(combat)
+			local hitSet, traveled, elapsed = {}, 0, 0
+			local function cleanup()
+				if humanoid and humanoid.Parent then
+					humanoid.AutoRotate = autoRotate
+				end
+				if owned and root.Parent then
+					pcall(function()
+						root:SetNetworkOwnershipAuto()
+					end)
+				end
+			end
+			state.connection = RunService.Heartbeat:Connect(function(dt)
+				if state.done or actor.PowerCast ~= state or not valid(combat, actor, model) or root.Anchored then
+					cleanup()
+					finish(state)
+					return
+				end
+				local step = math.min(dt, move.DashTime - elapsed)
+				local want = move.Range * (dashEase(elapsed + step, move.DashTime) - dashEase(elapsed, move.DashTime))
+				local hit = workspace:Blockcast(root.CFrame, Vector3.new(3, 4, 2), dash * (want + 0.1), params)
+				local moved = hit and math.clamp(hit.Distance - 0.1, 0, want) or want
+				local before = root.Position
+				root.AssemblyLinearVelocity = Vector3.new(0, root.AssemblyLinearVelocity.Y, 0)
+				model:PivotTo(model:GetPivot() + dash * moved)
+				hitWave(combat, state, before, root.Position, hitSet, params)
+				traveled += moved
+				elapsed += step
+				if hit or elapsed >= move.DashTime then
+					cleanup()
+					finish(state, "Impact", root.Position)
+				end
+			end)
+		elseif move.Kind == "Wave" then
 			local distance, hitSet = 0, {}
 			state.connection = RunService.Heartbeat:Connect(function(dt)
 				if state.done or actor.PowerCast ~= state or not valid(combat, actor, model) then

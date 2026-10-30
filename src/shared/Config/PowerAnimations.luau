@@ -33,11 +33,11 @@ return {
 		{ AnimationId = "rbxassetid://77687284149521", MovingAnimationId = "rbxassetid://126568718679011", Release = 0.8, Duration = 1.3, Clip = "Fire_3", Profile = "er" },
 	},
 	Sword = {
-		-- Dedicated Q cast (BE_QCasts). V2 IDs for revert: 82321222955196 / 98639800372126.
+		-- One-handed sword cast (owner, 2026-10-29). Two-handed IDs: 88794026792990 / 85555823896434.
 		{ AnimationId = "rbxassetid://123130502051204", MovingAnimationId = "rbxassetid://124321926989453", Release = 0.18, Duration = 0.68, Clip = "Sword_1", Profile = "q" },
-		-- Dedicated cast (BE_QCasts). V2 IDs for revert: 99059830204132 / 116839762988080.
-		{ AnimationId = "rbxassetid://128138553793651", MovingAnimationId = "rbxassetid://124731765632790", Release = 0.22, Duration = 0.72, Clip = "Sword_2", Profile = "er" },
-		-- Dedicated cast (BE_QCasts). V2 IDs for revert: 107251555642774 / 90423505115509.
+		-- One-handed dash-slash lunge (build_sword_rig.py --onehand --casts). Earlier rising-cut IDs: 128138553793651 / 124731765632790.
+		{ AnimationId = "rbxassetid://114699973381646", MovingAnimationId = "rbxassetid://86420505557078", Release = 0.2, Duration = 0.7, Clip = "Sword_2", Profile = "dash" },
+		-- One-handed sword cast (owner, 2026-10-29). Two-handed IDs: 107878981045280 / 92290438202787.
 		{ AnimationId = "rbxassetid://90373264559626", MovingAnimationId = "rbxassetid://102884088406655", Release = 0.55, Duration = 1.05, Clip = "Sword_3", Profile = "er" },
 	},
 	Shadow = {
@@ -49,39 +49,51 @@ return {
 		{ AnimationId = "rbxassetid://116366070991548", MovingAnimationId = "rbxassetid://130072065604092", Release = 1, Duration = 1.5, Clip = "Shadow_3", Profile = "er" },
 	},
 	Sword_Wind = {
-		-- Dedicated Q cast (BE_QCasts). V2 IDs for revert: 84209155229803 / 135933676725731.
+		-- One-handed sword cast (owner, 2026-10-29). Two-handed IDs: 104031365008407 / 107118202864539.
 		{ AnimationId = "rbxassetid://129844891801075", MovingAnimationId = "rbxassetid://89540226156072", Release = 0.18, Duration = 0.68, Clip = "Sword_Wind_1", Profile = "q" },
-		{ AnimationId = "rbxassetid://140414378284349", MovingAnimationId = "rbxassetid://123153128429635", Release = 0.22, Duration = 0.72, Clip = "Sword_Wind_2", Profile = "slash" },
+		-- One-handed dash-slash lunge (build_sword_rig.py --onehand --casts). Earlier rising-cut IDs: 140414378284349 / 123153128429635.
+		{ AnimationId = "rbxassetid://115113431681705", MovingAnimationId = "rbxassetid://101710023760196", Release = 0.2, Duration = 0.7, Clip = "Sword_Wind_2", Profile = "dash" },
+		-- One-handed sword cast (owner, 2026-10-29). Two-handed IDs: 83944980122451 / 130208077086233.
 		{ AnimationId = "rbxassetid://100497877726743", MovingAnimationId = "rbxassetid://85328066173416", Release = 0.5, Duration = 1, Clip = "Sword_Wind_3", Profile = "spin" },
 	},
 	Sword_Earth = {
-		-- Dedicated Q cast (BE_QCasts). V2 IDs for revert: 87561926139926 / 129767565462409.
+		-- One-handed sword cast (owner, 2026-10-29). Two-handed IDs: 74641532113691 / 71550996576859.
 		{ AnimationId = "rbxassetid://88555841779511", MovingAnimationId = "rbxassetid://84791158739296", Release = 0.18, Duration = 0.68, Clip = "Sword_Earth_1", Profile = "q" },
-		{ AnimationId = "rbxassetid://88057654853563", MovingAnimationId = "rbxassetid://90763784165209", Release = 0.55, Duration = 1.05, Clip = "Sword_Earth_2", Profile = "slam" },
+		-- One-handed dash-slash lunge (build_sword_rig.py --onehand --casts). Earlier rising-cut IDs: 88057654853563 / 90763784165209.
+		{ AnimationId = "rbxassetid://94762387849438", MovingAnimationId = "rbxassetid://118496910754646", Release = 0.35, Duration = 0.85, Clip = "Sword_Earth_2", Profile = "dash" },
+		-- One-handed sword cast (owner, 2026-10-29). Two-handed IDs: 71206028775577 / 103821064199695.
 		{ AnimationId = "rbxassetid://110251851319569", MovingAnimationId = "rbxassetid://90629995062694", Release = 0.9, Duration = 1.4, Clip = "Sword_Earth_3", Profile = "slam" },
 	},
 	Sword_Water = {
-		-- Dedicated Q cast (BE_QCasts). V2 IDs for revert: 127052758893797 / 114116558934819.
+		-- One-handed sword cast (owner, 2026-10-29). Two-handed IDs: 94435789966137 / 138475963901206.
 		{ AnimationId = "rbxassetid://115763588950449", MovingAnimationId = "rbxassetid://90380967260959", Release = 0.18, Duration = 0.68, Clip = "Sword_Water_1", Profile = "q" },
-		{ AnimationId = "rbxassetid://90956491796382", MovingAnimationId = "rbxassetid://139281542895128", Release = 0.25, Duration = 0.75, Clip = "Sword_Water_2", Profile = "slash" },
+		-- One-handed dash-slash lunge (build_sword_rig.py --onehand --casts). Earlier rising-cut IDs: 90956491796382 / 139281542895128.
+		{ AnimationId = "rbxassetid://78359262404115", MovingAnimationId = "rbxassetid://84957632618319", Release = 0.2, Duration = 0.7, Clip = "Sword_Water_2", Profile = "dash" },
+		-- One-handed sword cast (owner, 2026-10-29). Two-handed IDs: 86687199084799 / 87892319071401.
 		{ AnimationId = "rbxassetid://96388276026592", MovingAnimationId = "rbxassetid://112507263625832", Release = 0.5, Duration = 1, Clip = "Sword_Water_3", Profile = "spin" },
 	},
 	Sword_Fire = {
-		-- Dedicated Q cast (BE_QCasts). V2 IDs for revert: 94472826701570 / 87914792659964.
+		-- One-handed sword cast (owner, 2026-10-29). Two-handed IDs: 84061074042650 / 81497029535442.
 		{ AnimationId = "rbxassetid://74315673132074", MovingAnimationId = "rbxassetid://129659749635139", Release = 0.18, Duration = 0.68, Clip = "Sword_Fire_1", Profile = "q" },
-		{ AnimationId = "rbxassetid://128639770450870", MovingAnimationId = "rbxassetid://126027199122630", Release = 0.3, Duration = 0.8, Clip = "Sword_Fire_2", Profile = "slash" },
+		-- One-handed dash-slash lunge (build_sword_rig.py --onehand --casts). Earlier rising-cut IDs: 128639770450870 / 126027199122630.
+		{ AnimationId = "rbxassetid://107627739102988", MovingAnimationId = "rbxassetid://129980805578302", Release = 0.25, Duration = 0.75, Clip = "Sword_Fire_2", Profile = "dash" },
+		-- One-handed sword cast (owner, 2026-10-29). Two-handed IDs: 139642445328500 / 73143029166647.
 		{ AnimationId = "rbxassetid://122075088428982", MovingAnimationId = "rbxassetid://102764400236224", Release = 0.7, Duration = 1.2, Clip = "Sword_Fire_3", Profile = "wave" },
 	},
 	Sword_Shadow = {
-		-- Dedicated Q cast (BE_QCasts). V2 IDs for revert: 108820651629021 / 105232381329648.
+		-- One-handed sword cast (owner, 2026-10-29). Two-handed IDs: 97480935101076 / 82099278134539.
 		{ AnimationId = "rbxassetid://128490339683200", MovingAnimationId = "rbxassetid://123303116805284", Release = 0.18, Duration = 0.68, Clip = "Sword_Shadow_1", Profile = "q" },
-		{ AnimationId = "rbxassetid://87291338534492", MovingAnimationId = "rbxassetid://70572639125539", Release = 0.65, Duration = 1.15, Clip = "Sword_Shadow_2", Profile = "slash" },
+		-- One-handed dash-slash lunge (build_sword_rig.py --onehand --casts). Earlier rising-cut IDs: 87291338534492 / 70572639125539.
+		{ AnimationId = "rbxassetid://76521295441571", MovingAnimationId = "rbxassetid://116815176448523", Release = 0.35, Duration = 0.85, Clip = "Sword_Shadow_2", Profile = "dash" },
+		-- One-handed sword cast (owner, 2026-10-29). Two-handed IDs: 87846521401325 / 102200744909976.
 		{ AnimationId = "rbxassetid://133842569383531", MovingAnimationId = "rbxassetid://108952600350109", Release = 0.95, Duration = 1.45, Clip = "Sword_Shadow_3", Profile = "ritual" },
 	},
 	Sword_Sword = {
-		-- Dedicated Q cast (BE_QCasts). V2 IDs for revert: 104858114756279 / 118520888161210.
+		-- One-handed sword cast (owner, 2026-10-29). Two-handed IDs: 134303999859065 / 135721447068835.
 		{ AnimationId = "rbxassetid://82386283754997", MovingAnimationId = "rbxassetid://93347344799184", Release = 0.18, Duration = 0.68, Clip = "Sword_Sword_1", Profile = "q" },
-		{ AnimationId = "rbxassetid://81163947876830", MovingAnimationId = "rbxassetid://109780852287019", Release = 0.4, Duration = 0.9, Clip = "Sword_Sword_2", Profile = "rising" },
+		-- One-handed dash-slash lunge (build_sword_rig.py --onehand --casts). Earlier rising-cut IDs: 81163947876830 / 109780852287019.
+		{ AnimationId = "rbxassetid://80511002753656", MovingAnimationId = "rbxassetid://109405704973761", Release = 0.3, Duration = 0.8, Clip = "Sword_Sword_2", Profile = "dash" },
+		-- One-handed sword cast (owner, 2026-10-29). Two-handed IDs: 91733219862588 / 74922170656524.
 		{ AnimationId = "rbxassetid://127869914732492", MovingAnimationId = "rbxassetid://79002668784361", Release = 0.9, Duration = 1.4, Clip = "Sword_Sword_3", Profile = "slam" },
 	},
 }

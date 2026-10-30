@@ -315,7 +315,7 @@ function P.Portal(parent, origin, scale, title)
 	part("ArchLintel", Vector3.new(17, 4.2, 4.5), Vector3.new(0, 20, 0), P.Colors.Stone, Enum.Material.Concrete, true)
 	part("TopLight", Vector3.new(15, 0.4, 0.35), Vector3.new(0, 17.7, 2.4), P.Colors.Cyan, Enum.Material.Neon, false)
 	local sign = part("ArenaSign", Vector3.new(15.2, 3.1, 0.6), Vector3.new(0, 20, 2.6), P.Colors.Metal, Enum.Material.Metal, false)
-	P.Sign(sign, title or "ARENA", Color3.fromRGB(195, 246, 255))
+	P.Sign(sign, title or "FFA", Color3.fromRGB(195, 246, 255))
 	local glass = part("PortalSurface", Vector3.new(17, 16, 0.15), Vector3.new(0, 8, 0), P.Colors.Cyan, Enum.Material.Glass, false)
 	glass.Transparency = 0.84
 	glass.CastShadow = false

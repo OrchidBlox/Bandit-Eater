@@ -48,7 +48,7 @@ local function teleporter(parent, position)
 		part("PostLight", Vector3.new(0.22, 9, 0.15), Vector3.new(x, 6, -2.1), C.Cyan, Enum.Material.Neon, false)
 	end
 	local sign = part("ArenaSign", Vector3.new(19.4, 2.2, 1.6), Vector3.new(0, 12, -3), C.Metal, nil, true)
-	P.Sign(sign, "ARENA", Color3.fromRGB(205, 245, 255))
+	P.Sign(sign, "FFA", Color3.fromRGB(205, 245, 255))
 	local glass = part("PortalSurface", Vector3.new(16.5, 10.2, 0.12), Vector3.new(0, 5.8, -3), C.Cyan, Enum.Material.Glass, false)
 	glass.Transparency, glass.CastShadow = 0.88, false
 	for _, x in { -9.6, 9.6 } do

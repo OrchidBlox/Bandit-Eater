@@ -1,6 +1,7 @@
 -- Server-owned roaming pickups. Combat.Bandits remains a compatibility registry only.
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Visual = require(ReplicatedStorage.Shared.PowerStarVisual)
+local CollectionService = game:GetService("CollectionService")
 local Stars = { MaxCount = 6 }
 local rng = Random.new()
 local warnedMissingTemplate = false
@@ -90,6 +91,7 @@ function Stars.Spawn(world, records, index, powers)
 	model.PrimaryPart = body
 	model:SetAttribute("PowerId", power)
 	model:SetAttribute("IsPowerStar", true)
+	CollectionService:AddTag(model, "PowerStar") -- StarController draws these on the client
 	model:PivotTo(CFrame.new(position))
 	model.Parent = world.Root
 	local angle = rng:NextNumber(0, math.pi * 2)
@@ -104,6 +106,7 @@ function Stars.Reserve(record, actor)
 		return false
 	end
 	record.ReservedBy, record.ReservedUntil = actor, now + 0.2
+	record.Model:SetAttribute("Pulled", true) -- the client draws the inhale pull
 	return true
 end
 function Stars.Release(records, actor)
@@ -122,6 +125,7 @@ function Stars.Step(world, records, dt)
 		end
 		if record.ReservedBy then
 			record.ReservedBy, record.ReservedUntil = nil, nil
+			record.Model:SetAttribute("Pulled", false)
 			local position = record.Model.PrimaryPart.Position
 			position = Vector3.new(position.X, world.ArenaFloor.Position.Y + world.ArenaFloor.Size.Y / 2 + 2.5, position.Z)
 			if valid(world, position) then
@@ -142,7 +146,7 @@ function Stars.Step(world, records, dt)
 			record.TurnAt = now + 0.3
 		end
 		record.Age += dt
-		record.Model:PivotTo(Visual.Pose(CFrame.new(record.Position), record.Age))
+		record.Model:PivotTo(CFrame.new(record.Position))
 	end
 end
 return Stars

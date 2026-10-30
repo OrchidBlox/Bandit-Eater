@@ -3,7 +3,7 @@ local C = {
 	MatchSeconds = 90, IntermissionSeconds = 12, ResultsSeconds = 8,
 	MaxHealth = 100, WalkSpeed = 20, BotFill = 0, --[[ bots paused for VFX review 2026-10-28; was 4 ]] BanditRespawn = 8,
 	ShieldDuration = 1, ShieldCooldown = 5, ShieldReduction = 0.65,
-	InhaleDuration = 0.7, InhaleCooldown = 3, InhaleRange = 19,
+	InhaleDuration = 0.35, InhaleCooldown = 2, InhaleRange = 28,
 	SwapCooldown = 1.5, SwallowProtection = 0.4,
 	BaseIds = { "Wind", "Earth", "Water", "Fire", "Sword", "Shadow" },
 	Powers = {}, Fusions = {},
