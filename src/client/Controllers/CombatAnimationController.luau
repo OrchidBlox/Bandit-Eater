@@ -6,6 +6,7 @@ local Config = require(ReplicatedStorage.Shared.Config.CombatActions)
 local Remotes = require(ReplicatedStorage.Shared.Remotes)
 local Kit = require(script.Parent.Parent.Vfx.Kit)
 local Effect = require(script.Parent.Parent.Vfx.Effects.CombatAction)
+local SwordSlash = require(script.Parent.Parent.Vfx.Effects.SwordSlash)
 local Controller = {}
 local connections, states, effects, cancelled, hits = {}, {}, {}, {}, {}
 local started = false
@@ -143,6 +144,21 @@ local function draw(character, kind, position)
 	end
 end
 
+-- A sword hit leaves that hit's own slash trail (Effects/SwordSlash) instead of the fist's puff.
+local function drawSlash(character, combo, power, rootCFrame)
+	local camera = workspace.CurrentCamera
+	if not camera or (camera.CFrame.Position - rootCFrame.Position).Magnitude > Config.EffectDistance or #effects >= Config.MaxEffects then
+		stats.culled += 1
+		return
+	end
+	local effect = SwordSlash.Play({ Combo = combo, Power = power, Root = rootCFrame },
+		Kit.look(nil, 1, character == Players.LocalPlayer.Character))
+	if effect then
+		table.insert(effects, { character = character, effect = effect })
+		stats.effects += 1
+	end
+end
+
 local function phaseEffect(state, active, phase)
 	if state.active ~= active or active.emitted[phase] then return end
 	active.emitted[phase] = true
@@ -152,6 +168,10 @@ local function phaseEffect(state, active, phase)
 	if phase == "Strike" then
 		local power = character:GetAttribute("ActivePower")
 		local sword = power and Config.SwordM1[power]
+		if sword then
+			drawSlash(character, active.action, power, root.CFrame)
+			return
+		end
 		local hand = character:FindFirstChild(not sword and active.action == "M1_1" and "LeftHand" or "RightHand")
 		draw(character, "Swing", hand and hand:IsA("BasePart") and hand.Position or root.Position + root.CFrame.LookVector * 2)
 	else

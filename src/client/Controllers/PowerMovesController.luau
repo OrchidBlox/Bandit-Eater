@@ -161,7 +161,8 @@ function Controller.Play(data)
   count+=1
  end
  local d=distance(data.Origin)
- if d>Moves.CullDistance or count>=Moves.MaxConcurrent then
+ -- Effects within 70 studs may exceed the cap (up to twice): a culled telegraph hides damage from the player it threatens.
+ if d>Moves.CullDistance or count>=(d<=70 and Moves.MaxConcurrent*2 or Moves.MaxConcurrent) then
   counters.culled+=1
  return
  end

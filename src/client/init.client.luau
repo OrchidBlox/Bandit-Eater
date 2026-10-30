@@ -14,6 +14,7 @@ local CONTROLLER_ORDER = {
 	"PowerSwallowController",
 	"PowerMovesController",
 	"SwordController",
+	"StarController",
 	"PilotController",
 }
 

@@ -1,6 +1,6 @@
 -- Held swords. The server publishes each fighter's active power as the character attribute "ActivePower"; this
 -- controller welds the matching sword (ReplicatedStorage.Assets.Swords) to the right hand and, for the local
--- player, plays the two-handed ready hold while nothing else is using the arms. Presentation only: no hitboxes,
+-- player, plays the ready hold (when the sword clip set has one) while nothing else is using the arms. Presentation only: no hitboxes,
 -- no damage, no movement.
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -9,10 +9,10 @@ local Config = require(ReplicatedStorage.Shared.Config.CombatActions)
 
 local Controller = {}
 
--- Active power -> sword template. Fusion swords use the base Sword until their own meshes are installed.
+-- Active power -> sword template in ReplicatedStorage.Assets.Swords (every one shares the same grip and blade length).
 local SWORDS = {
-	Sword = "Sword", Sword_Wind = "Sword", Sword_Earth = "Sword", Sword_Water = "Sword",
-	Sword_Fire = "Sword", Sword_Shadow = "Sword", Sword_Sword = "Sword",
+	Sword = "Sword", Sword_Wind = "WindSword", Sword_Earth = "EarthSword", Sword_Water = "WaterSword",
+	Sword_Fire = "FireSword", Sword_Shadow = "ShadowSword", Sword_Sword = "MasterSword",
 }
 
 -- Grip measured in Blender with the sword attached to the canonical rig (blender/anims/build_sword_rig.py ->
