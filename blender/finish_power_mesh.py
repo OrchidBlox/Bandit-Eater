@@ -16,8 +16,14 @@ sources={
 }
 filename,name=sources.get(model,(f'BE_{model}.blend',f'BE_{model}'))
 with bpy.data.libraries.load(str(root/'blender'/filename),link=False) as (source,target):
-    target.scenes=source.scenes[:1]
-scene=target.scenes[0];bpy.context.window.scene=scene
+    if source.scenes: target.scenes=source.scenes[:1]
+    else: target.objects=list(source.objects)  # object-only blend (the safe save, see the crash trap in docs/codex-workflow.md)
+if target.scenes: scene=target.scenes[0]
+else:
+    bpy.ops.scene.new(type='EMPTY');scene=bpy.context.scene
+    for _o in target.objects: scene.collection.objects.link(_o)
+try: bpy.context.window.scene=scene
+except Exception: pass
 obj=next(o for o in scene.objects if o.type=='MESH' and (o.name.startswith(name) or (name.startswith('BE_') and o.name.startswith(name[3:]))))
 bpy.ops.object.select_all(action='DESELECT');obj.select_set(True);bpy.context.view_layer.objects.active=obj
 bpy.ops.object.transform_apply(location=False,rotation=True,scale=True)
@@ -49,7 +55,7 @@ bpy.ops.export_scene.fbx(filepath=str(root/f'blender/export/BE_PowerMesh_{model}
  use_selection=True,object_types={'MESH'},axis_forward='-Z',axis_up='Y',bake_anim=False,
  add_leaf_bones=False,path_mode='COPY',embed_textures=True)
 finished=root/'blender/finished';finished.mkdir(exist_ok=True)
-bpy.data.libraries.write(str(finished/f'BE_PowerMesh_{model}.blend'),{scene},fake_user=True)
+bpy.data.libraries.write(str(finished/f'BE_PowerMesh_{model}.blend'),{obj},fake_user=True)  # object only: writing a scenes.new scene crashes Blender 5.2.2
 obj.data.calc_loop_triangles()
 report={'model':model,'triangles':len(obj.data.loop_triangles),'materials':len(obj.data.materials),
  'dimensions_blender':list(obj.dimensions),'palette':palette,'exported':True}

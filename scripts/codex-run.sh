@@ -38,7 +38,7 @@ case "$mode" in
 		;;
 	blender)
 		approval=(-s workspace-write -c 'mcp_servers.blender.default_tools_approval_mode="approve"')
-		prompt="Read $spec and do exactly what it says through the Blender MCP. $brief"
+		prompt="Read $spec and do exactly what it says through the Blender MCP. BLENDER 5.2.2 CRASH TRAP (this closes the user's Blender): never write a Scene made with bpy.data.scenes.new to a .blend with bpy.data.libraries.write. Make the working scene with bpy.ops.scene.new(type='EMPTY') and save the finished mesh with bpy.data.libraries.write(path, {obj}, fake_user=True), the OBJECT only, never the scene. Do not open or switch files. $brief"
 		;;
 	studio)
 		approval=(--approve-for-me)
